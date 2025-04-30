@@ -1,0 +1,196 @@
+@import "../styles/partials/variables";
+@import "../styles/partials/animations";
+
+.about-page-section {
+  background: linear-gradient(135deg, $primary-bg, $secondary-bg);
+  color: $text-light;
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .section-title {
+    font-family: $font-header;
+    font-size: 1.3rem;
+    color: $accent;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+    animation: fadeInDown 1s ease-out;
+  }
+
+  .about-description {
+    font-family: $font-body;
+    font-size: 1.4rem;
+    max-width: 900px;
+    margin-bottom: 2rem;
+    color: $text-muted;
+    line-height: 2rem;
+    animation: fadeIn 1.5s ease-out;
+
+    strong {
+      color: $accent;
+    }
+  }
+
+  .fun-fact {
+    background: $highlight;
+    padding: 1.5rem 2rem;
+    border-radius: $radius;
+    margin-bottom: 2rem;
+    font-family: $font-btn;
+    font-size: 1.1rem;
+    color: $text-light;
+    animation: pulseGlow 2s infinite alternate;
+  }
+
+  .cta-button {
+    background-color: $highlight;
+    color: $text-light;
+    padding: 0.7rem 2rem;
+    border-radius: $btn-radius;
+    animation: pulseGlow 1.6s infinite;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: lighten($highlight, 10%);
+      color: $accent;
+      box-shadow: 0 0 18px $accent;
+    }
+  }
+}
+
+.gif-banner {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .gif-cropper {
+    width: 70%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: $radius;
+    box-shadow: $shadow-lg;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+}
+
+.timeline-horizontal {
+  margin: 1rem 0 2rem;
+  padding: 2rem 1rem;
+  height: 200px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  .timeline-track {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 100%;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: $accent;
+      opacity: 0.4;
+      transform: translateY(-50%);
+      z-index: 1;
+    }
+
+    .timeline-event {
+      position: relative;
+      flex: 0 0 auto;
+      width: 100px;
+      margin: 0 2rem;
+      text-align: center;
+      z-index: 2;
+      cursor: pointer;
+
+      .timeline-year {
+        font-family: $font-header;
+        font-size: 1rem;
+        color: $accent;
+        margin-bottom: 5rem;
+        display: block;
+        transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
+      }
+
+      p {
+        font-family: $font-body;
+        font-size: 1rem;
+        color: $text-muted;
+        margin: 0;
+        position: absolute;
+        top: 65%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 170px;
+        white-space: normal;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        background: rgba(29, 38, 125, 0.9);
+        padding: 0.5rem;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(212, 173, 252, 0.5);
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 16px;
+        height: 16px;
+        background: $highlight;
+        border: 2px solid $accent;
+        border-radius: 50%;
+        z-index: 3;
+        transition: background 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      &:hover {
+        .timeline-year {
+          color: $text-light;
+          text-shadow: 0 0 8px $accent, 0 0 12px $accent;
+          transform: scale(1.1);
+        }
+
+        &::before {
+          background: $accent;
+          box-shadow: 0 0 12px $accent;
+        }
+
+        p {
+          opacity: 1;
+          pointer-events: auto;
+        }
+      }
+    }
+  }
+}

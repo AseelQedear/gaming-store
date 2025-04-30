@@ -1,0 +1,192 @@
+.product-details {
+    color: $text-light;
+  
+    h2, h3, h4,
+    .product-title {
+      font-family: inherit;
+      text-shadow: none;
+      text-transform: none;
+    }
+  
+    .product-image-box {
+      background-color: $secondary-bg;
+      border-radius: $radius;
+      padding: 1rem;
+      box-shadow: $shadow-sm;
+      width: 600px;
+      height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+  
+      img {
+        width: 85%;
+        height: auto;
+        max-height: 100%;
+        object-fit: contain;
+        border-radius: 12px;
+      }
+  
+      .discount-badge,
+      .best-deal-badge {
+        position: absolute;
+        top: -12px;
+        font-size: 0.8rem;
+        font-weight: bold;
+        padding: 4px 10px;
+        border-radius: 8px;
+        z-index: 1;
+      }
+  
+      .discount-badge {
+        left: -12px;
+        background-color: #28a745;
+        color: white;
+      }
+  
+      .best-deal-badge {
+        right: -12px;
+        background-color: #ffb703;
+        color: $text-dark;
+        box-shadow: 0 0 10px rgba(255, 183, 3, 0.4);
+      }
+    }
+  
+    .product-info-box {
+      border-radius: $radius;
+      padding: 2rem;
+  
+      .title-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+  
+        .product-title {
+          color: $accent;
+          font-size: 1.5rem;
+          margin: 0;
+          flex: 1;
+        }
+  
+        .product-actions {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          font-size: 1.5rem;
+  
+          .wishlist-icon {
+            cursor: pointer;
+            transition: transform 0.3s ease, color 0.3s ease;
+            color: $accent;
+  
+            &:hover {
+              transform: scale(1.2);
+            }
+  
+            &.active {
+              color: #ff4d4f;
+              animation: pop 0.3s ease;
+            }
+          }
+  
+          .share-icon {
+            cursor: pointer;
+            color: #ccc;
+            transition: color 0.3s ease;
+  
+            &:hover {
+              color: $accent;
+            }
+          }
+        }
+      }
+  
+      .price-info {
+        .current-price {
+          font-size: 1.4rem;
+          font-weight: bold;
+          color: #ff4d4f;
+          text-align: left;
+        }
+  
+        .old-price {
+          font-size: 0.9rem;
+          color: #aaa;
+          text-decoration: line-through;
+          text-align: left;
+        }
+  
+        .offer-line {
+          font-size: 0.9rem;
+          color: #ccc;
+          min-height: 40px;
+          margin: 0.5rem 0 1rem;
+          text-align: left;
+        }
+      }
+  
+      .add-to-cart {
+        border-color: $accent;
+        color: $accent;
+        width: 50%;
+        align-self: center;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+  
+        &:hover {
+          background-color: $highlight;
+          color: white;
+  
+          &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            animation: slideHighlight 0.6s forwards;
+          }
+        }
+      }
+  
+      .out-of-stock-label {
+        margin-top: 1rem;
+        padding: 0.6rem 2rem;
+        border-radius: 5px;
+        font-weight: bold;
+        color: #aaa;
+        background-color: rgba(255, 255, 255, 0.05);
+        border: 2px dashed #aaa;
+        text-align: center;
+        width: 50%;
+      }
+  
+      .product-card-style2.sold-out {
+        opacity: 0.5;
+        pointer-events: none;
+        filter: grayscale(0.7);
+      }
+    }
+  
+    .product-specs {
+      h4 {
+        font-size: 1.5rem;
+        color: $accent;
+      }
+  
+      .specs-list {
+        padding-left: 1rem;
+  
+        li {
+          margin-bottom: 0.5rem;
+          font-size: 1rem;
+          color: $text-muted;
+        }
+      }
+    }
+  }
+  

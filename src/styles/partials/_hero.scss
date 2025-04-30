@@ -1,0 +1,94 @@
+.hero-banner {
+    position: relative;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  
+    .hero-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+  
+    .hero-overlay {
+      z-index: 2;
+      background-color: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      border-radius: $radius;
+      max-width: 900px;
+      width: 90%;
+      padding: 3rem;
+      color: $text-light;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+  
+      .hero-sprite {
+        width: 120px;
+        margin-right: 1rem;
+        transform: scaleX(-1);
+      }
+  
+      .hero-title {
+        color: $accent;
+        font-size: 30px;
+      }
+  
+      .hero-subtitle {
+        font-size: 1.2rem;
+        margin-top: 0.5rem;
+        color: #eee;
+      }
+  
+      .btn-cta {
+        background-color: $highlight;
+        color: $text-light;
+        padding: 0.7rem 2rem;
+        border-radius: $btn-radius;
+        animation: pulseGlow 1.6s infinite;
+        transition: all 0.3s ease;
+  
+        &:hover {
+          background-color: lighten($highlight, 10%);
+          color: $accent;
+          box-shadow: 0 0 18px $accent;
+        }
+      }
+    }
+  
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.03),
+        rgba(255, 255, 255, 0.03) 1px,
+        transparent 1px,
+        transparent 3px
+      );
+      z-index: 3;
+      pointer-events: none;
+    }
+  }
+  
+  .typewriter {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid $accent;
+    width: 0;
+    animation: typing 3s steps(40, end) forwards, blink 0.7s step-end infinite;
+  }
+  
+  

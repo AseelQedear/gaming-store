@@ -1,0 +1,535 @@
+// ===========================
+// 🎨 Color Variables
+// ===========================
+$primary-bg: #0C134F;
+$secondary-bg: #1D267D;
+$highlight: #5C469C;
+$accent: #D4ADFC;
+$text-light: #ffffff;
+
+// ===========================
+// 🔧 Base Resets
+// ===========================
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  background-color: $primary-bg;
+  color: $text-light;
+  scrollbar-gutter: stable;
+}
+
+body, .navbar, .form-control, .btn {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+// ===========================
+// 🔗 Navbar Styling
+// ===========================
+.navbar {
+  background-color: #070e3e !important;
+  height: 72px;
+  border-radius: 12px;
+  margin: 12px;
+  padding: 0 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  z-index: 500;
+
+  .container-fluid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+
+  .navbar-brand {
+    font-size: 2rem;
+    color: $accent !important;
+    transition: transform 0.4s ease, color 0.3s ease;
+    display: flex;
+    align-items: center;
+
+    svg {
+      width: 30px;
+      height: 30px;
+      font-size: 3rem;
+      transition: transform 0.3s ease;
+      animation: popIn 0.5s ease-out;
+    }
+
+    &:hover {
+      color: $text-light !important;
+
+      svg {
+        animation: wiggle 0.6s ease-in-out;
+      }
+    }
+  }
+
+  .cart-icon {
+    position: relative;
+    cursor: pointer;
+
+    .cart-badge {
+      width: 20px;
+      height: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      position: absolute;
+      top: -6px;
+      right: -15px;
+
+      background-color: red;
+      color: white;
+      border-radius: 50%;
+
+      font-size: 0.5rem;
+      font-weight: bold;
+      font-family: 'Press Start 2P', monospace;
+      z-index: 2;
+    }
+  }
+
+  @keyframes bounce-cart {
+    0%, 100% {
+      transform: scale(1);
+    }
+    30% {
+      transform: scale(1.3);
+    }
+    50% {
+      transform: scale(0.95);
+    }
+    70% {
+      transform: scale(1.1);
+    }
+  }
+
+  .bounce-cart {
+    animation: bounce-cart 0.5s ease;
+  }
+
+  .navbar-nav {
+    display: flex;
+    gap: 1.5rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .nav-link.active {
+      border-bottom: 2px solid lighten($accent, 10%);
+    }
+
+    .nav-link {
+      color: $accent !important;
+      font-weight: 500;
+      transition: color 0.2s ease, border-bottom 0.3s ease;
+
+      &:hover {
+        color: $text-light !important;
+      }
+
+      &.active {
+        color: $text-light !important;
+        font-weight: 700;
+        border-bottom: 2px solid $accent;
+      }
+    }
+  }
+
+  .icon-group {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    span,
+    a,
+    svg {
+      font-size: 1.2rem;
+      color: $accent !important;
+      transition: color 0.2s ease, transform 0.2s ease;
+      cursor: pointer;
+
+      &:hover {
+        color: $text-light !important;
+        transform: scale(1.1);
+      }
+    }
+
+    .search-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+  }
+
+  .navbar-toggler {
+    border: none;
+    outline: none;
+    color: $accent;
+
+    &:hover {
+      color: $text-light;
+    }
+  }
+}
+
+// ===========================
+// Responsive Design
+// ===========================
+@media (max-width: 768px) {
+  .navbar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .icon-group {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .search-wrapper {
+    display: none;
+  }
+
+  .cart-icon,
+  .user-icon {
+    display: block;
+  }
+
+  .navbar-toggler {
+    display: block;
+  }
+
+  .collapse {
+    display: block;
+  }
+}
+// ===========================
+// Profile Menu Dropdown
+// ===========================
+.profile-menu {
+  position: relative;
+
+  .dropdown-menu {
+    background-color: $primary-bg !important;  // Primary background color from navbar
+    color: $text-light;  // Light text color
+    border: 1px solid $highlight;  // Accent color for border
+    border-radius: 5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 160px;
+    padding: 10px 0;
+    display: none;  // Start as hidden
+    visibility: hidden;  // Start as hidden for better control over visibility
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.2s ease, visibility 0.2s ease;
+    transform: translateY(-10px);
+    position: absolute;
+    left: 0;  // Align the dropdown to the left of the profile icon
+    top: 35px;  // Adjust this value if necessary to position it correctly below the profile icon
+    z-index: 10000;  // Ensure it's above other elements (higher z-index than navbar)
+
+    .dropdown-item {
+      padding: 8px 12px;
+      color: $text-light;  // Text color
+      font-size: 1rem;
+      cursor: pointer;
+      text-align: left;
+      display: block;
+
+      &:hover {
+        background-color: $highlight;  // Hover effect with accent color
+        color: $text-light;
+      }
+    }
+  }
+
+  &:hover .dropdown-menu {
+    display: block;
+    visibility: visible;  // Make it visible on hover
+    opacity: 1;
+    transform: translateY(0);  // Apply the transition to make it appear smoothly
+  }
+}
+
+// ===========================
+// 🔍 Search Input (Inline Safe)
+// ===========================
+.search-input {
+  width: 0;
+  opacity: 0;
+  visibility: hidden;
+  max-width: 160px;
+  overflow: hidden;
+  transition: width 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+  height: 32px;
+  font-size: 0.85rem;
+  border-radius: 5px;
+  background-color: #f8f9fa;
+  border: 1px solid #ced4da;
+  color: #000;
+  padding: 0;
+}
+
+.search-input.expanded {
+  width: 160px;
+  opacity: 1;
+  visibility: visible;
+  padding: 0 0.5rem;
+}
+
+// ===========================
+// 🦾 Buttons
+// ===========================
+.btn-primary {
+  background-color: $highlight;
+  border-color: $highlight;
+
+  &:hover {
+    background-color: darken($highlight, 5%);
+    border-color: darken($highlight, 5%);
+  }
+}
+
+.btn-cta {
+  background-color: $highlight;
+  color: $text-light;
+  border-radius: 50px;
+  padding: 0.5rem 1.5rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: lighten($highlight, 5%);
+    color: $accent;
+  }
+}
+
+// ===========================
+// 🧩 Hero Section
+// ===========================
+.hero-banner {
+  background-color: $secondary-bg;
+  color: $text-light;
+
+  h1, p {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+  }
+}
+
+// ===========================
+// 🧱 Cards
+// ===========================
+.card {
+  background-color: $secondary-bg;
+  color: $text-light;
+  border: none;
+
+  h5 {
+    color: $accent;
+  }
+}
+
+
+// ===========================
+// 🌙 Dark Mode
+// ===========================
+html.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+
+  html, #root {
+    background-color: #121212;
+    color: #ffffff;
+  }
+
+  .hero-banner {
+    background-color: #1e1e1e;
+
+    .hero-overlay {
+      background-color: rgba(0, 0, 0, 0.7);
+      color: #fff;
+
+      .hero-title,
+      .hero-subtitle {
+        color: #D4ADFC;
+      }
+    }
+  }
+
+  .categories-section {
+    background-color: #181818;
+
+    .device-box {
+      background-color: #222;
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+
+      h5 {
+        color: #D4ADFC;
+      }
+    }
+  }
+
+  .popular-section {
+    background: linear-gradient(to right, #1a1a1a, #222);
+
+    .product-card-style2 {
+      background-color: #2a2a2a;
+
+      h5 {
+        color: #D4ADFC;
+      }
+
+      .price-info {
+        .current-price { color: #ff4d4f; }
+        .old-price { color: #aaa; }
+      }
+
+      .offer-line {
+        color: #bbb;
+      }
+
+      button {
+        color: #D4ADFC;
+        border-color: #D4ADFC;
+
+        &:hover {
+          background-color: #5C469C;
+          color: white;
+        }
+      }
+    }
+  }
+
+  .why-choose-modern {
+    background: linear-gradient(to left, #1a1a1a, #222);
+
+    .circle-icon {
+      background-color: #D4ADFC;
+      color: #1D267D;
+    }
+
+    .reason-title {
+      color: #D4ADFC;
+    }
+
+    .reason-desc {
+      color: #bbb;
+    }
+  }
+
+  .site-footer {
+    background-color: #1e1e1e;
+
+    .footer-logo, h6 {
+      color: #D4ADFC;
+    }
+
+    p, span {
+      color: #aaa;
+    }
+
+    .footer-links a,
+    .social-icons a {
+      color: #D4ADFC;
+
+      &:hover {
+        color: #ffffff;
+      }
+    }
+  }
+
+ 
+  .navbar {
+    background-color: #1e1e1e !important;
+
+    .navbar-brand,
+    .nav-link,
+    .dropdown-toggle,
+    .dropdown-item,
+    .form-control,
+    svg {
+      color: #ffffff !important;
+    }
+
+    .form-control {
+      background-color: #2a2a2a;
+      border-color: #444;
+    }
+
+    .dropdown-menu {
+      background-color: #2a2a2a;
+      border-color: #444;
+    }
+  }
+
+  .search-input {
+    background-color: #2a2a2a;
+    color: white;
+    border: 1px solid #444;
+  }
+
+  main {
+    background-color: #121212;
+    color: #ffffff;
+  }
+}
+
+// ===========================
+// 👣 Footer Styles
+// ===========================
+
+.text-accent {
+  color: $accent;
+}
+
+.site-footer {
+  background-color: #070e3e;
+  font-size: 0.9rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+
+  .footer-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: $accent;
+  }
+
+  .footer-links a {
+    font-weight: 500;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $accent;
+    }
+  }
+
+  .social-icons a {
+    color: $accent;
+    font-size: 1.3rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+      color: $text-light;
+      transform: scale(1.2);
+    }
+  }
+
+  p, span {
+    color: #bbb;
+    font-size: 0.85rem;
+  }
+
+  h6 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: $accent;
+  }
+}

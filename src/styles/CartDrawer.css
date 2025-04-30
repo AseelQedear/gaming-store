@@ -1,0 +1,429 @@
+@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans&family=Press+Start+2P&family=VT323&display=swap");
+@keyframes bounce-cart {
+  0%, 100% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.3);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  70% {
+    transform: scale(1.1);
+  }
+}
+@keyframes wiggle {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-7deg);
+  }
+  50% {
+    transform: rotate(7deg);
+  }
+  75% {
+    transform: rotate(-4deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes popIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideHighlight {
+  to {
+    left: 100%;
+  }
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 0px #D4ADFC;
+  }
+  50% {
+    box-shadow: 0 0 18px #D4ADFC;
+  }
+  100% {
+    box-shadow: 0 0 0px #D4ADFC;
+  }
+}
+.fade-in {
+  animation: fadeIn 0.6s ease-in both;
+}
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.fade-slide-down {
+  animation: slideDown 0.4s ease-out both;
+}
+
+.typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #D4ADFC;
+  width: 0;
+  animation: typing 3s steps(40, end) forwards, blink 0.7s step-end infinite;
+}
+
+@keyframes bounce-cart {
+  0%, 100% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.3);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  70% {
+    transform: scale(1.1);
+  }
+}
+.bounce-cart {
+  animation: bounce-cart 0.5s ease;
+}
+
+.pop-in {
+  animation: popIn 0.5s ease-out;
+}
+
+.wiggle {
+  animation: wiggle 0.6s ease-in-out;
+}
+
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  background-color: #0C134F;
+  color: #ffffff;
+  scrollbar-gutter: stable;
+}
+
+body, .navbar, .form-control, .btn {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+  font-family: "VT323", monospace;
+}
+
+h1, h2, h3, h6,
+.hero-title, .section-title, .footer-logo {
+  font-family: "Press Start 2P", monospace;
+  color: #D4ADFC;
+  font-size: 1.5rem;
+  text-shadow: 0 0 3px rgba(212, 173, 252, 0.4), 0 0 6px rgba(212, 173, 252, 0.2);
+  letter-spacing: 1px;
+  transition: text-shadow 0.3s ease, color 0.3s ease;
+}
+
+.btn, .btn-outline-light, .btn-outline-secondary {
+  font-family: "Pixelify Sans", sans-serif;
+}
+
+.cart-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1500;
+  pointer-events: auto;
+}
+
+.empty-message {
+  padding: 2rem;
+  text-align: center;
+  color: #ccc;
+  font-size: 1rem;
+}
+
+.cart-drawer {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 550px;
+  height: 100vh;
+  background: #0C134F;
+  color: #ffffff;
+  z-index: 2000;
+  transition: right 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 2.3rem;
+  overflow: hidden;
+}
+.cart-drawer.open {
+  right: 0;
+}
+.cart-drawer .cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+.cart-drawer .cart-header button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #D4ADFC;
+  cursor: pointer;
+}
+.cart-drawer .cart-header button:hover {
+  color: #ffffff;
+}
+.cart-drawer .cart-body {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+.cart-drawer .cart-body .cart-item {
+  display: flex;
+  gap: 1.2rem;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #5C469C;
+}
+.cart-drawer .cart-body .cart-item:last-of-type {
+  border-bottom: none;
+}
+.cart-drawer .cart-body .cart-item img {
+  width: 170px;
+  height: auto;
+  border-radius: 8px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border: 2px solid #5C469C;
+}
+.cart-drawer .cart-body .cart-item .item-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.cart-drawer .cart-body .cart-item .item-details h5 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: #D4ADFC;
+}
+.cart-drawer .cart-body .cart-item .item-details span {
+  font-size: 1rem;
+  color: #ccc;
+}
+.cart-drawer .cart-body .cart-item .item-details .price-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.cart-drawer .cart-body .cart-item .item-details .price-info .current-price {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #ff4d4f;
+}
+.cart-drawer .cart-body .cart-item .item-details .price-info .old-price {
+  font-size: 0.9rem;
+  color: #aaa;
+  text-decoration: line-through;
+}
+.cart-drawer .cart-body .cart-item .item-details .price-info .percent-badge {
+  background-color: #28a745;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 2px 8px;
+  border-radius: 7px;
+  white-space: nowrap;
+}
+.cart-drawer .cart-body .cart-item .item-details .qty {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-top: auto;
+}
+.cart-drawer .cart-body .cart-item .item-details .qty button {
+  padding: 0.3rem 0.6rem;
+  background-color: #1D267D;
+  color: #ffffff;
+  border: 1px solid #5C469C;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 38px;
+  height: 38px;
+}
+.cart-drawer .cart-body .cart-item .item-details .qty button:hover {
+  background-color: #5C469C;
+  color: white;
+}
+.cart-drawer .cart-body .cart-item .item-details .qty button.delete {
+  background: none;
+  color: red;
+  font-size: 1rem;
+  margin-left: auto;
+  border: none;
+}
+.cart-drawer .cart-body .cart-summary p,
+.cart-drawer .cart-body .cart-summary h5 {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  margin: 0.3rem 0;
+}
+.cart-drawer .cart-body .cart-summary h5 {
+  color: #D4ADFC;
+  font-size: 1.4rem;
+  border-top: 1px solid #5C469C;
+  padding-top: 1.2rem;
+  margin-top: 0.5rem;
+}
+.cart-drawer .cart-body .cart-summary h5 span {
+  color: #ff4d4f;
+}
+.cart-drawer .cart-footer {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.cart-drawer .cart-footer .discount-row {
+  display: flex;
+  gap: 0.5rem;
+}
+.cart-drawer .cart-footer .discount-row input {
+  flex: 1;
+  padding: 0.6rem;
+  background-color: #1D267D;
+  color: #ffffff;
+  border: 1px solid #5C469C;
+  border-radius: 7px;
+  font-size: 1rem;
+}
+.cart-drawer .cart-footer .discount-row input::-moz-placeholder {
+  color: #aaa;
+}
+.cart-drawer .cart-footer .discount-row input::placeholder {
+  color: #aaa;
+}
+.cart-drawer .cart-footer .discount-row .apply-btn {
+  white-space: nowrap;
+  padding: 0.6rem 1rem;
+  border-color: #D4ADFC;
+  color: #D4ADFC;
+  background: none;
+  border-radius: 7px;
+  width: 140px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.cart-drawer .cart-footer .discount-row .apply-btn:hover {
+  background-color: #5C469C;
+  color: white;
+}
+.cart-drawer .cart-footer .discount-row .apply-btn:hover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  animation: slideHighlight 0.6s forwards;
+}
+.cart-drawer .cart-footer .checkout-btn {
+  background: none;
+  color: #D4ADFC;
+  border: 1px solid #D4ADFC;
+  border-radius: 7px;
+  width: 100%;
+  align-self: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  margin-top: auto;
+}
+.cart-drawer .cart-footer .checkout-btn:hover {
+  background-color: #5C469C;
+  color: white;
+}
+.cart-drawer .cart-footer .checkout-btn:hover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  animation: slideHighlight 0.6s forwards;
+}
+.cart-drawer .cart-footer .checkout-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}/*# sourceMappingURL=CartDrawer.css.map */

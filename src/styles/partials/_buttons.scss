@@ -1,0 +1,23 @@
+.btn-primary {
+    background-color: $highlight;
+    border-color: $highlight;
+  
+    &:hover {
+      background-color: darken($highlight, 5%);
+      border-color: darken($highlight, 5%);
+    }
+  }
+  
+  .btn-cta {
+    background-color: $highlight;
+    color: $text-light;
+    border-radius: 50px;
+    padding: 0.5rem 1.5rem;
+    font-weight: bold;
+  
+    &:hover {
+      background-color: lighten($highlight, 5%);
+      color: $accent;
+    }
+  }
+  

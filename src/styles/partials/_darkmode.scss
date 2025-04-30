@@ -1,0 +1,530 @@
+html.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+  
+    html, #root {
+      background-color: #121212;
+      color: #ffffff;
+    }
+  
+    main {
+      background-color: #121212;
+      color: #ffffff;
+    }
+  
+    // Navbar overrides
+    .navbar {
+      background-color: #1e1e1e !important;
+  
+      .navbar-brand,
+      .nav-link,
+      .dropdown-toggle,
+      .dropdown-item,
+      .form-control,
+      svg {
+        color: #ffffff !important;
+      }
+  
+      .form-control {
+        background-color: #2a2a2a;
+        border-color: #444;
+      }
+  
+      .dropdown-menu {
+        background-color: #2a2a2a;
+        border-color: #444;
+      }
+    }
+  
+    .search-input {
+      background-color: #2a2a2a;
+      color: white;
+      border: 1px solid #444;
+    }
+  
+    // Hero section
+    .hero-banner {
+      background-color: #1e1e1e;
+  
+      .hero-overlay {
+        background-color: rgba(0, 0, 0, 0.7);
+        color: #fff;
+  
+        .hero-title,
+        .hero-subtitle {
+          color: #D4ADFC;
+        }
+      }
+    }
+  
+    // Explore devices section
+    .categories-section {
+      background-color: #181818;
+  
+      .device-box {
+        background-color: #222;
+        box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+  
+        h5 {
+          color: #D4ADFC;
+        }
+      }
+    }
+  
+    // Product cards / popular deals
+    .products-page{
+      background: none !important;
+    }
+    
+    .popular-section,
+    .products-page {
+      background: linear-gradient(to right, #1a1a1a, #222);
+  
+      .product-card-style2 {
+        background-color: #2a2a2a;
+  
+        h5 {
+          color: #D4ADFC;
+        }
+  
+        .price-info {
+          .current-price { color: #ff4d4f; }
+          .old-price { color: #aaa; }
+        }
+  
+        .offer-line {
+          color: #bbb;
+        }
+  
+        button {
+          color: #D4ADFC;
+          border-color: #D4ADFC;
+  
+          &:hover {
+            background-color: #5C469C;
+            color: white;
+          }
+        }
+      }
+    }
+  
+    // Why Choose Us section
+    .why-choose-modern {
+      background: linear-gradient(to left, #1a1a1a, #222);
+  
+      .circle-icon {
+        background-color: #D4ADFC;
+        color: #1D267D;
+      }
+  
+      .reason-title {
+        color: #D4ADFC;
+      }
+  
+      .reason-desc {
+        color: #bbb;
+      }
+    }
+  
+    // Footer
+    .site-footer {
+      background-color: #1e1e1e;
+  
+      .footer-logo,
+      h6 {
+        color: #D4ADFC;
+      }
+  
+      p, span {
+        color: #aaa;
+      }
+  
+      .footer-links a,
+      .social-icons a {
+        color: #D4ADFC;
+  
+        &:hover {
+          color: #ffffff;
+        }
+      }
+    }
+  }
+  
+  html.dark-mode {
+    .search-input {
+      background-color: #2a2a2a;
+      color: #fff;
+      border: 1px solid #444;
+    }
+  }
+
+  html.dark-mode .product-card-style2 {
+    background-color: #2a2a2a;
+    color: #fff;
+  
+    h5 {
+      color: $accent;
+    }
+  
+    .price-info {
+      .current-price { color: #ff4d4f; }
+      .old-price { color: #aaa; }
+    }
+  
+    .offer-line {
+      color: #bbb;
+    }
+  
+    .btn {
+      color: $accent;
+      border-color: $accent;
+  
+      &:hover {
+        background-color: $highlight;
+        color: white;
+      }
+    }
+  }
+  
+  html.dark-mode .filters-bar {
+    .form-select {
+      background-color: #2a2a2a;
+      color: $accent;
+      border: 1px solid #444;
+    }
+  }
+
+
+  html.dark-mode {
+    .categories-section {
+      background-color: #181818;
+  
+      .device-box {
+        background-color: #222;
+        box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+  
+        h5 {
+          color: $accent;
+        }
+      }
+    }
+  }
+
+  
+  html.dark-mode {
+    .categories-section {
+      background-color: #181818;
+  
+      .device-box {
+        background-color: #222;
+        box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+  
+        h5 {
+          color: $accent;
+        }
+      }
+    }
+  }
+
+  html.dark-mode {
+    .popular-section {
+      background: linear-gradient(to right, #1a1a1a, #222);
+  
+      .product-card-style2 {
+        background-color: #2a2a2a;
+  
+        h5 {
+          color: $accent;
+        }
+  
+        .price-info {
+          .current-price { color: #ff4d4f; }
+          .old-price { color: #aaa; }
+        }
+  
+        .offer-line {
+          color: #bbb;
+        }
+  
+        .btn {
+          color: $accent;
+          border-color: $accent;
+  
+          &:hover {
+            background-color: $highlight;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+  
+
+  html.dark-mode {
+    .why-choose-modern {
+      background: linear-gradient(to left, #1a1a1a, #222);
+  
+      .circle-icon {
+        background-color: $accent;
+        color: $text-dark;
+      }
+  
+      .reason-title {
+        color: $accent;
+      }
+  
+      .reason-desc {
+        color: #bbb;
+      }
+    }
+  }
+
+  
+  html.dark-mode {
+    .product-details {
+      .product-image-box {
+        background-color: #2a2a2a;
+      }
+  
+      .product-info-box {
+        .share-icon { color: #bbb; }
+  
+        .offer-line {
+          color: #bbb;
+        }
+  
+        .add-to-cart {
+          color: $accent;
+          border-color: $accent;
+  
+          &:hover {
+            background-color: $highlight;
+            color: white;
+          }
+        }
+  
+        .out-of-stock-label {
+          color: #bbb;
+          background-color: rgba(255, 255, 255, 0.05);
+          border: 2px dashed #555;
+        }
+      }
+    }
+  }
+
+  html.dark-mode {
+    .profile-page {
+      background-color: #121212;
+      color: $text-light;
+  
+      .profile-info,
+      .order-block,
+      .favorite-tile {
+        background-color: #1f1f1f;
+        box-shadow: none;
+      }
+  
+      .product-summary {
+        background-color: #2a2a2a !important;
+        color: $text-light;
+      }
+  
+      .fav-btn {
+        border-color: $accent;
+        color: $accent;
+  
+        &:hover {
+          background-color: $highlight;
+          color: white;
+        }
+      }
+  
+      .wishlist-icon {
+        color: $accent;
+  
+        &.active {
+          color: #ff4d4f;
+        }
+      }
+    }
+  }
+
+  html.dark-mode {
+    .cart-drawer {
+      background-color: #121212;
+  
+      .cart-header button,
+      .cart-footer .apply-btn,
+      .checkout-btn,
+      .item-details h5,
+      .qty button {
+        color: $accent;
+      }
+  
+      .item-details span,
+      .old-price,
+      .offer-line {
+        color: $text-muted;
+      }
+  
+      .cart-summary h5 {
+        color: $accent;
+      }
+  
+      .cart-item img {
+        border-color: $highlight;
+      }
+  
+      .qty button {
+        background-color: #1f1f1f;
+  
+        &:hover {
+          background-color: $highlight;
+        }
+      }
+  
+      input {
+        background-color: #1f1f1f;
+        border-color: $highlight;
+        color: $text-light;
+      }
+    }
+  }
+  
+  html.dark-mode {
+    .checkout-page {
+      background-color: #121212;
+      color: $text-light;
+  
+      .checkout-form,
+      .checkout-summary {
+        background-color: #1f1f1f;
+      }
+  
+      .review-section {
+        background-color: #222;
+      }
+  
+      input,
+      select {
+        background-color: #2a2a2a;
+        border-color: #444;
+        color: white;
+  
+        &::placeholder {
+          color: #bbb;
+        }
+      }
+  
+      .radio-label {
+        color: #ccc;
+      }
+  
+      .button-row button,
+      button {
+        border-color: $accent;
+        color: $accent;
+  
+        &:hover {
+          background-color: $highlight;
+          color: white;
+        }
+  
+        &:disabled {
+          background-color: #444;
+          color: #888;
+        }
+      }
+  
+      .toast-success {
+        background-color: #2e7d32;
+        color: white;
+      }
+    }
+  }
+
+  html.dark-mode {
+    .auth-page {
+      background: linear-gradient(135deg, darken($primary-bg, 5%), darken($secondary-bg, 5%));
+      
+      .auth-form {
+        background-color: #181818;
+  
+        .form-control {
+          background-color: #222;
+          color: $text-light;
+          border-color: $accent;
+  
+          &::placeholder {
+            color: $text-muted;
+          }
+  
+          &:focus {
+            border-color: lighten($accent, 10%);
+            box-shadow: 0 0 5px rgba($accent, 0.5);
+          }
+        }
+  
+        .btn-primary {
+          color: $accent;
+          border-color: $accent;
+  
+          &:hover {
+            background-color: $highlight;
+            color: white;
+          }
+        }
+  
+        .auth-link {
+          color: $accent;
+  
+          &:hover {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+  
+
+  html.dark-mode {
+    .about-page-section {
+      background: linear-gradient(135deg, #121212, #1a1a1a);
+  
+      .about-description {
+        color: #bbb;
+      }
+  
+      .fun-fact {
+        background: #333;
+        color: $text-light;
+      }
+  
+      .cta-button {
+        background-color: $highlight;
+        color: $text-light;
+  
+        &:hover {
+          background-color: lighten($highlight, 10%);
+          color: $accent;
+          box-shadow: 0 0 18px $accent;
+        }
+      }
+    }
+  
+    .timeline-horizontal {
+      .timeline-track {
+        &::before {
+          background: $accent;
+        }
+  
+        .timeline-event {
+          p {
+            background: rgba(40, 40, 40, 0.95);
+            color: $text-light;
+          }
+        }
+      }
+    }
+  }
+  

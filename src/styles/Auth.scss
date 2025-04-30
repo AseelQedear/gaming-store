@@ -1,0 +1,164 @@
+@import "../styles/partials/variables";
+@import "../styles/partials/animations";
+@import "../styles/partials/filters";
+
+.auth-page {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  background: linear-gradient(135deg, $primary-bg, $secondary-bg);
+  color: $text-light;
+  border-radius: 7px;
+  margin-top: 30px;
+
+  .auth-image {
+    flex: 1;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .auth-form {
+    flex: 1;
+    background-color: $secondary-bg;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8rem 3rem;
+    animation: fadeIn 0.8s ease forwards;
+
+    .form-wrapper {
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .auth-title {
+      font-family: $font-header;
+      font-size: 1.4rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      color: $accent;
+    }
+
+    form {
+      width: 100%;
+
+      .row {
+        margin: 0 -0.5rem;
+      }
+
+      .col-md-6 {
+        padding: 0 0.5rem;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+      }
+
+      .form-control {
+        background-color: $secondary-bg;
+        border: 1px solid $accent;
+        color: $text-light;
+        border-radius: 7px;
+        padding: 0.6rem 1rem;
+        font-size: 1rem;
+        height: 46px;
+
+        &::placeholder {
+          color: $text-muted;
+        }
+
+        &:focus {
+          background-color: $secondary-bg;
+          border-color: $accent;
+          box-shadow: 0 0 5px rgba($accent, 0.5);
+        }
+      }
+
+      .invalid-feedback {
+        font-size: 0.85rem;
+        margin-top: 0.7rem;
+        color: #ff6b6b;
+        width: 100%;
+        max-width: 400px;
+        white-space: normal;
+        word-break: break-word;
+
+        &.first-name-error,
+        &.last-name-error {
+          max-width: 200px;
+        }
+      }
+
+      .btn-primary {
+        background: none;
+        border: 1px solid $accent;
+        color: $accent;
+        padding: 0.6rem 1rem;
+        border-radius: 7px;
+        width: 140px;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background-color: $highlight;
+          color: $text-light;
+
+          &::after {
+            @include slide-highlight;
+          }
+        }
+      }
+
+      .auth-link {
+        color: $accent;
+        text-decoration: underline;
+        font-weight: bold;
+
+        &:hover {
+          color: $text-light;
+        }
+      }
+
+      .auth-text {
+        margin-top: 1rem;
+        text-align: center;
+        color: $text-muted;
+      }
+    }
+  }
+}
+
+// Mobile Responsive
+@media (max-width: 768px) {
+  .auth-page {
+    flex-direction: column;
+
+    .auth-image {
+      height: 250px;
+
+      img {
+        object-fit: cover;
+      }
+    }
+
+    .auth-form {
+      width: 100%;
+      padding: 3rem 2rem;
+      justify-content: flex-start;
+      min-height: calc(100vh - 250px);
+    }
+  }
+}

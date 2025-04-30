@@ -1,0 +1,29 @@
+.categories-section {
+    background-color: $primary-bg;
+    margin-bottom: 50px;
+    text-align: center;
+  
+    .section-title {
+      @extend .section-title; // Ensures global style consistency
+    }
+  
+    .device-box {
+      background-color: $secondary-bg;
+      padding: 1.5rem;
+      border-radius: $radius;
+      color: $text-light;
+      box-shadow: $shadow-sm;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: $shadow-lg;
+      }
+  
+      img {
+        max-height: 230px;
+        object-fit: cover;
+      }
+    }
+  }
+  

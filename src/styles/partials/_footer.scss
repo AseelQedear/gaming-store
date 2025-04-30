@@ -1,0 +1,42 @@
+.site-footer {
+    background-color: #070e3e;
+    font-size: 0.9rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+  
+    .footer-logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: $accent;
+    }
+  
+    .footer-links a {
+      font-weight: 500;
+  
+      &:hover {
+        color: $accent;
+      }
+    }
+  
+    .social-icons a {
+      color: $accent;
+      font-size: 1.3rem;
+  
+      &:hover {
+        color: $text-light;
+        transform: scale(1.2);
+      }
+    }
+  
+    p, span {
+      color: #bbb;
+      font-size: 0.85rem;
+    }
+  
+    h6 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: $accent;
+    }
+  }
+  

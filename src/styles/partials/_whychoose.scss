@@ -1,0 +1,58 @@
+.why-choose-modern {
+    background: linear-gradient(to left, $primary-bg, $secondary-bg);
+    padding: 4rem 0;
+    text-align: center;
+  
+    .section-title {
+      @extend .section-title;
+    }
+  
+    .reason-box {
+      padding: 1rem;
+  
+      .circle-icon {
+        position: relative;
+        width: 140px;
+        height: 140px;
+        font-size: 60px;
+        background-color: $accent;
+        color: $secondary-bg;
+        border-radius: 50%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s ease;
+  
+        &:hover {
+          animation: wiggle 0.5s ease-in-out;
+        }
+  
+        .badge-number {
+          position: absolute;
+          top: -3px;
+          right: -2px;
+          background-color: $highlight;
+          color: white;
+          font-size: 17px;
+          padding: 4px 8px;
+          border-radius: 25px;
+          font-weight: bold;
+        }
+      }
+  
+      .reason-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: $accent;
+        margin-top: 1rem;
+      }
+  
+      .reason-desc {
+        font-size: 0.9rem;
+        color: $text-muted;
+        margin-top: 0.5rem;
+      }
+    }
+  }
+  
