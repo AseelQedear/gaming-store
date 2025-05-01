@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4wAsrJnQYDgnP+tpfkZuFjATg6i432yXC1Kscsr75VZ7cDygtIFCjq6ypbIZCy4zEFGb2nfo2/WJpiDmjc0oJg==",
+  "dgSpecHash": "e+pLowMeGMcThqsi3As6vH5V35KdEODQO1dKSZmwzGxmdcVsp+p00oZ9FP5CKCl72qbO+2KJkbVvCGtlG8sCkA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\aseel\\gaming-store\\checkoutapi\\CheckoutAPI.csproj",
+  "projectFilePath": "C:\\Users\\aseel\\gaming-store\\CheckoutAPI\\CheckoutAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\aseel\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\aseel\\.nuget\\packages\\bouncycastle.cryptography\\2.5.1\\bouncycastle.cryptography.2.5.1.nupkg.sha512",

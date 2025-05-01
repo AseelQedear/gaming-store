@@ -1,22 +1,21 @@
-# Use official .NET SDK image to build
+# STAGE 1: Build
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /app
 
-# Copy csproj and restore dependencies
-COPY *.csproj ./
+# Copy just the .csproj file and restore dependencies
+COPY CheckoutAPI/*.csproj ./  
 RUN dotnet restore
 
-# Copy the rest of the app and publish
-COPY . ./
+# Copy the rest of the source code
+COPY CheckoutAPI/. ./
 RUN dotnet publish -c Release -o out
 
-# Final image: use ASP.NET runtime
+# STAGE 2: Runtime
 FROM mcr.microsoft.com/dotnet/aspnet:6.0
 WORKDIR /app
-COPY --from=build /app/out ./
+COPY --from=build /app/out .
 
-# Expose port
+# Expose port 80
 EXPOSE 80
 
-# Run app
-ENTRYPOINT ["dotnet", "CheckoutAPI.dll"]
+ENTRYPOINT ["dotnet", "CheckoutAPI.dll"]  # Replace with your DLL name
