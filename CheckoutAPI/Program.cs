@@ -11,6 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 // ✅ PostgreSQL Connection String from Railway
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
+
 // ✅ Use PostgreSQL instead of SQLite
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(connectionString));
