@@ -18,7 +18,7 @@ const Home: React.FC = () => {
   useEffect(() => {
     const fetchDevices = async () => {
       try {
-        const response = await axios.get("http://localhost:5202/api/device");
+        const response = await axios.get("https://gaming-store-production.up.railway.app/api/device");
         setDevices(response.data); 
       } catch (err) {
         setError("Failed to load products.");

@@ -9,7 +9,7 @@ const UserOrders: React.FC = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await axios.get(`http://localhost:5202/api/checkout/user/${userId}`);
+        const response = await axios.get(`https://gaming-store-production.up.railway.app/api/checkout/user/${userId}`);
         setOrders(response.data);
       } catch (error) {
         console.error("Error fetching orders:", error);

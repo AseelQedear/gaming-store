@@ -49,7 +49,7 @@ const Login: React.FC = () => {
     setServerError("");
 
     try {
-      const response = await axios.post("http://localhost:5202/api/auth/login", {
+      const response = await axios.post("https://gaming-store-production.up.railway.app/api/auth/login", {
         email,
         password,
       });

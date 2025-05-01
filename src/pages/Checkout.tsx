@@ -88,7 +88,7 @@ useEffect(() => {
 
     const fetchProfile = async () => {
       try {
-        const res = await fetch("http://localhost:5202/api/user/profile", {
+        const res = await fetch("https://gaming-store-production.up.railway.app/api/user/profile", {
           headers: { Authorization: `Bearer ${token}` },
         });
         if (!res.ok) throw new Error("Failed to fetch user profile");

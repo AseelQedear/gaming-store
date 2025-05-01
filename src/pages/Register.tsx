@@ -54,7 +54,7 @@ const Register: React.FC = () => {
     }
 
     try {
-      const res = await axios.post<{ token: string; email: string }>("http://localhost:5202/api/auth/register", {
+      const res = await axios.post<{ token: string; email: string }>("https://gaming-store-production.up.railway.app/api/auth/register", {
         firstName,
         lastName,
         email,

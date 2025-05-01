@@ -17,7 +17,7 @@ const ProductDetails: React.FC = () => {
     const fetchProduct = async () => {
       if (name) {
         try {
-          const response = await axios.get(`http://localhost:5202/api/device/name/${encodeURIComponent(name)}`);
+          const response = await axios.get(`https://gaming-store-production.up.railway.app/api/device/name/${encodeURIComponent(name)}`);
           setProduct(response.data);
         } catch (err) {
           setError("Failed to load product details.");

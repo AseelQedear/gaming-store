@@ -86,7 +86,7 @@ const Profile: React.FC = () => {
     const fetchProfile = async () => {
       try {
         const token = user.token;
-        const res = await axios.get("http://localhost:5202/api/user/profile", {
+        const res = await axios.get("https://gaming-store-production.up.railway.app/api/user/profile", {
           headers: { Authorization: `Bearer ${token}` },
         });
 
