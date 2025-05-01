@@ -4,26 +4,22 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using Npgsql.EntityFrameworkCore.PostgreSQL; // ✅ Required for PostgreSQL
 
 var builder = WebApplication.CreateBuilder(args);
 
-// ✅ PostgreSQL Connection String from Railway
+// ✅ Database
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-
-
-// ✅ Use PostgreSQL instead of SQLite
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseNpgsql(connectionString));
+    options.UseSqlite(connectionString));
 
-// ✅ Dependency Injection
+// ✅ Services
 builder.Services.AddScoped<IAuthService, AuthService>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// ✅ CORS (match your frontend origin exactly, no slash at the end)
+// ✅ CORS (NO TRAILING SLASH!)
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(policy =>
@@ -35,7 +31,7 @@ builder.Services.AddCors(options =>
     });
 });
 
-// ✅ JWT Authentication
+// ✅ JWT Auth
 var jwtKey = builder.Configuration["Jwt:Key"];
 var jwtIssuer = builder.Configuration["Jwt:Issuer"];
 var jwtAudience = builder.Configuration["Jwt:Audience"];
@@ -71,13 +67,6 @@ builder.Services.AddAuthentication(options =>
 });
 
 var app = builder.Build();
-
-// ✅ Apply migrations automatically on startup
-using (var scope = app.Services.CreateScope())
-{
-    var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-    dbContext.Database.Migrate(); // auto-run EF Core migrations
-}
 
 // ✅ Middleware
 if (app.Environment.IsDevelopment())
