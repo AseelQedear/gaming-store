@@ -196,6 +196,35 @@ namespace CheckoutAPI.Data
                  })
             }
         );
+        modelBuilder.Entity<User>().HasData(
+                new User { Id = 1, Email = "aseel@gmail.com", FirstName = "aseel", LastName = "qedaer", Password = "AQAAAAIAAYagAAAAEMj89bt1FFYO/+qD4VsAgIMxsp0ci1fVpg/8AIJzHPuBg2n14ZpImZkMA5CleH1SpA==", Phone = "0500901027" },
+                new User { Id = 2, Email = "abrar@gmail.com", FirstName = "abrar", LastName = "abrar", Password = "AQAAAAIAAYagAAAAEGQxI/da4HnI0SxhmYC7ns7q8MEoZD5mLAqoFOoYskBH1xvhi01BrwzPjcA7Q4KD6A==", Phone = "0512345678" },
+                new User { Id = 3, Email = "abrar@gmail.com", FirstName = "abrar", LastName = "abrar", Password = "AQAAAAIAAYagAAAAEINxYfB/sj8p343UC2YN2DRYQbD62sejQSE7IPWO22cQsw0lsvkDpdkqMSDQoImnpw==", Phone = "0512345678" },
+                new User { Id = 4, Email = "abrarsa@gmail.com", FirstName = "abrar", LastName = "saigh", Password = "AQAAAAIAAYagAAAAEAdIghq8uzxp9M0tILLfky2q3Yy3P6GaNWCVepZed8IEat6cks0gOEbyOeE0ranniA==", Phone = "0509876543" },
+                new User { Id = 5, Email = "afnan@gmail.com", FirstName = "afnan", LastName = "qedear", Password = "$2a$11$59T9TdN6q1HHO9rWuyxP3.YlZtnbtZog3.G2e9nQsmVRGgRepP1o6", Phone = "0555555559" },
+                new User { Id = 6, Email = "so00so359@gmail.com", FirstName = "aseel", LastName = "qedear", Password = "$2a$11$bQ9eAlAreXElo46G7a8QEOLpL0KkAYkmN3Z.dbO2aG/EEUj7NgOMS", Phone = "0500901027" }
+            );
+
+            modelBuilder.Entity<Favorite>().HasData(
+                new Favorite { Id = 10, DeviceId = 1, UserId = 5 },
+                new Favorite { Id = 11, DeviceId = 2, UserId = 5 },
+                new Favorite { Id = 12, DeviceId = 7, UserId = 5 },
+                new Favorite { Id = 16, DeviceId = 6, UserId = 5 },
+                new Favorite { Id = 17, DeviceId = 5, UserId = 5 },
+                new Favorite { Id = 18, DeviceId = 3, UserId = 5 }
+            );
+
+            modelBuilder.Entity<Order>().HasData(
+                new Order { Id = 1, Email = "afnan@gmail.com", OrderDate = DateTime.Parse("2025-04-29 21:35:28"), ShippingMethod = "Express", Total = 2509, UserId = 5 },
+                new Order { Id = 2, Email = "aseel@gmail.com", OrderDate = DateTime.Parse("2025-04-30 16:40:00"), ShippingMethod = "Standard", Total = 2799, UserId = 1 },
+                new Order { Id = 3, Email = "abrar@gmail.com", OrderDate = DateTime.Parse("2025-04-28 14:20:00"), ShippingMethod = "Express", Total = 2899, UserId = 2 }
+            );
+
+            modelBuilder.Entity<OrderItem>().HasData(
+                new OrderItem { Id = 1, OrderId = 1, DeviceId = 3, Quantity = 1, Variant = "Black 512GB", Price = 2509 },
+                new OrderItem { Id = 2, OrderId = 2, DeviceId = 1, Quantity = 1, Variant = "OLED 512GB", Price = 2799 },
+                new OrderItem { Id = 3, OrderId = 3, DeviceId = 2, Quantity = 1, Variant = "1TB Limited", Price = 2899 }
+            );
     }
 }
 }
