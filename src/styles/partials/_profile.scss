@@ -1,5 +1,6 @@
-@import "./variables";
-@import "./animations";
+@use "./variables" as *;
+@use "./animations" as *;
+@use "sass:color";
 
 .profile-page {
   padding: 4rem 2rem;
@@ -60,12 +61,12 @@
 
       p {
         font-size: 0.9rem;
-        color: lighten($accent, 25%);
+        color: color.adjust($accent, $lightness: 25%);
         margin: 0.3rem 0;
       }
 
       .product-summary {
-        background-color: darken($secondary-bg, 10%);
+        background-color: color.adjust($secondary-bg, $lightness: -10%);
         border-radius: 10px;
         padding: 0.75rem;
         font-size: 0.9rem;

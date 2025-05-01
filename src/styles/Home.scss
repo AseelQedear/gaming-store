@@ -1,10 +1,10 @@
 // ===============================
 // 📦 HOME PAGE STRUCTURE (IMPORTS ONLY)
 // ===============================
-@import "./partials/variables";
-@import "./partials/animations";
-@import "./partials/hero";
-@import "./partials/featured";
-@import "./partials/popular";
-@import "./partials/whychoose";
-@import "./partials/darkmode";
+@use "./partials/variables" as *;
+@use "./partials/animations" as *;
+@use "./partials/hero" as *;
+@use "./partials/featured" as *;
+@use "./partials/popular" as *;
+@use "./partials/whychoose" as *;
+@use "./partials/darkmode" as *;

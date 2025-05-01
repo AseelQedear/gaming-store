@@ -1,8 +1,8 @@
-@import "./partials/variables";
-@import "./partials/filters";
-@import "./partials/card";
-@import "./partials/animations";
-@import "./partials/darkmode";
+@use "./partials/variables" as *;
+@use "./partials/filters" as *;
+@use "./partials/card" as *;
+@use "./partials/animations" as *;
+@use "./partials/darkmode" as *;
 
 .products-page {
   padding-top: 3rem;

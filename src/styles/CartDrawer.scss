@@ -1,6 +1,6 @@
-@import "../styles/partials/variables";
-@import "../styles/partials/animations";
-@import "../styles/partials/base";
+@use "../styles/partials/variables" as *;
+@use "../styles/partials/animations" as *;
+@use "../styles/partials/base" as *;
 
 .cart-drawer {
   position: fixed;

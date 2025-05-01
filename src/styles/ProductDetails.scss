@@ -1,5 +1,5 @@
-@import "./partials/variables";
-@import "./partials/animations";
-@import "./partials/filters"; 
-@import "./partials/darkmode";
-@import "./partials/productdetails";
+@use "./partials/variables" as *;
+@use "./partials/animations" as *;
+@use "./partials/filters" as *; 
+@use "./partials/darkmode" as *;
+@use "./partials/productdetails" as *;

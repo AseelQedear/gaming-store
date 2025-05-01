@@ -1,6 +1,6 @@
-@import "./variables";
-@import "./animations";
-@import "./base";
+@use "./variables" as *;
+@use "./animations" as *;
+@use "./base" as *;
 
 .navbar {
   background-color: #070e3e !important;

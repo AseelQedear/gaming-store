@@ -1,3 +1,6 @@
+@use "./variables" as *;
+@use "./animations" as *;
+
 body, html, #root {
     margin: 0;
     padding: 0;

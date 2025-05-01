@@ -182,11 +182,7 @@ html.dark-mode {
   background-color: #121212;
   color: #ffffff;
 }
-html.dark-mode html, html.dark-mode #root {
-  background-color: #121212;
-  color: #ffffff;
-}
-html.dark-mode main {
+html.dark-mode html, html.dark-mode #root, html.dark-mode main {
   background-color: #121212;
   color: #ffffff;
 }
@@ -288,8 +284,7 @@ html.dark-mode .why-choose-modern .reason-desc {
 html.dark-mode .site-footer {
   background-color: #1e1e1e;
 }
-html.dark-mode .site-footer .footer-logo,
-html.dark-mode .site-footer h6 {
+html.dark-mode .site-footer .footer-logo, html.dark-mode .site-footer h6 {
   color: #D4ADFC;
 }
 html.dark-mode .site-footer p, html.dark-mode .site-footer span {
@@ -303,13 +298,6 @@ html.dark-mode .site-footer .footer-links a:hover,
 html.dark-mode .site-footer .social-icons a:hover {
   color: #ffffff;
 }
-
-html.dark-mode .search-input {
-  background-color: #2a2a2a;
-  color: #fff;
-  border: 1px solid #444;
-}
-
 html.dark-mode .product-card-style2 {
   background-color: #2a2a2a;
   color: #fff;
@@ -334,76 +322,11 @@ html.dark-mode .product-card-style2 .btn:hover {
   background-color: #5C469C;
   color: white;
 }
-
 html.dark-mode .filters-bar .form-select {
   background-color: #2a2a2a;
   color: #D4ADFC;
   border: 1px solid #444;
 }
-
-html.dark-mode .categories-section {
-  background-color: #181818;
-}
-html.dark-mode .categories-section .device-box {
-  background-color: #222;
-  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
-}
-html.dark-mode .categories-section .device-box h5 {
-  color: #D4ADFC;
-}
-
-html.dark-mode .categories-section {
-  background-color: #181818;
-}
-html.dark-mode .categories-section .device-box {
-  background-color: #222;
-  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
-}
-html.dark-mode .categories-section .device-box h5 {
-  color: #D4ADFC;
-}
-
-html.dark-mode .popular-section {
-  background: linear-gradient(to right, #1a1a1a, #222);
-}
-html.dark-mode .popular-section .product-card-style2 {
-  background-color: #2a2a2a;
-}
-html.dark-mode .popular-section .product-card-style2 h5 {
-  color: #D4ADFC;
-}
-html.dark-mode .popular-section .product-card-style2 .price-info .current-price {
-  color: #ff4d4f;
-}
-html.dark-mode .popular-section .product-card-style2 .price-info .old-price {
-  color: #aaa;
-}
-html.dark-mode .popular-section .product-card-style2 .offer-line {
-  color: #bbb;
-}
-html.dark-mode .popular-section .product-card-style2 .btn {
-  color: #D4ADFC;
-  border-color: #D4ADFC;
-}
-html.dark-mode .popular-section .product-card-style2 .btn:hover {
-  background-color: #5C469C;
-  color: white;
-}
-
-html.dark-mode .why-choose-modern {
-  background: linear-gradient(to left, #1a1a1a, #222);
-}
-html.dark-mode .why-choose-modern .circle-icon {
-  background-color: #D4ADFC;
-  color: #1D267D;
-}
-html.dark-mode .why-choose-modern .reason-title {
-  color: #D4ADFC;
-}
-html.dark-mode .why-choose-modern .reason-desc {
-  color: #bbb;
-}
-
 html.dark-mode .product-details .product-image-box {
   background-color: #2a2a2a;
 }
@@ -426,7 +349,6 @@ html.dark-mode .product-details .product-info-box .out-of-stock-label {
   background-color: rgba(255, 255, 255, 0.05);
   border: 2px dashed #555;
 }
-
 html.dark-mode .profile-page {
   background-color: #121212;
   color: #ffffff;
@@ -455,7 +377,6 @@ html.dark-mode .profile-page .wishlist-icon {
 html.dark-mode .profile-page .wishlist-icon.active {
   color: #ff4d4f;
 }
-
 html.dark-mode .cart-drawer {
   background-color: #121212;
 }
@@ -488,7 +409,6 @@ html.dark-mode .cart-drawer input {
   border-color: #5C469C;
   color: #ffffff;
 }
-
 html.dark-mode .checkout-page {
   background-color: #121212;
   color: #ffffff;
@@ -535,7 +455,6 @@ html.dark-mode .checkout-page .toast-success {
   background-color: #2e7d32;
   color: white;
 }
-
 html.dark-mode .auth-page {
   background: linear-gradient(135deg, #090e39, #182068);
 }
@@ -571,7 +490,6 @@ html.dark-mode .auth-page .auth-form .auth-link {
 html.dark-mode .auth-page .auth-form .auth-link:hover {
   color: white;
 }
-
 html.dark-mode .about-page-section {
   background: linear-gradient(135deg, #121212, #1a1a1a);
 }
@@ -591,10 +509,10 @@ html.dark-mode .about-page-section .cta-button:hover {
   color: #D4ADFC;
   box-shadow: 0 0 18px #D4ADFC;
 }
-html.dark-mode .timeline-horizontal .timeline-track::before {
+html.dark-mode .about-page-section .timeline-horizontal .timeline-track::before {
   background: #D4ADFC;
 }
-html.dark-mode .timeline-horizontal .timeline-track .timeline-event p {
+html.dark-mode .about-page-section .timeline-horizontal .timeline-track .timeline-event p {
   background: rgba(40, 40, 40, 0.95);
   color: #ffffff;
 }

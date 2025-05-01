@@ -1,23 +1,22 @@
 // =============================
 // 🌐 Import Global Partials
 // =============================
-@import "./styles/partials/variables";
-@import "./styles/partials/base";
-@import "./styles/partials/navbar";
-@import "./styles/partials/footer";
-@import "./styles/partials/search";
-@import "./styles/partials/buttons";
-@import "./styles/partials/animations";
-@import "./styles/partials/darkmode";
-@import "./styles/partials/productdetails";
-@import "./styles/partials/whychoose";
-@import "./styles/partials/hero";
-@import "./styles/partials/popular";
-@import "./styles/partials/featured";
-@import "./styles/partials/card";
-@import "./styles/partials/filters";
-@import "./styles/partials/profile";
-
+@use "./styles/partials/variables" as *;
+@use "./styles/partials/base" as *;
+@use "./styles/partials/navbar" as *;
+@use "./styles/partials/footer" as *;
+@use "./styles/partials/search" as *;
+@use "./styles/partials/buttons" as *;
+@use "./styles/partials/animations" as *;
+@use "./styles/partials/darkmode" as *;
+@use "./styles/partials/productdetails" as *;
+@use "./styles/partials/whychoose" as *;
+@use "./styles/partials/hero" as *;
+@use "./styles/partials/popular" as *;
+@use "./styles/partials/featured" as *;
+@use "./styles/partials/card" as *;
+@use "./styles/partials/filters" as *;
+@use "./styles/partials/profile" as *;
 
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&family=Press+Start+2P&family=VT323&display=swap');
 // =============================

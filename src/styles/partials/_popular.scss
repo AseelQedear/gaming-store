@@ -1,3 +1,5 @@
+@use "./variables" as *;
+
 .popular-section {
     background: linear-gradient(to right, $primary-bg, $secondary-bg);
     padding: 4rem 0;

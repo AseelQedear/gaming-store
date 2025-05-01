@@ -1,5 +1,6 @@
-@import "../styles/partials/variables";
-@import "../styles/partials/animations";
+@use "../styles/partials/variables" as *;
+@use "../styles/partials/animations" as *;
+@use "sass:color";
 
 .about-page-section {
   background: linear-gradient(135deg, $primary-bg, $secondary-bg);
@@ -62,7 +63,7 @@
     transition: all 0.3s ease;
 
     &:hover {
-      background-color: lighten($highlight, 10%);
+      background-color: color.adjust($highlight, $lightness: 10%);
       color: $accent;
       box-shadow: 0 0 18px $accent;
     }

@@ -1,3 +1,5 @@
+@use "./variables" as *;
+
 .why-choose-modern {
     background: linear-gradient(to left, $primary-bg, $secondary-bg);
     padding: 4rem 0;
