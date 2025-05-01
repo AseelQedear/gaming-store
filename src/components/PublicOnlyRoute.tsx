@@ -1,8 +1,6 @@
-// src/components/PublicOnlyRoute.tsx
-
 import React from "react";
 import { Navigate } from "react-router-dom";
-import { useAuth } from "./AuthContext"; // ✅ Use AuthContext
+import { useAuth } from "./AuthContext"; 
 
 interface PublicOnlyRouteProps {
   children: React.ReactNode;

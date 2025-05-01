@@ -1,5 +1,3 @@
-// ✅ wishlistContext.tsx (final fixed)
-
 import React, { createContext, useContext, useState, useEffect, ReactNode } from "react";
 
 interface WishlistContextType {
@@ -38,7 +36,7 @@ export const WishlistProvider = ({ children }: { children: ReactNode }) => {
 
     const isFavorite = wishlist.includes(deviceId);
 
-    // ✅ Optimistically update immediately
+   
     setWishlist((prev) =>
       isFavorite ? prev.filter((id) => id !== deviceId) : [...prev, deviceId]
     );
@@ -57,14 +55,14 @@ export const WishlistProvider = ({ children }: { children: ReactNode }) => {
       });
 
       if (!res.ok) {
-        // ❗ Server failed ➔ rollback
+       
         setWishlist((prev) =>
           !isFavorite ? prev.filter((id) => id !== deviceId) : [...prev, deviceId]
         );
         console.error("Failed to toggle favorite", res.status);
       }
     } catch (err) {
-      // ❗ Error ➔ rollback
+      
       console.error("Error in toggleWishlist", err);
       setWishlist((prev) =>
         !isFavorite ? prev.filter((id) => id !== deviceId) : [...prev, deviceId]

@@ -1,5 +1,3 @@
-// Profile.tsx - Enhanced feedback and validation
-
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -9,7 +7,7 @@ import { useWishlist } from "../components/wishlistContext";
 import "../styles/Profile.scss";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 interface UserInfo {

@@ -14,8 +14,8 @@ namespace CheckoutAPI.Models
     public List<OrderItem> OrderItems { get; set; } = new();
 
     [Column(TypeName = "decimal(10, 2)")]
-    public decimal Total { get; set; }  // ✅ New
-    public string ShippingMethod { get; set; } = string.Empty; // ✅ New
+    public decimal Total { get; set; }  
+    public string ShippingMethod { get; set; } = string.Empty; 
 }
 
 }

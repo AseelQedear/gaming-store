@@ -4,7 +4,7 @@
     text-align: center;
   
     .section-title {
-      @extend .section-title; // Ensures global style consistency
+      @extend .section-title; 
     }
   
     .device-box {

@@ -6,8 +6,6 @@ import { useWishlist } from "../components/wishlistContext";
 import { useCart } from "../components/CartContext";
 import "../styles/Products.scss";
 
-
-
 const Products: React.FC = () => {
   const { wishlist, toggleWishlist } = useWishlist();
   const { addToCart } = useCart();

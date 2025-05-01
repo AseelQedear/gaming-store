@@ -1,4 +1,4 @@
-// src/pages/Checkout.tsx
+
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../components/CartContext";
@@ -43,7 +43,7 @@ const Checkout: React.FC = () => {
   const shippingCost = shippingOption ? 10 : 0;
   const total = subtotal + shippingCost;
 
-  // Fix this near the top level of your component
+
 const onQuantityChange = (id: number, delta: number) => {
   updateQuantity(id, delta);
 };
@@ -75,7 +75,7 @@ useEffect(() => {
       return;
     }
 
-    // Decode token to check expiry
+    
     const decoded = JSON.parse(atob(token.split(".")[1]));
     const exp = decoded.exp * 1000;
 

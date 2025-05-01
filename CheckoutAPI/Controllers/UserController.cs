@@ -4,7 +4,6 @@ using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 using CheckoutAPI.Data;
 using CheckoutAPI.Models;
-using Microsoft.AspNetCore.Identity;
 
 namespace CheckoutAPI.Controllers
 {
@@ -100,74 +99,69 @@ namespace CheckoutAPI.Controllers
             }
             catch (Exception ex)
             {
-                Console.WriteLine("🔥 Profile Fetch Error: " + ex.Message);
-                return StatusCode(500, "Internal Server Error: " + ex.Message);
+                return StatusCode(500, "Internal Server Error.");
             }
         }
 
-[HttpPut("profile")]
-public async Task<IActionResult> UpdateProfile([FromBody] UpdateProfileDto updateDto)
-{
-    try
-    {
-        var userIdString = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-        if (string.IsNullOrEmpty(userIdString) || !int.TryParse(userIdString, out int userId))
-            return Unauthorized("User not authenticated.");
-
-        var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == userId);
-        if (user == null) return NotFound("User not found.");
-
-        bool updated = false;
-        List<string> updatedFields = new();
-
-        // 📧 Email
-        if (!string.IsNullOrWhiteSpace(updateDto.Email) && updateDto.Email != user.Email)
+        [HttpPut("profile")]
+        public async Task<IActionResult> UpdateProfile([FromBody] UpdateProfileDto updateDto)
         {
-            user.Email = updateDto.Email.Trim();
-            updated = true;
-            updatedFields.Add("Email");
+            try
+            {
+                var userIdString = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                if (string.IsNullOrEmpty(userIdString) || !int.TryParse(userIdString, out int userId))
+                    return Unauthorized("User not authenticated.");
+
+                var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == userId);
+                if (user == null) return NotFound("User not found.");
+
+                bool updated = false;
+                List<string> updatedFields = new();
+
+                if (!string.IsNullOrWhiteSpace(updateDto.Email) && updateDto.Email != user.Email)
+                {
+                    user.Email = updateDto.Email.Trim();
+                    updated = true;
+                    updatedFields.Add("Email");
+                }
+
+                if (!string.IsNullOrWhiteSpace(updateDto.Phone) && updateDto.Phone != user.Phone)
+                {
+                    user.Phone = updateDto.Phone.Trim();
+                    updated = true;
+                    updatedFields.Add("Phone");
+                }
+
+                if (!string.IsNullOrWhiteSpace(updateDto.NewPassword))
+                {
+                    if (string.IsNullOrWhiteSpace(updateDto.CurrentPassword))
+                        return BadRequest("Current password is required to change your password.");
+
+                    bool isCorrect = BCrypt.Net.BCrypt.Verify(updateDto.CurrentPassword, user.Password);
+                    if (!isCorrect)
+                        return BadRequest("Current password is incorrect.");
+
+                    user.Password = BCrypt.Net.BCrypt.HashPassword(updateDto.NewPassword);
+                    updated = true;
+                    updatedFields.Add("Password");
+                }
+
+                if (!updated)
+                    return BadRequest("No changes detected.");
+
+                await _context.SaveChangesAsync();
+
+                return Ok(new
+                {
+                    Message = $"Updated: {string.Join(", ", updatedFields)}.",
+                    Email = user.Email,
+                    Phone = user.Phone
+                });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Internal Server Error.");
+            }
         }
-
-        // 📱 Phone
-        if (!string.IsNullOrWhiteSpace(updateDto.Phone) && updateDto.Phone != user.Phone)
-        {
-            user.Phone = updateDto.Phone.Trim();
-            updated = true;
-            updatedFields.Add("Phone");
-        }
-
-        // 🔐 Password
-        if (!string.IsNullOrWhiteSpace(updateDto.NewPassword))
-        {
-            if (string.IsNullOrWhiteSpace(updateDto.CurrentPassword))
-                return BadRequest("Current password is required to change your password.");
-
-            bool isCorrect = BCrypt.Net.BCrypt.Verify(updateDto.CurrentPassword, user.Password);
-            if (!isCorrect)
-                return BadRequest("Current password is incorrect.");
-
-            user.Password = BCrypt.Net.BCrypt.HashPassword(updateDto.NewPassword);
-            updated = true;
-            updatedFields.Add("Password");
-        }
-
-        if (!updated)
-            return BadRequest("No changes detected.");
-
-        await _context.SaveChangesAsync();
-
-        return Ok(new
-        {
-            Message = $"Updated: {string.Join(", ", updatedFields)}.",
-            Email = user.Email,
-            Phone = user.Phone
-        });
-    }
-    catch (Exception ex)
-    {
-        Console.WriteLine("🔥 Profile Update Error: " + ex.Message);
-        return StatusCode(500, "Internal Server Error: " + ex.Message);
-    }
-}
     }
 }

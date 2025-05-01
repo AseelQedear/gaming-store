@@ -14,12 +14,12 @@ const Home: React.FC = () => {
   const [devices, setDevices] = useState<any[]>([]);
   const [error, setError] = useState<string | null>(null);
 
-  // Fetch devices from API
+
   useEffect(() => {
     const fetchDevices = async () => {
       try {
         const response = await axios.get("http://localhost:5202/api/device");
-        setDevices(response.data); // Set the fetched data to state
+        setDevices(response.data); 
       } catch (err) {
         setError("Failed to load products.");
       }

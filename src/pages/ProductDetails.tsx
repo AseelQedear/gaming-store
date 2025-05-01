@@ -50,7 +50,7 @@ const ProductDetails: React.FC = () => {
       variant: product.offer,
       price: product.price,
       image: product.image,
-      quantity: 1, // Always add 1; the context handles increasing if item exists
+      quantity: 1, 
     });
   };
 

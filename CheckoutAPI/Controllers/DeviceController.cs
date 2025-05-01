@@ -22,13 +22,13 @@ namespace CheckoutAPI.Controllers
         public async Task<IActionResult> GetDevices()
         {
             var devices = await _context.Devices
-                .AsNoTracking() // Optional: For better performance
+                .AsNoTracking() 
                 .ToListAsync();
 
             return Ok(devices);
         }
 
-        // Get device by ID with specifications (now from the Specifications field)
+        // Get device by ID with specifications (from the Specifications field)
         [HttpGet("{id}")]
         public async Task<IActionResult> GetDeviceById(int id)
         {
@@ -60,7 +60,7 @@ namespace CheckoutAPI.Controllers
             });
         }
 
-        // Get device by name with specifications (now from the Specifications field)
+        // Get device by name with specifications (from the Specifications field)
         [HttpGet("name/{name}")]
         public async Task<IActionResult> GetDeviceByName(string name)
         {

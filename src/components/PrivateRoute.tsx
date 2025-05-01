@@ -11,7 +11,7 @@ const PrivateRoute: React.FC<PrivateRouteProps> = ({ children }) => {
 
   console.log("🔐 PrivateRoute | Auth:", isAuthenticated, "User:", user);
 
-  if (checkingAuth) return null; // or <Spinner /> while checking
+  if (checkingAuth) return null; 
 
   if (!isAuthenticated) {
     return <Navigate to="/login" replace />;

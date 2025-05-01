@@ -1,5 +1,5 @@
-using CheckoutAPI.Services;
 using CheckoutAPI.Data;
+using CheckoutAPI.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -14,16 +14,6 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 // ✅ Services
 builder.Services.AddScoped<IAuthService, AuthService>();
-
-// Conditional email service registration
-if (builder.Environment.IsDevelopment())
-{
-    builder.Services.AddScoped<IEmailService, ConsoleEmailService>();
-}
-else
-{
-    builder.Services.AddScoped<IEmailService, MailKitEmailService>();
-}
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();

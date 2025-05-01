@@ -1,9 +1,7 @@
-// src/pages/Register.tsx
-
 import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
-import { useAuth } from "../components/AuthContext"; // ✅ NEW
+import { useAuth } from "../components/AuthContext"; 
 import "../styles/Auth.scss";
 
 const Register: React.FC = () => {
@@ -17,7 +15,7 @@ const Register: React.FC = () => {
   const [serverError, setServerError] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const navigate = useNavigate();
-  const { login: loginUser } = useAuth(); // ✅ NEW
+  const { login: loginUser } = useAuth(); 
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("user") || sessionStorage.getItem("user") || "null");
@@ -71,7 +69,7 @@ const Register: React.FC = () => {
 
       localStorage.setItem("user", userData);
 
-      loginUser({ token, email: registeredEmail }); // ✅ NEW
+      loginUser({ token, email: registeredEmail }); 
 
       navigate("/");
     } catch (error: any) {

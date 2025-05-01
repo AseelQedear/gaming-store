@@ -1,8 +1,7 @@
-// ✅ src/components/CartContext.tsx — final fixed version
-import React, { createContext, useContext, useState, useEffect, ReactNode } from "react";
+import { createContext, useContext, useState, useEffect, ReactNode } from "react";
 
 export interface CartItem {
-  id: number; // ✅ Ensure this stays a number
+  id: number; 
   name: string;
   variant: string;
   price: number;
@@ -38,10 +37,10 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
       try {
         const parsed = JSON.parse(savedCart);
         if (Array.isArray(parsed)) {
-          // ✅ Convert string IDs to numbers
+        
           const fixedItems: CartItem[] = parsed.map((item: any) => ({
             ...item,
-            id: Number(item.id), // Force to number
+            id: Number(item.id), 
           }));
           setCartItems(fixedItems);
         }

@@ -15,7 +15,6 @@ import ProductDetails from "./pages/ProductDetails";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
-import Checkout from "./pages/Checkout";
 import ProtectedCheckout from "./components/ProtectedCheckout";
 import PrivateRoute from "./components/PrivateRoute";
 import PublicOnlyRoute from "./components/PublicOnlyRoute";
@@ -33,7 +32,7 @@ const AppContent: React.FC = () => {
     AOS.init({ duration: 1000, once: true, offset: 100 });
   }, []);
 
-  // ✅ Load dark mode preference on initial render
+ 
   useEffect(() => {
     const savedMode = localStorage.getItem("darkMode");
     if (savedMode === "true") {
@@ -43,7 +42,7 @@ const AppContent: React.FC = () => {
     }
   }, []);
 
-  // ✅ Scroll to top on route change
+ 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
