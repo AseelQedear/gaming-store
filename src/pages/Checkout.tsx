@@ -276,7 +276,7 @@ useEffect(() => {
                     checked={shippingOption === opt}
                     onChange={() => setShippingOption(opt)}
                   />
-                  {opt} Shipping ${10}
+                  {opt} Shipping <span className="sr-symbol">$</span>{10}
                 </label>
               ))}
               <div className="button-row">

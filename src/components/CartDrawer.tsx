@@ -69,9 +69,9 @@ const CartDrawer = ({ isOpen, onClose, cartItems, onQuantityChange, onRemoveItem
           )}
           <div className="cart-summary">
             <p>Subtotal: <span>${subtotal.toFixed(2)}</span></p>
-            <p>Shipping: <span>$0.00</span></p>
-            <p>Taxes: <span>$0.00</span></p>
-            <h5>Total: <span>${subtotal.toFixed(2)}</span></h5>
+            <p>Shipping: <span><span className="sr-symbol">$</span>0.00</span></p>
+            <p>Taxes: <span><span className="sr-symbol">$</span>0.00</span></p>
+            <h5>Total: <span><span className="sr-symbol">$</span>{subtotal.toFixed(2)}</span></h5>
           </div>
 
           <div className="cart-footer">
