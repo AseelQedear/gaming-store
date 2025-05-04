@@ -68,9 +68,9 @@ const ProductCard: React.FC<ProductProps> = ({
       </h5>
 
       <div className="price-info text-end">
-        <div className="current-price">${product.price}</div>
+        <div className="current-price"><span className="sr-symbol">$</span>{product.price}</div>
         {product.discounted && (
-          <div className="old-price">${product.oldPrice}</div>
+          <div className="old-price"><span className="sr-symbol">$</span>{product.oldPrice}</div>
         )}
       </div>
       <p className="offer-line mt-2">{product.offer}</p>
