@@ -6,7 +6,6 @@ using CheckoutAPI.Data;
 using CheckoutAPI.Models;
 
 
-
 [Authorize]
 [ApiController]
 [Route("api/[controller]")]

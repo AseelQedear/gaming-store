@@ -166,7 +166,7 @@ const Profile: React.FC = () => {
     setIsSubmitting(true);
 
     try {
-      const res = await axios.put("http://localhost:5202/api/user/profile", {
+      const res = await axios.put("https://gaming-store-production.up.railway.app/api/user/profile", {
         email: emailInput,
         phone: phoneInput,
         currentPassword: currentPassword || null,

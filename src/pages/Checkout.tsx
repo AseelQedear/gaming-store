@@ -204,7 +204,7 @@ useEffect(() => {
     };
   
     try {
-      const res = await fetch("http://localhost:5202/api/checkout", {
+      const res = await fetch("https://gaming-store-production.up.railway.app/api/checkout", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
