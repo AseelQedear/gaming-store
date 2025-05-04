@@ -16,7 +16,7 @@ export const WishlistProvider = ({ children }: { children: ReactNode }) => {
       if (!user?.token) return;
 
       try {
-        const res = await fetch("http://localhost:5202/api/favorite", {
+        const res = await fetch("https://gaming-store-production.up.railway.app/api/favorite", {
           headers: { Authorization: `Bearer ${user.token}` },
         });
         const data = await res.json();
@@ -41,7 +41,7 @@ export const WishlistProvider = ({ children }: { children: ReactNode }) => {
       isFavorite ? prev.filter((id) => id !== deviceId) : [...prev, deviceId]
     );
 
-    const url = `http://localhost:5202/api/favorite${isFavorite ? `/${deviceId}` : ""}`;
+    const url = `https://gaming-store-production.up.railway.app/api/favorite${isFavorite ? `/${deviceId}` : ""}`;
     const method = isFavorite ? "DELETE" : "POST";
 
     try {
