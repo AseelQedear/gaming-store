@@ -117,3 +117,15 @@ C:\Users\aseel\gaming-store\checkoutapi\bin\Release\net7.0\publish\appsettings.D
 C:\Users\aseel\gaming-store\checkoutapi\bin\Release\net7.0\publish\appsettings.json
 C:\Users\aseel\gaming-store\checkoutapi\bin\Release\net7.0\publish\CheckoutAPI.deps.json
 C:\Users\aseel\gaming-store\checkoutapi\bin\Release\net7.0\publish\CheckoutAPI.runtimeconfig.json
+C:\Users\aseel\gaming-store\checkoutapi\bin\Release\net7.0\out\publish\web.config
+C:\Users\aseel\gaming-store\checkoutapi\bin\Release\net7.0\out\web.config
+C:\Users\aseel\gaming-store\checkoutapi\bin\Release\net7.0\out\appsettings.Development.json
+C:\Users\aseel\gaming-store\checkoutapi\bin\Release\net7.0\out\appsettings.json
+C:\Users\aseel\gaming-store\checkoutapi\bin\Release\net7.0\out\CheckoutAPI.deps.json
+C:\Users\aseel\gaming-store\checkoutapi\bin\Release\net7.0\out\CheckoutAPI.runtimeconfig.json
+C:\Users\aseel\gaming-store\checkoutapi\bin\Release\net7.0\out\publish\appsettings.Development.json
+C:\Users\aseel\gaming-store\checkoutapi\bin\Release\net7.0\out\publish\appsettings.json
+C:\Users\aseel\gaming-store\checkoutapi\bin\Release\net7.0\out\publish\CheckoutAPI.deps.json
+C:\Users\aseel\gaming-store\checkoutapi\bin\Release\net7.0\out\publish\CheckoutAPI.runtimeconfig.json
+C:\Users\aseel\gaming-store\checkoutapi\bin\Release\net7.0\Npgsql.dll
+C:\Users\aseel\gaming-store\checkoutapi\bin\Release\net7.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
