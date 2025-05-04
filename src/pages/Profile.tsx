@@ -244,7 +244,7 @@ const Profile: React.FC = () => {
                       <img src={item.device.image} alt={item.device.name} />
                       <p className="name">{item.device.name}</p>
                       <p>Qty: {item.quantity}</p>
-                      <p>${item.price.toFixed(2)}</p>
+                      <p><span className="sr-symbol">$</span>{item.price.toFixed(2)}</p>
                     </div>
                   ))}
                 </div>

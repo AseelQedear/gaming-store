@@ -87,9 +87,9 @@ const ProductDetails: React.FC = () => {
             </div>
 
             <div className="price-info mb-3 text-center">
-              <div className="current-price">${product.price}</div>
+              <div className="current-price"><span className="sr-symbol">$</span>{product.price}</div>
               {product.discounted && product.oldPrice && (
-                <div className="old-price">${product.oldPrice}</div>
+                <div className="old-price"><span className="sr-symbol">$</span>{product.oldPrice}</div>
               )}
               <div className="offer-line">{product.offer}</div>
             </div>

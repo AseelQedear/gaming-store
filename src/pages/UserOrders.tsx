@@ -30,7 +30,7 @@ const UserOrders: React.FC = () => {
             <div key={order.id}>
               <h3>Order ID: {order.id}</h3>
               <p>Date: {new Date(order.orderDate).toLocaleDateString()}</p>
-              <p>Total: ${order.totalAmount}</p>
+              <p>Total: <span className="sr-symbol">$</span>{order.totalAmount}</p>
               <ul>
                 {order.orderItems.map((item: any) => (
                   <li key={item.id}>

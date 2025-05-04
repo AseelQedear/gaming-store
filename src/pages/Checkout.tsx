@@ -424,9 +424,9 @@ useEffect(() => {
           {/* Correct naming here */}
           <div className="price-info">
           {item.oldPrice && (
-              <span className="old-price">${item.oldPrice.toFixed(2)}</span>
+              <span className="old-price"><span className="sr-symbol">$</span>{item.oldPrice.toFixed(2)}</span>
             )}
-            <span className="current-price">${item.price.toFixed(2)}</span>
+            <span className="current-price"><span className="sr-symbol">$</span>{item.price.toFixed(2)}</span>
             {item.percent && (
               <span className="percent-badge">-{item.percent.toFixed(0)}%</span>
             )}
@@ -445,9 +445,9 @@ useEffect(() => {
     ))}
 
     <div className="cart-summary">
-      <p>Subtotal: <span>${subtotal.toFixed(2)}</span></p>
-      <p>Shipping: <span>${shippingCost.toFixed(2)}</span></p>
-      <h5>Total: <span>${total.toFixed(2)}</span></h5>
+      <p>Subtotal: <span className="sr-symbol">$</span>{subtotal.toFixed(2)}</p>
+      <p>Shipping: <span className="sr-symbol">$</span>{shippingCost.toFixed(2)}</p>
+      <h5>Total: <span className="sr-symbol">$</span>{total.toFixed(2)}</h5>
     </div>
 
     <div className="cart-footer">
