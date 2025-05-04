@@ -1,7 +1,6 @@
 C:\Users\aseel\gaming-store\checkoutapi\publish\CheckoutAPI.exe
 C:\Users\aseel\gaming-store\checkoutapi\publish\out\publish\web.config
 C:\Users\aseel\gaming-store\checkoutapi\publish\out\web.config
-C:\Users\aseel\gaming-store\checkoutapi\publish\publish\web.config
 C:\Users\aseel\gaming-store\checkoutapi\publish\appsettings.Development.json
 C:\Users\aseel\gaming-store\checkoutapi\publish\appsettings.json
 C:\Users\aseel\gaming-store\checkoutapi\publish\out\appsettings.Development.json
@@ -12,10 +11,6 @@ C:\Users\aseel\gaming-store\checkoutapi\publish\out\publish\appsettings.Developm
 C:\Users\aseel\gaming-store\checkoutapi\publish\out\publish\appsettings.json
 C:\Users\aseel\gaming-store\checkoutapi\publish\out\publish\CheckoutAPI.deps.json
 C:\Users\aseel\gaming-store\checkoutapi\publish\out\publish\CheckoutAPI.runtimeconfig.json
-C:\Users\aseel\gaming-store\checkoutapi\publish\publish\appsettings.Development.json
-C:\Users\aseel\gaming-store\checkoutapi\publish\publish\appsettings.json
-C:\Users\aseel\gaming-store\checkoutapi\publish\publish\CheckoutAPI.deps.json
-C:\Users\aseel\gaming-store\checkoutapi\publish\publish\CheckoutAPI.runtimeconfig.json
 C:\Users\aseel\gaming-store\checkoutapi\publish\CheckoutAPI.dll
 C:\Users\aseel\gaming-store\checkoutapi\publish\CheckoutAPI.runtimeconfig.json
 C:\Users\aseel\gaming-store\checkoutapi\publish\CheckoutAPI.pdb
