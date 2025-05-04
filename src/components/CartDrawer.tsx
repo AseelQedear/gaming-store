@@ -49,12 +49,12 @@ const CartDrawer = ({ isOpen, onClose, cartItems, onQuantityChange, onRemoveItem
                   <div className="price-info">
                     {item.discounted && item.oldPrice ? (
                       <>
-                        <span className="old-price">${item.oldPrice.toFixed(2)}</span>
-                        <span className="current-price">${item.price.toFixed(2)}</span>
+                        <span className="old-price"><span className="sr-symbol">$</span>{item.oldPrice.toFixed(2)}</span>
+                        <span className="current-price"><span className="sr-symbol">$</span>{item.price.toFixed(2)}</span>
                         {item.percent && <span className="percent-badge">-{item.percent.toFixed(0)}%</span>}
                       </>
                     ) : (
-                      <span className="current-price">${item.price.toFixed(2)}</span>
+                      <span className="current-price"><span className="sr-symbol">$</span>{item.price.toFixed(2)}</span>
                     )}
                   </div>
                   <div className="qty">
@@ -68,7 +68,7 @@ const CartDrawer = ({ isOpen, onClose, cartItems, onQuantityChange, onRemoveItem
             ))
           )}
           <div className="cart-summary">
-            <p>Subtotal: <span>${subtotal.toFixed(2)}</span></p>
+            <p>Subtotal: <span><span className="sr-symbol">$<span></span>{subtotal.toFixed(2)}</span></p>
             <p>Shipping: <span><span className="sr-symbol">$</span>0.00</span></p>
             <p>Taxes: <span><span className="sr-symbol">$</span>0.00</span></p>
             <h5>Total: <span><span className="sr-symbol">$</span>{subtotal.toFixed(2)}</span></h5>
