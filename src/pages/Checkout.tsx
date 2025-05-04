@@ -445,9 +445,9 @@ useEffect(() => {
     ))}
 
     <div className="cart-summary">
-      <p>Subtotal: <span className="sr-symbol">$</span>{subtotal.toFixed(2)}</p>
-      <p>Shipping: <span className="sr-symbol">$</span>{shippingCost.toFixed(2)}</p>
-      <h5>Total: <span className="sr-symbol">$</span>{total.toFixed(2)}</h5>
+      <p>Subtotal: <span><span className="sr-symbol">$</span>{subtotal.toFixed(2)}</span></p>
+      <p>Shipping: <span><span className="sr-symbol">$</span>{shippingCost.toFixed(2)}</span></p>
+      <h5>Total: <span><span className="sr-symbol">$</span>{total.toFixed(2)}</span></h5>
     </div>
 
     <div className="cart-footer">

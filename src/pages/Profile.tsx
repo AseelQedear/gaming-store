@@ -275,8 +275,8 @@ const Profile: React.FC = () => {
                   <h5>{fav.device.name}</h5>
                   <p className="variant">{fav.device.offer}</p>
                   <div className="price-line">
-                    {fav.device.oldPrice && <span className="old">${fav.device.oldPrice.toFixed(2)}</span>}
-                    <span className="current">${fav.device.price.toFixed(2)}</span>
+                    {fav.device.oldPrice && <span className="old"><span className="sr-symbol">$</span>{fav.device.oldPrice.toFixed(2)}</span>}
+                    <span className="current"><span className="sr-symbol">$</span>{fav.device.price.toFixed(2)}</span>
                     {fav.device.percent && <span className="badge">-{fav.device.percent.toFixed(0)}%</span>}
                   </div>
                   <button
