@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\aseel\\gaming-store\\checkoutapi\\CheckoutAPI.csproj": {}
+    "C:\\Users\\aseel\\gaming-store\\CheckoutAPI\\CheckoutAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\aseel\\gaming-store\\checkoutapi\\CheckoutAPI.csproj": {
+    "C:\\Users\\aseel\\gaming-store\\CheckoutAPI\\CheckoutAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\aseel\\gaming-store\\checkoutapi\\CheckoutAPI.csproj",
+        "projectUniqueName": "C:\\Users\\aseel\\gaming-store\\CheckoutAPI\\CheckoutAPI.csproj",
         "projectName": "CheckoutAPI",
-        "projectPath": "C:\\Users\\aseel\\gaming-store\\checkoutapi\\CheckoutAPI.csproj",
+        "projectPath": "C:\\Users\\aseel\\gaming-store\\CheckoutAPI\\CheckoutAPI.csproj",
         "packagesPath": "C:\\Users\\aseel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\aseel\\gaming-store\\checkoutapi\\obj\\",
+        "outputPath": "C:\\Users\\aseel\\gaming-store\\CheckoutAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\aseel\\AppData\\Roaming\\NuGet\\NuGet.Config"
