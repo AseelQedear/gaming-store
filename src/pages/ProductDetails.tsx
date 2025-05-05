@@ -91,12 +91,12 @@ const ProductDetails: React.FC = () => {
 
             <div className="price-info mb-3 text-center">
               <div className="current-price">
-                <span className="sr-symbol">﷼</span>
+                <span className="sr-symbol">$</span>
                 {product.price}
               </div>
               {product.discounted && product.oldPrice && (
                 <div className="old-price">
-                  <span className="sr-symbol">﷼</span>
+                  <span className="sr-symbol">$</span>
                   {product.oldPrice}
                 </div>
               )}
