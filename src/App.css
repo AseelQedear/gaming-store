@@ -216,70 +216,45 @@ h1, h2, h3, h6,
 }
 
 /* RTL Layout */
-html[dir=rtl],
-body[dir=rtl] {
+html[dir=rtl] {
   direction: rtl;
   text-align: right;
 }
-html[dir=rtl] html[dir=rtl] .nav-icon,
-body[dir=rtl] html[dir=rtl] .nav-icon {
-  margin-left: 0;
-  margin-right: auto;
-}
-html[dir=rtl] .navbar .container-fluid,
-body[dir=rtl] .navbar .container-fluid {
+html[dir=rtl] .navbar .container-fluid {
   flex-direction: row-reverse;
   justify-content: space-between;
 }
-html[dir=rtl] .navbar .navbar-brand,
-body[dir=rtl] .navbar .navbar-brand {
-  margin-right: auto;
-  margin-left: 0;
-}
-html[dir=rtl] .navbar .navbar-nav,
-body[dir=rtl] .navbar .navbar-nav {
+html[dir=rtl] .navbar-nav {
   flex-direction: row-reverse;
 }
-html[dir=rtl] .navbar .navbar-toggler,
-body[dir=rtl] .navbar .navbar-toggler {
+html[dir=rtl] .icon-group {
+  flex-direction: row-reverse;
+}
+html[dir=rtl] .navbar-toggler {
   margin-right: auto;
   margin-left: 0;
 }
-html[dir=rtl] .navbar .navbar-collapse.collapse.show,
-body[dir=rtl] .navbar .navbar-collapse.collapse.show {
+html[dir=rtl] .navbar-collapse.collapse.show {
   align-items: flex-end;
 }
-html[dir=rtl] .navbar .navbar-nav .nav-link,
-body[dir=rtl] .navbar .navbar-nav .nav-link {
-  border-bottom: none;
-}
-html[dir=rtl] .navbar .navbar-nav .nav-link.active,
-body[dir=rtl] .navbar .navbar-nav .nav-link.active {
-  border-bottom: 2px solid #D4ADFC;
-}
-html[dir=rtl] .navbar .icon-group,
-body[dir=rtl] .navbar .icon-group {
-  flex-direction: row-reverse;
-}
-html[dir=rtl] .cart-icon .cart-badge,
-body[dir=rtl] .cart-icon .cart-badge {
+html[dir=rtl] .cart-icon .cart-badge {
   right: auto;
   left: -15px;
 }
-html[dir=rtl] .profile-menu .dropdown-menu,
-body[dir=rtl] .profile-menu .dropdown-menu {
+html[dir=rtl] .profile-menu .dropdown-menu {
   left: auto;
   right: 0;
 }
+html[dir=rtl] .navbar-brand {
+  justify-content: flex-end;
+}
 @media (max-width: 1024px) {
-  html[dir=rtl] .navbar .navbar-nav,
-  body[dir=rtl] .navbar .navbar-nav {
+  html[dir=rtl] .navbar .navbar-nav {
     align-items: flex-end;
     padding-right: 1rem;
     padding-left: 0;
   }
-  html[dir=rtl] .navbar .icon-group,
-  body[dir=rtl] .navbar .icon-group {
+  html[dir=rtl] .navbar .icon-group {
     justify-content: flex-end;
     padding: 0 1rem 1rem 0;
   }
@@ -290,11 +265,10 @@ html[dir=ltr] .navbar .container-fluid {
   flex-direction: row;
   justify-content: space-between;
 }
-html[dir=ltr] .navbar .navbar-brand {
-  margin-left: auto;
-  margin-right: 0;
+html[dir=ltr] .navbar-brand {
+  justify-content: flex-start;
 }
-html[dir=ltr] .navbar .navbar-toggler {
+html[dir=ltr] .navbar-toggler {
   margin-left: auto;
   margin-right: 0;
 }
