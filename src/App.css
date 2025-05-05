@@ -245,9 +245,6 @@ html[dir=rtl] .profile-menu .dropdown-menu {
   left: auto;
   right: 0;
 }
-html[dir=rtl] .navbar-brand {
-  justify-content: flex-end;
-}
 @media (max-width: 1024px) {
   html[dir=rtl] .navbar .navbar-nav {
     align-items: flex-end;
@@ -265,43 +262,12 @@ html[dir=ltr] .navbar .container-fluid {
   flex-direction: row;
   justify-content: space-between;
 }
-html[dir=ltr] .navbar-brand {
-  justify-content: flex-start;
-}
 html[dir=ltr] .navbar-toggler {
   margin-left: auto;
   margin-right: 0;
 }
 
-/* Language Dropdown Styling */
-.lang-dropdown .dropdown-toggle {
-  min-width: 110px;
-  color: #D4ADFC;
-  border-color: #D4ADFC;
-}
-.lang-dropdown .dropdown-toggle:hover {
-  background-color: #5C469C;
-  color: #ffffff;
-}
-.lang-dropdown .dropdown-toggle svg {
-  font-size: 1rem;
-}
-.lang-dropdown .dropdown-menu {
-  background-color: #0C134F;
-  border: 1px solid #5C469C;
-  padding: 0.5rem 0;
-  min-width: 120px;
-  text-align: center;
-}
-.lang-dropdown .dropdown-menu .dropdown-item {
-  color: #ffffff;
-  font-weight: 500;
-}
-.lang-dropdown .dropdown-menu .dropdown-item:hover {
-  background-color: #5C469C;
-  color: #D4ADFC;
-}
-
+/* Navbar */
 .navbar {
   background-color: #070e3e !important;
   height: 72px;
@@ -388,6 +354,7 @@ html[dir=ltr] .navbar-toggler {
   transform: scale(1.1);
 }
 
+/* Cart Badge */
 .cart-icon {
   position: relative;
 }
@@ -410,6 +377,7 @@ html[dir=ltr] .navbar-toggler {
   animation: bounce-cart 0.5s ease;
 }
 
+/* Profile Dropdown */
 .profile-menu {
   position: relative;
 }
@@ -445,12 +413,43 @@ html[dir=ltr] .navbar-toggler {
   transform: translateY(0);
 }
 
+/* Language Dropdown */
+.lang-dropdown .dropdown-toggle {
+  min-width: 110px;
+  color: #D4ADFC;
+  border-color: #D4ADFC;
+}
+.lang-dropdown .dropdown-toggle:hover {
+  background-color: #5C469C;
+  color: #ffffff;
+}
+.lang-dropdown .dropdown-toggle svg {
+  font-size: 1rem;
+}
+.lang-dropdown .dropdown-menu {
+  background-color: #0C134F;
+  border: 1px solid #5C469C;
+  padding: 0.5rem 0;
+  min-width: 120px;
+  text-align: center;
+}
+.lang-dropdown .dropdown-menu .dropdown-item {
+  color: #ffffff;
+  font-weight: 500;
+}
+.lang-dropdown .dropdown-menu .dropdown-item:hover {
+  background-color: #5C469C;
+  color: #D4ADFC;
+}
+
+/* Hide on mobile */
 @media (max-width: 768px) {
   .hide-on-mobile {
     display: none !important;
   }
 }
 
+/* Responsive Navbar Layout */
 @media (max-width: 1024px) {
   .navbar {
     flex-direction: column;

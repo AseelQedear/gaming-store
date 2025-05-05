@@ -43,10 +43,6 @@ html[dir="rtl"] {
     right: 0;
   }
 
-  .navbar-brand {
-    justify-content: flex-end;
-  }
-
   @media (max-width: 1024px) {
     .navbar .navbar-nav {
       align-items: flex-end;
@@ -68,53 +64,13 @@ html[dir="ltr"] {
     justify-content: space-between;
   }
 
-  .navbar-brand {
-    justify-content: flex-start;
-  }
-
   .navbar-toggler {
     margin-left: auto;
     margin-right: 0;
   }
 }
 
-
-/* Language Dropdown Styling */
-.lang-dropdown {
-  .dropdown-toggle {
-    min-width: 110px;
-    color: $accent;
-    border-color: $accent;
-
-    &:hover {
-      background-color: $highlight;
-      color: $text-light;
-    }
-
-    svg {
-      font-size: 1rem;
-    }
-  }
-
-  .dropdown-menu {
-    background-color: $primary-bg;
-    border: 1px solid $highlight;
-    padding: 0.5rem 0;
-    min-width: 120px;
-    text-align: center;
-
-    .dropdown-item {
-      color: $text-light;
-      font-weight: 500;
-
-      &:hover {
-        background-color: $highlight;
-        color: $accent;
-      }
-    }
-  }
-}
-
+/* Navbar */
 .navbar {
   background-color: #070e3e !important;
   height: 72px;
@@ -217,6 +173,7 @@ html[dir="ltr"] {
   }
 }
 
+/* Cart Badge */
 .cart-icon {
   position: relative;
 
@@ -241,6 +198,7 @@ html[dir="ltr"] {
   }
 }
 
+/* Profile Dropdown */
 .profile-menu {
   position: relative;
 
@@ -280,12 +238,50 @@ html[dir="ltr"] {
   }
 }
 
+/* Language Dropdown */
+.lang-dropdown {
+  .dropdown-toggle {
+    min-width: 110px;
+    color: $accent;
+    border-color: $accent;
+
+    &:hover {
+      background-color: $highlight;
+      color: $text-light;
+    }
+
+    svg {
+      font-size: 1rem;
+    }
+  }
+
+  .dropdown-menu {
+    background-color: $primary-bg;
+    border: 1px solid $highlight;
+    padding: 0.5rem 0;
+    min-width: 120px;
+    text-align: center;
+
+    .dropdown-item {
+      color: $text-light;
+      font-weight: 500;
+
+      &:hover {
+        background-color: $highlight;
+        color: $accent;
+      }
+    }
+  }
+}
+
+/* Hide on mobile */
 .hide-on-mobile {
   @media (max-width: 768px) {
     display: none !important;
   }
 }
 
+/* Responsive Navbar Layout */
 @media (max-width: 1024px) {
   .navbar {
     flex-direction: column;
@@ -318,4 +314,3 @@ html[dir="ltr"] {
     }
   }
 }
-
