@@ -16,6 +16,10 @@ html[dir="rtl"] {
     justify-content: space-between;
   }
 
+  .nav-icon {
+    flex-direction: row-reverse;
+  }
+  
   .navbar-nav {
     flex-direction: row-reverse;
   }
