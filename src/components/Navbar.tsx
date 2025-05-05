@@ -11,16 +11,18 @@ import {
 } from "react-icons/fa";
 import { useCart } from "../components/CartContext";
 import { useAuth } from "../components/AuthContext";
+import { useTranslation } from "react-i18next";
 
 const AppNavbar: React.FC = () => {
   const [darkMode, setDarkMode] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
   const [searchTerm, setSearchTerm] = useState(""); 
   const [bounce, setBounce] = useState(false);
+  const { t, i18n } = useTranslation();
 
+  const navigate = useNavigate();
   const { openCart, cartItems } = useCart();
   const { isAuthenticated, logout } = useAuth();
-  const navigate = useNavigate();
 
   const toggleDarkMode = () => {
     const newMode = !darkMode;
@@ -29,12 +31,17 @@ const AppNavbar: React.FC = () => {
     localStorage.setItem("darkMode", String(newMode));
   };
 
+  const toggleLanguage = () => {
+    const newLang = i18n.language === "en" ? "ar" : "en";
+    i18n.changeLanguage(newLang);
+    document.documentElement.dir = newLang === "ar" ? "rtl" : "ltr";
+  };
+
   useEffect(() => {
     const savedMode = localStorage.getItem("darkMode") === "true";
     setDarkMode(savedMode);
     document.documentElement.classList.toggle("dark-mode", savedMode);
   }, []);
-
 
   const totalItemCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
@@ -88,12 +95,10 @@ const AppNavbar: React.FC = () => {
   };
 
   const handleSearchKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter") {
-      if (searchTerm.trim()) {
-        navigate(`/products?search=${encodeURIComponent(searchTerm.trim())}`);
-        setShowSearch(false);
-        setSearchTerm("");
-      }
+    if (e.key === "Enter" && searchTerm.trim()) {
+      navigate(`/products?search=${encodeURIComponent(searchTerm.trim())}`);
+      setShowSearch(false);
+      setSearchTerm("");
     }
   };
 
@@ -119,21 +124,21 @@ const AppNavbar: React.FC = () => {
         <div className="collapse navbar-collapse justify-content-between" id="mainNavbar">
           <ul className="navbar-nav mx-auto mb-2 mb-md-0 gap-3">
             <li className="nav-item">
-              <NavLink className="nav-link" to="/products">Devices</NavLink>
+              <NavLink className="nav-link" to="/products">{t("devices")}</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/about">About</NavLink>
+              <NavLink className="nav-link" to="/about">{t("about")}</NavLink>
             </li>
           </ul>
 
           <div className="d-flex align-items-center gap-3 icon-group">
             <div className={`search-wrapper ${showSearch ? "expanded-wrapper" : "hide-on-mobile"}`}>
-              <span title="Search" onClick={() => setShowSearch(!showSearch)} style={{ cursor: "pointer" }}>
+              <span title={t("search")} onClick={() => setShowSearch(!showSearch)} style={{ cursor: "pointer" }}>
                 <FaSearch />
               </span>
               <input
                 type="text"
-                placeholder="Search..."
+                placeholder={t("search_placeholder")}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 onKeyDown={handleSearchKeyPress}
@@ -141,26 +146,30 @@ const AppNavbar: React.FC = () => {
               />
             </div>
 
-            <span title="Toggle Dark Mode" className="hide-on-mobile" onClick={toggleDarkMode} style={{ cursor: "pointer" }}>
+            <span title={t("dark_mode")} className="hide-on-mobile" onClick={toggleDarkMode} style={{ cursor: "pointer" }}>
               {darkMode ? <FaSun /> : <FaMoon />}
             </span>
 
-            <span title="Cart" onClick={openCart} className="cart-icon" style={{ cursor: "pointer" }}>
+            <span title={t("cart")} onClick={openCart} className="cart-icon" style={{ cursor: "pointer" }}>
               <FaShoppingCart />
               {totalItemCount > 0 && (
                 <span className={`cart-badge ${bounce ? "bounce-cart" : ""}`}>{totalItemCount}</span>
               )}
             </span>
 
-            <span title="Profile" onClick={handleUserClick} style={{ cursor: "pointer" }}>
+            <span title={t("profile")} onClick={handleUserClick} style={{ cursor: "pointer" }}>
               <FaUser />
             </span>
 
             {isAuthenticated && (
-              <span title="Logout" onClick={handleLogout} style={{ cursor: "pointer" }}>
+              <span title={t("logout")} onClick={handleLogout} style={{ cursor: "pointer" }}>
                 <FaSignOutAlt />
               </span>
             )}
+
+            <button onClick={toggleLanguage} className="btn btn-sm btn-outline-secondary">
+              {i18n.language === "en" ? "العربية" : "English"}
+            </button>
           </div>
         </div>
       </div>
