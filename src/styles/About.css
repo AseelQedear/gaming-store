@@ -224,6 +224,9 @@ html[dir=rtl] .about-page-section .container {
   text-align: right;
   align-items: flex-end;
 }
+html[dir=rtl] .about-page-section .fun-fact {
+  direction: rtl;
+}
 html[dir=rtl] .about-page-section .timeline-horizontal {
   direction: rtl;
 }
