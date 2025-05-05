@@ -1,10 +1,12 @@
 @use "./variables" as *;
 @use "./animations" as *;
 @use "./base" as *;
+
 :root {
   direction: ltr;
 }
 
+/* RTL Layout */
 html[dir="rtl"],
 body[dir="rtl"] {
   direction: rtl;
@@ -13,11 +15,12 @@ body[dir="rtl"] {
   .navbar {
     .container-fluid {
       flex-direction: row-reverse;
+      justify-content: space-between;
     }
 
     .navbar-brand {
-      margin-left: 0;
       margin-right: auto;
+      margin-left: 0;
     }
 
     .navbar-nav {
@@ -25,8 +28,8 @@ body[dir="rtl"] {
     }
 
     .navbar-toggler {
-      margin-left: 0;
       margin-right: auto;
+      margin-left: 0;
     }
 
     .navbar-collapse.collapse.show {
@@ -72,20 +75,27 @@ body[dir="rtl"] {
   }
 }
 
+/* LTR Layout */
 html[dir="ltr"] {
   .navbar {
+    .container-fluid {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
     .navbar-brand {
-      margin-right: 0;
       margin-left: auto;
+      margin-right: 0;
     }
 
     .navbar-toggler {
-      margin-right: 0;
       margin-left: auto;
+      margin-right: 0;
     }
   }
 }
 
+/* Language Dropdown Styling */
 .lang-dropdown {
   .dropdown-toggle {
     min-width: 110px;

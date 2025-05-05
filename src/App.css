@@ -215,6 +215,7 @@ h1, h2, h3, h6,
   direction: ltr;
 }
 
+/* RTL Layout */
 html[dir=rtl],
 body[dir=rtl] {
   direction: rtl;
@@ -223,11 +224,12 @@ body[dir=rtl] {
 html[dir=rtl] .navbar .container-fluid,
 body[dir=rtl] .navbar .container-fluid {
   flex-direction: row-reverse;
+  justify-content: space-between;
 }
 html[dir=rtl] .navbar .navbar-brand,
 body[dir=rtl] .navbar .navbar-brand {
-  margin-left: 0;
   margin-right: auto;
+  margin-left: 0;
 }
 html[dir=rtl] .navbar .navbar-nav,
 body[dir=rtl] .navbar .navbar-nav {
@@ -235,8 +237,8 @@ body[dir=rtl] .navbar .navbar-nav {
 }
 html[dir=rtl] .navbar .navbar-toggler,
 body[dir=rtl] .navbar .navbar-toggler {
-  margin-left: 0;
   margin-right: auto;
+  margin-left: 0;
 }
 html[dir=rtl] .navbar .navbar-collapse.collapse.show,
 body[dir=rtl] .navbar .navbar-collapse.collapse.show {
@@ -278,15 +280,21 @@ body[dir=rtl] .profile-menu .dropdown-menu {
   }
 }
 
+/* LTR Layout */
+html[dir=ltr] .navbar .container-fluid {
+  flex-direction: row;
+  justify-content: space-between;
+}
 html[dir=ltr] .navbar .navbar-brand {
-  margin-right: 0;
   margin-left: auto;
+  margin-right: 0;
 }
 html[dir=ltr] .navbar .navbar-toggler {
-  margin-right: 0;
   margin-left: auto;
+  margin-right: 0;
 }
 
+/* Language Dropdown Styling */
 .lang-dropdown .dropdown-toggle {
   min-width: 110px;
   color: #D4ADFC;
