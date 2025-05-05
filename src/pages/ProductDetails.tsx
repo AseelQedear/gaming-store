@@ -17,17 +17,18 @@ const ProductDetails: React.FC = () => {
 
   useEffect(() => {
     const fetchProduct = async () => {
-      if (name) {
-        try {
-          const response = await axios.get(
-            `https://gaming-store-production.up.railway.app/api/device/name/${encodeURIComponent(name)}`
-          );
-          setProduct(response.data);
-        } catch (err) {
-          setError(t("product_details.error_loading"));
-        }
-      } else {
+      if (!name) {
         setError(t("product_details.missing_name"));
+        return;
+      }
+
+      try {
+        const response = await axios.get(
+          `https://gaming-store-production.up.railway.app/api/device/name/${encodeURIComponent(name)}`
+        );
+        setProduct(response.data);
+      } catch {
+        setError(t("product_details.error_loading"));
       }
     };
 
@@ -117,7 +118,7 @@ const ProductDetails: React.FC = () => {
               </span>
             )}
 
-            {product.specifications && product.specifications.length > 0 && (
+            {product.specifications?.length > 0 && (
               <div className="product-specs mt-5">
                 <h4 className="section-title mb-3">
                   {t("product_details.specifications")}

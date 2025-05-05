@@ -69,7 +69,17 @@
       "sort_default": "Default",
       "sort_price_high": "Highest Price",
       "sort_price_low": "Lowest Price",
-      "error_loading": "Failed to load products."
+      "error_loading": "Failed to load products.",
+      "offers": {
+        "steam_deck_offer": "Free shipping + 200 games",
+        "steam_deck_limited_offer": "Exclusive colorway + travel case",
+        "rog_ally_meta_offer": "Free shipping + Meta+ subscription",
+        "rog_ally_budget_offer": "Budget-friendly bundle with charger",
+        "legion_go_offer": "3 Months Xbox Game Pass + 200 Games",
+        "msi_claw_wrath_offer": "Get Asgard’s Wrath 2 with purchase",
+        "msi_claw_pouch_offer": "Includes exclusive MSI travel pouch",
+        "default": ""
+      }
     },
     "product_card": {
       "wishlist": "Add to Wishlist",

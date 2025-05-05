@@ -13,6 +13,7 @@ interface ProductProps {
     image: string;
     type: string;
     offer: string;
+    offerKey?: string; // Added support for optional offerKey
     available: boolean;
     bestDeal: boolean;
     discounted: boolean;
@@ -84,7 +85,12 @@ const ProductCard: React.FC<ProductProps> = ({
           </div>
         )}
       </div>
-      <p className="offer-line mt-2">{product.offer}</p>
+
+      <p className="offer-line mt-2">
+        {t(`products.offers.${product.offerKey || "default"}`, {
+          defaultValue: product.offer,
+        })}
+      </p>
 
       <div className="mt-3">
         {product.available ? (
