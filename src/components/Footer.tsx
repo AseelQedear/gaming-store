@@ -2,10 +2,11 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 const Footer: React.FC = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const dir = i18n.language === "ar" ? "rtl" : "ltr";
 
   return (
-    <footer className="site-footer mt-5 text-light">
+    <footer className="site-footer mt-5 text-light" dir={dir}>
       <div className="container py-5">
         <div className="row g-4">
           {/* Logo & Rights */}
