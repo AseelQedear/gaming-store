@@ -1,7 +1,6 @@
 @use "./variables" as *;
 @use "./animations" as *;
 @use "./base" as *;
-
 :root {
   direction: ltr;
 }
@@ -16,13 +15,18 @@ body[dir="rtl"] {
       flex-direction: row-reverse;
     }
 
+    .navbar-brand {
+      margin-left: 0;
+      margin-right: auto;
+    }
+
     .navbar-nav {
       flex-direction: row-reverse;
     }
 
     .navbar-toggler {
-      margin-right: auto;
       margin-left: 0;
+      margin-right: auto;
     }
 
     .navbar-collapse.collapse.show {
@@ -64,6 +68,20 @@ body[dir="rtl"] {
     .navbar .icon-group {
       justify-content: flex-end;
       padding: 0 1rem 1rem 0;
+    }
+  }
+}
+
+html[dir="ltr"] {
+  .navbar {
+    .navbar-brand {
+      margin-right: 0;
+      margin-left: auto;
+    }
+
+    .navbar-toggler {
+      margin-right: 0;
+      margin-left: auto;
     }
   }
 }

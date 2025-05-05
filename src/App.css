@@ -224,14 +224,19 @@ html[dir=rtl] .navbar .container-fluid,
 body[dir=rtl] .navbar .container-fluid {
   flex-direction: row-reverse;
 }
+html[dir=rtl] .navbar .navbar-brand,
+body[dir=rtl] .navbar .navbar-brand {
+  margin-left: 0;
+  margin-right: auto;
+}
 html[dir=rtl] .navbar .navbar-nav,
 body[dir=rtl] .navbar .navbar-nav {
   flex-direction: row-reverse;
 }
 html[dir=rtl] .navbar .navbar-toggler,
 body[dir=rtl] .navbar .navbar-toggler {
-  margin-right: auto;
   margin-left: 0;
+  margin-right: auto;
 }
 html[dir=rtl] .navbar .navbar-collapse.collapse.show,
 body[dir=rtl] .navbar .navbar-collapse.collapse.show {
@@ -271,6 +276,15 @@ body[dir=rtl] .profile-menu .dropdown-menu {
     justify-content: flex-end;
     padding: 0 1rem 1rem 0;
   }
+}
+
+html[dir=ltr] .navbar .navbar-brand {
+  margin-right: 0;
+  margin-left: auto;
+}
+html[dir=ltr] .navbar .navbar-toggler {
+  margin-right: 0;
+  margin-left: auto;
 }
 
 .lang-dropdown .dropdown-toggle {
