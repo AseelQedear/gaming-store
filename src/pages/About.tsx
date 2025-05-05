@@ -47,8 +47,8 @@ const About: React.FC = () => {
         <p className="about-description">{t("about_page.mission_paragraph2")}</p>
 
         <div className="fun-fact mt-5">
-          <span>🎮 {t("about.fun_fact")}</span>
-        </div>
+        <span>🎮 {t("about_page.fun_fact")}</span>
+      </div>
 
       </div>
     </section>
