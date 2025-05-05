@@ -16,12 +16,13 @@
       "contact_us": "Contact Us"
     },
     "home": {
-      "hero_title": "Cila — The Pixel Playground",
+      "hero_title": "The Pixel Playground",
       "hero_subtitle": "Power up your game with the best handheld consoles.",
       "hero_button": "ENTER THE ARCADE",
       "explore_devices": "🔹 Explore Devices",
       "popular_deals": "🔥 Popular Deals",
       "why_choose": "💡 Why Gamers Choose Cila",
+      "error_loading_products": "Failed to load products.",
       "features": {
         "fast_delivery": {
           "title": "Lightning Fast Delivery",

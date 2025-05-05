@@ -22,10 +22,9 @@ const Home: React.FC = () => {
         const response = await axios.get("https://gaming-store-production.up.railway.app/api/device");
         setDevices(response.data);
       } catch (err) {
-        setError(t("home.error_loading_products")); // <-- if defined
+        setError(t("home.error_loading_products"));
       }
     };
-
     fetchDevices();
   }, [t]);
 
@@ -52,7 +51,7 @@ const Home: React.FC = () => {
             className="hero-sprite d-none d-md-block"
           />
           <div className="text-zone">
-            <h1 className="hero-title">{t("home.hero_title")}</h1>
+            <h1 className="hero-title">Cila — {t("home.hero_title")}</h1>
             <p className="hero-subtitle typewriter">{t("home.hero_subtitle")}</p>
             <a href="/products" className="btn btn-cta mt-4">
               {t("home.hero_button")}
