@@ -79,11 +79,11 @@ html[dir="rtl"] .about-page-section {
     align-items: flex-end;
   }
 
-  .fun-fact {
+  html[dir="rtl"] .fun-fact {
     direction: rtl;
     text-align: right;
 
-    html[dir="rtl"] .fun-fact span {
+    .fun-fact span {
       unicode-bidi: plaintext;
       direction: rtl;
       text-align: right;

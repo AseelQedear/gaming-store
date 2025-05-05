@@ -224,11 +224,11 @@ html[dir=rtl] .about-page-section .container {
   text-align: right;
   align-items: flex-end;
 }
-html[dir=rtl] .about-page-section .fun-fact {
+html[dir=rtl] .about-page-section html[dir=rtl] .fun-fact {
   direction: rtl;
   text-align: right;
 }
-html[dir=rtl] .about-page-section .fun-fact html[dir=rtl] .fun-fact span {
+html[dir=rtl] .about-page-section html[dir=rtl] .fun-fact .fun-fact span {
   unicode-bidi: plaintext;
   direction: rtl;
   text-align: right;
