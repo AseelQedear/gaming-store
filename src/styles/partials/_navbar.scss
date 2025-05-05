@@ -2,6 +2,107 @@
 @use "./animations" as *;
 @use "./base" as *;
 
+:root {
+  direction: ltr;
+}
+
+html[dir="rtl"],
+body[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+
+  .navbar {
+    .container-fluid {
+      flex-direction: row-reverse;
+    }
+
+    .navbar-nav {
+      flex-direction: row-reverse;
+    }
+
+    .navbar-toggler {
+      margin-right: auto;
+      margin-left: 0;
+    }
+
+    .navbar-collapse.collapse.show {
+      align-items: flex-end;
+    }
+
+    .navbar-nav .nav-link {
+      border-bottom: none;
+
+      &.active {
+        border-bottom: 2px solid $accent;
+      }
+    }
+
+    .icon-group {
+      flex-direction: row-reverse;
+    }
+  }
+
+  .cart-icon .cart-badge {
+    right: auto;
+    left: -15px;
+  }
+
+  .profile-menu {
+    .dropdown-menu {
+      left: auto;
+      right: 0;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .navbar .navbar-nav {
+      align-items: flex-end;
+      padding-right: 1rem;
+      padding-left: 0;
+    }
+
+    .navbar .icon-group {
+      justify-content: flex-end;
+      padding: 0 1rem 1rem 0;
+    }
+  }
+}
+
+.lang-dropdown {
+  .dropdown-toggle {
+    min-width: 110px;
+    color: $accent;
+    border-color: $accent;
+
+    &:hover {
+      background-color: $highlight;
+      color: $text-light;
+    }
+
+    svg {
+      font-size: 1rem;
+    }
+  }
+
+  .dropdown-menu {
+    background-color: $primary-bg;
+    border: 1px solid $highlight;
+    padding: 0.5rem 0;
+    min-width: 120px;
+    text-align: center;
+
+    .dropdown-item {
+      color: $text-light;
+      font-weight: 500;
+
+      &:hover {
+        background-color: $highlight;
+        color: $accent;
+      }
+    }
+  }
+}
+
 .navbar {
   background-color: #070e3e !important;
   height: 72px;

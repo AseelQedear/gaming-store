@@ -187,6 +187,12 @@ h1, h2, h3, h6,
   font-family: "Pixelify Sans", sans-serif;
 }
 
+.sr-symbol {
+  font-family: "Arshid", sans-serif;
+  font-size: 1.1em;
+  margin-inline-end: 4px;
+}
+
 .cart-backdrop {
   position: fixed;
   top: 0;
@@ -203,6 +209,96 @@ h1, h2, h3, h6,
   text-align: center;
   color: #ccc;
   font-size: 1rem;
+}
+
+:root {
+  direction: ltr;
+}
+
+html[dir=rtl],
+body[dir=rtl] {
+  direction: rtl;
+  text-align: right;
+}
+html[dir=rtl] .navbar .container-fluid,
+body[dir=rtl] .navbar .container-fluid {
+  flex-direction: row-reverse;
+}
+html[dir=rtl] .navbar .navbar-nav,
+body[dir=rtl] .navbar .navbar-nav {
+  flex-direction: row-reverse;
+}
+html[dir=rtl] .navbar .navbar-toggler,
+body[dir=rtl] .navbar .navbar-toggler {
+  margin-right: auto;
+  margin-left: 0;
+}
+html[dir=rtl] .navbar .navbar-collapse.collapse.show,
+body[dir=rtl] .navbar .navbar-collapse.collapse.show {
+  align-items: flex-end;
+}
+html[dir=rtl] .navbar .navbar-nav .nav-link,
+body[dir=rtl] .navbar .navbar-nav .nav-link {
+  border-bottom: none;
+}
+html[dir=rtl] .navbar .navbar-nav .nav-link.active,
+body[dir=rtl] .navbar .navbar-nav .nav-link.active {
+  border-bottom: 2px solid #D4ADFC;
+}
+html[dir=rtl] .navbar .icon-group,
+body[dir=rtl] .navbar .icon-group {
+  flex-direction: row-reverse;
+}
+html[dir=rtl] .cart-icon .cart-badge,
+body[dir=rtl] .cart-icon .cart-badge {
+  right: auto;
+  left: -15px;
+}
+html[dir=rtl] .profile-menu .dropdown-menu,
+body[dir=rtl] .profile-menu .dropdown-menu {
+  left: auto;
+  right: 0;
+}
+@media (max-width: 1024px) {
+  html[dir=rtl] .navbar .navbar-nav,
+  body[dir=rtl] .navbar .navbar-nav {
+    align-items: flex-end;
+    padding-right: 1rem;
+    padding-left: 0;
+  }
+  html[dir=rtl] .navbar .icon-group,
+  body[dir=rtl] .navbar .icon-group {
+    justify-content: flex-end;
+    padding: 0 1rem 1rem 0;
+  }
+}
+
+.lang-dropdown .dropdown-toggle {
+  min-width: 110px;
+  color: #D4ADFC;
+  border-color: #D4ADFC;
+}
+.lang-dropdown .dropdown-toggle:hover {
+  background-color: #5C469C;
+  color: #ffffff;
+}
+.lang-dropdown .dropdown-toggle svg {
+  font-size: 1rem;
+}
+.lang-dropdown .dropdown-menu {
+  background-color: #0C134F;
+  border: 1px solid #5C469C;
+  padding: 0.5rem 0;
+  min-width: 120px;
+  text-align: center;
+}
+.lang-dropdown .dropdown-menu .dropdown-item {
+  color: #ffffff;
+  font-weight: 500;
+}
+.lang-dropdown .dropdown-menu .dropdown-item:hover {
+  background-color: #5C469C;
+  color: #D4ADFC;
 }
 
 .navbar {
@@ -1602,6 +1698,18 @@ html.dark-mode .about-page-section .timeline-horizontal .timeline-track .timelin
   max-width: none;
   padding: 0;
   margin: 0;
+}
+
+@font-face {
+  font-family: "Arshid";
+  src: url("/fonts/Arshid.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+.sr-symbol {
+  font-family: "Arshid", sans-serif;
+  font-size: 1.1em;
+  margin-inline-end: 4px;
 }
 
 main,

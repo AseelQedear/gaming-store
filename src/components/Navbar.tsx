@@ -8,6 +8,7 @@ import {
   FaSearch,
   FaGamepad,
   FaSignOutAlt,
+  FaGlobe,
 } from "react-icons/fa";
 import { useCart } from "../components/CartContext";
 import { useAuth } from "../components/AuthContext";
@@ -16,25 +17,24 @@ import { useTranslation } from "react-i18next";
 const AppNavbar: React.FC = () => {
   const [darkMode, setDarkMode] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
-  const [searchTerm, setSearchTerm] = useState(""); 
+  const [searchTerm, setSearchTerm] = useState("");
   const [bounce, setBounce] = useState(false);
-  const { t, i18n } = useTranslation();
 
+  const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const { openCart, cartItems } = useCart();
   const { isAuthenticated, logout } = useAuth();
+
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
+    document.documentElement.dir = lng === "ar" ? "rtl" : "ltr";
+  };
 
   const toggleDarkMode = () => {
     const newMode = !darkMode;
     setDarkMode(newMode);
     document.documentElement.classList.toggle("dark-mode", newMode);
     localStorage.setItem("darkMode", String(newMode));
-  };
-
-  const toggleLanguage = () => {
-    const newLang = i18n.language === "en" ? "ar" : "en";
-    i18n.changeLanguage(newLang);
-    document.documentElement.dir = newLang === "ar" ? "rtl" : "ltr";
   };
 
   useEffect(() => {
@@ -132,6 +132,7 @@ const AppNavbar: React.FC = () => {
           </ul>
 
           <div className="d-flex align-items-center gap-3 icon-group">
+            {/* Search */}
             <div className={`search-wrapper ${showSearch ? "expanded-wrapper" : "hide-on-mobile"}`}>
               <span title={t("search")} onClick={() => setShowSearch(!showSearch)} style={{ cursor: "pointer" }}>
                 <FaSearch />
@@ -146,10 +147,12 @@ const AppNavbar: React.FC = () => {
               />
             </div>
 
+            {/* Dark Mode */}
             <span title={t("dark_mode")} className="hide-on-mobile" onClick={toggleDarkMode} style={{ cursor: "pointer" }}>
               {darkMode ? <FaSun /> : <FaMoon />}
             </span>
 
+            {/* Cart */}
             <span title={t("cart")} onClick={openCart} className="cart-icon" style={{ cursor: "pointer" }}>
               <FaShoppingCart />
               {totalItemCount > 0 && (
@@ -157,19 +160,42 @@ const AppNavbar: React.FC = () => {
               )}
             </span>
 
+            {/* Profile */}
             <span title={t("profile")} onClick={handleUserClick} style={{ cursor: "pointer" }}>
               <FaUser />
             </span>
 
+            {/* Logout */}
             {isAuthenticated && (
               <span title={t("logout")} onClick={handleLogout} style={{ cursor: "pointer" }}>
                 <FaSignOutAlt />
               </span>
             )}
 
-            <button onClick={toggleLanguage} className="btn btn-sm btn-outline-secondary">
-              {i18n.language === "en" ? "العربية" : "English"}
-            </button>
+            {/* Language Dropdown */}
+            <div className="dropdown lang-dropdown">
+              <button
+                className="btn btn-sm btn-outline-secondary dropdown-toggle d-flex align-items-center gap-2"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <FaGlobe />
+                {i18n.language === "en" ? "English" : "العربية"}
+              </button>
+              <ul className="dropdown-menu">
+                <li>
+                  <button className="dropdown-item d-flex align-items-center gap-2" onClick={() => changeLanguage("en")}>
+                    🇺🇸 English
+                  </button>
+                </li>
+                <li>
+                  <button className="dropdown-item d-flex align-items-center gap-2" onClick={() => changeLanguage("ar")}>
+                    🇸🇦 العربية
+                  </button>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>

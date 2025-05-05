@@ -186,6 +186,12 @@ h1, h2, h3, h6,
   font-family: "Pixelify Sans", sans-serif;
 }
 
+.sr-symbol {
+  font-family: "Arshid", sans-serif;
+  font-size: 1.1em;
+  margin-inline-end: 4px;
+}
+
 .cart-backdrop {
   position: fixed;
   top: 0;
