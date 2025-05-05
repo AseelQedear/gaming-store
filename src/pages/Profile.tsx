@@ -9,6 +9,8 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useTranslation } from "react-i18next";
+
 
 interface UserInfo {
   firstName: string;
@@ -53,9 +55,9 @@ interface Favorite {
 }
 
 const Profile: React.FC = () => {
-  const [userInfo, setUserInfo] = useState<UserInfo | null>(null);
-  const [orders, setOrders] = useState<Order[]>([]);
-  const [favorites, setFavorites] = useState<Favorite[]>([]);
+  const [userInfo, setUserInfo] = useState<any>(null);
+  const [orders, setOrders] = useState<any[]>([]);
+  const [favorites, setFavorites] = useState<any[]>([]);
   const [error, setError] = useState<string | null>(null);
 
   const [editMode, setEditMode] = useState(false);
@@ -63,7 +65,6 @@ const Profile: React.FC = () => {
   const [phoneInput, setPhoneInput] = useState("");
   const [currentPassword, setCurrentPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
-  const [updateMsg, setUpdateMsg] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -72,6 +73,7 @@ const Profile: React.FC = () => {
   const { user, isAuthenticated } = useAuth();
   const { addToCart } = useCart();
   const { wishlist, toggleWishlist } = useWishlist();
+  const { t } = useTranslation();
 
   useEffect(() => {
     AOS.init({ duration: 1000, once: true, offset: 100 });
@@ -85,9 +87,8 @@ const Profile: React.FC = () => {
 
     const fetchProfile = async () => {
       try {
-        const token = user.token;
         const res = await axios.get("https://gaming-store-production.up.railway.app/api/user/profile", {
-          headers: { Authorization: `Bearer ${token}` },
+          headers: { Authorization: `Bearer ${user.token}` },
         });
 
         setUserInfo({
@@ -103,44 +104,31 @@ const Profile: React.FC = () => {
         const ordersFromProfile = (res.data.orders || []).map((order: any) => ({
           id: order.id,
           orderDate: order.orderDate,
-          shippingMethod: order.shippingMethod || "Standard",
+          shippingMethod: order.shippingMethod || t("profile_page.standard_shipping"),
           total: order.devices.reduce((sum: number, d: any) => sum + d.orderPrice, 0),
           orderItems: order.devices.map((d: any, i: number) => ({
             id: i,
             quantity: d.quantity,
             price: d.orderPrice,
             variant: d.variant || "",
-            device: {
-              id: d.id,
-              name: d.name,
-              price: d.price,
-              oldPrice: d.oldPrice,
-              percent: d.percent,
-              image: d.image,
-              type: d.type,
-              offer: d.offer,
-              available: d.available,
-              bestDeal: d.bestDeal,
-              discounted: d.discounted,
-              specs: d.specifications,
-            },
+            device: { ...d, specs: d.specifications },
           })),
         }));
         setOrders(ordersFromProfile);
 
         const validFavorites = (res.data.favorites || [])
-          .map((f: { device?: Device; Device?: Device }) => ({
-            device: f.device || f.Device,
-          }))
-          .filter((f: { device?: Device }): f is Favorite => !!f.device);
-        setFavorites(validFavorites);
-      } catch (err) {
-        setError("Failed to fetch profile data.");
+        .map((f: { device?: Device; Device?: Device }) => ({
+          device: f.device || f.Device
+        }))
+        .filter((f: { device?: Device }) => !!f.device)
+                setFavorites(validFavorites);
+      } catch {
+        setError(t("profile_page.fetch_error"));
       }
     };
 
     fetchProfile();
-  }, [isAuthenticated, user, navigate]);
+  }, [isAuthenticated, user, navigate, t]);
 
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
@@ -148,10 +136,10 @@ const Profile: React.FC = () => {
     const phoneRegex = /^[0-9]{10,15}$/;
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,}$/;
 
-    if (!emailRegex.test(emailInput)) newErrors.email = "Invalid email format.";
-    if (!phoneRegex.test(phoneInput)) newErrors.phone = "Phone must be 10-15 digits.";
-    if (newPassword && !passwordRegex.test(newPassword)) newErrors.newPassword = "Password must be at least 8 characters, with uppercase, number, and special character.";
-    if (newPassword && !currentPassword) newErrors.currentPassword = "Current password required to change password.";
+    if (!emailRegex.test(emailInput)) newErrors.email = t("profile_page.invalid_email");
+    if (!phoneRegex.test(phoneInput)) newErrors.phone = t("profile_page.invalid_phone");
+    if (newPassword && !passwordRegex.test(newPassword)) newErrors.newPassword = t("profile_page.weak_password");
+    if (newPassword && !currentPassword) newErrors.currentPassword = t("profile_page.require_current");
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -160,13 +148,11 @@ const Profile: React.FC = () => {
   const handleProfileUpdate = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
-    setUpdateMsg(null);
-
     if (!validateForm()) return;
     setIsSubmitting(true);
 
     try {
-      const res = await axios.put("https://gaming-store-production.up.railway.app/api/user/profile", {
+      await axios.put("https://gaming-store-production.up.railway.app/api/user/profile", {
         email: emailInput,
         phone: phoneInput,
         currentPassword: currentPassword || null,
@@ -174,76 +160,77 @@ const Profile: React.FC = () => {
       }, {
         headers: { Authorization: `Bearer ${user?.token}` },
       });
-    
-      const msg = res.data?.message || "Profile updated.";
-      setUserInfo(prev => prev ? { ...prev, email: emailInput, phone: phoneInput } : prev);
+
+      setUserInfo((prev: UserInfo | null) =>
+        prev ? { ...prev, email: emailInput, phone: phoneInput } : prev
+      );
+      
       setEditMode(false);
-      toast.success(msg);
+      toast.success(t("profile_page.update_success"));
       setErrors({});
     } catch (err: any) {
-      toast.error(err?.response?.data || "Update failed.");
+      toast.error(err?.response?.data || t("profile_page.update_failed"));
     } finally {
       setIsSubmitting(false);
-    }}
-    
+    }
+  };
 
   return (
     <div className="profile-page py-5">
-      <h1>Welcome, {userInfo?.firstName} {userInfo?.lastName}</h1>
+      <h1>{t("profile_page.greeting", { name: `${userInfo?.firstName} ${userInfo?.lastName}` })}</h1>
 
-      <h2 className="section-title" data-aos="fade-up">👤 Personal Information</h2>
+      <h2 className="section-title" data-aos="fade-up">👤 {t("profile_page.personal_info")}</h2>
       <div className="profile-info" data-aos="fade-up">
         {!editMode ? (
           <>
-            <p><strong>Email:</strong> {userInfo?.email}</p>
-            <p><strong>Phone:</strong> {userInfo?.phone}</p>
-            <button onClick={() => setEditMode(true)} style={{ backgroundColor: '#5C469C', borderRadius: '7px' }}>Edit Profile</button>
+            <p><strong>{t("profile_page.email")}:</strong> {userInfo?.email}</p>
+            <p><strong>{t("profile_page.phone")}:</strong> {userInfo?.phone}</p>
+            <button onClick={() => setEditMode(true)}>{t("profile_page.edit_btn")}</button>
           </>
         ) : (
           <form onSubmit={handleProfileUpdate} noValidate>
-            <label>Email:
+            <label>{t("profile_page.email")}
               <input type="email" value={emailInput} onChange={(e) => setEmailInput(e.target.value)} className={errors.email ? "is-invalid" : ""} />
               {errors.email && <div className="invalid-feedback">{errors.email}</div>}
             </label>
-            <label>Phone:
+            <label>{t("profile_page.phone")}
               <input type="text" value={phoneInput} onChange={(e) => setPhoneInput(e.target.value)} className={errors.phone ? "is-invalid" : ""} />
               {errors.phone && <div className="invalid-feedback">{errors.phone}</div>}
             </label>
-            <label>Current Password:
+            <label>{t("profile_page.current_password")}
               <input type="password" value={currentPassword} onChange={(e) => setCurrentPassword(e.target.value)} className={errors.currentPassword ? "is-invalid" : ""} />
               {errors.currentPassword && <div className="invalid-feedback">{errors.currentPassword}</div>}
             </label>
-            <label>New Password:
+            <label>{t("profile_page.new_password")}
               <input type="password" value={newPassword} onChange={(e) => setNewPassword(e.target.value)} className={errors.newPassword ? "is-invalid" : ""} />
               {errors.newPassword && <div className="invalid-feedback">{errors.newPassword}</div>}
             </label>
             <div className="form-actions">
-              <button type="submit" disabled={isSubmitting}>Save</button>
-              <button type="button" onClick={() => setEditMode(false)}>Cancel</button>
+              <button type="submit" disabled={isSubmitting}>{t("profile_page.save")}</button>
+              <button type="button" onClick={() => setEditMode(false)}>{t("profile_page.cancel")}</button>
             </div>
-            {updateMsg && <p className="update-message">{updateMsg}</p>}
           </form>
         )}
       </div>
 
       <section className="orders-section" data-aos="fade-up">
-        <h2 className="section-title" >🛒 Orders</h2>
+        <h2 className="section-title">🛒 {t("profile_page.orders")}</h2>
         {orders.length === 0 ? (
-          <p className="no-data-message">No orders found.</p>
+          <p className="no-data-message">{t("profile_page.no_orders")}</p>
         ) : (
           <div className="orders-list">
             {orders.map((order) => (
               <div key={order.id} className="order-block">
-                <h5>Order #{order.id}</h5>
-                <p>Ordered on: {new Date(order.orderDate).toLocaleDateString()}</p>
-                <p>Shipping: {order.shippingMethod}</p>
-                <p>Total: ${order.total.toFixed(2)}</p>
+                <h5>{t("profile_page.order")} #{order.id}</h5>
+                <p>{t("profile_page.ordered_on")}: {new Date(order.orderDate).toLocaleDateString()}</p>
+                <p>{t("profile_page.shipping")}: {order.shippingMethod}</p>
+                <p>{t("profile_page.total")}: ${order.total.toFixed(2)}</p>
                 <div className="order-items-row">
-                  {order.orderItems.map((item) => (
+                {order.orderItems.map((item: OrderItem) => (
                     <div className="product-summary" key={item.id}>
                       <img src={item.device.image} alt={item.device.name} />
                       <p className="name">{item.device.name}</p>
-                      <p>Qty: {item.quantity}</p>
+                      <p>{t("profile_page.qty")}: {item.quantity}</p>
                       <p><span className="sr-symbol">$</span>{item.price.toFixed(2)}</p>
                     </div>
                   ))}
@@ -255,20 +242,15 @@ const Profile: React.FC = () => {
       </section>
 
       <div className="favorites-section" data-aos="fade-up">
-        <h2 className="section-title">❤️ Favorite Products</h2>
+        <h2 className="section-title">❤️ {t("profile_page.favorites")}</h2>
         {favorites.length === 0 ? (
-          <p className="no-data-message">No favorites yet.</p>
+          <p className="no-data-message">{t("profile_page.no_favorites")}</p>
         ) : (
           <div className="favorites-list">
             {favorites.map((fav) => (
               <div className="favorite-tile" key={fav.device.id}>
                 <div className="tile-header">
-                  <span
-                    className={`wishlist-icon ${wishlist.includes(fav.device.id) ? "active" : ""}`}
-                    onClick={() => toggleWishlist(fav.device.id)}
-                  >
-                    ♥
-                  </span>
+                  <span className={`wishlist-icon ${wishlist.includes(fav.device.id) ? "active" : ""}`} onClick={() => toggleWishlist(fav.device.id)}>♥</span>
                 </div>
                 <img src={fav.device.image} alt={fav.device.name} />
                 <div className="info">
@@ -295,7 +277,7 @@ const Profile: React.FC = () => {
                       })
                     }
                   >
-                    Add to Cart
+                    {t("product_card.add_to_cart")}
                   </button>
                 </div>
               </div>

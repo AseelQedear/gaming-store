@@ -155,7 +155,34 @@
         "weak_password": "Password must include uppercase, lowercase, digit, special character, and be at least 8 characters.",
         "passwords_not_matching": "Passwords do not match.",
         "unexpected_error": "An unexpected error occurred."
-    }
-
+    },
+    "profile_page": {
+        "greeting": "Welcome, {{name}}",
+        "personal_info": "Personal Information",
+        "email": "Email",
+        "phone": "Phone",
+        "edit_btn": "Edit Profile",
+        "current_password": "Current Password",
+        "new_password": "New Password",
+        "save": "Save",
+        "cancel": "Cancel",
+        "orders": "Orders",
+        "order": "Order",
+        "ordered_on": "Ordered on",
+        "shipping": "Shipping",
+        "standard_shipping": "Standard",
+        "total": "Total",
+        "qty": "Qty",
+        "favorites": "Favorite Products",
+        "no_orders": "No orders found.",
+        "no_favorites": "No favorites yet.",
+        "fetch_error": "Failed to fetch profile data.",
+        "update_success": "Profile updated successfully.",
+        "update_failed": "Update failed.",
+        "invalid_email": "Invalid email format.",
+        "invalid_phone": "Phone must be 10-15 digits.",
+        "weak_password": "Password must be at least 8 characters, with uppercase, number, and special character.",
+        "require_current": "Current password required to change password."
+        }
   }
   
