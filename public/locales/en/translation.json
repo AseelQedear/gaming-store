@@ -109,11 +109,53 @@
         "added": "Added to cart!",
         "updated": "Quantity updated!"
         },
-        "auth": {
+    "auth": {
             "token_expired": "Session expired. Please log in again.",
             "invalid_token": "Invalid token detected."
-            }
-
+            },
+    "wishlist": {
+        "fetch_error": "Failed to load favorites.",
+        "toggle_failed": "Failed to update wishlist.",
+        "toggle_error": "An error occurred while updating your wishlist."
+        },
+    "login_page": {
+        "welcome_back": "Welcome Back, Gamer!",
+        "email": "Email",
+        "password": "Password",
+        "remember_me": "Remember Me",
+        "login": "Login",
+        "no_account": "Don't have an account yet?",
+        "register_here": "Register here",
+        "email_required": "Email is required.",
+        "invalid_email": "Invalid email format.",
+        "password_required": "Password is required.",
+        "password_too_short": "Password must be at least 8 characters.",
+        "invalid_response": "Invalid server response. Token missing.",
+        "login_failed": "Login failed.",
+        "unexpected_error": "An unexpected error occurred."
+        },
+     "register_page": {
+        "title": "Join the Adventure!",
+        "first_name": "First Name",
+        "last_name": "Last Name",
+        "email": "Email",
+        "phone": "Phone",
+        "password": "Password",
+        "confirm_password": "Confirm Password",
+        "register": "Register",
+        "have_account": "Already have an account?",
+        "login_here": "Login here",
+        "first_name_required": "First name is required.",
+        "last_name_required": "Last name is required.",
+        "email_required": "Email is required.",
+        "invalid_email": "Invalid email format.",
+        "phone_required": "Phone is required.",
+        "invalid_phone": "Phone must be exactly 10 digits.",
+        "password_required": "Password is required.",
+        "weak_password": "Password must include uppercase, lowercase, digit, special character, and be at least 8 characters.",
+        "passwords_not_matching": "Passwords do not match.",
+        "unexpected_error": "An unexpected error occurred."
+    }
 
   }
   
