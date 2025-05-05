@@ -3,6 +3,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { CartItem } from "./CartContext";
 import "../styles/CartDrawer.scss";
+import { useTranslation } from "react-i18next";
 
 interface CartDrawerProps {
   isOpen: boolean;
@@ -12,13 +13,20 @@ interface CartDrawerProps {
   onRemoveItem: (id: number) => void;
 }
 
-const CartDrawer = ({ isOpen, onClose, cartItems, onQuantityChange, onRemoveItem }: CartDrawerProps) => {
+const CartDrawer = ({
+  isOpen,
+  onClose,
+  cartItems,
+  onQuantityChange,
+  onRemoveItem,
+}: CartDrawerProps) => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const subtotal = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
 
   const handleCheckout = () => {
     if (cartItems.length === 0) {
-      toast.warning("🛒 Your cart is empty!");
+      toast.warning(t("cart_drawer.empty_toast"));
       return;
     }
     onClose();
@@ -32,13 +40,13 @@ const CartDrawer = ({ isOpen, onClose, cartItems, onQuantityChange, onRemoveItem
       {isOpen && <div className="cart-backdrop" onClick={onClose} style={{ pointerEvents: "auto" }} />}
       <div className={`cart-drawer ${isOpen ? "open" : ""}`} style={{ pointerEvents: "auto" }}>
         <div className="cart-header">
-          <h3>Cart</h3>
+          <h3>{t("cart_drawer.title")}</h3>
           <button onClick={onClose}>&times;</button>
         </div>
 
         <div className="cart-body">
           {cartItems.length === 0 ? (
-            <p className="empty-message">Your cart is empty.</p>
+            <p className="empty-message">{t("cart_drawer.empty_message")}</p>
           ) : (
             cartItems.map((item) => (
               <div key={item.id} className="cart-item">
@@ -49,12 +57,20 @@ const CartDrawer = ({ isOpen, onClose, cartItems, onQuantityChange, onRemoveItem
                   <div className="price-info">
                     {item.discounted && item.oldPrice ? (
                       <>
-                        <span className="old-price"><span className="sr-symbol">$</span>{item.oldPrice.toFixed(2)}</span>
-                        <span className="current-price"><span className="sr-symbol">$</span>{item.price.toFixed(2)}</span>
-                        {item.percent && <span className="percent-badge">-{item.percent.toFixed(0)}%</span>}
+                        <span className="old-price">
+                          <span className="sr-symbol">$</span>{item.oldPrice.toFixed(2)}
+                        </span>
+                        <span className="current-price">
+                          <span className="sr-symbol">$</span>{item.price.toFixed(2)}
+                        </span>
+                        {item.percent && (
+                          <span className="percent-badge">-{item.percent.toFixed(0)}%</span>
+                        )}
                       </>
                     ) : (
-                      <span className="current-price"><span className="sr-symbol">$</span>{item.price.toFixed(2)}</span>
+                      <span className="current-price">
+                        <span className="sr-symbol">$</span>{item.price.toFixed(2)}
+                      </span>
                     )}
                   </div>
                   <div className="qty">
@@ -67,20 +83,21 @@ const CartDrawer = ({ isOpen, onClose, cartItems, onQuantityChange, onRemoveItem
               </div>
             ))
           )}
+
           <div className="cart-summary">
-            <p>Subtotal: <span><span className="sr-symbol">$</span>{subtotal.toFixed(2)}</span></p>
-            <p>Shipping: <span><span className="sr-symbol">$</span>0.00</span></p>
-            <p>Taxes: <span><span className="sr-symbol">$</span>0.00</span></p>
-            <h5>Total: <span><span className="sr-symbol">$</span>{subtotal.toFixed(2)}</span></h5>
+            <p>{t("cart_drawer.subtotal")}: <span><span className="sr-symbol">$</span>{subtotal.toFixed(2)}</span></p>
+            <p>{t("cart_drawer.shipping")}: <span><span className="sr-symbol">$</span>0.00</span></p>
+            <p>{t("cart_drawer.taxes")}: <span><span className="sr-symbol">$</span>0.00</span></p>
+            <h5>{t("cart_drawer.total")}: <span><span className="sr-symbol">$</span>{subtotal.toFixed(2)}</span></h5>
           </div>
 
           <div className="cart-footer">
             <div className="discount-row">
-              <input type="text" placeholder="Discount code" />
-              <button className="apply-btn">Apply</button>
+              <input type="text" placeholder={t("cart_drawer.discount_placeholder")} />
+              <button className="apply-btn">{t("cart_drawer.apply")}</button>
             </div>
             <button className="checkout-btn" onClick={handleCheckout}>
-              Proceed to checkout
+              {t("cart_drawer.checkout")}
             </button>
           </div>
         </div>

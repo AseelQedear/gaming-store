@@ -94,6 +94,26 @@
       "specifications": "Specifications",
       "error_loading": "Failed to load product details.",
       "missing_name": "Product name is missing."
-    }
+    },
+    "cart_drawer": {
+        "title": "Cart",
+        "empty_message": "Your cart is empty.",
+        "empty_toast": "🛒 Your cart is empty!",
+        "subtotal": "Subtotal",
+        "shipping": "Shipping",
+        "taxes": "Taxes",
+        "total": "Total",
+        "discount_placeholder": "Discount code",
+        "apply": "Apply",
+        "checkout": "Proceed to checkout",
+        "added": "Added to cart!",
+        "updated": "Quantity updated!"
+        },
+        "auth": {
+            "token_expired": "Session expired. Please log in again.",
+            "invalid_token": "Invalid token detected."
+            }
+
+
   }
   

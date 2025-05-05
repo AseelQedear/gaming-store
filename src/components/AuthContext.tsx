@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useState, ReactNode } from "react";
+import { useTranslation } from "react-i18next"; 
 
 interface AuthContextType {
   isAuthenticated: boolean;
@@ -13,7 +14,8 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<any>(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [checkingAuth, setCheckingAuth] = useState(true); 
+  const [checkingAuth, setCheckingAuth] = useState(true);
+  const { t } = useTranslation(); 
 
   useEffect(() => {
     const storedUser = localStorage.getItem("user") || sessionStorage.getItem("user");
@@ -30,22 +32,21 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
             setUser(parsed);
             setIsAuthenticated(true);
           } else {
-            console.warn("Token expired");
+            console.warn(t("auth.token_expired")); 
             localStorage.removeItem("user");
             sessionStorage.removeItem("user");
           }
         }
       } catch (error) {
-        console.error("Invalid user data", error);
+        console.error(t("auth.invalid_token"), error); 
       }
     }
-    setCheckingAuth(false); 
-  }, []);
+    setCheckingAuth(false);
+  }, [t]);
 
   const login = (userData: any) => {
     setUser(userData);
     setIsAuthenticated(true);
-    
     localStorage.setItem("user", JSON.stringify(userData));
   };
 

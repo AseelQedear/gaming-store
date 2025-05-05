@@ -1,7 +1,9 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from "react";
+import { toast } from "react-toastify";
+import { useTranslation } from "react-i18next";
 
 export interface CartItem {
-  id: number; 
+  id: number;
   name: string;
   variant: string;
   price: number;
@@ -31,16 +33,17 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [cartLoaded, setCartLoaded] = useState(false);
 
+  const { t } = useTranslation(); // ✅ translation hook
+
   useEffect(() => {
     const savedCart = localStorage.getItem("cart");
     if (savedCart) {
       try {
         const parsed = JSON.parse(savedCart);
         if (Array.isArray(parsed)) {
-        
           const fixedItems: CartItem[] = parsed.map((item: any) => ({
             ...item,
-            id: Number(item.id), 
+            id: Number(item.id),
           }));
           setCartItems(fixedItems);
         }
@@ -80,12 +83,14 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
         (item) => item.id === newItem.id && item.variant === newItem.variant
       );
       if (existingItem) {
+        toast.info(t("cart_drawer.updated")); // 👈 Optional example
         return prev.map((item) =>
           item.id === newItem.id && item.variant === newItem.variant
             ? { ...item, quantity: item.quantity + 1 }
             : item
         );
       }
+      toast.success(t("cart_drawer.added")); // 👈 Optional example
       return [...prev, { ...newItem, quantity: 1 }];
     });
   };
