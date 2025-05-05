@@ -14,6 +14,32 @@
       "devices": "Devices",
       "about": "About",
       "contact_us": "Contact Us"
+    },
+    "home": {
+      "hero_title": "Cila — The Pixel Playground",
+      "hero_subtitle": "Power up your game with the best handheld consoles.",
+      "hero_button": "ENTER THE ARCADE",
+      "explore_devices": "🔹 Explore Devices",
+      "popular_deals": "🔥 Popular Deals",
+      "why_choose": "💡 Why Gamers Choose Cila",
+      "features": {
+        "fast_delivery": {
+          "title": "Lightning Fast Delivery",
+          "desc": "We ship with real-time tracking and secure packaging."
+        },
+        "top_brands": {
+          "title": "Top-Tier Brands",
+          "desc": "Official gear from Valve, ASUS, Lenovo, and MSI."
+        },
+        "secure_payment": {
+          "title": "Secure Payment",
+          "desc": "Encrypted checkouts and trusted providers."
+        },
+        "loved_by_gamers": {
+          "title": "Loved by Gamers",
+          "desc": "Hundreds of 5-star reviews from around the world."
+        }
+      }
     }
   }
   

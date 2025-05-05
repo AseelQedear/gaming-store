@@ -4,29 +4,30 @@ import axios from "axios";
 import ProductCard from "../components/ProductCard";
 import { useWishlist } from "../components/wishlistContext";
 import { useCart } from "../components/CartContext";
+import { useTranslation } from "react-i18next";
 import "../styles/Home.scss";
 
 const Home: React.FC = () => {
   const { wishlist, toggleWishlist } = useWishlist();
   const { addToCart } = useCart();
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const [devices, setDevices] = useState<any[]>([]);
   const [error, setError] = useState<string | null>(null);
-
 
   useEffect(() => {
     const fetchDevices = async () => {
       try {
         const response = await axios.get("https://gaming-store-production.up.railway.app/api/device");
-        setDevices(response.data); 
+        setDevices(response.data);
       } catch (err) {
-        setError("Failed to load products.");
+        setError(t("error_loading_products"));
       }
     };
 
     fetchDevices();
-  }, []);
+  }, [t]);
 
   const filteredProducts = devices
     .filter((product) => product.discounted && product.available)
@@ -51,12 +52,10 @@ const Home: React.FC = () => {
             className="hero-sprite d-none d-md-block"
           />
           <div className="text-zone">
-            <h1 className="hero-title">Cila — The Pixel Playground</h1>
-            <p className="hero-subtitle typewriter">
-              Power up your game with the best handheld consoles.
-            </p>
+            <h1 className="hero-title">{t("hero_title")}</h1>
+            <p className="hero-subtitle typewriter">{t("hero_subtitle")}</p>
             <a href="/products" className="btn btn-cta mt-4">
-              ENTER THE ARCADE
+              {t("hero_cta")}
             </a>
           </div>
         </div>
@@ -65,7 +64,7 @@ const Home: React.FC = () => {
       {/* 🕹️ Featured Devices */}
       <section className="categories-section text-center py-5">
         <h2 className="section-title mb-5" data-aos="fade-up">
-          🔹 Explore Devices
+          🔹 {t("explore_devices")}
         </h2>
         <div className="row gx-4 gy-4 px-4">
           {[
@@ -92,7 +91,7 @@ const Home: React.FC = () => {
       {/* 🔥 Popular Deals */}
       <section className="popular-section container py-5">
         <h2 className="text-center mb-5 section-title" data-aos="fade-up">
-          🔥 Popular Deals
+          🔥 {t("popular_deals")}
         </h2>
         <div className="row g-4">
           {filteredProducts.slice(0, 4).map((product, i) => (
@@ -130,28 +129,28 @@ const Home: React.FC = () => {
       {/* 💡 Why Choose Us */}
       <section className="why-choose-modern py-5 text-center" data-aos="fade-up">
         <div className="container">
-          <h2 className="section-title mb-4">💡 Why Gamers Choose Cila</h2>
+          <h2 className="section-title mb-4">💡 {t("why_choose_title")}</h2>
           <div className="row g-4 justify-content-center" data-aos="fade-up">
             {[
               {
                 icon: "🚚",
-                title: "Lightning Fast Delivery",
-                desc: "We ship with real-time tracking and secure packaging.",
+                title: t("why_fast_delivery"),
+                desc: t("why_fast_delivery_desc"),
               },
               {
                 icon: "🎮",
-                title: "Top-Tier Brands",
-                desc: "Official gear from Valve, ASUS, Lenovo, and MSI.",
+                title: t("why_top_brands"),
+                desc: t("why_top_brands_desc"),
               },
               {
                 icon: "🔐",
-                title: "Secure Payment",
-                desc: "Encrypted checkouts and trusted providers.",
+                title: t("why_secure_payment"),
+                desc: t("why_secure_payment_desc"),
               },
               {
                 icon: "⭐",
-                title: "Loved by Gamers",
-                desc: "Hundreds of 5-star reviews from around the world.",
+                title: t("why_loved_by_gamers"),
+                desc: t("why_loved_by_gamers_desc"),
               },
             ].map((item, index) => (
               <div className="col-md-3 col-sm-6" key={index}>
