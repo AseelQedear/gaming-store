@@ -81,7 +81,14 @@ html[dir="rtl"] .about-page-section {
 
   .fun-fact {
     direction: rtl;
+    text-align: right;
+    
+    .fun-fact span {
+      unicode-bidi: plaintext;
+    }
+    
   }
+
   .timeline-horizontal {
     direction: rtl;
 
