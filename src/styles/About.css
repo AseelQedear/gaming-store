@@ -217,6 +217,25 @@
   box-shadow: 0 0 18px #D4ADFC;
 }
 
+html[dir=rtl] .about-page-section {
+  text-align: right;
+}
+html[dir=rtl] .about-page-section .container {
+  text-align: right;
+  align-items: flex-end;
+}
+html[dir=rtl] .about-page-section .timeline-horizontal {
+  direction: rtl;
+}
+html[dir=rtl] .about-page-section .timeline-horizontal .timeline-track {
+  flex-direction: row-reverse;
+}
+html[dir=rtl] .about-page-section .timeline-horizontal .timeline-track .timeline-event p {
+  transform: translateX(50%);
+  left: auto;
+  right: 50%;
+}
+
 .gif-banner {
   width: 100%;
   display: flex;

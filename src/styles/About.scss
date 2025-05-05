@@ -70,6 +70,33 @@
   }
 }
 
+// RTL Support
+html[dir="rtl"] .about-page-section {
+  text-align: right;
+
+  .container {
+    text-align: right;
+    align-items: flex-end;
+  }
+
+  .timeline-horizontal {
+    direction: rtl;
+
+    .timeline-track {
+      flex-direction: row-reverse;
+
+      .timeline-event {
+        p {
+          transform: translateX(50%);
+          left: auto;
+          right: 50%;
+        }
+      }
+    }
+  }
+}
+
+// GIF Banner
 .gif-banner {
   width: 100%;
   display: flex;
@@ -92,6 +119,7 @@
   }
 }
 
+// Timeline
 .timeline-horizontal {
   margin: 1rem 0 2rem;
   padding: 2rem 1rem;
