@@ -38,7 +38,9 @@
     line-height: 2rem;
     animation: fadeIn 1.5s ease-out;
 
-    strong {
+    strong.cila {
+      direction: ltr;
+      unicode-bidi: isolate;
       color: $accent;
     }
   }
@@ -52,6 +54,21 @@
     font-size: 1.1rem;
     color: $text-light;
     animation: pulseGlow 2s infinite alternate;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3rem;
+
+    .rtl-text {
+      direction: rtl;
+      unicode-bidi: isolate;
+    }
+
+    .ltr-word {
+      direction: ltr;
+      unicode-bidi: isolate;
+      font-weight: bold;
+    }
   }
 
   .cta-button {
@@ -70,7 +87,6 @@
   }
 }
 
-// RTL Support
 html[dir="rtl"] .about-page-section {
   text-align: right;
 
@@ -79,16 +95,8 @@ html[dir="rtl"] .about-page-section {
     align-items: flex-end;
   }
 
-  html[dir="rtl"] .fun-fact {
-    direction: rtl;
+  .about-description {
     text-align: right;
-
-    .fun-fact span {
-      unicode-bidi: plaintext;
-      direction: rtl;
-      text-align: right;
-    }
-
   }
 
   .timeline-horizontal {
@@ -108,7 +116,6 @@ html[dir="rtl"] .about-page-section {
   }
 }
 
-// GIF Banner
 .gif-banner {
   width: 100%;
   display: flex;
@@ -131,7 +138,6 @@ html[dir="rtl"] .about-page-section {
   }
 }
 
-// Timeline
 .timeline-horizontal {
   margin: 1rem 0 2rem;
   padding: 2rem 1rem;

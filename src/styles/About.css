@@ -190,7 +190,9 @@
   line-height: 2rem;
   animation: fadeIn 1.5s ease-out;
 }
-.about-page-section .about-description strong {
+.about-page-section .about-description strong.cila {
+  direction: ltr;
+  unicode-bidi: isolate;
   color: #D4ADFC;
 }
 .about-page-section .fun-fact {
@@ -202,6 +204,19 @@
   font-size: 1.1rem;
   color: #ffffff;
   animation: pulseGlow 2s infinite alternate;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+}
+.about-page-section .fun-fact .rtl-text {
+  direction: rtl;
+  unicode-bidi: isolate;
+}
+.about-page-section .fun-fact .ltr-word {
+  direction: ltr;
+  unicode-bidi: isolate;
+  font-weight: bold;
 }
 .about-page-section .cta-button {
   background-color: #5C469C;
@@ -224,13 +239,7 @@ html[dir=rtl] .about-page-section .container {
   text-align: right;
   align-items: flex-end;
 }
-html[dir=rtl] .about-page-section html[dir=rtl] .fun-fact {
-  direction: rtl;
-  text-align: right;
-}
-html[dir=rtl] .about-page-section html[dir=rtl] .fun-fact .fun-fact span {
-  unicode-bidi: plaintext;
-  direction: rtl;
+html[dir=rtl] .about-page-section .about-description {
   text-align: right;
 }
 html[dir=rtl] .about-page-section .timeline-horizontal {
