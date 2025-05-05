@@ -183,6 +183,62 @@
         "invalid_phone": "Phone must be 10-15 digits.",
         "weak_password": "Password must be at least 8 characters, with uppercase, number, and special character.",
         "require_current": "Current password required to change password."
-        }
-  }
+        },
+
+    "checkout_page": {
+        "title": "Checkout",
+        "step1_title": "1. Delivery details",
+        "step2_title": "2. Shipping",
+        "step3_title": "3. Payment",
+        "step4_title": "4. Review & Confirm",
+        "select_country": "Select Country",
+        "back": "Back",
+        "next": "Next",
+        "continue_review": "Continue to review",
+        "place_order": "Place Order",
+        "order_summary": "Order – {{count}} items",
+        "no_variant": "No variant",
+        "subtotal": "Subtotal",
+        "shipping": "Shipping",
+        "total": "Total",
+        "discount_placeholder": "Discount code",
+        "apply": "Apply",
+        "card_number": "Card number",
+        "card_name": "Name on Card",
+        "expiry": "MM/YY",
+        "cvc": "CVC",
+        "invalid_card_number": "Card number must be exactly 16 digits",
+        "invalid_name": "Name must contain only letters and be max 30 characters",
+        "invalid_expiry": "Expiry must be MM/YY",
+        "invalid_month": "Month must be between 01 and 12",
+        "expired_card": "Card expiry date must be in the future",
+        "invalid_cvc": "CVC must be exactly 3 digits",
+        "delivery_title": "🚚 Delivery",
+        "payment_title": "💳 Payment",
+        "shipping_method": "Shipping Method",
+        "delivery_errors": {
+        "firstName": "First name should contain only letters",
+        "lastName": "Last name should contain only letters",
+        "address": "Address is required",
+        "city": "City is required",
+        "country": "Select a country",
+        "postalCode": "Postal code must be 5 digits",
+        "phone": "Phone number must be 10 to 15 digits"
+        },
+        "card_errors": {
+        "number": "Invalid card number",
+        "name": "Invalid name",
+        "expiry": "Invalid expiry",
+        "expiry_month": "Month must be between 01 and 12",
+        "expiry_date": "Card expiry must be in the future",
+        "cvc": "Invalid CVC"
+        },
+        "toast_select_shipping": "Select a shipping method.",
+        "toast_success": "Order placed successfully!",
+        "toast_fail": "Checkout failed.",
+        "loading": "Loading..."
+    }
+    }
+    
+  
   
