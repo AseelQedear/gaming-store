@@ -8,11 +8,11 @@ const About: React.FC = () => {
   return (
     <section className="about-page-section py-5">
       <div className="container text-center" data-aos="fade-up">
-        <h2 className="section-title mb-4">🎮 {t("about.story_title")}</h2>
+        <h2 className="section-title mb-4">🎮 {t("about_page.story_title")}</h2>
 
-        <p className="about-description lead">{t("about.story_paragraph1")}</p>
-        <p className="about-description">{t("about.story_paragraph2")}</p>
-        <p className="about-description">{t("about.story_paragraph3")}</p>
+        <p className="about-description lead">{t("about_page.story_paragraph1")}</p>
+        <p className="about-description">{t("about_page.story_paragraph2")}</p>
+        <p className="about-description">{t("about_page.story_paragraph3")}</p>
 
         <div className="gif-banner my-5" data-aos="fade-up">
           <div className="gif-cropper">
@@ -24,7 +24,7 @@ const About: React.FC = () => {
           </div>
         </div>
 
-        <h2 className="section-title mb-4">🕹️ {t("about.journey_title")}</h2>
+        <h2 className="section-title mb-4">🕹️ {t("about_page.journey_title")}</h2>
         <div className="timeline-horizontal" data-aos="fade-up">
           <div className="timeline-track">
             {[
@@ -36,18 +36,18 @@ const About: React.FC = () => {
             ].map((event, i) => (
               <div className="timeline-event" key={i}>
                 <span className="timeline-year">{event.year}</span>
-                <p>{t(`about.timeline.${event.key}`)}</p>
+                <p>{t(`about_page.timeline.${event.key}`)}</p>
               </div>
             ))}
           </div>
         </div>
 
-        <h2 className="section-title mb-4">✨ {t("about.mission_title")}</h2>
-        <p className="about-description">{t("about.mission_paragraph1")}</p>
-        <p className="about-description">{t("about.mission_paragraph2")}</p>
+        <h2 className="section-title mb-4">✨ {t("about_page.mission_title")}</h2>
+        <p className="about-description">{t("about_page.mission_paragraph1")}</p>
+        <p className="about-description">{t("about_page.mission_paragraph2")}</p>
 
         <div className="fun-fact mt-5">
-          🎮 {t("about.fun_fact")}
+          🎮 {t("about_page.fun_fact")}
         </div>
       </div>
     </section>
