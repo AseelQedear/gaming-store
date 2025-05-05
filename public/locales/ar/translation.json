@@ -74,12 +74,12 @@
         "msi_claw": "MSI Claw"
         },
 
-        "product_card": {
-            "add_to_cart": "أضف إلى السلة",
-            "out_of_stock": "غير متوفر",
-            "best_value": "⭐ أفضل صفقة",
-            "discount_label": "-{{percent}}%",
-            "wishlist_tooltip": "أضف إلى المفضلة"
-            }
+    "product_card": {
+        "wishlist": "أضف إلى المفضلة",
+        "add_to_cart": "أضف إلى السلة",
+        "out_of_stock": "غير متوفر",
+        "best_value": "أفضل صفقة"
+        }
+
   }
   

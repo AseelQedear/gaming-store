@@ -71,12 +71,12 @@
             "sort_price_low": "Lowest Price"
             },
 
-            "product_card": {
-                "add_to_cart": "Add to Cart",
-                "out_of_stock": "Out of Stock",
-                "best_value": "⭐ Best Value",
-                "discount_label": "-{{percent}}%",
-                "wishlist_tooltip": "Add to Wishlist"
-                }
+        "product_card": {
+            "wishlist": "Add to Wishlist",
+            "add_to_cart": "Add to Cart",
+            "out_of_stock": "Out of Stock",
+            "best_value": "Best Value"
+            }
+
   }
   

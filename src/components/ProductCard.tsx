@@ -45,12 +45,14 @@ const ProductCard: React.FC<ProductProps> = ({
           e.stopPropagation();
           toggleWishlist(product.id);
         }}
-        title={t("products.add_to_wishlist")}
+        title={t("product_card.wishlist")}
       >
         {isWishlistActive ? <FaHeart /> : <FaRegHeart />}
       </span>
 
-      {product.bestDeal && <div className="best-deal-badge">{t("products.best_value")}</div>}
+      {product.bestDeal && (
+        <div className="best-deal-badge">⭐ {t("product_card.best_value")}</div>
+      )}
       {product.discounted && (
         <div className="discount-badge">-{product.percent.toFixed(0)}%</div>
       )}
@@ -72,11 +74,13 @@ const ProductCard: React.FC<ProductProps> = ({
 
       <div className="price-info text-end">
         <div className="current-price">
-          <span className="sr-symbol">SAR</span>{product.price}
+          <span className="sr-symbol">$</span>
+          {product.price}
         </div>
         {product.discounted && (
           <div className="old-price">
-            <span className="sr-symbol">SAR</span>{product.oldPrice}
+            <span className="sr-symbol">$</span>
+            {product.oldPrice}
           </div>
         )}
       </div>
@@ -92,11 +96,11 @@ const ProductCard: React.FC<ProductProps> = ({
               onAddToCart();
             }}
           >
-            {t("products.add_to_cart")}
+            {t("product_card.add_to_cart")}
           </button>
         ) : (
           <button className="btn btn-outline-secondary w-100" disabled>
-            {t("products.out_of_stock")}
+            {t("product_card.out_of_stock")}
           </button>
         )}
       </div>
