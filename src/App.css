@@ -215,55 +215,51 @@ h1, h2, h3, h6,
   direction: ltr;
 }
 
-/* RTL Layout */
-html[dir=rtl] {
-  direction: rtl;
-  text-align: right;
-}
-html[dir=rtl] .nav-icon {
+/* RTL Navbar Only */
+.navbar[dir=rtl] .nav-icon {
   margin-inline-start: auto;
   margin-inline-end: 0;
   transition: margin 0.3s ease;
 }
-html[dir=rtl] .navbar-nav {
+.navbar[dir=rtl] .navbar-nav {
   flex-direction: row-reverse;
 }
-html[dir=rtl] .icon-group {
+.navbar[dir=rtl] .icon-group {
   flex-direction: row-reverse;
 }
-html[dir=rtl] .navbar-toggler {
+.navbar[dir=rtl] .navbar-toggler {
   margin-right: auto;
   margin-left: 0;
 }
-html[dir=rtl] .navbar-collapse.collapse.show {
+.navbar[dir=rtl] .navbar-collapse.collapse.show {
   align-items: flex-end;
 }
-html[dir=rtl] .cart-icon .cart-badge {
+.navbar[dir=rtl] .cart-icon .cart-badge {
   right: auto;
   left: -15px;
 }
-html[dir=rtl] .profile-menu .dropdown-menu {
+.navbar[dir=rtl] .profile-menu .dropdown-menu {
   left: auto;
   right: 0;
 }
 @media (max-width: 1024px) {
-  html[dir=rtl] .navbar .navbar-nav {
+  .navbar[dir=rtl] .navbar-nav {
     align-items: flex-end;
     padding-right: 1rem;
     padding-left: 0;
   }
-  html[dir=rtl] .navbar .icon-group {
+  .navbar[dir=rtl] .icon-group {
     justify-content: flex-end;
     padding: 0 1rem 1rem 0;
   }
 }
 
 /* LTR Layout */
-html[dir=ltr] .navbar .container-fluid {
+.navbar[dir=ltr] .container-fluid {
   flex-direction: row;
   justify-content: space-between;
 }
-html[dir=ltr] .navbar-toggler {
+.navbar[dir=ltr] .navbar-toggler {
   margin-left: auto;
   margin-right: 0;
 }

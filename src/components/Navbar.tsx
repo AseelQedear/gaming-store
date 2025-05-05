@@ -27,7 +27,12 @@ const AppNavbar: React.FC = () => {
 
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
-    document.documentElement.dir = lng === "ar" ? "rtl" : "ltr";
+
+    // Flip only the navbar layout
+    const navbar = document.querySelector(".navbar");
+    if (navbar) {
+      navbar.setAttribute("dir", lng === "ar" ? "rtl" : "ltr");
+    }
   };
 
   const toggleDarkMode = () => {
@@ -191,7 +196,7 @@ const AppNavbar: React.FC = () => {
                 </li>
                 <li>
                   <button className="dropdown-item d-flex align-items-center gap-2" onClick={() => changeLanguage("ar")}>
-                   العربية
+                    العربية
                   </button>
                 </li>
               </ul>

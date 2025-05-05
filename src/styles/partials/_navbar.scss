@@ -6,18 +6,13 @@
   direction: ltr;
 }
 
-/* RTL Layout */
-html[dir="rtl"] {
-  direction: rtl;
-  text-align: right;
-
-
+/* RTL Navbar Only */
+.navbar[dir="rtl"] {
   .nav-icon {
     margin-inline-start: auto;
     margin-inline-end: 0;
     transition: margin 0.3s ease;
   }
-  
 
   .navbar-nav {
     flex-direction: row-reverse;
@@ -47,13 +42,13 @@ html[dir="rtl"] {
   }
 
   @media (max-width: 1024px) {
-    .navbar .navbar-nav {
+    .navbar-nav {
       align-items: flex-end;
       padding-right: 1rem;
       padding-left: 0;
     }
 
-    .navbar .icon-group {
+    .icon-group {
       justify-content: flex-end;
       padding: 0 1rem 1rem 0;
     }
@@ -61,8 +56,8 @@ html[dir="rtl"] {
 }
 
 /* LTR Layout */
-html[dir="ltr"] {
-  .navbar .container-fluid {
+.navbar[dir="ltr"] {
+  .container-fluid {
     flex-direction: row;
     justify-content: space-between;
   }
