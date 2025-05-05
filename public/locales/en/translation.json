@@ -76,6 +76,15 @@
             "add_to_cart": "Add to Cart",
             "out_of_stock": "Out of Stock",
             "best_value": "Best Value"
+            },
+
+        "product_details": {
+            "error_loading": "Failed to load product details.",
+            "missing_name": "Product name is missing.",
+            "best_deal": "Best Deal",
+            "add_to_cart": "Add to Cart",
+            "out_of_stock": "Out of Stock",
+            "specifications": "Specifications"
             }
 
   }
