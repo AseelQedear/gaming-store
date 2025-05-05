@@ -500,7 +500,8 @@ h1, h2, h3, h6,
   color: #ffffff;
   transform: scale(1.2);
 }
-.site-footer p, .site-footer span {
+.site-footer p,
+.site-footer span {
   color: #bbb;
   font-size: 0.85rem;
 }
@@ -508,6 +509,26 @@ h1, h2, h3, h6,
   font-size: 1rem;
   font-weight: 600;
   color: #D4ADFC;
+}
+.site-footer[dir=rtl] {
+  text-align: right;
+}
+.site-footer[dir=rtl] .text-md-start {
+  text-align: right !important;
+}
+.site-footer[dir=rtl] .text-md-end {
+  text-align: left !important;
+}
+.site-footer[dir=rtl] .footer-links {
+  flex-direction: row-reverse;
+}
+.site-footer[dir=rtl] .social-icons {
+  justify-content: flex-start !important;
+}
+@media (min-width: 768px) {
+  .site-footer[dir=rtl] .social-icons {
+    justify-content: flex-start !important;
+  }
 }
 
 .search-wrapper {
