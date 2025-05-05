@@ -59,7 +59,27 @@
     "mission_paragraph1": "في Cila، نؤمن أن كل لاعب يستحق أفضل المعدات — سواء كنت تغزو الممالك، أو تتسابق بسرعة الضوء، أو تهرب من الواقع لبعض الوقت. نحن هنا لنجعل تجربتك ممتعة مع أجهزة أصلية تشعر وكأنها جزء من قصتك.",
     "mission_paragraph2": "مهمتنا بسيطة: جعل أحلام اللاعبين واقعية. لا مزيد من الانتظار. لا مزيد من التساؤل. فقط سحر محمول نقي — يتم شحنه مباشرةً إلى يديك.",
     "fun_fact": "معلومة ممتعة: \"Cila\" تعني روح كل بكسل غلبته يوماً."
-    }
+    },
 
+    "products": {
+        "all_devices": "كل الأجهزة",
+        "filter_label": "تصفية حسب النوع",
+        "sort_label": "ترتيب حسب السعر",
+        "default_sort": "الافتراضي",
+        "highest_price": "الأعلى سعراً",
+        "lowest_price": "الأقل سعراً",
+        "steam_deck": "Steam Deck",
+        "rog_ally": "ROG Ally",
+        "lenovo_go": "Lenovo Go",
+        "msi_claw": "MSI Claw"
+        },
+
+        "product_card": {
+            "add_to_cart": "أضف إلى السلة",
+            "out_of_stock": "غير متوفر",
+            "best_value": "⭐ أفضل صفقة",
+            "discount_label": "-{{percent}}%",
+            "wishlist_tooltip": "أضف إلى المفضلة"
+            }
   }
   

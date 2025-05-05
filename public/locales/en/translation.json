@@ -59,7 +59,24 @@
         "mission_paragraph1": "At Cila, we believe every gamer deserves access to the best gear — whether you're conquering kingdoms, racing at light speed, or escaping reality for a while. We’re here to power up your playtime with authentic handhelds that feel like they belong in your story.",
         "mission_paragraph2": "Our mission is simple: to make gaming dreams tangible. No more waiting. No more wondering. Just pure, portable magic — shipped right to your hands.",
         "fun_fact": "Fun Fact: \"Cila\" means the spirit of every pixel you ever conquered."
-        }
+        },
+        "products": {
+            "all_devices": "All Devices",
+            "steam_deck": "Steam Deck",
+            "rog_ally": "ROG Ally",
+            "lenovo_go": "Lenovo Go",
+            "msi_claw": "MSI Claw",
+            "sort_default": "Default",
+            "sort_price_high": "Highest Price",
+            "sort_price_low": "Lowest Price"
+            },
 
+            "product_card": {
+                "add_to_cart": "Add to Cart",
+                "out_of_stock": "Out of Stock",
+                "best_value": "⭐ Best Value",
+                "discount_label": "-{{percent}}%",
+                "wishlist_tooltip": "Add to Wishlist"
+                }
   }
   

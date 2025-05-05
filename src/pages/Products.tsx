@@ -4,6 +4,7 @@ import axios from "axios";
 import ProductCard from "../components/ProductCard";
 import { useWishlist } from "../components/wishlistContext";
 import { useCart } from "../components/CartContext";
+import { useTranslation } from "react-i18next";
 import "../styles/Products.scss";
 
 const Products: React.FC = () => {
@@ -11,6 +12,7 @@ const Products: React.FC = () => {
   const { addToCart } = useCart();
   const location = useLocation();
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const [devices, setDevices] = useState<any[]>([]);
   const [error, setError] = useState<string | null>(null);
@@ -33,12 +35,12 @@ const Products: React.FC = () => {
         const response = await axios.get("https://gaming-store-production.up.railway.app/api/device");
         setDevices(response.data);
       } catch (err) {
-        setError("Failed to load products.");
+        setError(t("error_loading_products"));
       }
     };
 
     fetchDevices();
-  }, []);
+  }, [t]);
 
   const handleFilterChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const value = e.target.value;
@@ -46,22 +48,20 @@ const Products: React.FC = () => {
     navigate(`/products?filter=${value}`);
   };
 
-  
   const filteredByType = devices.filter(
     (p) =>
       filterType === "all" ||
       p.type?.toLowerCase().trim() === filterType.toLowerCase().trim()
   );
 
-    const normalizedSearch = searchQuery
-      .toLowerCase()
-      .replace(/\s+/g, "") 
-      .replace(/lenovogo|lenovo/g, "go");
+  const normalizedSearch = searchQuery
+    .toLowerCase()
+    .replace(/\s+/g, "")
+    .replace(/lenovogo|lenovo/g, "go");
 
-    const filtered = filteredByType.filter((p) =>
-      p.name.toLowerCase().replace(/\s+/g, "").includes(normalizedSearch)
-    );
-
+  const filtered = filteredByType.filter((p) =>
+    p.name.toLowerCase().replace(/\s+/g, "").includes(normalizedSearch)
+  );
 
   const sorted = [...filtered].sort((a, b) => {
     if (sortOption === "price-high") return b.price - a.price;
@@ -75,17 +75,17 @@ const Products: React.FC = () => {
 
       <div className="filters-bar d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2 fade-slide-down">
         <select onChange={handleFilterChange} value={filterType} className="form-select">
-          <option value="all">All Devices</option>
-          <option value="Steam Deck">Steam Deck</option>
-          <option value="ROG Ally">ROG Ally</option>
-          <option value="Lenovo Go">Lenovo Go</option>
-          <option value="MSI Claw">MSI Claw</option>
+          <option value="all">{t("products.all_devices")}</option>
+          <option value="Steam Deck">{t("products.steam_deck")}</option>
+          <option value="ROG Ally">{t("products.rog_ally")}</option>
+          <option value="Lenovo Go">{t("products.lenovo_go")}</option>
+          <option value="MSI Claw">{t("products.msi_claw")}</option>
         </select>
 
         <select onChange={(e) => setSortOption(e.target.value)} value={sortOption} className="form-select">
-          <option value="default">Default</option>
-          <option value="price-high">Highest Price</option>
-          <option value="price-low">Lowest Price</option>
+          <option value="default">{t("products.sort_default")}</option>
+          <option value="price-high">{t("products.sort_price_high")}</option>
+          <option value="price-low">{t("products.sort_price_low")}</option>
         </select>
       </div>
 

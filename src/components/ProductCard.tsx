@@ -1,6 +1,7 @@
 import React from "react";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 interface ProductProps {
   product: {
@@ -28,6 +29,8 @@ const ProductCard: React.FC<ProductProps> = ({
   toggleWishlist,
   onAddToCart,
 }) => {
+  const { t } = useTranslation();
+
   return (
     <div
       className={`product-card-style2 p-3 h-100 shadow-sm rounded ${
@@ -42,12 +45,12 @@ const ProductCard: React.FC<ProductProps> = ({
           e.stopPropagation();
           toggleWishlist(product.id);
         }}
-        title="Add to Wishlist"
+        title={t("products.add_to_wishlist")}
       >
         {isWishlistActive ? <FaHeart /> : <FaRegHeart />}
       </span>
 
-      {product.bestDeal && <div className="best-deal-badge">⭐ Best Value</div>}
+      {product.bestDeal && <div className="best-deal-badge">{t("products.best_value")}</div>}
       {product.discounted && (
         <div className="discount-badge">-{product.percent.toFixed(0)}%</div>
       )}
@@ -68,9 +71,13 @@ const ProductCard: React.FC<ProductProps> = ({
       </h5>
 
       <div className="price-info text-end">
-        <div className="current-price"><span className="sr-symbol">$</span>{product.price}</div>
+        <div className="current-price">
+          <span className="sr-symbol">SAR</span>{product.price}
+        </div>
         {product.discounted && (
-          <div className="old-price"><span className="sr-symbol">$</span>{product.oldPrice}</div>
+          <div className="old-price">
+            <span className="sr-symbol">SAR</span>{product.oldPrice}
+          </div>
         )}
       </div>
       <p className="offer-line mt-2">{product.offer}</p>
@@ -85,11 +92,11 @@ const ProductCard: React.FC<ProductProps> = ({
               onAddToCart();
             }}
           >
-            Add to Cart
+            {t("products.add_to_cart")}
           </button>
         ) : (
           <button className="btn btn-outline-secondary w-100" disabled>
-            Out of Stock
+            {t("products.out_of_stock")}
           </button>
         )}
       </div>
