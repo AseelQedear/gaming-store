@@ -19,6 +19,7 @@ import ProtectedCheckout from "./components/ProtectedCheckout";
 import PrivateRoute from "./components/PrivateRoute";
 import PublicOnlyRoute from "./components/PublicOnlyRoute";
 
+import "./i18n";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
