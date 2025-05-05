@@ -226,6 +226,8 @@ html[dir=rtl] .navbar .container-fluid {
 }
 html[dir=rtl] .nav-icon {
   flex-direction: row-reverse;
+  direction: rtl;
+  text-align: right;
 }
 html[dir=rtl] .navbar-nav {
   flex-direction: row-reverse;

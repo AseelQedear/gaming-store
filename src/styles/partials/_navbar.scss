@@ -18,8 +18,10 @@ html[dir="rtl"] {
 
   .nav-icon {
     flex-direction: row-reverse;
+    direction: rtl;
+    text-align: right;
   }
-  
+
   .navbar-nav {
     flex-direction: row-reverse;
   }
