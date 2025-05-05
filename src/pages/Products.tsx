@@ -35,7 +35,7 @@ const Products: React.FC = () => {
         const response = await axios.get("https://gaming-store-production.up.railway.app/api/device");
         setDevices(response.data);
       } catch (err) {
-        setError(t("error_loading_products"));
+        setError(t("products.error_loading"));
       }
     };
 
@@ -76,10 +76,10 @@ const Products: React.FC = () => {
       <div className="filters-bar d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2 fade-slide-down">
         <select onChange={handleFilterChange} value={filterType} className="form-select">
           <option value="all">{t("products.all_devices")}</option>
-          <option value="Steam Deck">{t("products.steam_deck")}</option>
-          <option value="ROG Ally">{t("products.rog_ally")}</option>
-          <option value="Lenovo Go">{t("products.lenovo_go")}</option>
-          <option value="MSI Claw">{t("products.msi_claw")}</option>
+          <option value="Steam Deck">Steam Deck</option>
+          <option value="ROG Ally">ROG Ally</option>
+          <option value="Lenovo Go">Lenovo Go</option>
+          <option value="MSI Claw">MSI Claw</option>
         </select>
 
         <select onChange={(e) => setSortOption(e.target.value)} value={sortOption} className="form-select">
