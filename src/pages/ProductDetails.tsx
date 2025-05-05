@@ -60,6 +60,7 @@ const ProductDetails: React.FC = () => {
   return (
     <div className="product-details container py-5 fade-in">
       <div className="row g-4 align-items-start">
+        {/* 📸 Image Section */}
         <div className="col-lg-6 fade-in-up">
           <div className="product-image-box mb-4 position-relative">
             {product.discounted && (
@@ -72,6 +73,7 @@ const ProductDetails: React.FC = () => {
           </div>
         </div>
 
+        {/* ℹ️ Info Section */}
         <div className="col-lg-6 fade-in-up" style={{ animationDelay: "0.2s" }}>
           <div className="product-info-box">
             <div className="title-row mb-3">
@@ -89,16 +91,20 @@ const ProductDetails: React.FC = () => {
 
             <div className="price-info mb-3 text-center">
               <div className="current-price">
-                <span className="sr-symbol">$</span>
+                <span className="sr-symbol">﷼</span>
                 {product.price}
               </div>
               {product.discounted && product.oldPrice && (
                 <div className="old-price">
-                  <span className="sr-symbol">$</span>
+                  <span className="sr-symbol">﷼</span>
                   {product.oldPrice}
                 </div>
               )}
-              <div className="offer-line">{product.offer}</div>
+              <div className="offer-line">
+                {t(`products.offers.${product.offerKey || "default"}`, {
+                  defaultValue: product.offer,
+                })}
+              </div>
             </div>
 
             {product.available ? (
@@ -106,12 +112,16 @@ const ProductDetails: React.FC = () => {
                 {t("product_details.add_to_cart")}
               </button>
             ) : (
-              <span className="out-of-stock-label">{t("product_details.out_of_stock")}</span>
+              <span className="out-of-stock-label">
+                {t("product_details.out_of_stock")}
+              </span>
             )}
 
             {product.specifications && product.specifications.length > 0 && (
               <div className="product-specs mt-5">
-                <h4 className="section-title mb-3">{t("product_details.specifications")}</h4>
+                <h4 className="section-title mb-3">
+                  {t("product_details.specifications")}
+                </h4>
                 <ul className="specs-list">
                   {product.specifications.map((spec: string, index: number) => (
                     <li key={index}>{spec}</li>

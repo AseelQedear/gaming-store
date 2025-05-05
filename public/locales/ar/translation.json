@@ -82,14 +82,13 @@
         },
      
     "product_details": {
-        "error_loading": "فشل في تحميل تفاصيل المنتج.",
-        "missing_name": "اسم المنتج مفقود.",
-        "best_deal": "أفضل صفقة",
+        "best_deal": "أفضل عرض",
         "add_to_cart": "أضف إلى السلة",
         "out_of_stock": "غير متوفر",
-        "specifications": "المواصفات"
-    }
+        "specifications": "المواصفات",
+        "error_loading": "فشل في تحميل تفاصيل المنتج.",
+        "missing_name": "اسم المنتج مفقود."
+        }
           
-
   }
   
