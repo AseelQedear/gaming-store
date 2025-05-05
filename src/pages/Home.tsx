@@ -22,7 +22,7 @@ const Home: React.FC = () => {
         const response = await axios.get("https://gaming-store-production.up.railway.app/api/device");
         setDevices(response.data);
       } catch (err) {
-        setError(t("error_loading_products"));
+        setError(t("home.error_loading_products")); // <-- if defined
       }
     };
 
@@ -52,10 +52,10 @@ const Home: React.FC = () => {
             className="hero-sprite d-none d-md-block"
           />
           <div className="text-zone">
-            <h1 className="hero-title">{t("hero_title")}</h1>
-            <p className="hero-subtitle typewriter">{t("hero_subtitle")}</p>
+            <h1 className="hero-title">{t("home.hero_title")}</h1>
+            <p className="hero-subtitle typewriter">{t("home.hero_subtitle")}</p>
             <a href="/products" className="btn btn-cta mt-4">
-              {t("hero_cta")}
+              {t("home.hero_button")}
             </a>
           </div>
         </div>
@@ -64,7 +64,7 @@ const Home: React.FC = () => {
       {/* 🕹️ Featured Devices */}
       <section className="categories-section text-center py-5">
         <h2 className="section-title mb-5" data-aos="fade-up">
-          🔹 {t("explore_devices")}
+          {t("home.explore_devices")}
         </h2>
         <div className="row gx-4 gy-4 px-4">
           {[
@@ -91,7 +91,7 @@ const Home: React.FC = () => {
       {/* 🔥 Popular Deals */}
       <section className="popular-section container py-5">
         <h2 className="text-center mb-5 section-title" data-aos="fade-up">
-          🔥 {t("popular_deals")}
+          {t("home.popular_deals")}
         </h2>
         <div className="row g-4">
           {filteredProducts.slice(0, 4).map((product, i) => (
@@ -129,28 +129,28 @@ const Home: React.FC = () => {
       {/* 💡 Why Choose Us */}
       <section className="why-choose-modern py-5 text-center" data-aos="fade-up">
         <div className="container">
-          <h2 className="section-title mb-4">💡 {t("why_choose_title")}</h2>
+          <h2 className="section-title mb-4">{t("home.why_choose")}</h2>
           <div className="row g-4 justify-content-center" data-aos="fade-up">
             {[
               {
                 icon: "🚚",
-                title: t("why_fast_delivery"),
-                desc: t("why_fast_delivery_desc"),
+                title: t("home.features.fast_delivery.title"),
+                desc: t("home.features.fast_delivery.desc"),
               },
               {
                 icon: "🎮",
-                title: t("why_top_brands"),
-                desc: t("why_top_brands_desc"),
+                title: t("home.features.top_brands.title"),
+                desc: t("home.features.top_brands.desc"),
               },
               {
                 icon: "🔐",
-                title: t("why_secure_payment"),
-                desc: t("why_secure_payment_desc"),
+                title: t("home.features.secure_payment.title"),
+                desc: t("home.features.secure_payment.desc"),
               },
               {
                 icon: "⭐",
-                title: t("why_loved_by_gamers"),
-                desc: t("why_loved_by_gamers_desc"),
+                title: t("home.features.loved_by_gamers.title"),
+                desc: t("home.features.loved_by_gamers.desc"),
               },
             ].map((item, index) => (
               <div className="col-md-3 col-sm-6" key={index}>
