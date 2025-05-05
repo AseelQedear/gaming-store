@@ -17,10 +17,11 @@ html[dir="rtl"] {
   }
 
   .nav-icon {
-    flex-direction: row-reverse;
-    direction: rtl;
-    text-align: right;
+    margin-inline-start: auto;
+    margin-inline-end: 0;
+    transition: margin 0.3s ease;
   }
+  
 
   .navbar-nav {
     flex-direction: row-reverse;

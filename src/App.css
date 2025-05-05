@@ -225,9 +225,9 @@ html[dir=rtl] .navbar .container-fluid {
   justify-content: space-between;
 }
 html[dir=rtl] .nav-icon {
-  flex-direction: row-reverse;
-  direction: rtl;
-  text-align: right;
+  margin-inline-start: auto;
+  margin-inline-end: 0;
+  transition: margin 0.3s ease;
 }
 html[dir=rtl] .navbar-nav {
   flex-direction: row-reverse;
