@@ -220,10 +220,6 @@ html[dir=rtl] {
   direction: rtl;
   text-align: right;
 }
-html[dir=rtl] .navbar .container-fluid {
-  flex-direction: row-reverse;
-  justify-content: space-between;
-}
 html[dir=rtl] .nav-icon {
   margin-inline-start: auto;
   margin-inline-end: 0;

@@ -11,10 +11,6 @@ html[dir="rtl"] {
   direction: rtl;
   text-align: right;
 
-  .navbar .container-fluid {
-    flex-direction: row-reverse;
-    justify-content: space-between;
-  }
 
   .nav-icon {
     margin-inline-start: auto;
