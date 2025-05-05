@@ -228,8 +228,10 @@ html[dir=rtl] .about-page-section .fun-fact {
   direction: rtl;
   text-align: right;
 }
-html[dir=rtl] .about-page-section .fun-fact .fun-fact span {
+html[dir=rtl] .about-page-section .fun-fact html[dir=rtl] .fun-fact span {
   unicode-bidi: plaintext;
+  direction: rtl;
+  text-align: right;
 }
 html[dir=rtl] .about-page-section .timeline-horizontal {
   direction: rtl;
