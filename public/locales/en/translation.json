@@ -5,6 +5,15 @@
     "dark_mode": "Toggle Dark Mode",
     "cart": "Cart",
     "profile": "Profile",
-    "logout": "Logout"
+    "logout": "Logout",
+    "footer": {
+      "rights": "All rights reserved.",
+      "built_with_love": "Built with ❤️ for gamers",
+      "quick_links": "Quick Links",
+      "home": "Home",
+      "devices": "Devices",
+      "about": "About",
+      "contact_us": "Contact Us"
+    }
   }
   

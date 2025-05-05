@@ -1,10 +1,19 @@
 {
     "devices": "الأجهزة",
-    "about": "حول",
-    "search_placeholder": "بحث...",
-    "dark_mode": "الوضع الداكن",
-    "cart": "عربة التسوق",
+    "about": "من نحن",
+    "search_placeholder": "ابحث...",
+    "dark_mode": "تبديل الوضع الليلي",
+    "cart": "السلة",
     "profile": "الملف الشخصي",
-    "logout": "تسجيل الخروج"
+    "logout": "تسجيل الخروج",
+    "footer": {
+      "rights": "جميع الحقوق محفوظة.",
+      "built_with_love": "بُني بحب ❤️ لعشاق الألعاب",
+      "quick_links": "روابط سريعة",
+      "home": "الرئيسية",
+      "devices": "الأجهزة",
+      "about": "من نحن",
+      "contact_us": "تواصل معنا"
+    }
   }
   
