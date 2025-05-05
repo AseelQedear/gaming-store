@@ -186,12 +186,12 @@ const AppNavbar: React.FC = () => {
               <ul className="dropdown-menu">
                 <li>
                   <button className="dropdown-item d-flex align-items-center gap-2" onClick={() => changeLanguage("en")}>
-                    🇺🇸 English
+                    English
                   </button>
                 </li>
                 <li>
                   <button className="dropdown-item d-flex align-items-center gap-2" onClick={() => changeLanguage("ar")}>
-                    🇸🇦 العربية
+                   العربية
                   </button>
                 </li>
               </ul>
