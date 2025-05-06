@@ -469,7 +469,7 @@ html[dir=rtl] .hero-title, html[dir=rtl] .section-title, html[dir=rtl] .footer-l
   background-color: #0C134F;
   border: 1px solid #5C469C;
   padding: 0.5rem 0;
-  min-width: 120px;
+  min-width: 80px;
   text-align: center;
 }
 .lang-dropdown .dropdown-menu .dropdown-item {
