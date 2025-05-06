@@ -153,7 +153,7 @@ const AppNavbar: React.FC = () => {
                     aria-expanded="false"
                   >
                     <FaGlobe />
-                    العربية
+                    AR
                   </button>
                   <ul className="dropdown-menu">
                     <li>
@@ -258,14 +258,14 @@ const AppNavbar: React.FC = () => {
                     aria-expanded="false"
                   >
                     <FaGlobe />
-                    English
+                    EN
                   </button>
                   <ul className="dropdown-menu">
                     <li>
-                      <button className="dropdown-item" onClick={() => changeLanguage("en")}>English</button>
+                      <button className="dropdown-item" onClick={() => changeLanguage("en")}>EN</button>
                     </li>
                     <li>
-                      <button className="dropdown-item" onClick={() => changeLanguage("ar")}>العربية</button>
+                      <button className="dropdown-item" onClick={() => changeLanguage("ar")}>AR</button>
                     </li>
                   </ul>
                 </div>
