@@ -22,3 +22,14 @@
   }
 }
 
+html[dir="rtl"] .products-page {
+  direction: rtl;
+
+  .row {
+    justify-content: flex-end; 
+  }
+
+  .product-card-style2 {
+    direction: ltr;
+  }
+}
