@@ -186,8 +186,8 @@
     display: flex;
     align-items: center;
     gap: 2rem;
-    flex-wrap: wrap; // ✅ Optional: allows wrapping in smaller screens
-    row-gap: 0.5rem;  // ✅ Optional: space between rows
+    flex-wrap: wrap; 
+    row-gap: 0.5rem;  
 
     span,
     svg {
@@ -272,7 +272,7 @@
 /* Language Dropdown */
 .lang-dropdown {
   .dropdown-toggle {
-    min-width: 110px;
+    min-width: 80px;
     color: $accent;
     border-color: $accent;
 

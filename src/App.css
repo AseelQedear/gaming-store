@@ -454,7 +454,7 @@ html[dir=rtl] .hero-title, html[dir=rtl] .section-title, html[dir=rtl] .footer-l
 
 /* Language Dropdown */
 .lang-dropdown .dropdown-toggle {
-  min-width: 110px;
+  min-width: 80px;
   color: #D4ADFC;
   border-color: #D4ADFC;
 }
