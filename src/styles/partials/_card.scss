@@ -83,6 +83,12 @@
       margin-top: 0.5rem;
       margin-bottom: 1rem;
       text-align: center;
+
+      html[dir="rtl"] & {
+        direction: rtl;
+        unicode-bidi: isolate;
+      }
+      
     }
   
     .btn {

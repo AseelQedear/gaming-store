@@ -25,3 +25,12 @@
     }
   }
   
+  html[dir="rtl"] .filters-bar {
+    flex-direction: row-reverse;
+  
+    .form-select {
+      text-align: right;
+      direction: rtl;
+    }
+  }
+  

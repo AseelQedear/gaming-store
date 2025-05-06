@@ -1464,6 +1464,10 @@ html.dark-mode .about-page-section .timeline-horizontal .timeline-track .timelin
   margin-bottom: 1rem;
   text-align: center;
 }
+html[dir=rtl] .product-card-style2 .offer-line {
+  direction: rtl;
+  unicode-bidi: isolate;
+}
 .product-card-style2 .btn {
   border-color: #D4ADFC;
   color: #D4ADFC;
@@ -1531,6 +1535,14 @@ html.dark-mode .about-page-section .timeline-horizontal .timeline-track .timelin
 }
 .filters-bar .form-select:hover {
   transform: translateY(-1px);
+}
+
+html[dir=rtl] .filters-bar {
+  flex-direction: row-reverse;
+}
+html[dir=rtl] .filters-bar .form-select {
+  text-align: right;
+  direction: rtl;
 }
 
 .profile-page {

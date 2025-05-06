@@ -183,6 +183,14 @@
   transform: translateY(-1px);
 }
 
+html[dir=rtl] .filters-bar {
+  flex-direction: row-reverse;
+}
+html[dir=rtl] .filters-bar .form-select {
+  text-align: right;
+  direction: rtl;
+}
+
 .auth-page {
   display: flex;
   height: 100vh;
