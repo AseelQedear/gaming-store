@@ -1127,13 +1127,13 @@ html[dir=rtl] .product-details .product-info-box .title-row {
   justify-content: flex-start;
 }
 html[dir=rtl] .product-details .product-info-box .title-row .product-title {
-  order: 1;
+  order: 2;
   margin-right: 0;
   margin-left: 1rem;
   flex: initial;
 }
 html[dir=rtl] .product-details .product-info-box .title-row .product-actions {
-  order: 2;
+  order: 1;
   flex-direction: row-reverse;
   display: flex;
   gap: 0.75rem;
