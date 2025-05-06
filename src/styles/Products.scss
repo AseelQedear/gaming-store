@@ -25,7 +25,7 @@
 html[dir="rtl"] .products-page {
   direction: rtl;
 
-  .row {
+  .row,.col-md {
     justify-content: flex-end; 
   }
 
