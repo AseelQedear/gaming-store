@@ -1122,33 +1122,20 @@ html.dark-mode .about-page-section .timeline-horizontal .timeline-track .timelin
 html[dir=rtl] .product-details {
   direction: rtl;
 }
-html[dir=rtl] .product-details .product-image-box .discount-badge {
-  left: auto;
-  right: -12px;
-}
-html[dir=rtl] .product-details .product-image-box .best-deal-badge {
-  right: auto;
-  left: -12px;
-}
 html[dir=rtl] .product-details .product-info-box .title-row {
   flex-direction: row-reverse;
 }
 html[dir=rtl] .product-details .product-info-box .title-row .product-title {
   text-align: right;
+  order: 1;
 }
 html[dir=rtl] .product-details .product-info-box .title-row .product-actions {
   flex-direction: row-reverse;
+  order: 2;
 }
 html[dir=rtl] .product-details .product-info-box .price-info .current-price,
 html[dir=rtl] .product-details .product-info-box .price-info .old-price,
 html[dir=rtl] .product-details .product-info-box .price-info .offer-line {
-  text-align: right;
-}
-html[dir=rtl] .product-details .product-info-box .add-to-cart,
-html[dir=rtl] .product-details .product-info-box .out-of-stock-label {
-  text-align: center;
-}
-html[dir=rtl] .product-details .product-specs h4 {
   text-align: right;
 }
 html[dir=rtl] .product-details .product-specs .specs-list {
@@ -1157,6 +1144,14 @@ html[dir=rtl] .product-details .product-specs .specs-list {
 }
 html[dir=rtl] .product-details .product-specs .specs-list li {
   text-align: right;
+}
+html[dir=rtl] .product-details .product-image-box .discount-badge {
+  left: auto;
+  right: -12px;
+}
+html[dir=rtl] .product-details .product-image-box .best-deal-badge {
+  right: auto;
+  left: -12px;
 }
 
 .why-choose-modern {

@@ -191,32 +191,21 @@
       }
     }
   }
-  
   html[dir="rtl"] .product-details {
     direction: rtl;
   
-    .product-image-box {
-      .discount-badge {
-        left: auto;
-        right: -12px;
-      }
-  
-      .best-deal-badge {
-        right: auto;
-        left: -12px;
-      }
-    }
-  
     .product-info-box {
       .title-row {
-        flex-direction: row-reverse;
+        flex-direction: row-reverse; 
   
         .product-title {
           text-align: right;
+          order: 1;
         }
   
         .product-actions {
           flex-direction: row-reverse;
+          order: 2; 
         }
       }
   
@@ -227,18 +216,9 @@
           text-align: right;
         }
       }
-  
-      .add-to-cart,
-      .out-of-stock-label {
-        text-align: center; 
-      }
     }
   
     .product-specs {
-      h4 {
-        text-align: right;
-      }
-  
       .specs-list {
         padding-left: 0;
         padding-right: 1rem;
@@ -246,6 +226,17 @@
         li {
           text-align: right;
         }
+      }
+    }
+  
+    .product-image-box {
+      .discount-badge {
+        left: auto;
+        right: -12px;
+      }
+      .best-deal-badge {
+        right: auto;
+        left: -12px;
       }
     }
   }
