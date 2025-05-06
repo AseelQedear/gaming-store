@@ -483,6 +483,14 @@ html[dir=rtl] .cart-drawer .cart-body .cart-summary h5 {
   flex-direction: row-reverse;
   text-align: right;
 }
+html[dir=rtl] .cart-drawer input::-moz-placeholder {
+  text-align: right;
+  direction: rtl;
+}
+html[dir=rtl] .cart-drawer input::placeholder {
+  text-align: right;
+  direction: rtl;
+}
 html[dir=rtl] .cart-drawer .cart-footer .discount-row {
   flex-direction: row-reverse;
 }/*# sourceMappingURL=CartDrawer.css.map */
