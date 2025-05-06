@@ -1128,9 +1128,9 @@ html[dir=rtl] .product-details .product-info-box .title-row {
 }
 html[dir=rtl] .product-details .product-info-box .title-row .product-title {
   order: 1;
-  margin-right: 0;
-  margin-left: 1rem;
-  flex: initial;
+  margin-left: 0;
+  margin-right: auto;
+  flex-shrink: 0;
 }
 html[dir=rtl] .product-details .product-info-box .title-row .product-actions {
   order: 2;
