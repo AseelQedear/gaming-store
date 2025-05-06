@@ -456,4 +456,33 @@ html[dir=rtl] .cart-drawer {
 html[dir=rtl] .cart-drawer.open {
   left: 0;
   right: auto;
+}
+
+html[dir=rtl] .cart-drawer .cart-header {
+  flex-direction: row-reverse;
+}
+html[dir=rtl] .cart-drawer .cart-body .cart-item {
+  flex-direction: row-reverse;
+}
+html[dir=rtl] .cart-drawer .cart-body .cart-item .item-details {
+  align-items: flex-end;
+  text-align: right;
+}
+html[dir=rtl] .cart-drawer .cart-body .cart-item .item-details .price-info {
+  flex-direction: row-reverse;
+}
+html[dir=rtl] .cart-drawer .cart-body .cart-item .item-details .qty {
+  flex-direction: row-reverse;
+}
+html[dir=rtl] .cart-drawer .cart-body .cart-item .item-details .qty .delete {
+  margin-left: 0;
+  margin-right: auto;
+}
+html[dir=rtl] .cart-drawer .cart-body .cart-summary p,
+html[dir=rtl] .cart-drawer .cart-body .cart-summary h5 {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+html[dir=rtl] .cart-drawer .cart-footer .discount-row {
+  flex-direction: row-reverse;
 }/*# sourceMappingURL=CartDrawer.css.map */

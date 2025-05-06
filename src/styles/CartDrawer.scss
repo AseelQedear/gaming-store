@@ -254,3 +254,48 @@ html[dir="rtl"] .cart-drawer {
     right: auto;
   }
 }
+
+html[dir="rtl"] .cart-drawer {
+  .cart-header {
+    flex-direction: row-reverse;
+  }
+
+  .cart-body {
+    .cart-item {
+      flex-direction: row-reverse;
+
+      .item-details {
+        align-items: flex-end;
+        text-align: right;
+
+        .price-info {
+          flex-direction: row-reverse;
+        }
+
+        .qty {
+          flex-direction: row-reverse;
+
+          .delete {
+            margin-left: 0;
+            margin-right: auto;
+          }
+        }
+      }
+    }
+
+    .cart-summary {
+      p,
+      h5 {
+        flex-direction: row-reverse;
+        text-align: right;
+      }
+    }
+  }
+
+  .cart-footer {
+    .discount-row {
+      flex-direction: row-reverse;
+    }
+  }
+}
+
