@@ -273,6 +273,11 @@ html[dir="rtl"] .cart-drawer {
 
         .qty {
           flex-direction: row-reverse;
+
+          .delete {
+            margin-left: auto;
+            margin-right: 0;
+          }
         }
       }
     }

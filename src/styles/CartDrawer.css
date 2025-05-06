@@ -474,6 +474,10 @@ html[dir=rtl] .cart-drawer .cart-body .cart-item .item-details .price-info {
 html[dir=rtl] .cart-drawer .cart-body .cart-item .item-details .qty {
   flex-direction: row-reverse;
 }
+html[dir=rtl] .cart-drawer .cart-body .cart-item .item-details .qty .delete {
+  margin-left: auto;
+  margin-right: 0;
+}
 html[dir=rtl] .cart-drawer .cart-body .cart-summary p,
 html[dir=rtl] .cart-drawer .cart-body .cart-summary h5 {
   flex-direction: row-reverse;
