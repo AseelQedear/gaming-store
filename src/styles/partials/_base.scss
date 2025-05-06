@@ -1,6 +1,12 @@
 @use "./variables" as *;
 @use "./animations" as *;
 
+@font-face {
+  font-family: 'BitsyArabic';
+  src: url('../public/fonts/bitsy-font-with-arabic.woff2') format('woff2');
+  font-display: swap;
+}
+
 body, html, #root {
     margin: 0;
     padding: 0;
@@ -26,7 +32,12 @@ body, html, #root {
     letter-spacing: 1px;
     transition: text-shadow 0.3s ease, color 0.3s ease;
   
+    html[dir="rtl"] & {
+      font-family: 'BitsyArabic', $font-header;
+    }
   }
+  
+
   
   .btn, .btn-outline-light, .btn-outline-secondary {
     font-family: $font-btn;

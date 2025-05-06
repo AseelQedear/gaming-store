@@ -1,7 +1,12 @@
-// src/App.tsx
-
 import React, { useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+  useLocation,
+} from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { WishlistProvider } from "./components/wishlistContext";
 import { CartProvider, useCart } from "./components/CartContext";
 import { AuthProvider } from "./components/AuthContext";
@@ -22,31 +27,33 @@ import PublicOnlyRoute from "./components/PublicOnlyRoute";
 import "./i18n";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
 import "./App.scss";
 
 const AppContent: React.FC = () => {
   const { isDrawerOpen, closeCart, cartItems, updateQuantity, removeItem } = useCart();
   const location = useLocation();
+  const { i18n } = useTranslation();
 
+  // Initialize AOS
   useEffect(() => {
     AOS.init({ duration: 1000, once: true, offset: 100 });
   }, []);
 
- 
+  // Dark mode preference
   useEffect(() => {
     const savedMode = localStorage.getItem("darkMode");
-    if (savedMode === "true") {
-      document.body.classList.add("dark-mode");
-    } else {
-      document.body.classList.remove("dark-mode");
-    }
+    document.body.classList.toggle("dark-mode", savedMode === "true");
   }, []);
 
- 
+  // Scroll to top on route change
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
+
+  // Set RTL or LTR based on language
+  useEffect(() => {
+    document.documentElement.setAttribute("dir", i18n.language === "ar" ? "rtl" : "ltr");
+  }, [i18n.language]);
 
   const hideNavFooter = location.pathname === "/checkout";
 
@@ -60,7 +67,6 @@ const AppContent: React.FC = () => {
           <Route path="/about" element={<About />} />
           <Route path="/products" element={<Products />} />
           <Route path="/product/:name" element={<ProductDetails />} />
-
           <Route
             path="/register"
             element={

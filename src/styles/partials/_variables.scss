@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&family=Press+Start+2P&family=VT323&display=swap');
 
+@font-face {
+    font-family: 'BitsyArabic';
+    src: url('../public/fonts/bitsy-font-with-arabic.woff2') format('woff2');
+    font-display: swap;
+  }
+  
 $primary-bg: #0C134F;
 $secondary-bg: #1D267D;
 $highlight: #5C469C;
@@ -9,6 +15,7 @@ $text-muted: #ccc;
 $text-dark: #1D267D;
 
 $font-header: 'Press Start 2P', monospace;
+$font-header-arabic: 'BitsyArabic', 'Press Start 2P', monospace;
 $font-body: 'VT323', monospace;
 $font-btn: 'Pixelify Sans', sans-serif;
 

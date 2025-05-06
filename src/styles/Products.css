@@ -1,4 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans&family=Press+Start+2P&family=VT323&display=swap");
+@font-face {
+  font-family: "BitsyArabic";
+  src: url("../public/fonts/bitsy-font-with-arabic.woff2") format("woff2");
+  font-display: swap;
+}
 .filters-bar {
   display: flex;
   justify-content: space-between;
