@@ -696,23 +696,31 @@ html.dark-mode .about-page-section .timeline-horizontal .timeline-track .timelin
 html[dir=rtl] .product-details {
   direction: rtl;
 }
-html[dir=rtl] .product-details .product-info-box .title-row {
+html[dir=rtl] .product-details .product-info-box html[dir=rtl] .product-details .product-info-box .title-row {
   flex-direction: row-reverse;
   justify-content: flex-start;
+  gap: 1rem;
 }
-html[dir=rtl] .product-details .product-info-box .title-row .product-title {
+html[dir=rtl] .product-details .product-info-box html[dir=rtl] .product-details .product-info-box .title-row .product-title {
   order: 1;
-  text-align: right;
-  margin-left: auto;
-}
-html[dir=rtl] .product-details .product-info-box .title-row .product-actions {
-  order: 2;
+  margin-left: 0;
   margin-right: auto;
-  flex-direction: row-reverse;
+  flex-shrink: 0;
 }
-html[dir=rtl] .product-details .product-info-box .title-row .price-info .current-price,
-html[dir=rtl] .product-details .product-info-box .title-row .price-info .old-price,
-html[dir=rtl] .product-details .product-info-box .title-row .price-info .offer-line {
+html[dir=rtl] .product-details .product-info-box html[dir=rtl] .product-details .product-info-box .title-row .product-actions {
+  order: 2;
+  margin-left: auto;
+  flex-direction: row-reverse;
+  display: flex;
+  gap: 0.75rem;
+}
+html[dir=rtl] .product-details .product-info-box html[dir=rtl] .product-details .product-info-box .title-row .product-actions .wishlist-icon,
+html[dir=rtl] .product-details .product-info-box html[dir=rtl] .product-details .product-info-box .title-row .product-actions .share-icon {
+  margin: 0;
+}
+html[dir=rtl] .product-details .product-info-box html[dir=rtl] .product-details .price-info .current-price,
+html[dir=rtl] .product-details .product-info-box html[dir=rtl] .product-details .price-info .old-price,
+html[dir=rtl] .product-details .product-info-box html[dir=rtl] .product-details .price-info .offer-line {
   text-align: right;
 }
 html[dir=rtl] .product-details .product-specs .specs-list {
