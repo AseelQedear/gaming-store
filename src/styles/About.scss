@@ -112,27 +112,6 @@ html[dir="rtl"] .about-page-section {
       direction: ltr;
     }
   }
-
-  .timeline-horizontal {
-    direction: rtl;
-
-    .timeline-track {
-      flex-direction: row-reverse;
-
-      .timeline-event {
-        p {
-          left: auto;
-          right: 50%;
-          transform: translateX(50%);
-        }
-      }
-
-      &::before {
-        left: auto;
-        right: 0;
-      }
-    }
-  }
 }
 
 .gif-banner {

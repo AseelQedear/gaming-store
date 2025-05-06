@@ -257,21 +257,6 @@ html[dir=rtl] .about-page-section .fun-fact .rtl-text {
 html[dir=rtl] .about-page-section .fun-fact .ltr-word {
   direction: ltr;
 }
-html[dir=rtl] .about-page-section .timeline-horizontal {
-  direction: rtl;
-}
-html[dir=rtl] .about-page-section .timeline-horizontal .timeline-track {
-  flex-direction: row-reverse;
-}
-html[dir=rtl] .about-page-section .timeline-horizontal .timeline-track .timeline-event p {
-  left: auto;
-  right: 50%;
-  transform: translateX(50%);
-}
-html[dir=rtl] .about-page-section .timeline-horizontal .timeline-track::before {
-  left: auto;
-  right: 0;
-}
 
 .gif-banner {
   width: 100%;
