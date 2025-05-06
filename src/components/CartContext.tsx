@@ -12,6 +12,7 @@ export interface CartItem {
   discounted?: boolean;
   oldPrice?: number;
   percent?: number;
+  offerKey?: string; 
 }
 
 interface CartContextType {

@@ -273,7 +273,7 @@ html[dir="rtl"] .cart-drawer {
           flex-direction: row-reverse;
 
           button.delete {
-            margin-right: auto; // ensures it goes to the left in RTL
+            margin-right: auto; 
             margin-left: 0;
           }
         }
