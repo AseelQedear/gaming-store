@@ -1124,7 +1124,6 @@ html[dir=rtl] .product-details {
 }
 html[dir=rtl] .product-details .product-info-box .title-row {
   flex-direction: row-reverse;
-  flex-direction: row-reverse;
   justify-content: flex-start;
   gap: 1rem;
 }
