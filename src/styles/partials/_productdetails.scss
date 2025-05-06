@@ -196,16 +196,19 @@
   
     .product-info-box {
       .title-row {
-        flex-direction: row-reverse; 
+        flex-direction: row-reverse;
+        justify-content: flex-start; 
   
         .product-title {
-          text-align: right;
           order: 1;
+          text-align: right;
+          margin-left: auto; 
         }
   
         .product-actions {
-          order: 2; 
-        }
+          order: 2;
+          margin-right: auto; 
+          flex-direction: row-reverse;
       }
   
       .price-info {
@@ -216,6 +219,7 @@
         }
       }
     }
+  }
   
     .product-specs {
       .specs-list {
