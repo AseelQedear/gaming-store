@@ -13,6 +13,7 @@ import {
 import { useCart } from "../components/CartContext";
 import { useAuth } from "../components/AuthContext";
 import { useTranslation } from "react-i18next";
+import MobileResponsiveNavbar from "./MobileResponsiveNavbar";
 
 const AppNavbar: React.FC = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -112,26 +113,17 @@ const AppNavbar: React.FC = () => {
     }
   };
 
+  const isRTL = i18n.language === "ar";
+
   return (
-    <nav className="navbar navbar-expand-md fixed-top shadow-sm">
-      <div className="container-fluid px-4">
-        <NavLink className="navbar-brand d-flex align-items-center" to="/" title="Home">
-          <FaGamepad size={20} className="nav-icon pop-in" />
-        </NavLink>
+    <>
+      {/* ✅ Desktop Navbar */}
+      <nav className="navbar navbar-expand-md fixed-top shadow-sm d-none d-md-flex">
+        <div className="container-fluid px-4">
+          <NavLink className="navbar-brand d-flex align-items-center" to="/" title="Home">
+            <FaGamepad size={20} className="nav-icon pop-in" />
+          </NavLink>
 
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#mainNavbar"
-          aria-controls="mainNavbar"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-
-        <div className="collapse navbar-collapse justify-content-between" id="mainNavbar">
           <ul className="navbar-nav mx-auto mb-2 mb-md-0 gap-3">
             <li className="nav-item">
               <NavLink className="nav-link" to="/products">{t("devices")}</NavLink>
@@ -142,59 +134,29 @@ const AppNavbar: React.FC = () => {
           </ul>
 
           <div className="d-flex align-items-center gap-3 icon-group">
-          {i18n.language === "ar" ? (
+            {(isRTL ? (
               <>
-                {/* Language Dropdown */}
                 <div className="dropdown lang-dropdown">
-                  <button
-                    className="btn btn-sm btn-outline-secondary dropdown-toggle d-flex align-items-center gap-2"
-                    type="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
+                  <button className="btn btn-sm btn-outline-secondary dropdown-toggle d-flex align-items-center gap-2" type="button" data-bs-toggle="dropdown">
                     <FaGlobe />
                     AR
                   </button>
                   <ul className="dropdown-menu">
-                    <li>
-                      <button className="dropdown-item" onClick={() => changeLanguage("en")}>EN</button>
-                    </li>
-                    <li>
-                      <button className="dropdown-item" onClick={() => changeLanguage("ar")}>AR</button>
-                    </li>
+                    <li><button className="dropdown-item" onClick={() => changeLanguage("en")}>EN</button></li>
+                    <li><button className="dropdown-item" onClick={() => changeLanguage("ar")}>AR</button></li>
                   </ul>
                 </div>
-
-                {/* Dark Mode */}
-                <span title={t("dark_mode")} className="hide-on-mobile" onClick={toggleDarkMode} style={{ cursor: "pointer" }}>
-                  {darkMode ? <FaSun /> : <FaMoon />}
-                </span>
-
-                {/* Logout */}
-                {isAuthenticated && (
-                  <span title={t("logout")} onClick={handleLogout} style={{ cursor: "pointer" }}>
-                    <FaSignOutAlt />
-                  </span>
-                )}
-
-                {/* Profile */}
-                <span title={t("profile")} onClick={handleUserClick} style={{ cursor: "pointer" }}>
-                  <FaUser />
-                </span>
-
-                {/* Cart */}
-                <span title={t("cart")} onClick={openCart} className="cart-icon" style={{ cursor: "pointer" }}>
+                <span title={t("dark_mode")} className="hide-on-mobile" onClick={toggleDarkMode}><FaMoon /></span>
+                {isAuthenticated && <span title={t("logout")} onClick={handleLogout}><FaSignOutAlt /></span>}
+                <span title={t("profile")} onClick={handleUserClick}><FaUser /></span>
+                <span title={t("cart")} onClick={openCart} className="cart-icon">
                   <FaShoppingCart />
                   {totalItemCount > 0 && (
                     <span className={`cart-badge ${bounce ? "bounce-cart" : ""}`}>{totalItemCount}</span>
                   )}
                 </span>
-
-                {/* Search */}
                 <div className={`search-wrapper ${showSearch ? "expanded-wrapper" : "hide-on-mobile"}`}>
-                  <span title={t("search")} onClick={() => setShowSearch(!showSearch)} style={{ cursor: "pointer" }}>
-                    <FaSearch />
-                  </span>
+                  <span title={t("search")} onClick={() => setShowSearch(!showSearch)}><FaSearch /></span>
                   <input
                     type="text"
                     placeholder={t("search_placeholder")}
@@ -204,14 +166,11 @@ const AppNavbar: React.FC = () => {
                     className={`search-input ${showSearch ? "expanded" : ""}`}
                   />
                 </div>
-                </>
+              </>
             ) : (
               <>
-                {/* Search */}
                 <div className={`search-wrapper ${showSearch ? "expanded-wrapper" : "hide-on-mobile"}`}>
-                  <span title={t("search")} onClick={() => setShowSearch(!showSearch)} style={{ cursor: "pointer" }}>
-                    <FaSearch />
-                  </span>
+                  <span title={t("search")} onClick={() => setShowSearch(!showSearch)}><FaSearch /></span>
                   <input
                     type="text"
                     placeholder={t("search_placeholder")}
@@ -221,62 +180,38 @@ const AppNavbar: React.FC = () => {
                     className={`search-input ${showSearch ? "expanded" : ""}`}
                   />
                 </div>
-
-                
-                {/* Cart */}
-                <span title={t("cart")} onClick={openCart} className="cart-icon" style={{ cursor: "pointer" }}>
+                <span title={t("cart")} onClick={openCart} className="cart-icon">
                   <FaShoppingCart />
                   {totalItemCount > 0 && (
                     <span className={`cart-badge ${bounce ? "bounce-cart" : ""}`}>{totalItemCount}</span>
                   )}
                 </span>
-
-                {/* Profile */}
-                <span title={t("profile")} onClick={handleUserClick} style={{ cursor: "pointer" }}>
-                  <FaUser />
-                </span>
-
-                {/* Logout */}
-                {isAuthenticated && (
-                  <span title={t("logout")} onClick={handleLogout} style={{ cursor: "pointer" }}>
-                    <FaSignOutAlt />
-                  </span>
-                )}
-
-                  {/* Dark Mode */}
-                  <span title={t("dark_mode")} className="hide-on-mobile" onClick={toggleDarkMode} style={{ cursor: "pointer" }}>
+                <span title={t("profile")} onClick={handleUserClick}><FaUser /></span>
+                {isAuthenticated && <span title={t("logout")} onClick={handleLogout}><FaSignOutAlt /></span>}
+                <span title={t("dark_mode")} className="hide-on-mobile" onClick={toggleDarkMode}>
                   {darkMode ? <FaSun /> : <FaMoon />}
-                 </span>
-
-                
-                {/* Language Dropdown */}
+                </span>
                 <div className="dropdown lang-dropdown">
-                  <button
-                    className="btn btn-sm btn-outline-secondary dropdown-toggle d-flex align-items-center gap-2"
-                    type="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
+                  <button className="btn btn-sm btn-outline-secondary dropdown-toggle d-flex align-items-center gap-2" type="button" data-bs-toggle="dropdown">
                     <FaGlobe />
                     EN
                   </button>
                   <ul className="dropdown-menu">
-                    <li>
-                      <button className="dropdown-item" onClick={() => changeLanguage("en")}>EN</button>
-                    </li>
-                    <li>
-                      <button className="dropdown-item" onClick={() => changeLanguage("ar")}>AR</button>
-                    </li>
+                    <li><button className="dropdown-item" onClick={() => changeLanguage("en")}>EN</button></li>
+                    <li><button className="dropdown-item" onClick={() => changeLanguage("ar")}>AR</button></li>
                   </ul>
                 </div>
               </>
-
-
-            )}
+            ))}
           </div>
         </div>
+      </nav>
+
+      {/* ✅ Mobile Navbar */}
+      <div className="d-md-none">
+        <MobileResponsiveNavbar />
       </div>
-    </nav>
+    </>
   );
 };
 
