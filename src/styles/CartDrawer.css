@@ -458,35 +458,37 @@ html[dir=rtl] .cart-drawer.open {
   right: auto;
 }
 
-html[dir=rtl] .cart-drawer .cart-header {
-  flex-direction: row-reverse;
-}
-html[dir=rtl] .cart-drawer .cart-body .cart-item {
-  flex-direction: row-reverse;
-}
-html[dir=rtl] .cart-drawer .cart-body .cart-item .item-details .price-info {
-  flex-direction: row-reverse;
-}
-html[dir=rtl] .cart-drawer .cart-body .cart-item .item-details .qty {
-  flex-direction: row-reverse;
-}
-html[dir=rtl] .cart-drawer .cart-body .cart-item .item-details .qty .delete {
-  margin-left: auto;
-  margin-right: 0;
-}
-html[dir=rtl] .cart-drawer .cart-body .cart-summary p,
-html[dir=rtl] .cart-drawer .cart-body .cart-summary h5 {
+.cart-header {
   flex-direction: row-reverse;
   text-align: right;
 }
-html[dir=rtl] .cart-drawer input::-moz-placeholder {
-  text-align: right;
-  direction: rtl;
-}
-html[dir=rtl] .cart-drawer input::placeholder {
-  text-align: right;
-  direction: rtl;
-}
-html[dir=rtl] .cart-drawer .cart-footer .discount-row {
+
+.cart-body .cart-item {
   flex-direction: row-reverse;
+  text-align: right;
+}
+.cart-body .cart-item .item-details .price-info {
+  flex-direction: row-reverse;
+}
+.cart-body .cart-item .item-details .qty {
+  flex-direction: row-reverse;
+}
+.cart-body .cart-item .item-details .qty button.delete {
+  margin-right: auto;
+  margin-left: 0;
+}
+.cart-body .cart-summary p,
+.cart-body .cart-summary h5 {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.cart-footer .discount-row {
+  flex-direction: row-reverse;
+}
+.cart-footer .discount-row input {
+  text-align: right;
+}
+.cart-footer .checkout-btn {
+  text-align: center;
 }/*# sourceMappingURL=CartDrawer.css.map */

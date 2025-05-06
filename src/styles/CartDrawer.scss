@@ -254,14 +254,15 @@ html[dir="rtl"] .cart-drawer {
   }
 }
 
-html[dir="rtl"] .cart-drawer {
   .cart-header {
     flex-direction: row-reverse;
+    text-align: right;
   }
 
   .cart-body {
     .cart-item {
       flex-direction: row-reverse;
+      text-align: right;
 
       .item-details {
         .price-info {
@@ -271,12 +272,10 @@ html[dir="rtl"] .cart-drawer {
         .qty {
           flex-direction: row-reverse;
 
-          .delete {
-            margin-left: auto;
-            margin-right: 0;
+          button.delete {
+            margin-right: auto; // ensures it goes to the left in RTL
+            margin-left: 0;
           }
-
-          
         }
       }
     }
@@ -290,15 +289,17 @@ html[dir="rtl"] .cart-drawer {
     }
   }
 
-  input::placeholder {
-    text-align: right;
-    direction: rtl;
-  }
-  
   .cart-footer {
     .discount-row {
       flex-direction: row-reverse;
+
+      input {
+        text-align: right;
+      }
+    }
+
+    .checkout-btn {
+      text-align: center;
     }
   }
-}
 
