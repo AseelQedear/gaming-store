@@ -27,8 +27,6 @@ const AppNavbar: React.FC = () => {
 
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
-
-    // Flip only the navbar layout
     const navbar = document.querySelector(".navbar");
     if (navbar) {
       navbar.setAttribute("dir", lng === "ar" ? "rtl" : "ltr");
@@ -48,7 +46,7 @@ const AppNavbar: React.FC = () => {
       navbar.setAttribute("dir", i18n.language === "ar" ? "rtl" : "ltr");
     }
   }, [i18n.language]);
-  
+
   useEffect(() => {
     const savedMode = localStorage.getItem("darkMode") === "true";
     setDarkMode(savedMode);
@@ -144,70 +142,126 @@ const AppNavbar: React.FC = () => {
           </ul>
 
           <div className="d-flex align-items-center gap-3 icon-group">
-            {/* Search */}
-            <div className={`search-wrapper ${showSearch ? "expanded-wrapper" : "hide-on-mobile"}`}>
-              <span title={t("search")} onClick={() => setShowSearch(!showSearch)} style={{ cursor: "pointer" }}>
-                <FaSearch />
-              </span>
-              <input
-                type="text"
-                placeholder={t("search_placeholder")}
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                onKeyDown={handleSearchKeyPress}
-                className={`search-input ${showSearch ? "expanded" : ""}`}
-              />
-            </div>
+            {i18n.language === "ar" ? (
+              <>
+                {/* Language Dropdown */}
+                <div className="dropdown lang-dropdown">
+                  <button
+                    className="btn btn-sm btn-outline-secondary dropdown-toggle d-flex align-items-center gap-2"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <FaGlobe />
+                    العربية
+                  </button>
+                  <ul className="dropdown-menu">
+                    <li>
+                      <button className="dropdown-item" onClick={() => changeLanguage("en")}>English</button>
+                    </li>
+                    <li>
+                      <button className="dropdown-item" onClick={() => changeLanguage("ar")}>العربية</button>
+                    </li>
+                  </ul>
+                </div>
 
-            {/* Dark Mode */}
-            <span title={t("dark_mode")} className="hide-on-mobile" onClick={toggleDarkMode} style={{ cursor: "pointer" }}>
-              {darkMode ? <FaSun /> : <FaMoon />}
-            </span>
+                {/* Profile */}
+                <span title={t("profile")} onClick={handleUserClick} style={{ cursor: "pointer" }}>
+                  <FaUser />
+                </span>
 
-            {/* Cart */}
-            <span title={t("cart")} onClick={openCart} className="cart-icon" style={{ cursor: "pointer" }}>
-              <FaShoppingCart />
-              {totalItemCount > 0 && (
-                <span className={`cart-badge ${bounce ? "bounce-cart" : ""}`}>{totalItemCount}</span>
-              )}
-            </span>
+                {/* Cart */}
+                <span title={t("cart")} onClick={openCart} className="cart-icon" style={{ cursor: "pointer" }}>
+                  <FaShoppingCart />
+                  {totalItemCount > 0 && (
+                    <span className={`cart-badge ${bounce ? "bounce-cart" : ""}`}>{totalItemCount}</span>
+                  )}
+                </span>
 
-            {/* Profile */}
-            <span title={t("profile")} onClick={handleUserClick} style={{ cursor: "pointer" }}>
-              <FaUser />
-            </span>
+                {/* Dark Mode */}
+                <span title={t("dark_mode")} className="hide-on-mobile" onClick={toggleDarkMode} style={{ cursor: "pointer" }}>
+                  {darkMode ? <FaSun /> : <FaMoon />}
+                </span>
 
-            {/* Logout */}
+                {/* Search */}
+                <div className={`search-wrapper ${showSearch ? "expanded-wrapper" : "hide-on-mobile"}`}>
+                  <span title={t("search")} onClick={() => setShowSearch(!showSearch)} style={{ cursor: "pointer" }}>
+                    <FaSearch />
+                  </span>
+                  <input
+                    type="text"
+                    placeholder={t("search_placeholder")}
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    onKeyDown={handleSearchKeyPress}
+                    className={`search-input ${showSearch ? "expanded" : ""}`}
+                  />
+                </div>
+              </>
+            ) : (
+              <>
+                {/* Search */}
+                <div className={`search-wrapper ${showSearch ? "expanded-wrapper" : "hide-on-mobile"}`}>
+                  <span title={t("search")} onClick={() => setShowSearch(!showSearch)} style={{ cursor: "pointer" }}>
+                    <FaSearch />
+                  </span>
+                  <input
+                    type="text"
+                    placeholder={t("search_placeholder")}
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    onKeyDown={handleSearchKeyPress}
+                    className={`search-input ${showSearch ? "expanded" : ""}`}
+                  />
+                </div>
+
+                {/* Dark Mode */}
+                <span title={t("dark_mode")} className="hide-on-mobile" onClick={toggleDarkMode} style={{ cursor: "pointer" }}>
+                  {darkMode ? <FaSun /> : <FaMoon />}
+                </span>
+
+                {/* Cart */}
+                <span title={t("cart")} onClick={openCart} className="cart-icon" style={{ cursor: "pointer" }}>
+                  <FaShoppingCart />
+                  {totalItemCount > 0 && (
+                    <span className={`cart-badge ${bounce ? "bounce-cart" : ""}`}>{totalItemCount}</span>
+                  )}
+                </span>
+
+                {/* Profile */}
+                <span title={t("profile")} onClick={handleUserClick} style={{ cursor: "pointer" }}>
+                  <FaUser />
+                </span>
+
+                {/* Language Dropdown */}
+                <div className="dropdown lang-dropdown">
+                  <button
+                    className="btn btn-sm btn-outline-secondary dropdown-toggle d-flex align-items-center gap-2"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <FaGlobe />
+                    English
+                  </button>
+                  <ul className="dropdown-menu">
+                    <li>
+                      <button className="dropdown-item" onClick={() => changeLanguage("en")}>English</button>
+                    </li>
+                    <li>
+                      <button className="dropdown-item" onClick={() => changeLanguage("ar")}>العربية</button>
+                    </li>
+                  </ul>
+                </div>
+              </>
+            )}
+
+            {/* Logout (always last) */}
             {isAuthenticated && (
               <span title={t("logout")} onClick={handleLogout} style={{ cursor: "pointer" }}>
                 <FaSignOutAlt />
               </span>
             )}
-
-            {/* Language Dropdown */}
-            <div className="dropdown lang-dropdown">
-              <button
-                className="btn btn-sm btn-outline-secondary dropdown-toggle d-flex align-items-center gap-2"
-                type="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                <FaGlobe />
-                {i18n.language === "en" ? "English" : "العربية"}
-              </button>
-              <ul className="dropdown-menu">
-                <li>
-                  <button className="dropdown-item d-flex align-items-center gap-2" onClick={() => changeLanguage("en")}>
-                    English
-                  </button>
-                </li>
-                <li>
-                  <button className="dropdown-item d-flex align-items-center gap-2" onClick={() => changeLanguage("ar")}>
-                    العربية
-                  </button>
-                </li>
-              </ul>
-            </div>
           </div>
         </div>
       </div>

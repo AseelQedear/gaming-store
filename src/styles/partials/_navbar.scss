@@ -36,21 +36,33 @@
     left: -15px;
   }
 
-  .profile-menu .dropdown-menu {
+  .profile-menu .dropdown-menu,
+  .lang-dropdown .dropdown-menu {
     left: auto;
     right: 0;
   }
 
   @media (max-width: 1024px) {
     .navbar-nav {
+      flex-direction: column;
       align-items: flex-end;
       padding-right: 1rem;
       padding-left: 0;
     }
 
     .icon-group {
+      flex-direction: row-reverse;
       justify-content: flex-end;
       padding: 0 1rem 1rem 0;
+    }
+
+    .navbar-collapse.collapse.show {
+      align-items: flex-end;
+    }
+
+    .lang-dropdown .dropdown-menu {
+      right: 0;
+      left: auto;
     }
   }
 }
@@ -66,9 +78,28 @@
     margin-left: auto;
     margin-right: 0;
   }
+
+  @media (max-width: 1024px) {
+    .navbar-nav {
+      flex-direction: column;
+      align-items: flex-start;
+      padding-left: 1rem;
+    }
+
+    .icon-group {
+      flex-direction: row;
+      justify-content: flex-start;
+      padding: 0 1rem 1rem;
+    }
+
+    .lang-dropdown .dropdown-menu {
+      left: 0;
+      right: auto;
+    }
+  }
 }
 
-/* Navbar */
+/* Navbar Core */
 .navbar {
   background-color: #070e3e !important;
   height: 72px;
@@ -155,6 +186,8 @@
     display: flex;
     align-items: center;
     gap: 2rem;
+    flex-wrap: wrap; // ✅ Optional: allows wrapping in smaller screens
+    row-gap: 0.5rem;  // ✅ Optional: space between rows
 
     span,
     svg {
@@ -276,39 +309,5 @@
 .hide-on-mobile {
   @media (max-width: 768px) {
     display: none !important;
-  }
-}
-
-/* Responsive Navbar Layout */
-@media (max-width: 1024px) {
-  .navbar {
-    flex-direction: column;
-    height: auto;
-    padding: 1rem;
-
-    .container-fluid {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .navbar-nav {
-      flex-direction: column;
-      width: 100%;
-      align-items: flex-start;
-      padding-left: 1rem;
-      gap: 1rem;
-    }
-
-    .icon-group {
-      width: 100%;
-      justify-content: flex-start;
-      gap: 1.5rem;
-      padding: 0 1rem 1rem;
-      white-space: nowrap;
-    }
-
-    .navbar-toggler {
-      margin-left: auto;
-    }
   }
 }
