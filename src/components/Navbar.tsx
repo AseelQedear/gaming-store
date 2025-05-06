@@ -243,6 +243,12 @@ const AppNavbar: React.FC = () => {
                   </span>
                 )}
 
+                  {/* Dark Mode */}
+                  <span title={t("dark_mode")} className="hide-on-mobile" onClick={toggleDarkMode} style={{ cursor: "pointer" }}>
+                  {darkMode ? <FaSun /> : <FaMoon />}
+                 </span>
+
+                
                 {/* Language Dropdown */}
                 <div className="dropdown lang-dropdown">
                   <button
@@ -251,12 +257,6 @@ const AppNavbar: React.FC = () => {
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
-
-                {/* Dark Mode */}
-                <span title={t("dark_mode")} className="hide-on-mobile" onClick={toggleDarkMode} style={{ cursor: "pointer" }}>
-                  {darkMode ? <FaSun /> : <FaMoon />}
-                </span>
-
                     <FaGlobe />
                     English
                   </button>
@@ -270,6 +270,8 @@ const AppNavbar: React.FC = () => {
                   </ul>
                 </div>
               </>
+
+
             )}
           </div>
         </div>
