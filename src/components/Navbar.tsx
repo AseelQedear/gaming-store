@@ -14,6 +14,7 @@ import { useCart } from "../components/CartContext";
 import { useAuth } from "../components/AuthContext";
 import { useTranslation } from "react-i18next";
 import MobileResponsiveNavbar from "./MobileResponsiveNavbar";
+import "../styles/partials/navbar.scss";
 
 const AppNavbar: React.FC = () => {
   const [darkMode, setDarkMode] = useState(false);

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import {
   FaBars,
@@ -62,19 +62,17 @@ const MobileResponsiveNavbar: React.FC = () => {
           <FaGamepad size={22} className="text-accent" />
         </NavLink>
 
-        <div className="d-flex align-items-center gap-3">
+        <div className="icon-group d-flex align-items-center gap-3">
           <FaSearch title={t("search")} onClick={() => navigate("/products")} />
-
-          <div className="cart-icon position-relative" onClick={() => navigate("/cart")}> 
+          <div className="cart-icon position-relative" onClick={() => navigate("/cart")}>
             <FaShoppingCart title={t("cart")} />
             {totalItemCount > 0 && <span className="cart-badge">{totalItemCount}</span>}
           </div>
-
-          <FaUser title={t("profile")} onClick={() => navigate(isAuthenticated ? "/profile" : "/login")} />
-
           <FaBars title="Menu" onClick={() => setSidebarOpen(true)} />
         </div>
       </nav>
+
+      {sidebarOpen && <div className="sidebar-overlay" onClick={() => setSidebarOpen(false)} />}
 
       <Offcanvas show={sidebarOpen} onHide={() => setSidebarOpen(false)} placement="end" className="mobile-sidebar">
         <Offcanvas.Header closeButton>
@@ -96,6 +94,10 @@ const MobileResponsiveNavbar: React.FC = () => {
                 <FaSignOutAlt /> {t("logout")}
               </button>
             )}
+
+            <button onClick={() => navigate(isAuthenticated ? "/profile" : "/login")}>
+              <FaUser /> {t("profile")}
+            </button>
 
             <div className="lang-switch">
               <button onClick={() => changeLanguage("en")}><FaGlobe /> EN</button>
