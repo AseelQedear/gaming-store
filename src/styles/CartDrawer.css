@@ -446,4 +446,14 @@ html[dir=rtl] .hero-title, html[dir=rtl] .section-title, html[dir=rtl] .footer-l
 .cart-drawer .cart-footer .checkout-btn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+html[dir=rtl] .cart-drawer {
+  left: -100%;
+  right: auto;
+  transition: left 0.4s ease;
+}
+html[dir=rtl] .cart-drawer.open {
+  left: 0;
+  right: auto;
 }/*# sourceMappingURL=CartDrawer.css.map */
