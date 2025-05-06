@@ -86,17 +86,31 @@
     }
   }
 }
-
 html[dir="rtl"] .about-page-section {
-  text-align: right;
+  direction: rtl;
+
+  // Keep text centered
+  text-align: center;
 
   .container {
-    text-align: right;
-    align-items: flex-end;
+    text-align: center;
+    align-items: center;
   }
 
   .about-description {
-    text-align: right;
+    text-align: center;
+  }
+
+  .fun-fact {
+    flex-direction: row-reverse;
+
+    .rtl-text {
+      direction: rtl;
+    }
+
+    .ltr-word {
+      direction: ltr;
+    }
   }
 
   .timeline-horizontal {
@@ -107,10 +121,15 @@ html[dir="rtl"] .about-page-section {
 
       .timeline-event {
         p {
-          transform: translateX(50%);
           left: auto;
           right: 50%;
+          transform: translateX(50%);
         }
+      }
+
+      &::before {
+        left: auto;
+        right: 0;
       }
     }
   }
