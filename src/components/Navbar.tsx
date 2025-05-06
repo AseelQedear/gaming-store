@@ -43,6 +43,13 @@ const AppNavbar: React.FC = () => {
   };
 
   useEffect(() => {
+    const navbar = document.querySelector(".navbar");
+    if (navbar) {
+      navbar.setAttribute("dir", i18n.language === "ar" ? "rtl" : "ltr");
+    }
+  }, [i18n.language]);
+  
+  useEffect(() => {
     const savedMode = localStorage.getItem("darkMode") === "true";
     setDarkMode(savedMode);
     document.documentElement.classList.toggle("dark-mode", savedMode);
