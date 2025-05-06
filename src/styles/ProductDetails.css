@@ -699,21 +699,18 @@ html[dir=rtl] .product-details {
 html[dir=rtl] .product-details .product-info-box .title-row {
   flex-direction: row-reverse;
   justify-content: flex-start;
-  gap: 1rem;
 }
 html[dir=rtl] .product-details .product-info-box .title-row .product-title {
   order: 1;
-  margin-left: 0;
-  margin-right: auto;
-  flex-shrink: 0;
+  margin-right: 0;
+  margin-left: 1rem;
+  flex: initial;
 }
 html[dir=rtl] .product-details .product-info-box .title-row .product-actions {
   order: 2;
   flex-direction: row-reverse;
   display: flex;
   gap: 0.75rem;
-  margin-left: auto;
-  justify-content: flex-start;
 }
 html[dir=rtl] .product-details .product-info-box .price-info .current-price,
 html[dir=rtl] .product-details .product-info-box .price-info .old-price,
