@@ -157,10 +157,10 @@ const AppNavbar: React.FC = () => {
                   </button>
                   <ul className="dropdown-menu">
                     <li>
-                      <button className="dropdown-item" onClick={() => changeLanguage("en")}>English</button>
+                      <button className="dropdown-item" onClick={() => changeLanguage("en")}>EN</button>
                     </li>
                     <li>
-                      <button className="dropdown-item" onClick={() => changeLanguage("ar")}>العربية</button>
+                      <button className="dropdown-item" onClick={() => changeLanguage("ar")}>AR</button>
                     </li>
                   </ul>
                 </div>
