@@ -674,7 +674,7 @@ html.dark-mode .about-page-section .timeline-horizontal .timeline-track .timelin
 html[dir=rtl] .products-page {
   direction: rtl;
 }
-html[dir=rtl] .products-page .row, html[dir=rtl] .products-page .col-md {
+html[dir=rtl] .products-page .row {
   justify-content: flex-end;
 }
 html[dir=rtl] .products-page .product-card-style2 {
