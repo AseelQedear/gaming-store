@@ -16,7 +16,7 @@
       "contact_us": "Contact Us"
     },
 
-    
+
     "home": {
       "hero_title": "The Pixel Playground",
       "hero_subtitle": "Power up your game with the best handheld consoles.",
@@ -120,18 +120,7 @@
         "apply": "Apply",
         "checkout": "Proceed to checkout",
         "added": "Added to cart!",
-        "updated": "Quantity updated!",
-
-          "offers": {
-          "steam_deck_offer": "Free shipping + 200 games",
-          "steam_deck_limited_offer": "Exclusive colorway + travel case",
-          "rog_ally_meta_offer": "Free shipping + Meta+ subscription",
-          "rog_ally_budget_offer": "Budget-friendly bundle with charger",
-          "legion_go_offer": "3 Months Xbox Game Pass + 200 Games",
-          "msi_claw_wrath_offer": "Get Asgard’s Wrath 2 with purchase",
-          "msi_claw_pouch_offer": "Includes exclusive MSI travel pouch",
-          "default": ""
-      }
+        "updated": "Quantity updated!"
         },
 
 

@@ -120,18 +120,8 @@
         "apply": "تطبيق",
         "checkout": "الانتقال للدفع",
         "added": "تمت الإضافة إلى السلة!",
-        "updated": "تم تحديث الكمية!",
-        
-          "offers": {
-          "steam_deck_offer": "شحن مجاني + 200 لعبة",
-          "steam_deck_limited_offer": "تصميم حصري + حقيبة سفر",
-          "rog_ally_meta_offer": "شحن مجاني + اشتراك Meta+",
-          "rog_ally_budget_offer": "حزمة اقتصادية مع شاحن",
-          "legion_go_offer": "3 أشهر Xbox Game Pass + 200 لعبة",
-          "msi_claw_wrath_offer": "احصل على Asgard’s Wrath 2 مع الشراء",
-          "msi_claw_pouch_offer": "تشمل حقيبة MSI حصرية",
-          "default": ""
-        },
+        "updated": "تم تحديث الكمية!"
+         },
 
 
     "auth": {
@@ -268,7 +258,7 @@
           }
         
         }
-      }      
+          
           
 
 
