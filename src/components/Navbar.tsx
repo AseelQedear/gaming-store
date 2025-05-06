@@ -142,7 +142,7 @@ const AppNavbar: React.FC = () => {
           </ul>
 
           <div className="d-flex align-items-center gap-3 icon-group">
-            {i18n.language === "ar" ? (
+          {i18n.language === "ar" ? (
               <>
                 {/* Language Dropdown */}
                 <div className="dropdown lang-dropdown">
@@ -165,6 +165,18 @@ const AppNavbar: React.FC = () => {
                   </ul>
                 </div>
 
+                {/* Dark Mode */}
+                <span title={t("dark_mode")} className="hide-on-mobile" onClick={toggleDarkMode} style={{ cursor: "pointer" }}>
+                  {darkMode ? <FaSun /> : <FaMoon />}
+                </span>
+
+                {/* Logout */}
+                {isAuthenticated && (
+                  <span title={t("logout")} onClick={handleLogout} style={{ cursor: "pointer" }}>
+                    <FaSignOutAlt />
+                  </span>
+                )}
+
                 {/* Profile */}
                 <span title={t("profile")} onClick={handleUserClick} style={{ cursor: "pointer" }}>
                   <FaUser />
@@ -176,11 +188,6 @@ const AppNavbar: React.FC = () => {
                   {totalItemCount > 0 && (
                     <span className={`cart-badge ${bounce ? "bounce-cart" : ""}`}>{totalItemCount}</span>
                   )}
-                </span>
-
-                {/* Dark Mode */}
-                <span title={t("dark_mode")} className="hide-on-mobile" onClick={toggleDarkMode} style={{ cursor: "pointer" }}>
-                  {darkMode ? <FaSun /> : <FaMoon />}
                 </span>
 
                 {/* Search */}
@@ -197,7 +204,7 @@ const AppNavbar: React.FC = () => {
                     className={`search-input ${showSearch ? "expanded" : ""}`}
                   />
                 </div>
-              </>
+                </>
             ) : (
               <>
                 {/* Search */}
@@ -215,11 +222,7 @@ const AppNavbar: React.FC = () => {
                   />
                 </div>
 
-                {/* Dark Mode */}
-                <span title={t("dark_mode")} className="hide-on-mobile" onClick={toggleDarkMode} style={{ cursor: "pointer" }}>
-                  {darkMode ? <FaSun /> : <FaMoon />}
-                </span>
-
+                
                 {/* Cart */}
                 <span title={t("cart")} onClick={openCart} className="cart-icon" style={{ cursor: "pointer" }}>
                   <FaShoppingCart />
@@ -233,6 +236,13 @@ const AppNavbar: React.FC = () => {
                   <FaUser />
                 </span>
 
+                {/* Logout */}
+                {isAuthenticated && (
+                  <span title={t("logout")} onClick={handleLogout} style={{ cursor: "pointer" }}>
+                    <FaSignOutAlt />
+                  </span>
+                )}
+
                 {/* Language Dropdown */}
                 <div className="dropdown lang-dropdown">
                   <button
@@ -241,6 +251,12 @@ const AppNavbar: React.FC = () => {
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
+
+                {/* Dark Mode */}
+                <span title={t("dark_mode")} className="hide-on-mobile" onClick={toggleDarkMode} style={{ cursor: "pointer" }}>
+                  {darkMode ? <FaSun /> : <FaMoon />}
+                </span>
+
                     <FaGlobe />
                     English
                   </button>
@@ -254,13 +270,6 @@ const AppNavbar: React.FC = () => {
                   </ul>
                 </div>
               </>
-            )}
-
-            {/* Logout (always last) */}
-            {isAuthenticated && (
-              <span title={t("logout")} onClick={handleLogout} style={{ cursor: "pointer" }}>
-                <FaSignOutAlt />
-              </span>
             )}
           </div>
         </div>
