@@ -8,6 +8,8 @@ import "../styles/Checkout.scss";
 import { FaGamepad } from "react-icons/fa";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useTranslation } from "react-i18next";
+
 
 const countries = ["Saudi Arabia", "United States", "Canada", "Germany", "France", "Japan"];
 
@@ -43,6 +45,7 @@ const Checkout: React.FC = () => {
   const shippingCost = shippingOption ? 10 : 0;
   const total = subtotal + shippingCost;
 
+  const { t } = useTranslation();
 
 const onQuantityChange = (id: number, delta: number) => {
   updateQuantity(id, delta);
@@ -235,40 +238,41 @@ useEffect(() => {
   </div>
 
       <div className="checkout-form col-md-7 p-4">
-        <h2 className="pixel-title">Checkout</h2>
+      <h2 className="pixel-title">{t("checkout_page.title")}</h2>
 
         {step === 1 && (
           <div className="step" data-aos="fade-up">
-            <h5>1. Delivery details</h5>
+            <h5>{t("checkout_page.step1_title")}</h5>
             <div className="grid-2col">
               {Object.entries(delivery).map(([key, value]) => (
                 <div key={key} className={key === "address" ? "full-width" : ""}>
                   {key === "country" ? (
                     <select value={value} onChange={(e) => setDelivery({ ...delivery, [key]: e.target.value })}>
-                      <option value="">Select Country</option>
+                      <option value="">{t("checkout_page.select_country")}</option>
                       {countries.map((c) => <option key={c} value={c}>{c}</option>)}
                     </select>
                   ) : (
                     <input
-                      placeholder={key.replace(/([A-Z])/g, " $1")}
+                      placeholder={t(`checkout_page.${key}`)}
                       value={value}
                       onChange={(e) => setDelivery({ ...delivery, [key]: e.target.value })}
                     />
                   )}
-                  {deliveryErrors[key] && <small className="error">{deliveryErrors[key]}</small>}
+                  {deliveryErrors[key] && <small className="error">{t(`checkout_page.delivery_errors.${key}`)}</small>}
                 </div>
               ))}
             </div>
             <div className="button-row">
-              <button onClick={handleBack}>Back</button>
-              <button onClick={handleNext}>Next</button>
+              <button onClick={handleBack}>{t("checkout_page.back")}</button>
+              <button onClick={handleNext}>{t("checkout_page.next")}</button>
             </div>
+
           </div>
         )}
 
           {step === 2 && (
             <div className="step" data-aos="fade-up">
-              <h5>2. Shipping</h5>
+              <h5>{t("checkout_page.step2_title")}</h5>
               {["Express", "Standard"].map((opt) => (
                 <label key={opt} className="radio-label">
                   <input
@@ -276,19 +280,21 @@ useEffect(() => {
                     checked={shippingOption === opt}
                     onChange={() => setShippingOption(opt)}
                   />
-                  {opt} Shipping <span className="sr-symbol">$</span>{10}
+                   {t(`checkout_page.${opt.toLowerCase()}_shipping`)} <span className="sr-symbol">$</span>{10}
                 </label>
               ))}
               <div className="button-row">
-                <button onClick={handleBack}>Back</button>
-                <button disabled={!shippingOption} onClick={handleNext}>Next</button>
+                <button onClick={handleBack}>{t("checkout_page.back")}</button>
+                <button disabled={!shippingOption} onClick={handleNext}>
+                  {t("checkout_page.next")}
+                </button>
               </div>
             </div>
           )}
 
           {step === 3 && (
             <div className="step" data-aos="fade-up">
-              <h5>3. Payment</h5>
+              <h5>{t("checkout_page.step3_title")}</h5>
 
               {/* Card Preview */}
               <Cards
@@ -315,8 +321,9 @@ useEffect(() => {
                   onFocus={() => setFocus("number")}
                 />
                 {cardError.includes("Invalid card number") && (
-                  <small className="error">Card number must be exactly 16 digits</small>
+                  <small className="error">{t("checkout_page.card_errors.invalid_card_number")}</small>
                 )}
+
               </div>
 
               {/* Name */}
@@ -330,8 +337,9 @@ useEffect(() => {
                   onFocus={() => setFocus("name")}
                 />
                 {cardError.includes("Invalid name") && (
-                  <small className="error">Name must contain only letters and be max 30 characters</small>
+                  <small className="error">{t("checkout_page.card_errors.invalid_name")}</small>
                 )}
+
               </div>
 
               {/* Expiry and CVC */}
@@ -353,10 +361,10 @@ useEffect(() => {
                   {(cardError.includes("Invalid expiry") || cardError.includes("Month must be between 01 and 12") || cardError.includes("Card expiry must be in the future")) && (
                     <small className="error">
                       {cardError.includes("Invalid expiry")
-                        ? "Expiry must be MM/YY"
+                        ? t("checkout_page.card_errors.invalid_expiry")
                         : cardError.includes("Month must be between 01 and 12")
-                        ? "Month must be between 01 and 12"
-                        : "Card expiry date must be in the future"}
+                        ? t("checkout_page.card_errors.invalid_month")
+                        : t("checkout_page.card_errors.expired")}
                     </small>
                   )}
                 </div>
@@ -370,15 +378,16 @@ useEffect(() => {
                     onChange={(e) => setCvc(e.target.value.replace(/\D/g, "").slice(0, 3))}
                     onFocus={() => setFocus("cvc")}
                   />
-                  {cardError.includes("Invalid CVC") && (
-                    <small className="error">CVC must be exactly 3 digits</small>
+                 {cardError.includes("Invalid CVC") && (
+                    <small className="error">{t("checkout_page.card_errors.invalid_cvc")}</small>
                   )}
+
                 </div>
               </div>
 
               <div className="button-row">
-                <button onClick={handleBack}>Back</button>
-                <button onClick={handleNext}>Continue to review</button>
+                <button onClick={handleBack}>{t("checkout_page.back")}</button>
+                <button onClick={handleNext}>{t("checkout_page.continue_review")}</button>
               </div>
             </div>
           )}
@@ -386,9 +395,9 @@ useEffect(() => {
 
         {step === 4 && (
           <div className="step review-step" data-aos="fade-up">
-            <h5>4. Review & Confirm</h5>
+            <h5>{t("checkout_page.step4_title")}</h5>
             <div className="review-section">
-              <h4>🚚 Delivery</h4>
+            <h4>{t("checkout_page.delivery_details")}</h4>
               {Object.entries(delivery).map(([key, value]) => (
                 <p key={key}>
                 <strong>
@@ -399,27 +408,31 @@ useEffect(() => {
               ))}
             </div>
             <div className="review-section">
-              <h4>💳 Payment</h4>
+            <h4>{t("checkout_page.payment_details")}</h4>
               <p><strong>Shipping Method:</strong> {shippingOption}</p>
               <p><strong>Total:</strong> <span className="highlighted-total">${total.toFixed(2)}</span></p>
             </div>
             <div className="button-row">
-              <button onClick={handleBack}>Back</button>
-              <button onClick={submitOrder}>Place Order</button>
+              <button onClick={handleBack}>{t("checkout_page.back")}</button>
+              <button onClick={submitOrder}>{t("checkout_page.place_order")}</button>
             </div>
           </div>
         )}
       </div>
 
       <div className="checkout-summary col-md-5 p-4" data-aos="fade-left">
-  <h3 className="pixel-title">Order – {cartItems.length} items</h3>
+      <h3 className="pixel-title">
+        {t("checkout_page.order_summary", { count: cartItems.length })}
+      </h3>
+
   <div className="cart-body">
     {cartItems.map((item, index) => (
       <div key={index} className="cart-item">
         <img src={item.image} alt={item.name} />
         <div className="item-details">
           <h5>{item.name}</h5>
-          <span>{item.variant || "No variant"}</span>
+            <span>{item.variant || t("checkout_page.no_variant")}</span>
+
 
           {/* Correct naming here */}
           <div className="price-info">
@@ -445,15 +458,15 @@ useEffect(() => {
     ))}
 
     <div className="cart-summary">
-      <p>Subtotal: <span><span className="sr-symbol">$</span>{subtotal.toFixed(2)}</span></p>
-      <p>Shipping: <span><span className="sr-symbol">$</span>{shippingCost.toFixed(2)}</span></p>
-      <h5>Total: <span><span className="sr-symbol">$</span>{total.toFixed(2)}</span></h5>
+      <p>{t("checkout_page.subtotal")}: <span><span className="sr-symbol">$</span>{subtotal.toFixed(2)}</span></p>
+      <p>{t("checkout_page.shipping")}: <span><span className="sr-symbol">$</span>{shippingCost.toFixed(2)}</span></p>
+      <h5>{t("checkout_page.total")}: <span><span className="sr-symbol">$</span>{total.toFixed(2)}</span></h5>
     </div>
 
     <div className="cart-footer">
       <div className="discount-row">
-        <input type="text" placeholder="Discount code" />
-        <button className="apply-btn">Apply</button>
+      <input type="text" placeholder={t("checkout_page.discount_placeholder")} />
+      <button className="apply-btn">{t("checkout_page.apply_discount")}</button>
       </div>
     </div>
   </div>
