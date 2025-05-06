@@ -106,6 +106,8 @@ const Products: React.FC = () => {
                   discounted: product.discounted,
                   oldPrice: product.oldPrice,
                   percent: product.percent,
+                  offer: product.offer,             
+                  offerKey: product.offerKey,
                 })
               }
             />

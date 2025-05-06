@@ -13,7 +13,7 @@ interface ProductProps {
     image: string;
     type: string;
     offer: string;
-    offerKey?: string; // Added support for optional offerKey
+    offerKey?: string; 
     available: boolean;
     bestDeal: boolean;
     discounted: boolean;

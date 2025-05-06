@@ -53,19 +53,21 @@ const CartDrawer = ({
                 <img src={item.image} alt={item.name} />
                 <div className="item-details">
                   <h5>{item.name}</h5>
+                  
                   <span>
                     {t(`products.offers.${item.offerKey || "default"}`, {
-                      defaultValue: item.variant,
+                      defaultValue: item.offer || item.variant,
                     })}
                   </span>
+
                   <div className="price-info">
                     {item.discounted && item.oldPrice ? (
                       <>
                         <span className="old-price">
-                          <span className="sr-symbol">﷼</span>{item.oldPrice.toFixed(2)}
+                          <span className="sr-symbol">$</span>{item.oldPrice.toFixed(2)}
                         </span>
                         <span className="current-price">
-                          <span className="sr-symbol">﷼</span>{item.price.toFixed(2)}
+                          <span className="sr-symbol">$</span>{item.price.toFixed(2)}
                         </span>
                         {item.percent && (
                           <span className="percent-badge">-{item.percent.toFixed(0)}%</span>
@@ -73,7 +75,7 @@ const CartDrawer = ({
                       </>
                     ) : (
                       <span className="current-price">
-                        <span className="sr-symbol">﷼</span>{item.price.toFixed(2)}
+                        <span className="sr-symbol">$</span>{item.price.toFixed(2)}
                       </span>
                     )}
                   </div>
@@ -89,10 +91,10 @@ const CartDrawer = ({
           )}
 
           <div className="cart-summary">
-            <p>{t("cart_drawer.subtotal")}: <span><span className="sr-symbol">﷼</span>{subtotal.toFixed(2)}</span></p>
-            <p>{t("cart_drawer.shipping")}: <span><span className="sr-symbol">﷼</span>0.00</span></p>
-            <p>{t("cart_drawer.taxes")}: <span><span className="sr-symbol">﷼</span>0.00</span></p>
-            <h5>{t("cart_drawer.total")}: <span><span className="sr-symbol">﷼</span>{subtotal.toFixed(2)}</span></h5>
+            <p>{t("cart_drawer.subtotal")}: <span><span className="sr-symbol">$</span>{subtotal.toFixed(2)}</span></p>
+            <p>{t("cart_drawer.shipping")}: <span><span className="sr-symbol">$</span>0.00</span></p>
+            <p>{t("cart_drawer.taxes")}: <span><span className="sr-symbol">$</span>0.00</span></p>
+            <h5>{t("cart_drawer.total")}: <span><span className="sr-symbol">$</span>{subtotal.toFixed(2)}</span></h5>
           </div>
 
           <div className="cart-footer">

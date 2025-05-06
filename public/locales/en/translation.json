@@ -15,6 +15,8 @@
       "about": "About",
       "contact_us": "Contact Us"
     },
+
+    
     "home": {
       "hero_title": "The Pixel Playground",
       "hero_subtitle": "Power up your game with the best handheld consoles.",
@@ -42,6 +44,8 @@
         }
       }
     },
+
+
     "about_page": {
       "story_title": "Our Story",
       "story_paragraph1": "Cila started with a simple dream — a gamer girl who spent hours in pixel worlds, wishing to hold a legendary handheld console of her own. A dreamer who didn't just want to play games — she wanted to live inside them.",
@@ -60,6 +64,8 @@
       "mission_paragraph2": "Our mission is simple: to make gaming dreams tangible. No more waiting. No more wondering. Just pure, portable magic — shipped right to your hands.",
       "fun_fact": "Fun Fact: \"Cila\" means the spirit of every pixel you ever conquered."
     },
+
+
     "products": {
       "all_devices": "All Devices",
       "steam_deck": "Steam Deck",
@@ -70,6 +76,7 @@
       "sort_price_high": "Highest Price",
       "sort_price_low": "Lowest Price",
       "error_loading": "Failed to load products.",
+
       "offers": {
         "steam_deck_offer": "Free shipping + 200 games",
         "steam_deck_limited_offer": "Exclusive colorway + travel case",
@@ -81,12 +88,16 @@
         "default": ""
       }
     },
+
+
     "product_card": {
       "wishlist": "Add to Wishlist",
       "add_to_cart": "Add to Cart",
       "out_of_stock": "Out of Stock",
       "best_value": "Best Value"
     },
+
+
     "product_details": {
       "best_deal": "Best Deal",
       "add_to_cart": "Add to Cart",
@@ -95,6 +106,8 @@
       "error_loading": "Failed to load product details.",
       "missing_name": "Product name is missing."
     },
+
+
     "cart_drawer": {
         "title": "Cart",
         "empty_message": "Your cart is empty.",
@@ -107,17 +120,34 @@
         "apply": "Apply",
         "checkout": "Proceed to checkout",
         "added": "Added to cart!",
-        "updated": "Quantity updated!"
+        "updated": "Quantity updated!",
+
+          "offers": {
+          "steam_deck_offer": "Free shipping + 200 games",
+          "steam_deck_limited_offer": "Exclusive colorway + travel case",
+          "rog_ally_meta_offer": "Free shipping + Meta+ subscription",
+          "rog_ally_budget_offer": "Budget-friendly bundle with charger",
+          "legion_go_offer": "3 Months Xbox Game Pass + 200 Games",
+          "msi_claw_wrath_offer": "Get Asgard’s Wrath 2 with purchase",
+          "msi_claw_pouch_offer": "Includes exclusive MSI travel pouch",
+          "default": ""
+      }
         },
+
+
     "auth": {
             "token_expired": "Session expired. Please log in again.",
             "invalid_token": "Invalid token detected."
             },
+
+
     "wishlist": {
         "fetch_error": "Failed to load favorites.",
         "toggle_failed": "Failed to update wishlist.",
         "toggle_error": "An error occurred while updating your wishlist."
         },
+
+
     "login_page": {
         "welcome_back": "Welcome Back, Gamer!",
         "email": "Email",
@@ -134,6 +164,8 @@
         "login_failed": "Login failed.",
         "unexpected_error": "An unexpected error occurred."
         },
+
+
      "register_page": {
         "title": "Join the Adventure!",
         "first_name": "First Name",
@@ -156,6 +188,8 @@
         "passwords_not_matching": "Passwords do not match.",
         "unexpected_error": "An unexpected error occurred."
     },
+
+
     "profile_page": {
         "greeting": "Welcome, {{name}}",
         "personal_info": "Personal Information",
@@ -185,54 +219,55 @@
         "require_current": "Current password required to change password."
         },
 
+
     "checkout_page": {
-    "title": "Checkout",
-    "step1_title": "1. Delivery details",
-    "step2_title": "2. Shipping",
-    "step3_title": "3. Payment",
-    "step4_title": "4. Review & Confirm",
-    "select_country": "Select Country",
-    "firstName": "First Name",
-    "lastName": "Last Name",
-    "address": "Address",
-    "postalCode": "Postal Code",
-    "city": "City",
-    "country": "Country",
-    "phone": "Phone Number",
-    "delivery_errors": {
-      "firstName": "First name should contain only letters",
-      "lastName": "Last name should contain only letters",
-      "address": "Address is required",
-      "city": "City is required",
-      "country": "Select a country",
-      "postalCode": "Postal code must be 5 digits",
-      "phone": "Phone number must be 10 to 15 digits"
-    },
-    "express_shipping": "Express Shipping",
-    "standard_shipping": "Standard Shipping",
-    "card_errors": {
-      "invalid_card_number": "Card number must be exactly 16 digits",
-      "invalid_name": "Name must contain only letters and be max 30 characters",
-      "invalid_expiry": "Expiry must be MM/YY",
-      "invalid_month": "Month must be between 01 and 12",
-      "expired": "Card expiry date must be in the future",
-      "invalid_cvc": "CVC must be exactly 3 digits"
-    },
-    "back": "Back",
-    "next": "Next",
-    "continue_review": "Continue to review",
-    "place_order": "Place Order",
-    "order_summary": "Order – {{count}} items",
-    "no_variant": "No variant",
-    "subtotal": "Subtotal",
-    "shipping": "Shipping",
-    "total": "Total",
-    "discount_placeholder": "Discount code",
-    "apply_discount": "Apply",
-    "delivery_details": "🚚 Delivery",
-    "payment_details": "💳 Payment"
-  }
+      "title": "Checkout",
+      "step1_title": "1. Delivery details",
+      "step2_title": "2. Shipping",
+      "step3_title": "3. Payment",
+      "step4_title": "4. Review & Confirm",
+      "select_country": "Select Country",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "address": "Address",
+      "postalCode": "Postal Code",
+      "city": "City",
+      "country": "Country",
+      "phone": "Phone Number",
+      "delivery_errors": {
+        "firstName": "First name should contain only letters",
+        "lastName": "Last name should contain only letters",
+        "address": "Address is required",
+        "city": "City is required",
+        "country": "Select a country",
+        "postalCode": "Postal code must be 5 digits",
+        "phone": "Phone number must be 10 to 15 digits"
+      },
+      "express_shipping": "Express Shipping",
+      "standard_shipping": "Standard Shipping",
+      "card_errors": {
+        "invalid_card_number": "Card number must be exactly 16 digits",
+        "invalid_name": "Name must contain only letters and be max 30 characters",
+        "invalid_expiry": "Expiry must be MM/YY",
+        "invalid_month": "Month must be between 01 and 12",
+        "expired": "Card expiry date must be in the future",
+        "invalid_cvc": "CVC must be exactly 3 digits"
+      },
+      "back": "Back",
+      "next": "Next",
+      "continue_review": "Continue to review",
+      "place_order": "Place Order",
+      "order_summary": "Order – {{count}} items",
+      "no_variant": "No variant",
+      "subtotal": "Subtotal",
+      "shipping": "Shipping",
+      "total": "Total",
+      "discount_placeholder": "Discount code",
+      "apply_discount": "Apply",
+      "delivery_details": "🚚 Delivery",
+      "payment_details": "💳 Payment"
     }
+      }
     
   
   
