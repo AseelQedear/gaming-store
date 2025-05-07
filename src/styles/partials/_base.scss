@@ -2,23 +2,6 @@
 @use "./animations" as *;
 
 // ===============================
-// 🅰️ Font Face Definitions
-// ===============================
-@font-face {
-  font-family: 'BitsyArabic';
-  src: url('../fonts/bitsy-font-with-arabic.woff2') format('woff2');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Arshid';
-  src: url('../fonts/Arshid.otf') format('opentype'); 
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-// ===============================
 // 🌍 Global Reset and Theme
 // ===============================
 body, html, #root {
@@ -42,7 +25,7 @@ body {
 }
 
 .sr-symbol {
-  font-family: 'Arshid', sans-serif;
+  font-family: $font-btn;
   font-size: 1.1em;
   margin-inline-end: 4px;
 }
@@ -61,17 +44,21 @@ h1, h2, h3, h6,
 }
 
 // ===============================
-// 🔄 RTL Font Override for Arabic
+// 🔄 RTL Font Override for Arabic Only
 // ===============================
 html[dir="rtl"] {
   body,
-  h1, h2, h3, h4, h5, h6,
   p, span, a, li, button, input, textarea {
-    font-family: 'BitsyArabic', sans-serif !important;
+    font-family: 'Cairo', sans-serif !important;
+  }
+
+  h1, h2, h3, h4, h5, h6,
+  .section-title, .hero-title, .footer-logo {
+    font-family: 'Tajawal', sans-serif !important;
   }
 
   .sr-symbol {
-    font-family: 'Arshid', sans-serif !important;
+    font-family: 'Tajawal', sans-serif !important;
   }
 }
 
@@ -88,7 +75,6 @@ html[dir="rtl"] {
   z-index: 1500; 
   pointer-events: auto;
 }
-
 
 // ===============================
 // 😔 Empty Message
