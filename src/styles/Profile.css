@@ -455,7 +455,6 @@ html[dir=rtl] .profile-page .orders-section .product-summary {
 }
 html[dir=rtl] .profile-page .orders-section .product-summary * {
   text-align: center !important;
-  display: block;
 }
 html[dir=rtl] .profile-page .favorites-section .favorites-list {
   justify-content: right !important;
