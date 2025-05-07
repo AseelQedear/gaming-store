@@ -348,6 +348,7 @@ html[dir="rtl"] {
 
     .form-actions {
       flex-direction: row-reverse;
+      align-items: flex-start;
     }
   }
 }

@@ -454,4 +454,5 @@ html[dir=rtl] .profile-page form label {
 }
 html[dir=rtl] .profile-page .form-actions {
   flex-direction: row-reverse;
+  align-items: flex-start;
 }/*# sourceMappingURL=Profile.css.map */
