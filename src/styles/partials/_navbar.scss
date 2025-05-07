@@ -16,6 +16,15 @@ html[dir="rtl"] .navbar {
 
   .icon-group {
     flex-direction: row-reverse;
+
+    .cart-icon .cart-badge {
+      right: auto;
+      left: -15px;
+    }
+
+    .search-wrapper input {
+      text-align: right;
+    }
   }
 
   .navbar-toggler {
@@ -25,11 +34,6 @@ html[dir="rtl"] .navbar {
 
   .navbar-collapse.collapse.show {
     align-items: flex-end;
-  }
-
-  .cart-icon .cart-badge {
-    right: auto;
-    left: -15px;
   }
 
   .profile-menu .dropdown-menu,
@@ -182,8 +186,8 @@ html[dir="ltr"] .navbar {
     display: flex;
     align-items: center;
     gap: 2rem;
-    flex-wrap: wrap; 
-    row-gap: 0.5rem;  
+    flex-wrap: wrap;
+    row-gap: 0.5rem;
 
     span,
     svg {

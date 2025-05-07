@@ -15,7 +15,6 @@ import { useAuth } from "../components/AuthContext";
 import { useTranslation } from "react-i18next";
 import MobileResponsiveNavbar from "./MobileResponsiveNavbar";
 
-
 const AppNavbar: React.FC = () => {
   const [darkMode, setDarkMode] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
@@ -121,7 +120,7 @@ const AppNavbar: React.FC = () => {
             </li>
           </ul>
 
-          <div className="d-flex align-items-center gap-3 icon-group">
+          <div className={`d-flex align-items-center gap-3 icon-group`}>
             <div className={`search-wrapper ${showSearch ? "expanded-wrapper" : "hide-on-mobile"}`}>
               <span title={t("search")} onClick={() => setShowSearch(!showSearch)}><FaSearch /></span>
               <input

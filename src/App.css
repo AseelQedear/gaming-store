@@ -241,16 +241,19 @@ html[dir=rtl] .navbar .navbar-nav {
 html[dir=rtl] .navbar .icon-group {
   flex-direction: row-reverse;
 }
+html[dir=rtl] .navbar .icon-group .cart-icon .cart-badge {
+  right: auto;
+  left: -15px;
+}
+html[dir=rtl] .navbar .icon-group .search-wrapper input {
+  text-align: right;
+}
 html[dir=rtl] .navbar .navbar-toggler {
   margin-right: auto;
   margin-left: 0;
 }
 html[dir=rtl] .navbar .navbar-collapse.collapse.show {
   align-items: flex-end;
-}
-html[dir=rtl] .navbar .cart-icon .cart-badge {
-  right: auto;
-  left: -15px;
 }
 html[dir=rtl] .navbar .profile-menu .dropdown-menu,
 html[dir=rtl] .navbar .lang-dropdown .dropdown-menu {
