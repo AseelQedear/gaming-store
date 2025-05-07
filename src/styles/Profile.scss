@@ -297,43 +297,43 @@
 }
 
 html[dir="rtl"] .profile-page {
-  direction: rtl;
-  text-align: right;
+  direction: rtl !important;
+  text-align: right !important;
 
   h1, h2, .section-title {
     text-align: right !important;
   }
 
   .profile-info form label {
-    align-items: flex-end;
+    align-items: flex-end !important;
 
     input {
-      direction: rtl;
+      direction: rtl !important;
       text-align: right;
 
       &::placeholder {
-        text-align: right;
+        text-align: right !important;
       }
     }
   }
 
   .invalid-feedback {
-    text-align: right;
+    text-align: right !important;
   }
 
   .orders-section .order-block {
-    text-align: right;
+    text-align: right !important;
 
     p {
-      text-align: right;
+      text-align: right !important;
     }
 
     .product-summary {
-      text-align: right;
+      text-align: right !important;
     }
 
     .order-items-row {
-      flex-direction: row-reverse;
+      flex-direction: row-reverse !important;
     }
   }
 
@@ -343,25 +343,25 @@ html[dir="rtl"] .profile-page {
     }
 
     .favorite-tile {
-      text-align: right;
+      text-align: right !important;
 
       .tile-header {
-        justify-content: flex-start;
+        justify-content: flex-start !important;
       }
 
       .info {
-        align-items: flex-end;
+        align-items: flex-end !important;
 
         h5, .variant, .price-line, .fav-btn {
-          text-align: right;
+          text-align: right !important;
         }
 
         .price-line {
-          flex-direction: row-reverse;
+          flex-direction: row-reverse !important;
 
           .badge {
-            margin-right: 0;
-            margin-left: auto;
+            margin-right: 0 !important;
+            margin-left: auto !important;
           }
         }
       }
@@ -369,6 +369,6 @@ html[dir="rtl"] .profile-page {
   }
 
   .form-actions {
-    flex-direction: row-reverse;
+    flex-direction: row-reverse !important;
   }
 }
