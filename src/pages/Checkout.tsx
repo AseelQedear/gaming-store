@@ -440,37 +440,49 @@ useEffect(() => {
         {t("checkout_page.order_summary", { count: cartItems.length })}
       </h3>
 
-    <div className="cart-body">
-      {cartItems.map((item, index) => (
-        <div key={index} className="cart-item">
-          <img src={item.image} alt={item.name} />
-          <div className="item-details">
-            <h5>{item.name}</h5>
-              <span>{item.variant || t("checkout_page.no_variant")}</span>
+      <div className="cart-body">
+  {cartItems.map((item, index) => (
+    <div key={index} className="cart-item">
+      <img src={item.image} alt={item.name} />
+      <div className="item-details">
+        <h5>{item.name}</h5>
 
+        {/* Translated Offer Line */}
+        <span>
+          {item.offerKey
+            ? t(`products.offers.${item.offerKey}`, {
+                defaultValue: item.offer || t("checkout_page.no_variant"),
+              })
+            : item.offer || t("checkout_page.no_variant")}
+        </span>
 
-            {/* Correct naming here */}
-            <div className="price-info">
-            {item.oldPrice && (
-                <span className="old-price"><span className="sr-symbol">$</span>{item.oldPrice.toFixed(2)}</span>
-              )}
-              <span className="current-price"><span className="sr-symbol">$</span>{item.price.toFixed(2)}</span>
-              {item.percent && (
-                <span className="percent-badge">-{item.percent.toFixed(0)}%</span>
-              )}
-            </div>
-
-              {/* Quantity Controls */}
-          <div className="qty">
-            <button onClick={() => onQuantityChange(item.id, -1)}>-</button>
-            <span>{item.quantity}</span>
-            <button onClick={() => onQuantityChange(item.id, 1)}>+</button>
-            <button className="delete" onClick={() => onRemoveItem(item.id)}>🗑</button>
-          </div>
-
-          </div>
+        {/* Price Information */}
+        <div className="price-info">
+          {item.oldPrice && (
+            <span className="old-price">
+              <span className="sr-symbol">$</span>
+              {item.oldPrice.toFixed(2)}
+            </span>
+          )}
+          <span className="current-price">
+            <span className="sr-symbol">$</span>
+            {item.price.toFixed(2)}
+          </span>
+          {item.percent && (
+            <span className="percent-badge">-{item.percent.toFixed(0)}%</span>
+          )}
         </div>
-      ))}
+
+        {/* Quantity Controls */}
+        <div className="qty">
+          <button onClick={() => onQuantityChange(item.id, -1)}>-</button>
+          <span>{item.quantity}</span>
+          <button onClick={() => onQuantityChange(item.id, 1)}>+</button>
+          <button className="delete" onClick={() => onRemoveItem(item.id)}>🗑</button>
+        </div>
+      </div>
+    </div>
+  ))}
 
       <div className="cart-summary">
         <p>{t("checkout_page.subtotal")}: <span><span className="sr-symbol">$</span>{subtotal.toFixed(2)}</span></p>
