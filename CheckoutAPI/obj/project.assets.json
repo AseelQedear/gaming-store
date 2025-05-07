@@ -9392,11 +9392,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\aseel\\gaming-store\\checkoutapi\\CheckoutAPI.csproj",
+      "projectUniqueName": "C:\\Users\\aseel\\gaming-store\\CheckoutAPI\\CheckoutAPI.csproj",
       "projectName": "CheckoutAPI",
-      "projectPath": "C:\\Users\\aseel\\gaming-store\\checkoutapi\\CheckoutAPI.csproj",
+      "projectPath": "C:\\Users\\aseel\\gaming-store\\CheckoutAPI\\CheckoutAPI.csproj",
       "packagesPath": "C:\\Users\\aseel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\aseel\\gaming-store\\checkoutapi\\obj\\",
+      "outputPath": "C:\\Users\\aseel\\gaming-store\\CheckoutAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\aseel\\AppData\\Roaming\\NuGet\\NuGet.Config"
