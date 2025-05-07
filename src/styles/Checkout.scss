@@ -509,13 +509,13 @@ html[dir="rtl"] .checkout-page {
       }
 
       .item-details {
-        text-align: right;
+        text-align: left;
         align-items: flex-end;
 
         h5,
         span,
         p {
-          text-align: right;
+          text-align: left;
         }
 
         .price-info {

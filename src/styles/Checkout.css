@@ -612,13 +612,13 @@ html[dir=rtl] .checkout-page .cart-body .cart-item img {
   margin-left: 1.5rem;
 }
 html[dir=rtl] .checkout-page .cart-body .cart-item .item-details {
-  text-align: right;
+  text-align: left;
   align-items: flex-end;
 }
 html[dir=rtl] .checkout-page .cart-body .cart-item .item-details h5,
 html[dir=rtl] .checkout-page .cart-body .cart-item .item-details span,
 html[dir=rtl] .checkout-page .cart-body .cart-item .item-details p {
-  text-align: right;
+  text-align: left;
 }
 html[dir=rtl] .checkout-page .cart-body .cart-item .item-details .price-info {
   flex-direction: row-reverse;
