@@ -39,12 +39,6 @@ const AppNavbar: React.FC = () => {
   };
 
   useEffect(() => {
-    const dir = i18n.dir();
-    document.documentElement.setAttribute("dir", dir);
-    document.body.classList.toggle("rtl", dir === "rtl");
-  }, [i18n.language]);
-
-  useEffect(() => {
     const savedMode = localStorage.getItem("darkMode") === "true";
     setDarkMode(savedMode);
     document.documentElement.classList.toggle("dark-mode", savedMode);
