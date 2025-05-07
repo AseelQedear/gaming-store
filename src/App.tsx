@@ -52,9 +52,9 @@ const AppContent: React.FC = () => {
 
   // Set RTL or LTR based on language
   useEffect(() => {
-    document.documentElement.lang = i18n.language;
-    document.documentElement.dir = i18n.dir(); 
+    document.documentElement.setAttribute("dir", i18n.dir());
   }, [i18n.language]);
+
   
   const hideNavFooter = location.pathname === "/checkout";
 

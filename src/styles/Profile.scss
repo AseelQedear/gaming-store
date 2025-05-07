@@ -295,80 +295,81 @@
     }
   }
 }
+html[dir="rtl"] {
+  .profile-page {
+    direction: rtl;
+    text-align: right;
 
-html[dir="rtl"] .profile-page {
-  direction: rtl;
-  text-align: right;
+    h1, h2, .section-title {
+      text-align: right !important;
+    }
 
-  h1, h2, .section-title {
-    text-align: right !important;
-  }
+    .profile-info form label {
+      align-items: flex-end;
 
-  .profile-info form label {
-    align-items: flex-end;
-
-    input {
-      direction: rtl;
-      text-align: right;
-
-      &::placeholder {
+      input {
+        direction: rtl;
         text-align: right;
-      }
-    }
-  }
 
-  .invalid-feedback {
-    text-align: right;
-  }
-
-  .orders-section .order-block {
-    text-align: right;
-
-    p {
-      text-align: right;
-    }
-
-    .product-summary {
-      text-align: right;
-    }
-
-    .order-items-row {
-      flex-direction: row-reverse;
-    }
-  }
-
-  .favorites-section {
-    .favorites-list {
-      justify-content: flex-end !important;
-    }
-
-    .favorite-tile {
-      text-align: right;
-
-      .tile-header {
-        justify-content: flex-start;
-      }
-
-      .info {
-        align-items: flex-end;
-
-        h5, .variant, .price-line, .fav-btn {
+        &::placeholder {
           text-align: right;
         }
+      }
+    }
 
-        .price-line {
-          flex-direction: row-reverse;
+    .invalid-feedback {
+      text-align: right;
+    }
 
-          .badge {
-            margin-right: 0;
-            margin-left: auto;
+    .orders-section .order-block {
+      text-align: right;
+
+      p {
+        text-align: right;
+      }
+
+      .product-summary {
+        text-align: right;
+      }
+
+      .order-items-row {
+        flex-direction: row-reverse;
+      }
+    }
+
+    .favorites-section {
+      .favorites-list {
+        justify-content: flex-end !important;
+      }
+
+      .favorite-tile {
+        text-align: right;
+
+        .tile-header {
+          justify-content: flex-start;
+        }
+
+        .info {
+          align-items: flex-end;
+
+          h5, .variant, .price-line, .fav-btn {
+            text-align: right;
+          }
+
+          .price-line {
+            flex-direction: row-reverse;
+
+            .badge {
+              margin-right: 0;
+              margin-left: auto;
+            }
           }
         }
       }
     }
-  }
 
-  .form-actions {
-    flex-direction: row-reverse;
+    .form-actions {
+      flex-direction: row-reverse;
+    }
   }
 }
