@@ -309,6 +309,7 @@ html[dir="rtl"] .profile-page {
 
     input {
       direction: rtl;
+      text-align: right;
 
       &::placeholder {
         text-align: right;
@@ -320,24 +321,54 @@ html[dir="rtl"] .profile-page {
     text-align: right;
   }
 
-  .orders-section .order-block p,
-  .orders-section .order-block .product-summary {
+  .orders-section .order-block {
     text-align: right;
+
+    p {
+      text-align: right;
+    }
+
+    .product-summary {
+      text-align: right;
+    }
+
+    .order-items-row {
+      flex-direction: row-reverse;
+    }
   }
 
-  .favorites-section .favorites-list {
-    justify-content: flex-end !important;
+  .favorites-section {
+    .favorites-list {
+      justify-content: flex-end !important;
+    }
+
+    .favorite-tile {
+      text-align: right;
+
+      .tile-header {
+        justify-content: flex-start;
+      }
+
+      .info {
+        align-items: flex-end;
+
+        h5, .variant, .price-line, .fav-btn {
+          text-align: right;
+        }
+
+        .price-line {
+          flex-direction: row-reverse;
+
+          .badge {
+            margin-right: 0;
+            margin-left: auto;
+          }
+        }
+      }
+    }
   }
 
-  .favorites-section .favorite-tile .info,
-  .favorites-section .favorite-tile .variant,
-  .favorites-section .favorite-tile .price-line,
-  .favorites-section .favorite-tile .fav-btn {
-    text-align: right;
-    align-items: flex-end;
-  }
-
-  .price-line {
+  .form-actions {
     flex-direction: row-reverse;
   }
 }
