@@ -588,7 +588,6 @@ html[dir=rtl] .checkout-page .grid-2col .full-width {
   grid-column: span 2;
 }
 html[dir=rtl] .checkout-page .radio-label {
-  justify-content: flex-end;
   flex-direction: row-reverse;
   gap: 0.5rem;
 }
