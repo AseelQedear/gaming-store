@@ -164,13 +164,11 @@
 }
 
 
-html[dir="rtl"] .auth-page,
-body.rtl .auth-page {
+html[dir="rtl"] .auth-page {
   direction: rtl;
   text-align: right;
 
   .auth-form {
-    .auth-title,
     .auth-text {
       text-align: right;
     }
@@ -204,12 +202,6 @@ body.rtl .auth-page {
       }
     }
   }
-
-  html[dir="rtl"] input,
-body.rtl input {
-  direction: rtl !important;
-  text-align: right !important;
-}
 
 html[dir="rtl"] input::placeholder,
 body.rtl input::placeholder {
