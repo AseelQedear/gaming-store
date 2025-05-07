@@ -15,7 +15,7 @@ import { Offcanvas } from "react-bootstrap";
 import { useCart } from "../components/CartContext";
 import { useAuth } from "../components/AuthContext";
 import { useTranslation } from "react-i18next";
-import "../styles/partials/mobilenavbar.scss";
+
 
 const MobileResponsiveNavbar: React.FC = () => {
   const [darkMode, setDarkMode] = useState(false);
