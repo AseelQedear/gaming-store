@@ -295,49 +295,49 @@
     }
   }
 }
+
 html[dir="rtl"] .profile-page {
   direction: rtl;
   text-align: right;
 
-  .profile-info,
-  .section-title,
-  .orders-section,
-  .favorites-section {
-    direction: rtl;
-    text-align: right;
+  h1, h2, .section-title {
+    text-align: right !important;
   }
 
-  input,
-  textarea,
-  select {
-    direction: rtl;
-    text-align: right;
+  .profile-info form label {
+    align-items: flex-end;
 
-    &::placeholder {
-      text-align: right;
+    input {
+      direction: rtl;
+
+      &::placeholder {
+        text-align: right;
+      }
     }
   }
 
-  .favorites-list,
-  .order-block,
-  .favorite-tile {
-    justify-content: flex-end;
+  .invalid-feedback {
+    text-align: right;
   }
 
-  .tile-header {
-    justify-content: flex-start;
+  .orders-section .order-block p,
+  .orders-section .order-block .product-summary {
+    text-align: right;
+  }
+
+  .favorites-section .favorites-list {
+    justify-content: flex-end !important;
+  }
+
+  .favorites-section .favorite-tile .info,
+  .favorites-section .favorite-tile .variant,
+  .favorites-section .favorite-tile .price-line,
+  .favorites-section .favorite-tile .fav-btn {
+    text-align: right;
+    align-items: flex-end;
   }
 
   .price-line {
-    justify-content: flex-end;
-  }
-
-  .btn,
-  p,
-  h1,
-  h2,
-  h5,
-  strong {
-    text-align: right;
+    flex-direction: row-reverse;
   }
 }

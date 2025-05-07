@@ -118,7 +118,7 @@ const AppNavbar: React.FC = () => {
 
   return (
     <>
-      {/* ✅ Desktop Navbar */}
+      {/* Desktop Navbar */}
       <nav className="navbar navbar-expand-md fixed-top shadow-sm d-none d-md-flex">
         <div className="container-fluid px-4">
           <NavLink className="navbar-brand d-flex align-items-center" to="/" title="Home">
@@ -208,7 +208,7 @@ const AppNavbar: React.FC = () => {
         </div>
       </nav>
 
-      {/* ✅ Mobile Navbar */}
+      {/* Mobile Navbar */}
       <div className="d-md-none">
         <MobileResponsiveNavbar />
       </div>

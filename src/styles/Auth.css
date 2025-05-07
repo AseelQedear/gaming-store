@@ -342,45 +342,30 @@ html[dir=rtl] .auth-page {
   direction: rtl;
   text-align: right;
 }
-html[dir=rtl] .auth-page .auth-form,
-html[dir=rtl] .auth-page .form-wrapper,
-html[dir=rtl] .auth-page form {
-  direction: rtl;
+html[dir=rtl] .auth-page .auth-form .auth-title,
+html[dir=rtl] .auth-page .auth-form .auth-text {
   text-align: right;
 }
-html[dir=rtl] .auth-page .form-group {
+html[dir=rtl] .auth-page .auth-form form .form-group {
   align-items: flex-end;
 }
-html[dir=rtl] .auth-page .form-group input,
-html[dir=rtl] .auth-page .form-group textarea,
-html[dir=rtl] .auth-page .form-group select {
-  text-align: right;
+html[dir=rtl] .auth-page .auth-form form .form-group input {
   direction: rtl;
 }
-html[dir=rtl] .auth-page .form-group input::-moz-placeholder, html[dir=rtl] .auth-page .form-group textarea::-moz-placeholder, html[dir=rtl] .auth-page .form-group select::-moz-placeholder {
+html[dir=rtl] .auth-page .auth-form form .form-group input::-moz-placeholder {
   text-align: right;
 }
-html[dir=rtl] .auth-page .form-group input::placeholder,
-html[dir=rtl] .auth-page .form-group textarea::placeholder,
-html[dir=rtl] .auth-page .form-group select::placeholder {
+html[dir=rtl] .auth-page .auth-form form .form-group input::placeholder {
   text-align: right;
 }
-html[dir=rtl] .auth-page .form-check {
-  flex-direction: row-reverse;
-  justify-content: flex-end;
+html[dir=rtl] .auth-page .auth-form form .invalid-feedback {
+  text-align: right;
 }
-html[dir=rtl] .auth-page .form-check .form-check-input {
-  margin-left: 0.5rem;
-  margin-right: 0;
+html[dir=rtl] .auth-page .auth-form form .form-check {
+  direction: rtl;
+  text-align: right;
 }
-html[dir=rtl] .auth-page .form-check .form-check-label {
+html[dir=rtl] .auth-page .auth-form form .form-check .form-check-input {
+  margin-left: 0;
   margin-right: 0.5rem;
-}
-html[dir=rtl] .auth-page .invalid-feedback,
-html[dir=rtl] .auth-page .auth-text,
-html[dir=rtl] .auth-page .auth-link,
-html[dir=rtl] .auth-page .auth-title,
-html[dir=rtl] .auth-page .btn,
-html[dir=rtl] .auth-page p {
-  text-align: right;
 }/*# sourceMappingURL=Auth.css.map */

@@ -167,48 +167,38 @@ html[dir="rtl"] .auth-page {
   direction: rtl;
   text-align: right;
 
-  .auth-form,
-  .form-wrapper,
-  form {
-    direction: rtl;
-    text-align: right;
-  }
-
-  .form-group {
-    align-items: flex-end;
-
-    input,
-    textarea,
-    select {
+  .auth-form {
+    .auth-title,
+    .auth-text {
       text-align: right;
-      direction: rtl;
+    }
 
-      &::placeholder {
+    form {
+      .form-group {
+        align-items: flex-end;
+
+        input {
+          direction: rtl;
+
+          &::placeholder {
+            text-align: right;
+          }
+        }
+      }
+
+      .invalid-feedback {
         text-align: right;
       }
+
+      .form-check {
+        direction: rtl;
+        text-align: right;
+
+        .form-check-input {
+          margin-left: 0;
+          margin-right: 0.5rem;
+        }
+      }
     }
-  }
-
-  .form-check {
-    flex-direction: row-reverse;
-    justify-content: flex-end;
-
-    .form-check-input {
-      margin-left: 0.5rem;
-      margin-right: 0;
-    }
-
-    .form-check-label {
-      margin-right: 0.5rem;
-    }
-  }
-
-  .invalid-feedback,
-  .auth-text,
-  .auth-link,
-  .auth-title,
-  .btn,
-  p {
-    text-align: right;
   }
 }
