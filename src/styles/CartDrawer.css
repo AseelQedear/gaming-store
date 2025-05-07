@@ -163,7 +163,14 @@
 
 @font-face {
   font-family: "BitsyArabic";
-  src: url("../public/fonts/bitsy-font-with-arabic.woff2") format("woff2");
+  src: url("../fonts/bitsy-font-with-arabic.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Arshid";
+  src: url("../fonts/Arshid.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
   font-display: swap;
 }
 body, html, #root {
@@ -182,6 +189,16 @@ body {
   font-family: "VT323", monospace;
 }
 
+.btn, .btn-outline-light, .btn-outline-secondary {
+  font-family: "Pixelify Sans", sans-serif;
+}
+
+.sr-symbol {
+  font-family: "Arshid", sans-serif;
+  font-size: 1.1em;
+  margin-inline-end: 4px;
+}
+
 h1, h2, h3, h6,
 .hero-title, .section-title, .footer-logo {
   font-family: "Press Start 2P", monospace;
@@ -191,19 +208,14 @@ h1, h2, h3, h6,
   letter-spacing: 1px;
   transition: text-shadow 0.3s ease, color 0.3s ease;
 }
-html[dir=rtl] h1, html[dir=rtl] h2, html[dir=rtl] h3, html[dir=rtl] h6,
-html[dir=rtl] .hero-title, html[dir=rtl] .section-title, html[dir=rtl] .footer-logo {
-  font-family: "BitsyArabic", "Press Start 2P", monospace;
-}
 
-.btn, .btn-outline-light, .btn-outline-secondary {
-  font-family: "Pixelify Sans", sans-serif;
+html[dir=rtl] body,
+html[dir=rtl] h1, html[dir=rtl] h2, html[dir=rtl] h3, html[dir=rtl] h4, html[dir=rtl] h5, html[dir=rtl] h6,
+html[dir=rtl] p, html[dir=rtl] span, html[dir=rtl] a, html[dir=rtl] li, html[dir=rtl] button, html[dir=rtl] input, html[dir=rtl] textarea {
+  font-family: "BitsyArabic", sans-serif !important;
 }
-
-.sr-symbol {
-  font-family: "Arshid", sans-serif;
-  font-size: 1.1em;
-  margin-inline-end: 4px;
+html[dir=rtl] .sr-symbol {
+  font-family: "Arshid", sans-serif !important;
 }
 
 .cart-backdrop {
