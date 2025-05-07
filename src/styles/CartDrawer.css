@@ -176,12 +176,6 @@ body {
   font-family: "Pixelify Sans", sans-serif;
 }
 
-.sr-symbol {
-  font-family: "Pixelify Sans", sans-serif;
-  font-size: 1.1em;
-  margin-inline-end: 4px;
-}
-
 h1, h2, h3, h6,
 .hero-title, .section-title, .footer-logo {
   font-family: "Press Start 2P", monospace;
