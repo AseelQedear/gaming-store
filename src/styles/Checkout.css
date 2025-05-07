@@ -639,9 +639,6 @@ html[dir=rtl] .checkout-page .cart-body .cart-summary p span,
 html[dir=rtl] .checkout-page .cart-body .cart-summary h5 span {
   margin-right: auto;
 }
-html[dir=rtl] .checkout-page .cart-footer .discount-row {
-  flex-direction: row-reverse;
-}
-html[dir=rtl] .checkout-page .cart-footer .discount-row input {
+html[dir=rtl] .checkout-page .cart-footer input {
   text-align: right;
 }/*# sourceMappingURL=Checkout.css.map */

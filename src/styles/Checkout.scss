@@ -547,12 +547,10 @@ html[dir="rtl"] .checkout-page {
   }
 
   .cart-footer {
-    .discount-row {
-      flex-direction: row-reverse;
 
       input {
         text-align: right;
       }
     }
   }
-}
+
