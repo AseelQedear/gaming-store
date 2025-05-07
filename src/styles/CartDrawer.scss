@@ -259,24 +259,7 @@ html[dir="rtl"] {
 
     .cart-body {
       .cart-item {
-        flex-direction: row-reverse;
         text-align: right;
-
-        .item-details {
-          .price-info {
-            flex-direction: row-reverse;
-          }
-
-          .qty {
-            flex-direction: row-reverse;
-
-            button.delete {
-              margin-right: auto; 
-              margin-left: 0;
-            }
-          }
-        }
-      }
 
       .cart-summary {
         p,
@@ -298,5 +281,5 @@ html[dir="rtl"] {
         text-align: center;
       }
     }
-  }
-}
+    }}}
+

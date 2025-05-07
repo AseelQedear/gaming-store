@@ -461,26 +461,15 @@ html[dir=rtl] .cart-drawer .cart-header {
   text-align: right;
 }
 html[dir=rtl] .cart-drawer .cart-body .cart-item {
-  flex-direction: row-reverse;
   text-align: right;
 }
-html[dir=rtl] .cart-drawer .cart-body .cart-item .item-details .price-info {
-  flex-direction: row-reverse;
-}
-html[dir=rtl] .cart-drawer .cart-body .cart-item .item-details .qty {
-  flex-direction: row-reverse;
-}
-html[dir=rtl] .cart-drawer .cart-body .cart-item .item-details .qty button.delete {
-  margin-right: auto;
-  margin-left: 0;
-}
-html[dir=rtl] .cart-drawer .cart-body .cart-summary p,
-html[dir=rtl] .cart-drawer .cart-body .cart-summary h5 {
+html[dir=rtl] .cart-drawer .cart-body .cart-item .cart-summary p,
+html[dir=rtl] .cart-drawer .cart-body .cart-item .cart-summary h5 {
   text-align: right;
 }
-html[dir=rtl] .cart-drawer .cart-footer .discount-row input {
+html[dir=rtl] .cart-drawer .cart-body .cart-footer .discount-row input {
   text-align: right;
 }
-html[dir=rtl] .cart-drawer .cart-footer .checkout-btn {
+html[dir=rtl] .cart-drawer .cart-body .cart-footer .checkout-btn {
   text-align: center;
 }/*# sourceMappingURL=CartDrawer.css.map */
