@@ -566,4 +566,81 @@
 .checkout-page .back-home-icon:hover {
   animation: wiggle 0.8s ease forwards;
   color: #ffffff;
+}
+
+html[dir=rtl] .checkout-page {
+  direction: rtl;
+}
+html[dir=rtl] .checkout-page .button-row {
+  flex-direction: row-reverse;
+}
+html[dir=rtl] .checkout-page .review-step h5, html[dir=rtl] .checkout-page .review-step h6 {
+  text-align: right;
+}
+html[dir=rtl] .checkout-page .review-step .review-section {
+  text-align: right;
+}
+html[dir=rtl] .checkout-page .review-step .review-section p, html[dir=rtl] .checkout-page .review-step .review-section li {
+  direction: rtl;
+  text-align: right;
+}
+html[dir=rtl] .checkout-page .review-step .review-section p strong, html[dir=rtl] .checkout-page .review-step .review-section li strong {
+  margin-left: 0.4rem;
+  margin-right: 0;
+}
+html[dir=rtl] .checkout-page .grid-2col {
+  direction: rtl;
+}
+html[dir=rtl] .checkout-page .grid-2col .input-group {
+  align-items: flex-end;
+}
+html[dir=rtl] .checkout-page .grid-2col input, html[dir=rtl] .checkout-page .grid-2col select {
+  text-align: right;
+}
+html[dir=rtl] .checkout-page .grid-2col input::-moz-placeholder, html[dir=rtl] .checkout-page .grid-2col select::-moz-placeholder {
+  text-align: right;
+}
+html[dir=rtl] .checkout-page .grid-2col input::placeholder, html[dir=rtl] .checkout-page .grid-2col select::placeholder {
+  text-align: right;
+}
+html[dir=rtl] .checkout-page .radio-label {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+html[dir=rtl] .checkout-page .radio-label input[type=radio] {
+  margin-left: 0.5rem;
+  margin-right: 0;
+}
+html[dir=rtl] .checkout-page .checkout-summary {
+  text-align: right;
+}
+html[dir=rtl] .checkout-page .checkout-summary .cart-item {
+  flex-direction: row-reverse;
+}
+html[dir=rtl] .checkout-page .checkout-summary .cart-item .item-details {
+  text-align: right;
+}
+html[dir=rtl] .checkout-page .checkout-summary .cart-item .qty {
+  flex-direction: row-reverse;
+}
+html[dir=rtl] .checkout-page .checkout-summary .cart-item .qty button.delete {
+  margin-left: 0;
+  margin-right: auto;
+}
+html[dir=rtl] .checkout-page .checkout-summary .cart-summary,
+html[dir=rtl] .checkout-page .checkout-summary .cart-footer,
+html[dir=rtl] .checkout-page .checkout-summary .price-info {
+  text-align: right;
+}
+html[dir=rtl] .checkout-page .checkout-summary .cart-summary p, html[dir=rtl] .checkout-page .checkout-summary .cart-summary h5,
+html[dir=rtl] .checkout-page .checkout-summary .cart-footer p,
+html[dir=rtl] .checkout-page .checkout-summary .cart-footer h5,
+html[dir=rtl] .checkout-page .checkout-summary .price-info p,
+html[dir=rtl] .checkout-page .checkout-summary .price-info h5 {
+  justify-content: space-between;
+  direction: rtl;
+}
+html[dir=rtl] .checkout-page .back-home-icon {
+  left: auto;
+  right: 4rem;
 }/*# sourceMappingURL=Checkout.css.map */

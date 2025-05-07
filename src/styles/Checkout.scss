@@ -449,5 +449,93 @@
 }
 
 
+html[dir="rtl"] .checkout-page {
+  direction: rtl;
 
+  .button-row {
+    flex-direction: row-reverse;
+  }
 
+  .review-step {
+    h5, h6 {
+      text-align: right;
+    }
+
+    .review-section {
+      text-align: right;
+
+      p, li {
+        direction: rtl;
+        text-align: right;
+
+        strong {
+          margin-left: 0.4rem;
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  .grid-2col {
+    direction: rtl;
+
+    .input-group {
+      align-items: flex-end;
+    }
+
+    input, select {
+      text-align: right;
+
+      &::placeholder {
+        text-align: right;
+      }
+    }
+  }
+
+  .radio-label {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+
+    input[type="radio"] {
+      margin-left: 0.5rem;
+      margin-right: 0;
+    }
+  }
+
+  .checkout-summary {
+    text-align: right;
+
+    .cart-item {
+      flex-direction: row-reverse;
+
+      .item-details {
+        text-align: right;
+      }
+
+      .qty {
+        flex-direction: row-reverse;
+
+        button.delete {
+          margin-left: 0;
+          margin-right: auto;
+        }
+      }
+    }
+
+    .cart-summary,
+    .cart-footer,
+    .price-info {
+      text-align: right;
+
+      p, h5 {
+        justify-content: space-between;
+        direction: rtl;
+      }
+    }
+  }
+
+  .back-home-icon {
+    left: auto;
+    right: 4rem;
+  }
+}
