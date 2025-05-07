@@ -454,6 +454,12 @@ html[dir=rtl] .profile-page p {
 html[dir=rtl] .profile-page .orders-section .product-summary {
   text-align: center !important;
 }
+html[dir=rtl] .profile-page .orders-section .product-summary * {
+  text-align: center !important;
+  margin-inline-start: auto !important;
+  margin-inline-end: auto !important;
+  display: block;
+}
 html[dir=rtl] .profile-page .favorites-section .favorites-list {
   justify-content: right !important;
 }
@@ -461,6 +467,6 @@ html[dir=rtl] .profile-page form label {
   text-align: right;
 }
 html[dir=rtl] .profile-page .form-actions {
-  flex-direction: row-reverse !important;
-  align-items: flex-end !important;
+  align-items: flex-start !important;
+  justify-content: right !important;
 }/*# sourceMappingURL=Profile.css.map */

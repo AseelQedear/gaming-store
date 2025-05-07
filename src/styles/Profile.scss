@@ -346,8 +346,14 @@ html[dir="rtl"] {
 
     .orders-section .product-summary {
       text-align: center !important;
+      * {
+        text-align: center !important;
+        margin-inline-start: auto !important;
+        margin-inline-end: auto !important;
+        display: block;
+      }
     }
-    
+
     .favorites-section .favorites-list {
       justify-content: right !important;
     }
@@ -357,8 +363,8 @@ html[dir="rtl"] {
     }
 
     .form-actions {
-      flex-direction: row-reverse !important;
-      align-items: flex-end !important;
+      align-items: flex-start !important;
+      justify-content: right !important;
     }
   }
 }
