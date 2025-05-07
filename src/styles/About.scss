@@ -102,14 +102,6 @@ html[dir="rtl"] .about-page-section {
 
   .fun-fact {
     flex-direction: row-reverse;
-
-    .rtl-text {
-      direction: rtl;
-    }
-
-    .ltr-word {
-      direction: ltr;
-    }
   }
 }
 
@@ -128,7 +120,7 @@ html[dir="rtl"] .about-page-section {
 
     img {
       width: 100%;
-      height: auto;
+      height: 100%;
       object-fit: cover;
       object-position: center;
     }
@@ -233,6 +225,63 @@ html[dir="rtl"] .about-page-section {
         p {
           opacity: 1;
           pointer-events: auto;
+        }
+      }
+    }
+  }
+}
+
+// ✅ Mobile Responsiveness
+@media (max-width: 768px) {
+  .about-page-section {
+    padding: 2rem 1rem;
+
+    .section-title {
+      font-size: 1.1rem;
+    }
+
+    .about-description {
+      font-size: 1.1rem;
+      line-height: 1.7rem;
+    }
+
+    .fun-fact {
+      font-size: 1rem;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .cta-button {
+      padding: 0.6rem 1.5rem;
+      font-size: 0.95rem;
+    }
+  }
+
+  .gif-banner .gif-cropper {
+    width: 90%;
+    height: 200px;
+  }
+
+  .timeline-horizontal {
+    padding: 1rem;
+    height: auto;
+
+    .timeline-track {
+      flex-direction: row;
+      align-items: flex-start;
+
+      .timeline-event {
+        width: 80px;
+        margin: 0 1rem;
+
+        .timeline-year {
+          margin-bottom: 1rem;
+        }
+
+        p {
+          font-size: 0.85rem;
+          top: 55%;
+          width: 140px;
         }
       }
     }

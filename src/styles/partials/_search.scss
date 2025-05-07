@@ -28,10 +28,10 @@
     display: none;
   }
 
-  .search-wrapper.expanded-wrapper {
+  .expanded-wrapper {
     display: flex !important;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     width: 100%;
     margin-top: 1rem;
     gap: 0.5rem;
@@ -40,5 +40,19 @@
       width: 100% !important;
       opacity: 1 !important;
     }
+  }
+}
+
+html[dir="rtl"] {
+  .search-wrapper {
+    flex-direction: row-reverse;
+
+    .search-input::placeholder {
+      text-align: right;
+    }
+  }
+
+  .expanded-wrapper {
+    align-items: flex-end;
   }
 }

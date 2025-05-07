@@ -615,19 +615,32 @@ html[dir=ltr] .navbar .navbar-toggler {
   .search-wrapper {
     display: none;
   }
-  .search-wrapper.expanded-wrapper {
+  .expanded-wrapper {
     display: flex !important;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     width: 100%;
     margin-top: 1rem;
     gap: 0.5rem;
   }
-  .search-wrapper.expanded-wrapper .search-input {
+  .expanded-wrapper .search-input {
     width: 100% !important;
     opacity: 1 !important;
   }
 }
+html[dir=rtl] .search-wrapper {
+  flex-direction: row-reverse;
+}
+html[dir=rtl] .search-wrapper .search-input::-moz-placeholder {
+  text-align: right;
+}
+html[dir=rtl] .search-wrapper .search-input::placeholder {
+  text-align: right;
+}
+html[dir=rtl] .expanded-wrapper {
+  align-items: flex-end;
+}
+
 .btn-primary {
   background-color: #5C469C;
   border-color: #5C469C;
