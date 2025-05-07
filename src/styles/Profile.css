@@ -434,10 +434,17 @@
 html[dir=rtl] .profile-page {
   direction: rtl;
 }
+html[dir=rtl] .profile-page h1 {
+  direction: rtl;
+  flex-direction: row-reverse;
+}
 html[dir=rtl] .profile-page h2,
 html[dir=rtl] .profile-page .section-title,
 html[dir=rtl] .profile-page p {
   text-align: right !important;
+}
+html[dir=rtl] .profile-page .product-summary {
+  text-align: center !important;
 }
 html[dir=rtl] .profile-page .favorites-section .favorites-list {
   justify-content: right !important;

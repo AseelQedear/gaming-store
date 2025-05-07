@@ -319,15 +319,23 @@
   }
 }
 
-// RTL SUPPORT ONLY
 html[dir="rtl"] {
   .profile-page {
     direction: rtl;
+
+    h1 {
+      direction: rtl;
+      flex-direction: row-reverse;
+    }
 
     h2,
     .section-title,
     p {
       text-align: right !important;
+    }
+
+    .product-summary {
+      text-align: center !important;
     }
 
     .favorites-section .favorites-list {
