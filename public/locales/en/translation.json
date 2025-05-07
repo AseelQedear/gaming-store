@@ -255,7 +255,18 @@
       "apply_discount": "Apply",
       "delivery_details": "🚚 Delivery",
       "payment_details": "💳 Payment"
-    }
+    },
+    "review_labels": {
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "address": "Address",
+    "postalCode": "Postal Code",
+    "city": "City",
+    "country": "Country",
+    "phone": "Phone",
+    "shippingMethod": "Shipping Method",
+    "total": "Total"
+  }
       }
     
   
