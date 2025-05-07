@@ -676,6 +676,7 @@ html[dir=rtl] .products-page {
 }
 html[dir=rtl] .products-page .row {
   justify-content: flex-end;
+  justify-content: right !important;
 }
 html[dir=rtl] .products-page .product-card-style2 {
   direction: ltr;
