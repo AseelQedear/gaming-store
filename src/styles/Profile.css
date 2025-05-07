@@ -444,7 +444,6 @@ html[dir=rtl] .profile-page {
 }
 html[dir=rtl] .profile-page h1 {
   direction: rtl;
-  flex-direction: row-reverse;
 }
 html[dir=rtl] .profile-page h2,
 html[dir=rtl] .profile-page .section-title,
