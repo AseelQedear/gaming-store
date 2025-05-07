@@ -449,59 +449,31 @@
   }
 }
 
-
 html[dir="rtl"] .checkout-page {
   direction: rtl;
+  text-align: right;
+
+  .back-home-icon {
+    left: unset;
+    right: 4rem;
+  }
+
+  .checkout-form,
+  .checkout-summary {
+    text-align: right;
+  }
 
   .button-row {
     flex-direction: row-reverse;
   }
 
-  .review-step {
-    h5, h6 {
-      text-align: right;
-    }
-
-    h6 {
-      font-size: 1.1rem;
-      color: #a6b0ff;
-      margin-bottom: 0.5rem;
-      margin-top: 1rem;
-    }
-
-    .review-section {
-      text-align: right;
-
-      p, li {
-        direction: rtl;
-        text-align: right;
-
-        strong {
-          margin-left: 0.4rem;
-          margin-right: 0;
-        }
-      }
-    }
-  }
-
   .grid-2col {
-    direction: rtl;
-
-    .input-group {
-      align-items: flex-end;
-    }
-
-    input, select {
-      text-align: right;
-
-      &::placeholder {
-        text-align: right;
-      }
+    .full-width {
+      grid-column: span 2;
     }
   }
 
   .radio-label {
-    flex-direction: row-reverse;
     justify-content: flex-end;
 
     input[type="radio"] {
@@ -510,40 +482,77 @@ html[dir="rtl"] .checkout-page {
     }
   }
 
-  .checkout-summary {
-    text-align: right;
+  .review-step {
+    .review-section {
+      ul {
+        padding-right: 1rem;
 
-    .cart-item {
-      flex-direction: row-reverse;
+        li {
+          list-style: none;
+          margin-bottom: 0.5rem;
 
-      .item-details {
-        text-align: right;
-      }
-
-      .qty {
-        flex-direction: row-reverse;
-
-        button.delete {
-          margin-left: 0;
-          margin-right: auto;
+          strong {
+            margin-left: 0.3rem;
+          }
         }
-      }
-    }
-
-    .cart-summary,
-    .cart-footer,
-    .price-info {
-      text-align: left;
-
-      p, h5 {
-        justify-content: space-between;
-        direction: rtl;
       }
     }
   }
 
-  .back-home-icon {
-    left: auto;
-    right: 4rem;
+  .cart-body {
+    .cart-item {
+      flex-direction: row-reverse;
+
+      img {
+        margin-right: 0;
+        margin-left: 1.5rem;
+      }
+
+      .item-details {
+        text-align: right;
+        align-items: flex-end;
+
+        h5,
+        span,
+        p {
+          text-align: right;
+        }
+
+        .price-info {
+          flex-direction: row-reverse;
+        }
+
+        .qty {
+          flex-direction: row-reverse;
+
+          button.delete {
+            margin-right: 0;
+            margin-left: auto;
+          }
+        }
+      }
+    }
+
+    .cart-summary {
+      p,
+      h5 {
+        justify-content: space-between;
+        text-align: right;
+
+        span {
+          margin-right: auto;
+        }
+      }
+    }
+  }
+
+  .cart-footer {
+    .discount-row {
+      flex-direction: row-reverse;
+
+      input {
+        text-align: right;
+      }
+    }
   }
 }

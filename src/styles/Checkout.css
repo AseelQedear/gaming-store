@@ -571,83 +571,77 @@
 
 html[dir=rtl] .checkout-page {
   direction: rtl;
+  text-align: right;
+}
+html[dir=rtl] .checkout-page .back-home-icon {
+  left: unset;
+  right: 4rem;
+}
+html[dir=rtl] .checkout-page .checkout-form,
+html[dir=rtl] .checkout-page .checkout-summary {
+  text-align: right;
 }
 html[dir=rtl] .checkout-page .button-row {
   flex-direction: row-reverse;
 }
-html[dir=rtl] .checkout-page .review-step h5, html[dir=rtl] .checkout-page .review-step h6 {
-  text-align: right;
-}
-html[dir=rtl] .checkout-page .review-step h6 {
-  font-size: 1.1rem;
-  color: #a6b0ff;
-  margin-bottom: 0.5rem;
-  margin-top: 1rem;
-}
-html[dir=rtl] .checkout-page .review-step .review-section {
-  text-align: right;
-}
-html[dir=rtl] .checkout-page .review-step .review-section p, html[dir=rtl] .checkout-page .review-step .review-section li {
-  direction: rtl;
-  text-align: right;
-}
-html[dir=rtl] .checkout-page .review-step .review-section p strong, html[dir=rtl] .checkout-page .review-step .review-section li strong {
-  margin-left: 0.4rem;
-  margin-right: 0;
-}
-html[dir=rtl] .checkout-page .grid-2col {
-  direction: rtl;
-}
-html[dir=rtl] .checkout-page .grid-2col .input-group {
-  align-items: flex-end;
-}
-html[dir=rtl] .checkout-page .grid-2col input, html[dir=rtl] .checkout-page .grid-2col select {
-  text-align: right;
-}
-html[dir=rtl] .checkout-page .grid-2col input::-moz-placeholder, html[dir=rtl] .checkout-page .grid-2col select::-moz-placeholder {
-  text-align: right;
-}
-html[dir=rtl] .checkout-page .grid-2col input::placeholder, html[dir=rtl] .checkout-page .grid-2col select::placeholder {
-  text-align: right;
+html[dir=rtl] .checkout-page .grid-2col .full-width {
+  grid-column: span 2;
 }
 html[dir=rtl] .checkout-page .radio-label {
-  flex-direction: row-reverse;
   justify-content: flex-end;
 }
 html[dir=rtl] .checkout-page .radio-label input[type=radio] {
   margin-left: 0.5rem;
   margin-right: 0;
 }
-html[dir=rtl] .checkout-page .checkout-summary {
-  text-align: right;
+html[dir=rtl] .checkout-page .review-step .review-section ul {
+  padding-right: 1rem;
 }
-html[dir=rtl] .checkout-page .checkout-summary .cart-item {
+html[dir=rtl] .checkout-page .review-step .review-section ul li {
+  list-style: none;
+  margin-bottom: 0.5rem;
+}
+html[dir=rtl] .checkout-page .review-step .review-section ul li strong {
+  margin-left: 0.3rem;
+}
+html[dir=rtl] .checkout-page .cart-body .cart-item {
   flex-direction: row-reverse;
 }
-html[dir=rtl] .checkout-page .checkout-summary .cart-item .item-details {
+html[dir=rtl] .checkout-page .cart-body .cart-item img {
+  margin-right: 0;
+  margin-left: 1.5rem;
+}
+html[dir=rtl] .checkout-page .cart-body .cart-item .item-details {
+  text-align: right;
+  align-items: flex-end;
+}
+html[dir=rtl] .checkout-page .cart-body .cart-item .item-details h5,
+html[dir=rtl] .checkout-page .cart-body .cart-item .item-details span,
+html[dir=rtl] .checkout-page .cart-body .cart-item .item-details p {
   text-align: right;
 }
-html[dir=rtl] .checkout-page .checkout-summary .cart-item .qty {
+html[dir=rtl] .checkout-page .cart-body .cart-item .item-details .price-info {
   flex-direction: row-reverse;
 }
-html[dir=rtl] .checkout-page .checkout-summary .cart-item .qty button.delete {
-  margin-left: 0;
+html[dir=rtl] .checkout-page .cart-body .cart-item .item-details .qty {
+  flex-direction: row-reverse;
+}
+html[dir=rtl] .checkout-page .cart-body .cart-item .item-details .qty button.delete {
+  margin-right: 0;
+  margin-left: auto;
+}
+html[dir=rtl] .checkout-page .cart-body .cart-summary p,
+html[dir=rtl] .checkout-page .cart-body .cart-summary h5 {
+  justify-content: space-between;
+  text-align: right;
+}
+html[dir=rtl] .checkout-page .cart-body .cart-summary p span,
+html[dir=rtl] .checkout-page .cart-body .cart-summary h5 span {
   margin-right: auto;
 }
-html[dir=rtl] .checkout-page .checkout-summary .cart-summary,
-html[dir=rtl] .checkout-page .checkout-summary .cart-footer,
-html[dir=rtl] .checkout-page .checkout-summary .price-info {
-  text-align: left;
+html[dir=rtl] .checkout-page .cart-footer .discount-row {
+  flex-direction: row-reverse;
 }
-html[dir=rtl] .checkout-page .checkout-summary .cart-summary p, html[dir=rtl] .checkout-page .checkout-summary .cart-summary h5,
-html[dir=rtl] .checkout-page .checkout-summary .cart-footer p,
-html[dir=rtl] .checkout-page .checkout-summary .cart-footer h5,
-html[dir=rtl] .checkout-page .checkout-summary .price-info p,
-html[dir=rtl] .checkout-page .checkout-summary .price-info h5 {
-  justify-content: space-between;
-  direction: rtl;
-}
-html[dir=rtl] .checkout-page .back-home-icon {
-  left: auto;
-  right: 4rem;
+html[dir=rtl] .checkout-page .cart-footer .discount-row input {
+  text-align: right;
 }/*# sourceMappingURL=Checkout.css.map */
