@@ -474,8 +474,7 @@ html[dir="rtl"] .checkout-page {
   }
 
   .radio-label {
-    justify-content: flex-end;
-    flex-direction: reverse;
+    justify-content: flex-start;
     gap: 0.5rem;
 
     input[type="radio"] {
