@@ -86,56 +86,14 @@
   }
 }
 
-.typewriter {
-  overflow: hidden;
-  white-space: nowrap;
-  border-right: 2px solid $accent;
-  width: 0;
-  animation: typing 3s steps(40, end) forwards, blink 0.7s step-end infinite;
-}
+html[dir="rtl"] {
+  .hero-banner .hero-overlay {
+    direction: rtl;
+    unicode-bidi: isolate;
 
-html[dir="rtl"] .hero-banner {
- 
-  .hero-overlay {
-    flex-direction: row-reverse;
-    text-align: right;
-
-    .hero-sprite {
-      margin-left: 1rem;
-      margin-right: 0;
-      transform: scaleX(1);
+    .hero-title,
+    .hero-subtitle {
+      text-align: center;
     }
-  }
-
-  .typewriter {
-    border-left: 2px solid $accent;
-    border-right: none;
-  }
-
-
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: repeating-linear-gradient(
-        to bottom,
-        rgba(255, 255, 255, 0.03),
-        rgba(255, 255, 255, 0.03) 1px,
-        transparent 1px,
-        transparent 3px
-      );
-      z-index: 3;
-      pointer-events: none;
-}
-
-  .typewriter {
-  overflow: hidden;
-  white-space: nowrap;
-  border-right: 2px solid $accent;
-  width: 0;
-  animation: typing 3s steps(40, end) forwards, blink 0.7s step-end infinite;
   }
 }

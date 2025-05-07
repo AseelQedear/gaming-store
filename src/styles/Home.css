@@ -234,44 +234,13 @@
   pointer-events: none;
 }
 
-.typewriter {
-  overflow: hidden;
-  white-space: nowrap;
-  border-right: 2px solid #D4ADFC;
-  width: 0;
-  animation: typing 3s steps(40, end) forwards, blink 0.7s step-end infinite;
-}
-
 html[dir=rtl] .hero-banner .hero-overlay {
-  flex-direction: row-reverse;
-  text-align: right;
+  direction: rtl;
+  unicode-bidi: isolate;
 }
-html[dir=rtl] .hero-banner .hero-overlay .hero-sprite {
-  margin-left: 1rem;
-  margin-right: 0;
-  transform: scaleX(1);
-}
-html[dir=rtl] .hero-banner .typewriter {
-  border-left: 2px solid #D4ADFC;
-  border-right: none;
-}
-html[dir=rtl] .hero-banner::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: repeating-linear-gradient(to bottom, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.03) 1px, transparent 1px, transparent 3px);
-  z-index: 3;
-  pointer-events: none;
-}
-html[dir=rtl] .hero-banner .typewriter {
-  overflow: hidden;
-  white-space: nowrap;
-  border-right: 2px solid #D4ADFC;
-  width: 0;
-  animation: typing 3s steps(40, end) forwards, blink 0.7s step-end infinite;
+html[dir=rtl] .hero-banner .hero-overlay .hero-title,
+html[dir=rtl] .hero-banner .hero-overlay .hero-subtitle {
+  text-align: center;
 }
 
 .categories-section {
