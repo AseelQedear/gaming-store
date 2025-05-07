@@ -1894,13 +1894,13 @@ html[dir=rtl] .filters-bar .form-select {
 }
 
 @font-face {
-  font-family: "Arshid" !important;
+  font-family: "Arshid";
   src: url("./fonts/Arshid.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
 .sr-symbol {
-  font-family: "Arshid", sans-serif;
+  font-family: "Arshid", sans-serif !important;
   font-size: 1.1em;
   margin-inline-end: 4px;
 }
