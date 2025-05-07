@@ -337,4 +337,34 @@ html[dir=rtl] .filters-bar .form-select {
     justify-content: flex-start;
     min-height: calc(100vh - 250px);
   }
+}
+[dir=rtl] {
+  text-align: right;
+}
+[dir=rtl] .auth-form form .form-group {
+  align-items: flex-end;
+}
+[dir=rtl] .auth-form form .form-group input {
+  text-align: right;
+}
+[dir=rtl] .auth-form form .auth-link {
+  text-align: right;
+  display: block;
+}
+[dir=rtl] .auth-form form .auth-text {
+  text-align: right;
+}
+[dir=rtl] .auth-form form .invalid-feedback {
+  text-align: right;
+}
+[dir=rtl] .form-check {
+  text-align: right;
+}
+[dir=rtl] .form-check .form-check-input {
+  margin-left: 0;
+  margin-right: 0.5rem;
+}
+
+.auth-page {
+  transition: direction 0.3s ease, text-align 0.3s ease;
 }/*# sourceMappingURL=Auth.css.map */

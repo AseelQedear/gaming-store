@@ -429,4 +429,35 @@
     flex: 1 1 100%;
     max-width: 100%;
   }
+}
+
+[dir=rtl] {
+  text-align: right;
+}
+[dir=rtl] .profile-info,
+[dir=rtl] .section-title,
+[dir=rtl] .orders-section,
+[dir=rtl] .favorites-section {
+  direction: rtl;
+}
+[dir=rtl] .profile-info form label,
+[dir=rtl] .orders-section .order-block,
+[dir=rtl] .favorites-section .favorite-tile .info {
+  text-align: right;
+}
+[dir=rtl] .profile-info form .form-actions {
+  flex-direction: row-reverse;
+}
+[dir=rtl] .favorites-section .favorite-tile .price-line {
+  flex-direction: row-reverse;
+}
+[dir=rtl] .tile-header {
+  justify-content: flex-start !important;
+}
+[dir=rtl] .favorites-list {
+  justify-content: right !important;
+}
+
+.profile-page {
+  transition: direction 0.3s ease, text-align 0.3s ease;
 }/*# sourceMappingURL=Profile.css.map */
