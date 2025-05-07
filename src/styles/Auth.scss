@@ -163,8 +163,8 @@
   }
 }
 
-
-[dir="rtl"] {
+html[dir="rtl"] .auth-page {
+  direction: rtl;
   text-align: right;
 
   .auth-form {
@@ -172,35 +172,32 @@
       .form-group {
         align-items: flex-end;
 
-        input {
+        input::placeholder {
           text-align: right;
+        }
+      
+        input {
+          direction: rtl;
         }
       }
 
-      .auth-link {
-        text-align: right;
-        display: block;
-      }
-
+      .invalid-feedback,
       .auth-text {
         text-align: right;
       }
 
-      .invalid-feedback {
+      .form-check {
         text-align: right;
+
+        .form-check-input {
+          margin-left: 0;
+          margin-right: 0.5rem;
+        }
       }
     }
   }
-
-  .form-check {
-    text-align: right;
-
-    .form-check-input {
-      margin-left: 0;
-      margin-right: 0.5rem;
-    }
-  }
 }
+
 
 .auth-page {
   transition: direction 0.3s ease, text-align 0.3s ease;

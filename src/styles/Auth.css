@@ -338,29 +338,30 @@ html[dir=rtl] .filters-bar .form-select {
     min-height: calc(100vh - 250px);
   }
 }
-[dir=rtl] {
+html[dir=rtl] .auth-page {
+  direction: rtl;
   text-align: right;
 }
-[dir=rtl] .auth-form form .form-group {
+html[dir=rtl] .auth-page .auth-form form .form-group {
   align-items: flex-end;
 }
-[dir=rtl] .auth-form form .form-group input {
+html[dir=rtl] .auth-page .auth-form form .form-group input::-moz-placeholder {
   text-align: right;
 }
-[dir=rtl] .auth-form form .auth-link {
-  text-align: right;
-  display: block;
-}
-[dir=rtl] .auth-form form .auth-text {
+html[dir=rtl] .auth-page .auth-form form .form-group input::placeholder {
   text-align: right;
 }
-[dir=rtl] .auth-form form .invalid-feedback {
+html[dir=rtl] .auth-page .auth-form form .form-group input {
+  direction: rtl;
+}
+html[dir=rtl] .auth-page .auth-form form .invalid-feedback,
+html[dir=rtl] .auth-page .auth-form form .auth-text {
   text-align: right;
 }
-[dir=rtl] .form-check {
+html[dir=rtl] .auth-page .auth-form form .form-check {
   text-align: right;
 }
-[dir=rtl] .form-check .form-check-input {
+html[dir=rtl] .auth-page .auth-form form .form-check .form-check-input {
   margin-left: 0;
   margin-right: 0.5rem;
 }

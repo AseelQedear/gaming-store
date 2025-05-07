@@ -319,38 +319,50 @@
   }
 }
 
-[dir="rtl"] {
+html[dir="rtl"] .profile-page {
+  direction: rtl;
   text-align: right;
 
-  .profile-info,
-  .section-title,
-  .orders-section,
-  .favorites-section {
-    direction: rtl;
-  }
-
-  .profile-info form label,
-  .orders-section .order-block,
-  .favorites-section .favorite-tile .info {
+  .section-title {
     text-align: right;
   }
 
-  .profile-info form {
-    .form-actions {
-      flex-direction: row-reverse;
+  .profile-info {
+    text-align: right;
+  }
+
+  .orders-section {
+    .order-block {
+      text-align: right;
     }
   }
 
-  .favorites-section .favorite-tile .price-line {
-    flex-direction: row-reverse;
+  .favorites-section {
+    .favorites-list {
+      justify-content: right !important;
+    }
+
+    .favorite-tile {
+      text-align: right;
+
+      .tile-header {
+        justify-content: flex-start;
+      }
+
+      .info {
+        .price-line {
+          flex-direction: row-reverse;
+        }
+      }
+    }
+  }
+  
+  input::placeholder {
+    text-align: right;
   }
 
-  .tile-header {
-    justify-content: flex-start !important;
-  }
-
-  .favorites-list {
-    justify-content: right !important;
+  input {
+    direction: rtl;
   }
 }
 

@@ -431,31 +431,39 @@
   }
 }
 
-[dir=rtl] {
-  text-align: right;
-}
-[dir=rtl] .profile-info,
-[dir=rtl] .section-title,
-[dir=rtl] .orders-section,
-[dir=rtl] .favorites-section {
+html[dir=rtl] .profile-page {
   direction: rtl;
-}
-[dir=rtl] .profile-info form label,
-[dir=rtl] .orders-section .order-block,
-[dir=rtl] .favorites-section .favorite-tile .info {
   text-align: right;
 }
-[dir=rtl] .profile-info form .form-actions {
-  flex-direction: row-reverse;
+html[dir=rtl] .profile-page .section-title {
+  text-align: right;
 }
-[dir=rtl] .favorites-section .favorite-tile .price-line {
-  flex-direction: row-reverse;
+html[dir=rtl] .profile-page .profile-info {
+  text-align: right;
 }
-[dir=rtl] .tile-header {
-  justify-content: flex-start !important;
+html[dir=rtl] .profile-page .orders-section .order-block {
+  text-align: right;
 }
-[dir=rtl] .favorites-list {
+html[dir=rtl] .profile-page .favorites-section .favorites-list {
   justify-content: right !important;
+}
+html[dir=rtl] .profile-page .favorites-section .favorite-tile {
+  text-align: right;
+}
+html[dir=rtl] .profile-page .favorites-section .favorite-tile .tile-header {
+  justify-content: flex-start;
+}
+html[dir=rtl] .profile-page .favorites-section .favorite-tile .info .price-line {
+  flex-direction: row-reverse;
+}
+html[dir=rtl] .profile-page input::-moz-placeholder {
+  text-align: right;
+}
+html[dir=rtl] .profile-page input::placeholder {
+  text-align: right;
+}
+html[dir=rtl] .profile-page input {
+  direction: rtl;
 }
 
 .profile-page {
