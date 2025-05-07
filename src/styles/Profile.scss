@@ -318,3 +318,29 @@
     }
   }
 }
+
+// RTL SUPPORT ONLY
+html[dir="rtl"] {
+  .profile-page {
+    direction: rtl;
+
+    h2,
+    .section-title,
+    p {
+      text-align: right !important;
+    }
+
+    .favorites-section .favorites-list {
+      justify-content: right !important;
+    }
+
+    form label {
+      align-items: flex-end;
+      text-align: right;
+    }
+
+    .form-actions {
+      flex-direction: row-reverse;
+    }
+  }
+}
