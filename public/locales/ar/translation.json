@@ -180,7 +180,7 @@
 
 
     "profile_page": {
-        "greeting": "مرحبا {{name}}",
+        "greeting": "،مرحبًا {{name}}",
         "personal_info": "المعلومات الشخصية",
         "email": "البريد الإلكتروني",
         "phone": "رقم الهاتف",
