@@ -473,14 +473,7 @@ html[dir="rtl"] .checkout-page {
     }
   }
 
-  .radio-label {
-    justify-content: flex-end;
-
-    input[type="radio"] {
-      margin-left: 0.5rem;
-      margin-right: 0;
-    }
-  }
+  
 
   .review-step {
     .review-section {
@@ -547,7 +540,6 @@ html[dir="rtl"] .checkout-page {
   }
 
   .cart-footer {
-
       input {
         text-align: right;
       }
