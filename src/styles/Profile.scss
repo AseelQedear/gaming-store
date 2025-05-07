@@ -15,7 +15,13 @@
   .profile-page .sr-symbol {
     font-family: 'Arshid', sans-serif !important;
   }
-  
+
+  .profile-info,
+  .orders-section,
+  .favorites-section {
+    margin-bottom: 2rem;
+  }
+
   h1 {
     text-align: center;
     font-size: 1.5rem;
