@@ -295,8 +295,9 @@
     }
   }
 }
-html[dir="rtl"] {
-  .profile-page {
+
+html[dir="rtl"] .profile-page {
+  
     direction: rtl;
     text-align: right;
 
@@ -372,4 +373,4 @@ html[dir="rtl"] {
       flex-direction: row-reverse;
     }
   }
-}
+
