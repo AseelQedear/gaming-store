@@ -14,8 +14,9 @@ const Login: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
   const navigate = useNavigate();
   const { login: loginUser } = useAuth();
-  const { t } = useTranslation();
-
+  const { t, i18n } = useTranslation();
+  const isRTL = i18n.dir() === "rtl";
+  
   useEffect(() => {
     const user =
       JSON.parse(localStorage.getItem("user") || sessionStorage.getItem("user") || "null");
@@ -86,7 +87,7 @@ const Login: React.FC = () => {
   };
 
   return (
-    <div className="auth-page">
+    <div className="auth-page" dir={isRTL ? "rtl" : "ltr"}>
       <div className="auth-image">
         <img src="/media/image.png" alt="Login" />
       </div>

@@ -318,3 +318,43 @@
     }
   }
 }
+
+[dir="rtl"] {
+  text-align: right;
+
+  .profile-info,
+  .section-title,
+  .orders-section,
+  .favorites-section {
+    direction: rtl;
+  }
+
+  .profile-info form label,
+  .orders-section .order-block,
+  .favorites-section .favorite-tile .info {
+    text-align: right;
+  }
+
+  .profile-info form {
+    .form-actions {
+      flex-direction: row-reverse;
+    }
+  }
+
+  .favorites-section .favorite-tile .price-line {
+    flex-direction: row-reverse;
+  }
+
+  .tile-header {
+    justify-content: flex-start !important;
+  }
+
+  .favorites-list {
+    justify-content: right !important;
+  }
+}
+
+.profile-page {
+  transition: direction 0.3s ease, text-align 0.3s ease;
+}
+

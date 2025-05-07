@@ -73,8 +73,9 @@ const Profile: React.FC = () => {
   const { user, isAuthenticated } = useAuth();
   const { addToCart } = useCart();
   const { wishlist, toggleWishlist } = useWishlist();
-  const { t } = useTranslation();
-
+  const { t, i18n } = useTranslation();
+  const isRTL = i18n.dir() === "rtl";
+  
   useEffect(() => {
     AOS.init({ duration: 1000, once: true, offset: 100 });
   }, []);
@@ -176,7 +177,7 @@ const Profile: React.FC = () => {
   };
 
   return (
-    <div className="profile-page py-5">
+    <div className="profile-page py-5" dir={isRTL ? "rtl" : "ltr"}>
       <h1>{t("profile_page.greeting", { name: `${userInfo?.firstName} ${userInfo?.lastName}` })}</h1>
 
       <h2 className="section-title" data-aos="fade-up">👤 {t("profile_page.personal_info")}</h2>
