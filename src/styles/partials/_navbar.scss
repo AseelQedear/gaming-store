@@ -2,12 +2,8 @@
 @use "./animations" as *;
 @use "./base" as *;
 
-:root {
-  direction: ltr;
-}
-
 /* RTL Navbar Only */
-.navbar[dir="rtl"] {
+html[dir="rtl"] .navbar {
   .nav-icon {
     margin-inline-start: auto;
     margin-inline-end: 0;
@@ -68,7 +64,7 @@
 }
 
 /* LTR Layout */
-.navbar[dir="ltr"] {
+html[dir="ltr"] .navbar {
   .container-fluid {
     flex-direction: row;
     justify-content: space-between;

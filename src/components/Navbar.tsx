@@ -29,10 +29,6 @@ const AppNavbar: React.FC = () => {
 
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
-    const navbar = document.querySelector(".navbar");
-    if (navbar) {
-      navbar.setAttribute("dir", lng === "ar" ? "rtl" : "ltr");
-    }
   };
 
   const toggleDarkMode = () => {
@@ -43,10 +39,9 @@ const AppNavbar: React.FC = () => {
   };
 
   useEffect(() => {
-    const navbar = document.querySelector(".navbar");
-    if (navbar) {
-      navbar.setAttribute("dir", i18n.language === "ar" ? "rtl" : "ltr");
-    }
+    const dir = i18n.dir();
+    document.documentElement.setAttribute("dir", dir);
+    document.body.classList.toggle("rtl", dir === "rtl");
   }, [i18n.language]);
 
   useEffect(() => {
@@ -114,8 +109,6 @@ const AppNavbar: React.FC = () => {
     }
   };
 
-  const isRTL = i18n.language === "ar";
-
   return (
     <>
       {/* Desktop Navbar */}
@@ -135,75 +128,49 @@ const AppNavbar: React.FC = () => {
           </ul>
 
           <div className="d-flex align-items-center gap-3 icon-group">
-            {(isRTL ? (
-              <>
-                <div className="dropdown lang-dropdown">
-                  <button className="btn btn-sm btn-outline-secondary dropdown-toggle d-flex align-items-center gap-2" type="button" data-bs-toggle="dropdown">
-                    <FaGlobe />
-                    AR
-                  </button>
-                  <ul className="dropdown-menu">
-                    <li><button className="dropdown-item" onClick={() => changeLanguage("en")}>EN</button></li>
-                    <li><button className="dropdown-item" onClick={() => changeLanguage("ar")}>AR</button></li>
-                  </ul>
-                </div>
-                <span title={t("dark_mode")} className="hide-on-mobile" onClick={toggleDarkMode}><FaMoon /></span>
-                {isAuthenticated && <span title={t("logout")} onClick={handleLogout}><FaSignOutAlt /></span>}
-                <span title={t("profile")} onClick={handleUserClick}><FaUser /></span>
-                <span title={t("cart")} onClick={openCart} className="cart-icon">
-                  <FaShoppingCart />
-                  {totalItemCount > 0 && (
-                    <span className={`cart-badge ${bounce ? "bounce-cart" : ""}`}>{totalItemCount}</span>
-                  )}
-                </span>
-                <div className={`search-wrapper ${showSearch ? "expanded-wrapper" : "hide-on-mobile"}`}>
-                  <span title={t("search")} onClick={() => setShowSearch(!showSearch)}><FaSearch /></span>
-                  <input
-                    type="text"
-                    placeholder={t("search_placeholder")}
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    onKeyDown={handleSearchKeyPress}
-                    className={`search-input ${showSearch ? "expanded" : ""}`}
-                  />
-                </div>
-              </>
-            ) : (
-              <>
-                <div className={`search-wrapper ${showSearch ? "expanded-wrapper" : "hide-on-mobile"}`}>
-                  <span title={t("search")} onClick={() => setShowSearch(!showSearch)}><FaSearch /></span>
-                  <input
-                    type="text"
-                    placeholder={t("search_placeholder")}
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    onKeyDown={handleSearchKeyPress}
-                    className={`search-input ${showSearch ? "expanded" : ""}`}
-                  />
-                </div>
-                <span title={t("cart")} onClick={openCart} className="cart-icon">
-                  <FaShoppingCart />
-                  {totalItemCount > 0 && (
-                    <span className={`cart-badge ${bounce ? "bounce-cart" : ""}`}>{totalItemCount}</span>
-                  )}
-                </span>
-                <span title={t("profile")} onClick={handleUserClick}><FaUser /></span>
-                {isAuthenticated && <span title={t("logout")} onClick={handleLogout}><FaSignOutAlt /></span>}
-                <span title={t("dark_mode")} className="hide-on-mobile" onClick={toggleDarkMode}>
-                  {darkMode ? <FaSun /> : <FaMoon />}
-                </span>
-                <div className="dropdown lang-dropdown">
-                  <button className="btn btn-sm btn-outline-secondary dropdown-toggle d-flex align-items-center gap-2" type="button" data-bs-toggle="dropdown">
-                    <FaGlobe />
-                    EN
-                  </button>
-                  <ul className="dropdown-menu">
-                    <li><button className="dropdown-item" onClick={() => changeLanguage("en")}>EN</button></li>
-                    <li><button className="dropdown-item" onClick={() => changeLanguage("ar")}>AR</button></li>
-                  </ul>
-                </div>
-              </>
-            ))}
+            <div className={`search-wrapper ${showSearch ? "expanded-wrapper" : "hide-on-mobile"}`}>
+              <span title={t("search")} onClick={() => setShowSearch(!showSearch)}><FaSearch /></span>
+              <input
+                type="text"
+                placeholder={t("search_placeholder")}
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                onKeyDown={handleSearchKeyPress}
+                className={`search-input ${showSearch ? "expanded" : ""}`}
+              />
+            </div>
+
+            <span title={t("cart")} onClick={openCart} className="cart-icon">
+              <FaShoppingCart />
+              {totalItemCount > 0 && (
+                <span className={`cart-badge ${bounce ? "bounce-cart" : ""}`}>{totalItemCount}</span>
+              )}
+            </span>
+
+            <span title={t("profile")} onClick={handleUserClick}><FaUser /></span>
+
+            {isAuthenticated && (
+              <span title={t("logout")} onClick={handleLogout}><FaSignOutAlt /></span>
+            )}
+
+            <span title={t("dark_mode")} className="hide-on-mobile" onClick={toggleDarkMode}>
+              {darkMode ? <FaSun /> : <FaMoon />}
+            </span>
+
+            <div className="dropdown lang-dropdown">
+              <button
+                className="btn btn-sm btn-outline-secondary dropdown-toggle d-flex align-items-center gap-2"
+                type="button"
+                data-bs-toggle="dropdown"
+              >
+                <FaGlobe />
+                {i18n.language.toUpperCase()}
+              </button>
+              <ul className="dropdown-menu">
+                <li><button className="dropdown-item" onClick={() => changeLanguage("en")}>EN</button></li>
+                <li><button className="dropdown-item" onClick={() => changeLanguage("ar")}>AR</button></li>
+              </ul>
+            </div>
           </div>
         </div>
       </nav>
