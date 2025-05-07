@@ -11,7 +11,7 @@ const Home: React.FC = () => {
   const { wishlist, toggleWishlist } = useWishlist();
   const { addToCart } = useCart();
   const navigate = useNavigate();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const [devices, setDevices] = useState<any[]>([]);
   const [error, setError] = useState<string | null>(null);
@@ -27,6 +27,7 @@ const Home: React.FC = () => {
     };
     fetchDevices();
   }, [t]);
+
 
   const filteredProducts = devices
     .filter((product) => product.discounted && product.available)

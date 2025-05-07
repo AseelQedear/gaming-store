@@ -5,24 +5,29 @@
   height: 64px;
   border-radius: 12px;
   margin: 12px;
+  padding: 0 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   z-index: 1050;
   color: $accent;
+  font-family: $font-header;
 
   .icon-group {
-    gap: 1rem;
     display: flex;
     align-items: center;
+    gap: 1.5rem;
 
+    span,
     svg {
       font-size: 1.2rem;
       color: $accent;
       cursor: pointer;
+      transition: color 0.3s ease, transform 0.3s ease;
 
       &:hover {
         color: $text-light;
+        transform: scale(1.1);
       }
     }
   }
@@ -38,15 +43,21 @@
       color: white;
       border-radius: 50%;
       font-size: 0.8rem;
+      font-weight: bold;
       width: 18px;
       height: 18px;
       display: flex;
       align-items: center;
       justify-content: center;
+
+      &.bounce-cart {
+        animation: bounce-cart 0.5s ease;
+      }
     }
   }
 }
 
+// Sidebar overlay when mobile menu is open
 .sidebar-overlay {
   position: fixed;
   top: 0;
@@ -58,9 +69,14 @@
   backdrop-filter: blur(2px);
 }
 
+// Sidebar styles for mobile nav
 .mobile-sidebar {
+  background-color: $primary-bg;
+  color: $text-light;
+
   .offcanvas-body {
     padding: 1rem 1.5rem;
+    font-family: $font-body;
 
     .sidebar-links {
       list-style: none;
@@ -74,6 +90,7 @@
         a {
           color: $text-light;
           text-decoration: none;
+          transition: color 0.2s ease;
 
           &:hover {
             color: $accent;
@@ -96,8 +113,10 @@
         padding: 0.5rem 0.75rem;
         color: $text-light;
         font-weight: 500;
+        font-family: $font-body;
         border-radius: 6px;
         width: 100%;
+        transition: background-color 0.3s ease, color 0.3s ease;
 
         &:hover {
           background-color: $highlight;
@@ -114,6 +133,19 @@
 
       button {
         flex: 1;
+        font-weight: 500;
+        font-family: $font-body;
+        color: $accent;
+        border: 1px solid $accent;
+        background: transparent;
+        padding: 0.4rem 0.6rem;
+        border-radius: 6px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+
+        &:hover {
+          background-color: $highlight;
+          color: $text-light;
+        }
       }
     }
   }

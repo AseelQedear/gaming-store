@@ -102,6 +102,60 @@ const AppNavbar: React.FC = () => {
     }
   };
 
+  const renderIcons = () => {
+    const icons = [
+      // Search input and icon
+      <div className={`search-wrapper ${showSearch ? "expanded-wrapper" : "hide-on-mobile"}`} key="search">
+        <span title={t("search")} onClick={() => setShowSearch(!showSearch)}><FaSearch /></span>
+        <input
+          type="text"
+          placeholder={t("search_placeholder")}
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          onKeyDown={handleSearchKeyPress}
+          className={`search-input ${showSearch ? "expanded" : ""}`}
+        />
+      </div>,
+
+      // Cart
+      <span title={t("cart")} onClick={openCart} className="cart-icon" key="cart">
+        <FaShoppingCart />
+        {totalItemCount > 0 && (
+          <span className={`cart-badge ${bounce ? "bounce-cart" : ""}`}>{totalItemCount}</span>
+        )}
+      </span>,
+
+      // Profile
+      <span title={t("profile")} onClick={handleUserClick} key="profile"><FaUser /></span>,
+
+      // Logout (conditionally rendered)
+      isAuthenticated && <span title={t("logout")} onClick={handleLogout} key="logout"><FaSignOutAlt /></span>,
+
+      // Dark mode
+      <span title={t("dark_mode")} className="hide-on-mobile" onClick={toggleDarkMode} key="dark">
+        {darkMode ? <FaSun /> : <FaMoon />}
+      </span>,
+
+      // Language dropdown
+      <div className="dropdown lang-dropdown" key="lang">
+        <button
+          className="btn btn-sm btn-outline-secondary dropdown-toggle d-flex align-items-center gap-2"
+          type="button"
+          data-bs-toggle="dropdown"
+        >
+          <FaGlobe />
+          {i18n.language.toUpperCase()}
+        </button>
+        <ul className="dropdown-menu">
+          <li><button className="dropdown-item" onClick={() => changeLanguage("en")}>EN</button></li>
+          <li><button className="dropdown-item" onClick={() => changeLanguage("ar")}>AR</button></li>
+        </ul>
+      </div>
+    ].filter(Boolean); // Filter out false/null items like logout when not authenticated
+
+    return i18n.dir() === "rtl" ? icons.reverse() : icons;
+  };
+
   return (
     <>
       {/* Desktop Navbar */}
@@ -120,50 +174,8 @@ const AppNavbar: React.FC = () => {
             </li>
           </ul>
 
-          <div className={`d-flex align-items-center gap-3 icon-group`}>
-            <div className={`search-wrapper ${showSearch ? "expanded-wrapper" : "hide-on-mobile"}`}>
-              <span title={t("search")} onClick={() => setShowSearch(!showSearch)}><FaSearch /></span>
-              <input
-                type="text"
-                placeholder={t("search_placeholder")}
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                onKeyDown={handleSearchKeyPress}
-                className={`search-input ${showSearch ? "expanded" : ""}`}
-              />
-            </div>
-
-            <span title={t("cart")} onClick={openCart} className="cart-icon">
-              <FaShoppingCart />
-              {totalItemCount > 0 && (
-                <span className={`cart-badge ${bounce ? "bounce-cart" : ""}`}>{totalItemCount}</span>
-              )}
-            </span>
-
-            <span title={t("profile")} onClick={handleUserClick}><FaUser /></span>
-
-            {isAuthenticated && (
-              <span title={t("logout")} onClick={handleLogout}><FaSignOutAlt /></span>
-            )}
-
-            <span title={t("dark_mode")} className="hide-on-mobile" onClick={toggleDarkMode}>
-              {darkMode ? <FaSun /> : <FaMoon />}
-            </span>
-
-            <div className="dropdown lang-dropdown">
-              <button
-                className="btn btn-sm btn-outline-secondary dropdown-toggle d-flex align-items-center gap-2"
-                type="button"
-                data-bs-toggle="dropdown"
-              >
-                <FaGlobe />
-                {i18n.language.toUpperCase()}
-              </button>
-              <ul className="dropdown-menu">
-                <li><button className="dropdown-item" onClick={() => changeLanguage("en")}>EN</button></li>
-                <li><button className="dropdown-item" onClick={() => changeLanguage("ar")}>AR</button></li>
-              </ul>
-            </div>
+          <div className="d-flex align-items-center gap-3 icon-group">
+            {renderIcons()}
           </div>
         </div>
       </nav>

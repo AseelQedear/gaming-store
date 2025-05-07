@@ -37,6 +37,7 @@
       transition: transform 0.3s ease;
       display: flex;
       align-items: center;
+      text-decoration: none;
 
       &:hover {
         color: $text-light;
@@ -69,6 +70,11 @@
       text-align: left !important;
     }
 
+    p{
+      direction: ltr;
+      unicode-bidi: isolate;
+    }
+      
     .footer-links {
       flex-direction: row-reverse;
       justify-content: center;
@@ -80,6 +86,7 @@
 
       a {
         margin-inline: 0.25rem;
+       
       }
     }
   }

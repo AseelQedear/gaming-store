@@ -430,8 +430,7 @@ useEffect(() => {
               </div>
             </div>
           )}
-
-
+          
       </div>
 
       <div className="checkout-summary col-md-5 p-4" data-aos="fade-left">
@@ -439,56 +438,56 @@ useEffect(() => {
         {t("checkout_page.order_summary", { count: cartItems.length })}
       </h3>
 
-  <div className="cart-body">
-    {cartItems.map((item, index) => (
-      <div key={index} className="cart-item">
-        <img src={item.image} alt={item.name} />
-        <div className="item-details">
-          <h5>{item.name}</h5>
-            <span>{item.variant || t("checkout_page.no_variant")}</span>
+    <div className="cart-body">
+      {cartItems.map((item, index) => (
+        <div key={index} className="cart-item">
+          <img src={item.image} alt={item.name} />
+          <div className="item-details">
+            <h5>{item.name}</h5>
+              <span>{item.variant || t("checkout_page.no_variant")}</span>
 
 
-          {/* Correct naming here */}
-          <div className="price-info">
-          {item.oldPrice && (
-              <span className="old-price"><span className="sr-symbol">$</span>{item.oldPrice.toFixed(2)}</span>
-            )}
-            <span className="current-price"><span className="sr-symbol">$</span>{item.price.toFixed(2)}</span>
-            {item.percent && (
-              <span className="percent-badge">-{item.percent.toFixed(0)}%</span>
-            )}
+            {/* Correct naming here */}
+            <div className="price-info">
+            {item.oldPrice && (
+                <span className="old-price"><span className="sr-symbol">$</span>{item.oldPrice.toFixed(2)}</span>
+              )}
+              <span className="current-price"><span className="sr-symbol">$</span>{item.price.toFixed(2)}</span>
+              {item.percent && (
+                <span className="percent-badge">-{item.percent.toFixed(0)}%</span>
+              )}
+            </div>
+
+              {/* Quantity Controls */}
+          <div className="qty">
+            <button onClick={() => onQuantityChange(item.id, -1)}>-</button>
+            <span>{item.quantity}</span>
+            <button onClick={() => onQuantityChange(item.id, 1)}>+</button>
+            <button className="delete" onClick={() => onRemoveItem(item.id)}>🗑</button>
           </div>
 
-            {/* Quantity Controls */}
-        <div className="qty">
-          <button onClick={() => onQuantityChange(item.id, -1)}>-</button>
-          <span>{item.quantity}</span>
-          <button onClick={() => onQuantityChange(item.id, 1)}>+</button>
-          <button className="delete" onClick={() => onRemoveItem(item.id)}>🗑</button>
+          </div>
         </div>
+      ))}
 
-        </div>
+      <div className="cart-summary">
+        <p>{t("checkout_page.subtotal")}: <span><span className="sr-symbol">$</span>{subtotal.toFixed(2)}</span></p>
+        <p>{t("checkout_page.shipping")}: <span><span className="sr-symbol">$</span>{shippingCost.toFixed(2)}</span></p>
+        <h5>{t("checkout_page.total")}: <span><span className="sr-symbol">$</span>{total.toFixed(2)}</span></h5>
       </div>
-    ))}
 
-    <div className="cart-summary">
-      <p>{t("checkout_page.subtotal")}: <span><span className="sr-symbol">$</span>{subtotal.toFixed(2)}</span></p>
-      <p>{t("checkout_page.shipping")}: <span><span className="sr-symbol">$</span>{shippingCost.toFixed(2)}</span></p>
-      <h5>{t("checkout_page.total")}: <span><span className="sr-symbol">$</span>{total.toFixed(2)}</span></h5>
-    </div>
-
-    <div className="cart-footer">
-      <div className="discount-row">
-      <input type="text" placeholder={t("checkout_page.discount_placeholder")} />
-      <button className="apply-btn">{t("checkout_page.apply_discount")}</button>
+      <div className="cart-footer">
+        <div className="discount-row">
+        <input type="text" placeholder={t("checkout_page.discount_placeholder")} />
+        <button className="apply-btn">{t("checkout_page.apply_discount")}</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
 
-    </div>
-  );
-};
+      </div>
+    );
+  };
 
 export default Checkout;
