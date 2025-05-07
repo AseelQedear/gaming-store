@@ -1,53 +1,81 @@
 @use "./variables" as *;
 @use "./animations" as *;
 
+// ===============================
+// 🅰️ Font Face Definitions
+// ===============================
 @font-face {
   font-family: 'BitsyArabic';
-  src: url('../public/fonts/bitsy-font-with-arabic.woff2') format('woff2');
+  src: url('/fonts/bitsy-font-with-arabic.woff2') format('woff2');
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Arshid';
+  src: url('/fonts/Arshid.woff') format('woff'); // ✅ Using .woff instead of .otf
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+// ===============================
+// 🌍 Global Reset and Theme
+// ===============================
 body, html, #root {
-    margin: 0;
-    padding: 0;
-    background-color: $primary-bg;
-    color: $text-light;
-    scrollbar-gutter: stable;
-  }
-  
-  body, .navbar, .form-control, .btn {
-    transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 0;
+  padding: 0;
+  background-color: $primary-bg;
+  color: $text-light;
+  scrollbar-gutter: stable;
+}
+
+body, .navbar, .form-control, .btn {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+  font-family: $font-body;
+}
+
+.btn, .btn-outline-light, .btn-outline-secondary {
+  font-family: $font-btn;
+}
+
+.sr-symbol {
+  font-family: 'Arshid', sans-serif;
+  font-size: 1.1em;
+  margin-inline-end: 4px;
+}
+
+// ===============================
+// 🎨 Heading and Title Styling
+// ===============================
+h1, h2, h3, h6,
+.hero-title, .section-title, .footer-logo {
+  font-family: $font-header;
+  color: $accent;
+  font-size: 1.5rem;
+  text-shadow: 0 0 3px rgba($accent, 0.4), 0 0 6px rgba($accent, 0.2);
+  letter-spacing: 1px;
+  transition: text-shadow 0.3s ease, color 0.3s ease;
+}
+
+// ===============================
+// 🔄 RTL Font Override for Arabic
+// ===============================
+html[dir="rtl"] {
+  body,
+  h1, h2, h3, h4, h5, h6,
+  p, span, a, li, button, input, textarea {
+    font-family: 'BitsyArabic', sans-serif !important;
   }
 
-  body {
-    font-family: $font-body;
-  }
-  
-  h1, h2, h3, h6,
-  .hero-title, .section-title, .footer-logo {
-    font-family: $font-header;
-    color: $accent;
-    font-size: 1.5rem;
-    text-shadow: 0 0 3px rgba($accent, 0.4), 0 0 6px rgba($accent, 0.2);
-    letter-spacing: 1px;
-    transition: text-shadow 0.3s ease, color 0.3s ease;
-  
-    html[dir="rtl"] & {
-      font-family: 'BitsyArabic', $font-header;
-    }
-  }
-  
-  .btn, .btn-outline-light, .btn-outline-secondary {
-    font-family: $font-btn;
-  }
-  
   .sr-symbol {
-    font-family: 'Arshid', sans-serif;
-    font-size: 1.1em;
-    margin-inline-end: 4px;
+    font-family: 'Arshid', sans-serif !important;
   }
-  
-  // ===============================
+}
+
+// ===============================
 // 🖤 Global Backdrop
 // ===============================
 .cart-backdrop {
