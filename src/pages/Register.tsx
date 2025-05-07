@@ -29,8 +29,11 @@ const Register: React.FC = () => {
   }, [navigate]);
 
   useEffect(() => {
-    document.documentElement.setAttribute("dir", i18n.dir());
+    const dir = i18n.dir();
+    document.documentElement.setAttribute("dir", dir);
+    document.body.classList.toggle("rtl", dir === "rtl");
   }, [i18n.language]);
+  
 
   const validateForm = () => {
     const newErrors: Record<string, string> = {};

@@ -163,7 +163,9 @@
   }
 }
 
-html[dir="rtl"] .auth-page {
+
+html[dir="rtl"] .auth-page,
+body.rtl .auth-page {
   direction: rtl;
   text-align: right;
 
@@ -179,9 +181,10 @@ html[dir="rtl"] .auth-page {
 
         input {
           direction: rtl;
+          text-align: right;
 
           &::placeholder {
-            text-align: right;
+            text-align: right !important;
           }
         }
       }

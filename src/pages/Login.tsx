@@ -14,8 +14,7 @@ const Login: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
   const navigate = useNavigate();
   const { login: loginUser } = useAuth();
-  const { t } = useTranslation();
-  
+  const { t, i18n } = useTranslation();
   
   useEffect(() => {
     const user =
@@ -26,6 +25,13 @@ const Login: React.FC = () => {
     }
   }, [navigate]);
 
+   useEffect(() => {
+      const dir = i18n.dir();
+      document.documentElement.setAttribute("dir", dir);
+      document.body.classList.toggle("rtl", dir === "rtl");
+    }, [i18n.language]);
+    
+  
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
