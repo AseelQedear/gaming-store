@@ -1378,9 +1378,17 @@ html[dir=rtl] .hero-banner .hero-overlay .hero-subtitle.typewriter {
   margin-bottom: 50px;
   text-align: center;
 }
+.popular-section .product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
 .popular-section .product-card-style2 {
   background-color: #1D267D;
   padding: 1.5rem;
+  width: 100%;
   max-width: 280px;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
@@ -1390,6 +1398,7 @@ html[dir=rtl] .hero-banner .hero-overlay .hero-subtitle.typewriter {
   transition: transform 0.3s ease;
   transform: translateZ(0);
   will-change: transform;
+  position: relative;
 }
 .popular-section .product-card-style2:hover {
   transform: translateY(-5px);
@@ -1437,6 +1446,7 @@ html[dir=rtl] .hero-banner .hero-overlay .hero-subtitle.typewriter {
   max-height: 130px;
   -o-object-fit: contain;
      object-fit: contain;
+  width: 100%;
 }
 .popular-section .product-card-style2 h5 {
   color: #D4ADFC;
@@ -1488,6 +1498,20 @@ html[dir=rtl] .hero-banner .hero-overlay .hero-subtitle.typewriter {
   height: 100%;
   background: rgba(255, 255, 255, 0.1);
   animation: slideHighlight 0.6s forwards;
+}
+@media (max-width: 768px) {
+  .popular-section {
+    padding: 2rem 1rem;
+  }
+  .popular-section .product-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  .popular-section .product-card-style2 {
+    max-width: 100%;
+    width: 100%;
+  }
 }
 
 .categories-section {
