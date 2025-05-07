@@ -637,7 +637,7 @@ html[dir=rtl] .checkout-page .checkout-summary .cart-item .qty button.delete {
 html[dir=rtl] .checkout-page .checkout-summary .cart-summary,
 html[dir=rtl] .checkout-page .checkout-summary .cart-footer,
 html[dir=rtl] .checkout-page .checkout-summary .price-info {
-  text-align: right;
+  text-align: left;
 }
 html[dir=rtl] .checkout-page .checkout-summary .cart-summary p, html[dir=rtl] .checkout-page .checkout-summary .cart-summary h5,
 html[dir=rtl] .checkout-page .checkout-summary .cart-footer p,
