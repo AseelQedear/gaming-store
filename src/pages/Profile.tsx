@@ -262,7 +262,7 @@ const Profile: React.FC = () => {
                 <div className="info">
                   <h5>{fav.device.name}</h5>
                   <p className="variant">
-                    {fav.device.offerKey
+                    {fav.device.offerKey && fav.device.offerKey !== "default"
                       ? t(`products.offers.${fav.device.offerKey}`)
                       : fav.device.offer}
                   </p>
