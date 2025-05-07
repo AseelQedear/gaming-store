@@ -87,13 +87,20 @@
 }
 
 html[dir="rtl"] {
-  .hero-banner .hero-overlay {
-    direction: rtl;
-    unicode-bidi: isolate;
+  .hero-banner {
+    .hero-overlay {
+      flex-direction: row-reverse;
 
-    .hero-title,
-    .hero-subtitle {
-      text-align: center;
+      .hero-sprite {
+        margin-left: 1rem; // mirror of margin-right in LTR
+        margin-right: 0;
+        transform: none; // remove flipping in RTL
+      }
+
+      .hero-title,
+      .hero-subtitle {
+        text-align: right;
+      }
     }
   }
 }

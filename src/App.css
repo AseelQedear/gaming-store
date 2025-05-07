@@ -1281,12 +1281,16 @@ html[dir=rtl] .product-details .product-image-box .best-deal-badge {
 }
 
 html[dir=rtl] .hero-banner .hero-overlay {
-  direction: rtl;
-  unicode-bidi: isolate;
+  flex-direction: row-reverse;
+}
+html[dir=rtl] .hero-banner .hero-overlay .hero-sprite {
+  margin-left: 1rem;
+  margin-right: 0;
+  transform: none;
 }
 html[dir=rtl] .hero-banner .hero-overlay .hero-title,
 html[dir=rtl] .hero-banner .hero-overlay .hero-subtitle {
-  text-align: center;
+  text-align: right;
 }
 
 .popular-section {
