@@ -94,7 +94,7 @@
   animation: typing 3s steps(40, end) forwards, blink 0.7s step-end infinite;
 }
 
-[dir="rtl"] & {
+html[dir="rtl"] .hero-banner {
   .hero-overlay {
     flex-direction: row-reverse;
     text-align: right;
@@ -110,7 +110,7 @@
     border-left: 2px solid $accent;
     border-right: none;
   }
-}
+
 
 &::after {
   content: "";
@@ -137,4 +137,5 @@ white-space: nowrap;
 border-right: 2px solid $accent;
 width: 0;
 animation: typing 3s steps(40, end) forwards, blink 0.7s step-end infinite;
+}
 }
