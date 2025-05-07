@@ -92,9 +92,9 @@ html[dir="rtl"] {
       flex-direction: row-reverse;
 
       .hero-sprite {
-        margin-left: 1rem; // mirror of margin-right in LTR
+        margin-left: 1rem; 
         margin-right: 0;
-        transform: none; // remove flipping in RTL
+
       }
 
       .hero-title,

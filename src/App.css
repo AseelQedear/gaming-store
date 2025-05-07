@@ -1286,7 +1286,6 @@ html[dir=rtl] .hero-banner .hero-overlay {
 html[dir=rtl] .hero-banner .hero-overlay .hero-sprite {
   margin-left: 1rem;
   margin-right: 0;
-  transform: none;
 }
 html[dir=rtl] .hero-banner .hero-overlay .hero-title,
 html[dir=rtl] .hero-banner .hero-overlay .hero-subtitle {
