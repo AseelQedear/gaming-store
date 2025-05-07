@@ -342,39 +342,27 @@ html[dir=rtl] .auth-page {
   direction: rtl;
   text-align: right;
 }
-html[dir=rtl] .auth-page .auth-form .auth-text {
-  text-align: right;
-}
-html[dir=rtl] .auth-page .auth-form form .form-group {
+html[dir=rtl] .auth-page form .form-group {
   align-items: flex-end;
 }
-html[dir=rtl] .auth-page .auth-form form .form-group input {
+html[dir=rtl] .auth-page form .form-group input {
   direction: rtl;
   text-align: right;
 }
-html[dir=rtl] .auth-page .auth-form form .form-group input::-moz-placeholder {
+html[dir=rtl] .auth-page form .form-group input::-moz-placeholder {
   text-align: right !important;
 }
-html[dir=rtl] .auth-page .auth-form form .form-group input::placeholder {
+html[dir=rtl] .auth-page form .form-group input::placeholder {
   text-align: right !important;
 }
-html[dir=rtl] .auth-page .auth-form form .invalid-feedback {
+html[dir=rtl] .auth-page form .invalid-feedback {
   text-align: right;
 }
-html[dir=rtl] .auth-page .auth-form form .form-check {
+html[dir=rtl] .auth-page form .form-check {
   direction: rtl;
   text-align: right;
 }
-html[dir=rtl] .auth-page .auth-form form .form-check .form-check-input {
+html[dir=rtl] .auth-page form .form-check .form-check-input {
   margin-left: 0;
   margin-right: 0.5rem;
-}
-html[dir=rtl] .auth-page html[dir=rtl] input::-moz-placeholder, html[dir=rtl] .auth-page body.rtl input::-moz-placeholder {
-  text-align: right !important;
-  direction: rtl !important;
-}
-html[dir=rtl] .auth-page html[dir=rtl] input::placeholder,
-html[dir=rtl] .auth-page body.rtl input::placeholder {
-  text-align: right !important;
-  direction: rtl !important;
 }/*# sourceMappingURL=Auth.css.map */
