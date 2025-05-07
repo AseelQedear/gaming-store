@@ -17,7 +17,7 @@ const Register: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
   const navigate = useNavigate();
   const { login: loginUser } = useAuth();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
 
   useEffect(() => {
@@ -27,6 +27,10 @@ const Register: React.FC = () => {
       navigate("/");
     }
   }, [navigate]);
+
+  useEffect(() => {
+    document.documentElement.setAttribute("dir", i18n.dir());
+  }, [i18n.language]);
 
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
