@@ -416,62 +416,62 @@
 }
 
 html[dir=rtl] .profile-page {
-  direction: rtl !important;
-  text-align: right !important;
+  direction: rtl;
+  text-align: right;
 }
 html[dir=rtl] .profile-page h1, html[dir=rtl] .profile-page h2, html[dir=rtl] .profile-page .section-title {
   text-align: right !important;
 }
 html[dir=rtl] .profile-page .profile-info form label {
-  align-items: flex-end !important;
+  align-items: flex-end;
 }
 html[dir=rtl] .profile-page .profile-info form label input {
-  direction: rtl !important;
+  direction: rtl;
   text-align: right;
 }
 html[dir=rtl] .profile-page .profile-info form label input::-moz-placeholder {
-  text-align: right !important;
+  text-align: right;
 }
 html[dir=rtl] .profile-page .profile-info form label input::placeholder {
-  text-align: right !important;
+  text-align: right;
 }
 html[dir=rtl] .profile-page .invalid-feedback {
-  text-align: right !important;
+  text-align: right;
 }
 html[dir=rtl] .profile-page .orders-section .order-block {
-  text-align: right !important;
+  text-align: right;
 }
 html[dir=rtl] .profile-page .orders-section .order-block p {
-  text-align: right !important;
+  text-align: right;
 }
 html[dir=rtl] .profile-page .orders-section .order-block .product-summary {
-  text-align: right !important;
+  text-align: right;
 }
 html[dir=rtl] .profile-page .orders-section .order-block .order-items-row {
-  flex-direction: row-reverse !important;
+  flex-direction: row-reverse;
 }
 html[dir=rtl] .profile-page .favorites-section .favorites-list {
   justify-content: flex-end !important;
 }
 html[dir=rtl] .profile-page .favorites-section .favorite-tile {
-  text-align: right !important;
+  text-align: right;
 }
 html[dir=rtl] .profile-page .favorites-section .favorite-tile .tile-header {
-  justify-content: flex-start !important;
+  justify-content: flex-start;
 }
 html[dir=rtl] .profile-page .favorites-section .favorite-tile .info {
-  align-items: flex-end !important;
+  align-items: flex-end;
 }
 html[dir=rtl] .profile-page .favorites-section .favorite-tile .info h5, html[dir=rtl] .profile-page .favorites-section .favorite-tile .info .variant, html[dir=rtl] .profile-page .favorites-section .favorite-tile .info .price-line, html[dir=rtl] .profile-page .favorites-section .favorite-tile .info .fav-btn {
-  text-align: right !important;
+  text-align: right;
 }
 html[dir=rtl] .profile-page .favorites-section .favorite-tile .info .price-line {
-  flex-direction: row-reverse !important;
+  flex-direction: row-reverse;
 }
 html[dir=rtl] .profile-page .favorites-section .favorite-tile .info .price-line .badge {
-  margin-right: 0 !important;
-  margin-left: auto !important;
+  margin-right: 0;
+  margin-left: auto;
 }
 html[dir=rtl] .profile-page .form-actions {
-  flex-direction: row-reverse !important;
+  flex-direction: row-reverse;
 }/*# sourceMappingURL=Profile.css.map */
