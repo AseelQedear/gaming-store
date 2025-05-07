@@ -393,31 +393,31 @@ useEffect(() => {
           )}
 
 
-        {step === 4 && (
-          <div className="step review-step" data-aos="fade-up">
-            <h5>{t("checkout_page.step4_title")}</h5>
-            <div className="review-section">
-            <h4>{t("checkout_page.delivery_details")}</h4>
-              {Object.entries(delivery).map(([key, value]) => (
-                <p key={key}>
-                <strong>
-                  {key.replace(/([A-Z])/g, " $1").replace(/^./, (str) => str.toUpperCase())}:
-                </strong> {value}
-              </p>
-              
-              ))}
-            </div>
-            <div className="review-section">
-            <h4>{t("checkout_page.payment_details")}</h4>
-              <p><strong>Shipping Method:</strong> {shippingOption}</p>
-              <p><strong>Total:</strong> <span className="highlighted-total">${total.toFixed(2)}</span></p>
-            </div>
-            <div className="button-row">
-              <button onClick={handleBack}>{t("checkout_page.back")}</button>
-              <button onClick={submitOrder}>{t("checkout_page.place_order")}</button>
-            </div>
-          </div>
-        )}
+{step === 4 && (
+  <div className="step review-step" data-aos="fade-up">
+    <h5>{t("checkout_page.step4_title")}</h5>
+    <div className="review-section">
+      <h4>{t("checkout_page.delivery_details")}</h4>
+      {Object.entries(delivery).map(([key, value]) => (
+        <p key={key}>
+          <strong>
+            {key.replace(/([A-Z])/g, " $1").replace(/^./, (str) => str.toUpperCase())}:
+          </strong> {value}
+        </p>
+      ))}
+    </div>
+    <div className="review-section">
+      <h4>{t("checkout_page.payment_details")}</h4>
+      <p><strong>Shipping Method:</strong> {shippingOption}</p>
+      <p><strong>Total:</strong> <span className="highlighted-total">${total.toFixed(2)}</span></p>
+    </div>
+    <div className="button-row">
+      <button onClick={handleBack}>{t("checkout_page.back")}</button>
+      <button onClick={submitOrder}>{t("checkout_page.place_order")}</button>
+    </div>
+  </div>
+)}
+
       </div>
 
       <div className="checkout-summary col-md-5 p-4" data-aos="fade-left">
