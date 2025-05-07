@@ -171,6 +171,9 @@
   color: #ffffff;
   width: 1200px !important;
 }
+.profile-page .profile-page .sr-symbol {
+  font-family: "Arshid", sans-serif !important;
+}
 .profile-page h1 {
   text-align: center;
   font-size: 1.5rem;
