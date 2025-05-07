@@ -7,20 +7,17 @@
   background-color: $primary-bg;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  max-width: 1100px;
+  max-width: 1000px;
   margin: 2rem auto;
   color: $text-light;
-  width: 1200px !important;
+  width: 900px;
+  transition: direction 0.3s ease, text-align 0.3s ease;
 
   h1 {
     text-align: center;
     font-size: 1.5rem;
     color: $accent;
     margin-bottom: 2rem;
-  }
-
-  h2 {
-    text-align: left !important;
   }
 
   .profile-info {
@@ -50,6 +47,10 @@
           &.is-invalid {
             border-color: #dc3545;
           }
+
+          &::placeholder {
+            color: $text-muted;
+          }
         }
 
         .invalid-feedback {
@@ -77,11 +78,6 @@
           }
         }
       }
-
-      .update-message {
-        color: $accent;
-        margin-top: 0.5rem;
-      }
     }
   }
 
@@ -103,32 +99,13 @@
   }
 
   .orders-section {
-    overflow-x: auto;
-    scroll-behavior: smooth;
-
-    &::-webkit-scrollbar {
-      height: 8px;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background: $accent;
-      border-radius: 8px;
-    }
-
-    .orders-list {
-      display: flex;
-      flex-wrap: nowrap;
-      gap: 1.5rem;
-      padding-bottom: 1rem;
-    }
+    margin-bottom: 4rem;
 
     .order-block {
-      min-width: 300px;
-      max-width: 350px;
-      flex-shrink: 0;
       background-color: $secondary-bg;
       border-radius: $radius;
       padding: 1.5rem;
+      margin-bottom: 2rem;
       box-shadow: $shadow-sm;
       transition: transform 0.2s ease;
 
@@ -171,7 +148,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 1.5rem;
-      justify-content: left !important;
+      justify-content: left;
     }
 
     .favorite-tile {
@@ -179,14 +156,14 @@
       color: $text-light;
       border-radius: $radius;
       padding: 1rem;
-      width: 280px !important;
+      width: 220px;
       text-align: center;
       box-shadow: $shadow-sm;
       transition: transform 0.2s;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      min-height: 400px;
+      min-height: 300px;
 
       &:hover {
         transform: scale(1.015);
@@ -216,7 +193,7 @@
 
       img {
         max-width: 100%;
-        max-height: 140px;
+        max-height: 120px;
         object-fit: contain;
         margin-bottom: 0.5rem;
       }
@@ -319,54 +296,39 @@
   }
 }
 
-html[dir="rtl"] .profile-page {
-  direction: rtl;
-  text-align: right;
-
-  .section-title {
+html[dir="rtl"] {
+  .profile-page {
+    direction: rtl;
     text-align: right;
-  }
 
-  .profile-info {
-    text-align: right;
-  }
-
-  .orders-section {
-    .order-block {
+    .section-title {
       text-align: right;
     }
-  }
 
-  .favorites-section {
-    .favorites-list {
-      justify-content: right !important;
+    input,
+    input::placeholder {
+      direction: rtl;
+      text-align: right;
     }
 
-    .favorite-tile {
-      text-align: right;
-
-      .tile-header {
-        justify-content: flex-start;
+    .favorites-section {
+      .favorites-list {
+        justify-content: right;
       }
 
-      .info {
+      .favorite-tile {
+        .tile-header {
+          justify-content: flex-start;
+        }
+
         .price-line {
           flex-direction: row-reverse;
         }
       }
     }
-  }
-  
-  input::placeholder {
-    text-align: right;
-  }
 
-  input {
-    direction: rtl;
+    .invalid-feedback {
+      text-align: right;
+    }
   }
 }
-
-.profile-page {
-  transition: direction 0.3s ease, text-align 0.3s ease;
-}
-

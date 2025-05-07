@@ -166,19 +166,17 @@
   background-color: #0C134F;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  max-width: 1100px;
+  max-width: 1000px;
   margin: 2rem auto;
   color: #ffffff;
-  width: 1200px !important;
+  width: 900px;
+  transition: direction 0.3s ease, text-align 0.3s ease;
 }
 .profile-page h1 {
   text-align: center;
   font-size: 1.5rem;
   color: #D4ADFC;
   margin-bottom: 2rem;
-}
-.profile-page h2 {
-  text-align: left !important;
 }
 .profile-page .profile-info {
   background-color: #1D267D;
@@ -207,6 +205,12 @@
 .profile-page .profile-info form label input.is-invalid {
   border-color: #dc3545;
 }
+.profile-page .profile-info form label input::-moz-placeholder {
+  color: #ccc;
+}
+.profile-page .profile-info form label input::placeholder {
+  color: #ccc;
+}
 .profile-page .profile-info form label .invalid-feedback {
   color: #dc3545;
   font-size: 0.85rem;
@@ -228,10 +232,6 @@
 .profile-page .profile-info form .form-actions button:hover {
   background-color: #ba7cfa;
 }
-.profile-page .profile-info form .update-message {
-  color: #D4ADFC;
-  margin-top: 0.5rem;
-}
 .profile-page .section-title {
   font-size: 1.2rem;
   color: #D4ADFC;
@@ -247,29 +247,13 @@
   color: #D4ADFC;
 }
 .profile-page .orders-section {
-  overflow-x: auto;
-  scroll-behavior: smooth;
-}
-.profile-page .orders-section::-webkit-scrollbar {
-  height: 8px;
-}
-.profile-page .orders-section::-webkit-scrollbar-thumb {
-  background: #D4ADFC;
-  border-radius: 8px;
-}
-.profile-page .orders-section .orders-list {
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 1.5rem;
-  padding-bottom: 1rem;
+  margin-bottom: 4rem;
 }
 .profile-page .orders-section .order-block {
-  min-width: 300px;
-  max-width: 350px;
-  flex-shrink: 0;
   background-color: #1D267D;
   border-radius: 16px;
   padding: 1.5rem;
+  margin-bottom: 2rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
   transition: transform 0.2s ease;
 }
@@ -304,21 +288,21 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
-  justify-content: left !important;
+  justify-content: left;
 }
 .profile-page .favorites-section .favorite-tile {
   background-color: #1D267D;
   color: #ffffff;
   border-radius: 16px;
   padding: 1rem;
-  width: 280px !important;
+  width: 220px;
   text-align: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
   transition: transform 0.2s;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 400px;
+  min-height: 300px;
 }
 .profile-page .favorites-section .favorite-tile:hover {
   transform: scale(1.015);
@@ -343,7 +327,7 @@
 }
 .profile-page .favorites-section .favorite-tile img {
   max-width: 100%;
-  max-height: 140px;
+  max-height: 120px;
   -o-object-fit: contain;
      object-fit: contain;
   margin-bottom: 0.5rem;
@@ -438,34 +422,24 @@ html[dir=rtl] .profile-page {
 html[dir=rtl] .profile-page .section-title {
   text-align: right;
 }
-html[dir=rtl] .profile-page .profile-info {
+html[dir=rtl] .profile-page input::-moz-placeholder {
+  direction: rtl;
   text-align: right;
 }
-html[dir=rtl] .profile-page .orders-section .order-block {
+html[dir=rtl] .profile-page input,
+html[dir=rtl] .profile-page input::placeholder {
+  direction: rtl;
   text-align: right;
 }
 html[dir=rtl] .profile-page .favorites-section .favorites-list {
-  justify-content: right !important;
-}
-html[dir=rtl] .profile-page .favorites-section .favorite-tile {
-  text-align: right;
+  justify-content: right;
 }
 html[dir=rtl] .profile-page .favorites-section .favorite-tile .tile-header {
   justify-content: flex-start;
 }
-html[dir=rtl] .profile-page .favorites-section .favorite-tile .info .price-line {
+html[dir=rtl] .profile-page .favorites-section .favorite-tile .price-line {
   flex-direction: row-reverse;
 }
-html[dir=rtl] .profile-page input::-moz-placeholder {
+html[dir=rtl] .profile-page .invalid-feedback {
   text-align: right;
-}
-html[dir=rtl] .profile-page input::placeholder {
-  text-align: right;
-}
-html[dir=rtl] .profile-page input {
-  direction: rtl;
-}
-
-.profile-page {
-  transition: direction 0.3s ease, text-align 0.3s ease;
 }/*# sourceMappingURL=Profile.css.map */

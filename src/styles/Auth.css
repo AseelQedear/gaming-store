@@ -346,16 +346,12 @@ html[dir=rtl] .auth-page .auth-form form .form-group {
   align-items: flex-end;
 }
 html[dir=rtl] .auth-page .auth-form form .form-group input::-moz-placeholder {
-  text-align: right;
-}
-html[dir=rtl] .auth-page .auth-form form .form-group input::placeholder {
-  text-align: right;
-}
-html[dir=rtl] .auth-page .auth-form form .form-group input {
   direction: rtl;
+  text-align: right;
 }
-html[dir=rtl] .auth-page .auth-form form .invalid-feedback,
-html[dir=rtl] .auth-page .auth-form form .auth-text {
+html[dir=rtl] .auth-page .auth-form form .form-group input,
+html[dir=rtl] .auth-page .auth-form form .form-group input::placeholder {
+  direction: rtl;
   text-align: right;
 }
 html[dir=rtl] .auth-page .auth-form form .form-check {
@@ -364,6 +360,10 @@ html[dir=rtl] .auth-page .auth-form form .form-check {
 html[dir=rtl] .auth-page .auth-form form .form-check .form-check-input {
   margin-left: 0;
   margin-right: 0.5rem;
+}
+html[dir=rtl] .auth-page .auth-form form .invalid-feedback,
+html[dir=rtl] .auth-page .auth-form form .auth-text {
+  text-align: right;
 }
 
 .auth-page {
