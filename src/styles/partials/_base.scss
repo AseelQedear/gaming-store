@@ -49,15 +49,15 @@ h1, h2, h3, h6,
 html[dir="rtl"] {
   body,
   p, span, a, li, button, input, textarea {
-    font-family: $font-header-arabic !important;
+    font-family: 'Cairo', sans-serif !important;
   }
 
   h1, h2, h3, h4, h5, h6,
   .section-title, .hero-title, .footer-logo {
-    font-family: $font-header-arabic !important;
+    font-family: 'Tajawal', sans-serif !important;
   }
-}
 
+}
 
 // ===============================
 // 🖤 Global Backdrop
