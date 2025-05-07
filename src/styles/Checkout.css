@@ -509,6 +509,7 @@
   top: 1rem;
   right: 1rem;
   background: #4caf50;
+  text-align: center;
   color: white;
   padding: 1rem 2rem;
   border-radius: 8px;
@@ -576,6 +577,12 @@ html[dir=rtl] .checkout-page .button-row {
 }
 html[dir=rtl] .checkout-page .review-step h5, html[dir=rtl] .checkout-page .review-step h6 {
   text-align: right;
+}
+html[dir=rtl] .checkout-page .review-step h6 {
+  font-size: 1.1rem;
+  color: #a6b0ff;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
 }
 html[dir=rtl] .checkout-page .review-step .review-section {
   text-align: right;
