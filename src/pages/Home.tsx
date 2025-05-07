@@ -11,7 +11,7 @@ const Home: React.FC = () => {
   const { wishlist, toggleWishlist } = useWishlist();
   const { addToCart } = useCart();
   const navigate = useNavigate();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const [devices, setDevices] = useState<any[]>([]);
   const [error, setError] = useState<string | null>(null);
@@ -27,6 +27,13 @@ const Home: React.FC = () => {
     };
     fetchDevices();
   }, [t]);
+
+   useEffect(() => {
+      const dir = i18n.dir();
+      document.documentElement.setAttribute("dir", dir);
+      document.body.classList.toggle("rtl", dir === "rtl");
+    }, [i18n.language]);
+    
 
   const filteredProducts = devices
     .filter((product) => product.discounted && product.available)
