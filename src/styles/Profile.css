@@ -450,7 +450,6 @@ html[dir=rtl] .profile-page .favorites-section .favorites-list {
   justify-content: right !important;
 }
 html[dir=rtl] .profile-page form label {
-  align-items: flex-start;
   text-align: right;
 }
 html[dir=rtl] .profile-page .form-actions {
