@@ -392,31 +392,45 @@ useEffect(() => {
             </div>
           )}
 
+          {step === 4 && (
+            <div className="step review-step" data-aos="fade-up">
+              <h5>{t("checkout_page.step4_title")}</h5>
 
-{step === 4 && (
-  <div className="step review-step" data-aos="fade-up">
-    <h5>{t("checkout_page.step4_title")}</h5>
-    <div className="review-section">
-      <h4>{t("checkout_page.delivery_details")}</h4>
-      {Object.entries(delivery).map(([key, value]) => (
-        <p key={key}>
-          <strong>
-            {key.replace(/([A-Z])/g, " $1").replace(/^./, (str) => str.toUpperCase())}:
-          </strong> {value}
-        </p>
-      ))}
-    </div>
-    <div className="review-section">
-      <h4>{t("checkout_page.payment_details")}</h4>
-      <p><strong>Shipping Method:</strong> {shippingOption}</p>
-      <p><strong>Total:</strong> <span className="highlighted-total">${total.toFixed(2)}</span></p>
-    </div>
-    <div className="button-row">
-      <button onClick={handleBack}>{t("checkout_page.back")}</button>
-      <button onClick={submitOrder}>{t("checkout_page.place_order")}</button>
-    </div>
-  </div>
-)}
+              {/* Delivery Section */}
+              <div className="review-section">
+                <h4>{t("checkout_page.delivery_details")}</h4>
+                <ul className="delivery-info">
+                  {Object.entries(delivery).map(([key, value]) => (
+                    <li key={key}>
+                      <strong>{t(`checkout_page.review_labels.${key}`)}:</strong> {value}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Payment Section */}
+              <div className="review-section">
+                <h4>{t("checkout_page.payment_details")}</h4>
+                <ul className="payment-info">
+                  <li>
+                    <strong>{t("checkout_page.review_labels.shippingMethod")}:</strong> {t(`checkout_page.${shippingOption.toLowerCase()}_shipping`)}
+                  </li>
+                  <li>
+                    <strong>{t("checkout_page.review_labels.total")}:</strong>{" "}
+                    <span className="highlighted-total">
+                      <span className="sr-symbol">$</span>{total.toFixed(2)}
+                    </span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="button-row">
+                <button onClick={handleBack}>{t("checkout_page.back")}</button>
+                <button onClick={submitOrder}>{t("checkout_page.place_order")}</button>
+              </div>
+            </div>
+          )}
+
 
       </div>
 
