@@ -275,12 +275,12 @@ useEffect(() => {
               <h5>{t("checkout_page.step2_title")}</h5>
               {["Express", "Standard"].map((opt) => (
                 <label key={opt} className="radio-label">
+                  {t(`checkout_page.${opt.toLowerCase()}_shipping`)} <span className="sr-symbol">$</span>{10}
                   <input
                     type="radio"
                     checked={shippingOption === opt}
                     onChange={() => setShippingOption(opt)}
                   />
-                   {t(`checkout_page.${opt.toLowerCase()}_shipping`)} <span className="sr-symbol">$</span>{10}
                 </label>
               ))}
               <div className="button-row">
@@ -391,6 +391,8 @@ useEffect(() => {
               </div>
             </div>
           )}
+
+
           {step === 4 && (
             <div className="step review-step" data-aos="fade-up">
               <h5>{t("checkout_page.step4_title")}</h5>
@@ -430,7 +432,7 @@ useEffect(() => {
                 <button onClick={submitOrder}>{t("checkout_page.place_order")}</button>
               </div>
             </div>
-)}
+              )}
 
           
       </div>

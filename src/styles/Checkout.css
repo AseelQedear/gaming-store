@@ -587,6 +587,14 @@ html[dir=rtl] .checkout-page .button-row {
 html[dir=rtl] .checkout-page .grid-2col .full-width {
   grid-column: span 2;
 }
+html[dir=rtl] .checkout-page .radio-label {
+  justify-content: flex-end;
+  flex-direction: row-reverse;
+  gap: 0.5rem;
+}
+html[dir=rtl] .checkout-page .radio-label input[type=radio] {
+  margin: 0;
+}
 html[dir=rtl] .checkout-page .review-step .review-section ul {
   padding-right: 1rem;
 }

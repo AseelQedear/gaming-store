@@ -473,8 +473,16 @@ html[dir="rtl"] .checkout-page {
     }
   }
 
-  
+  .radio-label {
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+    gap: 0.5rem;
 
+    input[type="radio"] {
+      margin: 0;
+    }
+  }
+  
   .review-step {
     .review-section {
       ul {
