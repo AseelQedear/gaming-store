@@ -225,7 +225,7 @@ const Profile: React.FC = () => {
                 <h5>{t("profile_page.order")} #{order.id}</h5>
                 <p>{t("profile_page.ordered_on")}: {new Date(order.orderDate).toLocaleDateString()}</p>
                 <p>{t("profile_page.shipping")}: {order.shippingMethod}</p>
-                <p>{t("profile_page.total")}: ${order.total.toFixed(2)}</p>
+                <p>{t("profile_page.total")}: <span className="sr-symbol">$</span>{order.total.toFixed(2)}</p>
                 <div className="order-items-row">
                 {order.orderItems.map((item: OrderItem) => (
                     <div className="product-summary" key={item.id}>
@@ -251,16 +251,33 @@ const Profile: React.FC = () => {
             {favorites.map((fav) => (
               <div className="favorite-tile" key={fav.device.id}>
                 <div className="tile-header">
-                  <span className={`wishlist-icon ${wishlist.includes(fav.device.id) ? "active" : ""}`} onClick={() => toggleWishlist(fav.device.id)}>♥</span>
+                  <span
+                    className={`wishlist-icon ${wishlist.includes(fav.device.id) ? "active" : ""}`}
+                    onClick={() => toggleWishlist(fav.device.id)}
+                  >
+                    ♥
+                  </span>
                 </div>
                 <img src={fav.device.image} alt={fav.device.name} />
                 <div className="info">
                   <h5>{fav.device.name}</h5>
-                  <p className="variant">{fav.device.offer}</p>
+                  <p className="variant">
+                    {fav.device.offerKey
+                      ? t(`products.offers.${fav.device.offerKey}`)
+                      : fav.device.offer}
+                  </p>
                   <div className="price-line">
-                    {fav.device.oldPrice && <span className="old"><span className="sr-symbol">$</span>{fav.device.oldPrice.toFixed(2)}</span>}
-                    <span className="current"><span className="sr-symbol">$</span>{fav.device.price.toFixed(2)}</span>
-                    {fav.device.percent && <span className="badge">-{fav.device.percent.toFixed(0)}%</span>}
+                    {fav.device.oldPrice && (
+                      <span className="old">
+                        <span className="sr-symbol">$</span>{fav.device.oldPrice.toFixed(2)}
+                      </span>
+                    )}
+                    <span className="current">
+                      <span className="sr-symbol">$</span>{fav.device.price.toFixed(2)}
+                    </span>
+                    {fav.device.percent && (
+                      <span className="badge">-{fav.device.percent.toFixed(0)}%</span>
+                    )}
                   </div>
                   <button
                     className="fav-btn"
@@ -275,6 +292,8 @@ const Profile: React.FC = () => {
                         discounted: fav.device.discounted,
                         oldPrice: fav.device.oldPrice,
                         percent: fav.device.percent,
+                        offer: fav.device.offer,
+                        offerKey: fav.device.offerKey,
                       })
                     }
                   >
@@ -283,6 +302,7 @@ const Profile: React.FC = () => {
                 </div>
               </div>
             ))}
+
           </div>
         )}
       </div>
