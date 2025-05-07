@@ -275,15 +275,16 @@ useEffect(() => {
               <h5>{t("checkout_page.step2_title")}</h5>
               {["Express", "Standard"].map((opt) => (
                 <label key={opt} className="radio-label">
-                  <span>{t(`checkout_page.${opt.toLowerCase()}_shipping`)}</span>
-                  <span className="sr-symbol">$</span> 10
                   <input
                     type="radio"
                     checked={shippingOption === opt}
                     onChange={() => setShippingOption(opt)}
                   />
+                  <span>{t(`checkout_page.${opt.toLowerCase()}_shipping`)}</span>
+                  <span className="sr-symbol">$</span> 10
                 </label>
               ))}
+
               <div className="button-row">
                 <button onClick={handleBack}>{t("checkout_page.back")}</button>
                 <button disabled={!shippingOption} onClick={handleNext}>
