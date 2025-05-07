@@ -411,3 +411,80 @@ html.dark-mode {
     }
   }
 }
+
+html.dark-mode {
+  // 🟣 Mobile Navbar
+  .mobile-navbar {
+    background-color: #1e1e1e;
+    border: 1px solid #2a2a2a;
+
+    .icon-group span,
+    .icon-group svg,
+    .nav-icon {
+      color: $accent;
+
+      &:hover {
+        color: white;
+      }
+    }
+
+    .cart-icon .cart-badge {
+      background-color: red;
+      color: white;
+    }
+  }
+
+
+  .mobile-sidebar {
+    background-color: #1e1e1e !important;
+    color: $text-light;
+
+    .offcanvas-header,
+    .offcanvas-body {
+      background-color: #1e1e1e;
+      color: $text-light;
+    }
+
+    .offcanvas-title {
+      color: $accent;
+    }
+
+    .close-icon {
+      color: $accent;
+
+      &:hover {
+        color: white;
+      }
+    }
+
+    .sidebar-links li {
+      border-color: rgba(255, 255, 255, 0.1);
+
+      a {
+        color: $text-light;
+
+        svg {
+          color: $accent;
+        }
+
+        &:hover {
+          color: $accent;
+
+          svg {
+            transform: translateX(4px);
+            color: white;
+          }
+        }
+      }
+    }
+
+    .sidebar-controls-inline span,
+    .sidebar-logout span {
+      color: $accent;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}

@@ -1,7 +1,7 @@
 @use './variables' as *;
 
 .mobile-navbar {
-  background-color: #070e3e;
+  background-color: #070e3e; 
   height: 64px;
   border-radius: 12px;
   margin: 12px;
@@ -14,20 +14,18 @@
   font-family: $font-header;
 
   .icon-group {
+    gap: 1rem;
     display: flex;
     align-items: center;
-    gap: 1.5rem;
 
     span,
     svg {
       font-size: 1.2rem;
       color: $accent;
       cursor: pointer;
-      transition: color 0.3s ease, transform 0.3s ease;
 
       &:hover {
         color: $text-light;
-        transform: scale(1.1);
       }
     }
   }
@@ -43,21 +41,15 @@
       color: white;
       border-radius: 50%;
       font-size: 0.8rem;
-      font-weight: bold;
       width: 18px;
       height: 18px;
       display: flex;
       align-items: center;
       justify-content: center;
-
-      &.bounce-cart {
-        animation: bounce-cart 0.5s ease;
-      }
     }
   }
 }
 
-// Sidebar overlay when mobile menu is open
 .sidebar-overlay {
   position: fixed;
   top: 0;
@@ -69,83 +61,126 @@
   backdrop-filter: blur(2px);
 }
 
-// Sidebar styles for mobile nav
 .mobile-sidebar {
-  background-color: $primary-bg;
+  background-color: $primary-bg !important;
   color: $text-light;
 
+  .offcanvas-header,
   .offcanvas-body {
-    padding: 1rem 1.5rem;
-    font-family: $font-body;
+    background-color: $primary-bg;
+    color: $text-light;
+    padding: 1.25rem;
+    gap: 16rem;
+    
+  }
 
-    .sidebar-links {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 1rem;
+  .offcanvas-title {
+    font-family: $font-header;
+    font-size: 1rem;
+    color: $accent;
+  }
 
-      li {
-        margin: 1rem 0;
-        font-size: 1.1rem;
+  .btn-close {
+    filter: invert(1);
+  }
 
-        a {
-          color: $text-light;
-          text-decoration: none;
-          transition: color 0.2s ease;
+  .close-icon {
+    font-size: 1.3rem;
+    color: $accent;
+    cursor: pointer;
+    padding: 0.5rem;
 
-          &:hover {
-            color: $accent;
+    &:hover {
+      color: $text-light;
+    }
+  }
+
+  .sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem;
+
+    li {
+      border-bottom: 1px solid rgba($highlight, 0.2);
+      padding: 1rem 0;
+      font-size: 1.1rem;
+
+      a {
+        color: $text-light;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+        transition: color 0.3s ease;
+
+        svg {
+          font-size: 1rem;
+          color: $accent;
+          transition: transform 0.2s ease;
+        }
+
+        &:hover {
+          color: $accent;
+
+          svg {
+            transform: translateX(4px);
           }
         }
       }
     }
+  }
 
-    .sidebar-controls {
+  .sidebar-controls-inline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+
+    span {
       display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
+      align-items: center;
+      gap: 0.4rem;
+      color: $accent;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: color 0.3s ease, transform 0.3s ease;
 
-      button {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        background: transparent;
-        border: 1px solid $highlight;
-        padding: 0.5rem 0.75rem;
+      svg {
+        font-size: 1.1rem;
+      }
+
+      &:hover {
         color: $text-light;
-        font-weight: 500;
-        font-family: $font-body;
-        border-radius: 6px;
-        width: 100%;
-        transition: background-color 0.3s ease, color 0.3s ease;
-
-        &:hover {
-          background-color: $highlight;
-          color: $accent;
-        }
+        transform: scale(1.1);
       }
     }
+  }
 
-    .lang-switch {
+  .sidebar-logout {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+
+    span {
       display: flex;
-      justify-content: space-between;
-      gap: 0.75rem;
-      margin-top: 1rem;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: $font-btn;
+      color: $accent;
+      cursor: pointer;
+      font-weight: 600;
+      transition: color 0.3s ease, transform 0.3s ease;
 
-      button {
-        flex: 1;
-        font-weight: 500;
-        font-family: $font-body;
-        color: $accent;
-        border: 1px solid $accent;
-        background: transparent;
-        padding: 0.4rem 0.6rem;
-        border-radius: 6px;
-        transition: background-color 0.3s ease, color 0.3s ease;
+      svg {
+        font-size: 1rem;
+      }
 
-        &:hover {
-          background-color: $highlight;
-          color: $text-light;
-        }
+      &:hover {
+        color: $text-light;
+        transform: scale(1.05);
       }
     }
   }

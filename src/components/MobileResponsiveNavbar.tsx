@@ -10,6 +10,8 @@ import {
   FaGamepad,
   FaMoon,
   FaSun,
+  FaChevronRight,
+  FaTimes,
 } from "react-icons/fa";
 import { Offcanvas } from "react-bootstrap";
 import { useCart } from "../components/CartContext";
@@ -76,8 +78,8 @@ const MobileResponsiveNavbar: React.FC = () => {
         </NavLink>
 
         <div className="icon-group d-flex align-items-center gap-3">
-          {(dir === "rtl" ? [...topIcons].reverse() : topIcons).map((icon, idx) => (
-            <span key={idx}>{icon}</span>
+          {(dir === "rtl" ? [...topIcons].reverse() : topIcons).map((icon) => (
+            <span key={icon.key}>{icon}</span>
           ))}
           <FaBars title={t("menu")} onClick={() => setSidebarOpen(true)} />
         </div>
@@ -91,31 +93,48 @@ const MobileResponsiveNavbar: React.FC = () => {
         placement="end"
         className="mobile-sidebar"
       >
-        <Offcanvas.Header closeButton>
+        <Offcanvas.Header>
           <Offcanvas.Title>{t("menu")}</Offcanvas.Title>
+          <span className="close-icon" onClick={() => setSidebarOpen(false)}>
+            <FaTimes />
+          </span>
         </Offcanvas.Header>
+
         <Offcanvas.Body>
           <ul className="sidebar-links">
-            <li><NavLink to="/products" onClick={() => setSidebarOpen(false)}>{t("devices")}</NavLink></li>
-            <li><NavLink to="/about" onClick={() => setSidebarOpen(false)}>{t("about")}</NavLink></li>
+            <li>
+              <NavLink to="/products" onClick={() => setSidebarOpen(false)}>
+                {t("devices")} <FaChevronRight />
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/about" onClick={() => setSidebarOpen(false)}>
+                {t("about")} <FaChevronRight />
+              </NavLink>
+            </li>
           </ul>
 
-          <div className="sidebar-controls">
-            <button onClick={toggleDarkMode}>
-              {darkMode ? <><FaSun /> {t("light_mode")}</> : <><FaMoon /> {t("dark_mode")}</>}
-            </button>
+          <div className="sidebar-controls-inline">
+            <span title={t("dark_mode")} onClick={toggleDarkMode}>
+              {darkMode ? <FaSun /> : <FaMoon />}
+            </span>
 
-            {isAuthenticated && (
-              <button onClick={handleLogout}>
-                <FaSignOutAlt /> {t("logout")}
-              </button>
-            )}
+            <span title="AR" onClick={() => changeLanguage("ar")}>
+              AR <FaGlobe />
+            </span>
 
-            <div className="lang-switch">
-              <button onClick={() => changeLanguage("en")}><FaGlobe /> EN</button>
-              <button onClick={() => changeLanguage("ar")}><FaGlobe /> AR</button>
-            </div>
+            <span title="EN" onClick={() => changeLanguage("en")}>
+              EN <FaGlobe />
+            </span>
           </div>
+
+          {isAuthenticated && (
+            <div className="sidebar-logout">
+              <span onClick={handleLogout} title={t("logout")}>
+                <FaSignOutAlt /> {t("logout")}
+              </span>
+            </div>
+          )}
         </Offcanvas.Body>
       </Offcanvas>
     </>
