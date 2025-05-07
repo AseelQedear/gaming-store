@@ -163,40 +163,52 @@
   }
 }
 
-html[dir="rtl"] {
-  .auth-page {
+html[dir="rtl"] .auth-page {
+  direction: rtl;
+  text-align: right;
+
+  .auth-form,
+  .form-wrapper,
+  form {
     direction: rtl;
     text-align: right;
+  }
 
-    .auth-form {
-      form {
-        .form-group {
-          align-items: flex-end;
+  .form-group {
+    align-items: flex-end;
 
-          input,
-          input::placeholder {
-            direction: rtl;
-            text-align: right;
-          }
-        }
+    input,
+    textarea,
+    select {
+      text-align: right;
+      direction: rtl;
 
-        .form-check {
-          text-align: right;
-
-          .form-check-input {
-            margin-left: 0;
-            margin-right: 0.5rem;
-          }
-        }
-
-        .invalid-feedback,
-        .auth-text {
-          text-align: right;
-        }
+      &::placeholder {
+        text-align: right;
       }
     }
   }
-}
-.auth-page {
-  transition: direction 0.3s ease, text-align 0.3s ease;
+
+  .form-check {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+
+    .form-check-input {
+      margin-left: 0.5rem;
+      margin-right: 0;
+    }
+
+    .form-check-label {
+      margin-right: 0.5rem;
+    }
+  }
+
+  .invalid-feedback,
+  .auth-text,
+  .auth-link,
+  .auth-title,
+  .btn,
+  p {
+    text-align: right;
+  }
 }

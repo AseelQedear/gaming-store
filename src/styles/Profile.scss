@@ -295,40 +295,49 @@
     }
   }
 }
+html[dir="rtl"] .profile-page {
+  direction: rtl;
+  text-align: right;
 
-html[dir="rtl"] {
-  .profile-page {
+  .profile-info,
+  .section-title,
+  .orders-section,
+  .favorites-section {
+    direction: rtl;
+    text-align: right;
+  }
+
+  input,
+  textarea,
+  select {
     direction: rtl;
     text-align: right;
 
-    .section-title {
+    &::placeholder {
       text-align: right;
     }
+  }
 
-    input,
-    input::placeholder {
-      direction: rtl;
-      text-align: right;
-    }
+  .favorites-list,
+  .order-block,
+  .favorite-tile {
+    justify-content: flex-end;
+  }
 
-    .favorites-section {
-      .favorites-list {
-        justify-content: right;
-      }
+  .tile-header {
+    justify-content: flex-start;
+  }
 
-      .favorite-tile {
-        .tile-header {
-          justify-content: flex-start;
-        }
+  .price-line {
+    justify-content: flex-end;
+  }
 
-        .price-line {
-          flex-direction: row-reverse;
-        }
-      }
-    }
-
-    .invalid-feedback {
-      text-align: right;
-    }
+  .btn,
+  p,
+  h1,
+  h2,
+  h5,
+  strong {
+    text-align: right;
   }
 }

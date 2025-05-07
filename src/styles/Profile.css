@@ -419,27 +419,43 @@ html[dir=rtl] .profile-page {
   direction: rtl;
   text-align: right;
 }
-html[dir=rtl] .profile-page .section-title {
-  text-align: right;
-}
-html[dir=rtl] .profile-page input::-moz-placeholder {
+html[dir=rtl] .profile-page .profile-info,
+html[dir=rtl] .profile-page .section-title,
+html[dir=rtl] .profile-page .orders-section,
+html[dir=rtl] .profile-page .favorites-section {
   direction: rtl;
   text-align: right;
 }
 html[dir=rtl] .profile-page input,
-html[dir=rtl] .profile-page input::placeholder {
+html[dir=rtl] .profile-page textarea,
+html[dir=rtl] .profile-page select {
   direction: rtl;
   text-align: right;
 }
-html[dir=rtl] .profile-page .favorites-section .favorites-list {
-  justify-content: right;
+html[dir=rtl] .profile-page input::-moz-placeholder, html[dir=rtl] .profile-page textarea::-moz-placeholder, html[dir=rtl] .profile-page select::-moz-placeholder {
+  text-align: right;
 }
-html[dir=rtl] .profile-page .favorites-section .favorite-tile .tile-header {
+html[dir=rtl] .profile-page input::placeholder,
+html[dir=rtl] .profile-page textarea::placeholder,
+html[dir=rtl] .profile-page select::placeholder {
+  text-align: right;
+}
+html[dir=rtl] .profile-page .favorites-list,
+html[dir=rtl] .profile-page .order-block,
+html[dir=rtl] .profile-page .favorite-tile {
+  justify-content: flex-end;
+}
+html[dir=rtl] .profile-page .tile-header {
   justify-content: flex-start;
 }
-html[dir=rtl] .profile-page .favorites-section .favorite-tile .price-line {
-  flex-direction: row-reverse;
+html[dir=rtl] .profile-page .price-line {
+  justify-content: flex-end;
 }
-html[dir=rtl] .profile-page .invalid-feedback {
+html[dir=rtl] .profile-page .btn,
+html[dir=rtl] .profile-page p,
+html[dir=rtl] .profile-page h1,
+html[dir=rtl] .profile-page h2,
+html[dir=rtl] .profile-page h5,
+html[dir=rtl] .profile-page strong {
   text-align: right;
 }/*# sourceMappingURL=Profile.css.map */
