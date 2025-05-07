@@ -145,13 +145,13 @@
         "login": "تسجيل الدخول",
         "no_account": "ليس لديك حساب؟",
         "register_here": "سجّل هنا",
-        "email_required": ".البريد الإلكتروني مطلوب",
-        "invalid_email": ".صيغة البريد الإلكتروني غير صحيحة",
+        "email_required": "البريد الإلكتروني مطلوب.",
+        "invalid_email": "صيغة البريد الإلكتروني غير صحيحة.",
         "password_required": "كلمة المرور مطلوبة.",
-        "password_too_short": ".يجب أن تكون كلمة المرور 8 أحرف على الأقل",
-        "invalid_response": ".استجابة غير صالحة من الخادم. الرمز مفقود",
-        "login_failed": ".فشل تسجيل الدخول",
-        "unexpected_error": ".حدث خطأ غير متوقع"
+        "password_too_short": "يجب أن تكون كلمة المرور 8 أحرف على الأقل.",
+        "invalid_response": "استجابة غير صالحة من الخادم. الرمز مفقود.",
+        "login_failed": "فشل تسجيل الدخول.",
+        "unexpected_error": "حدث خطأ غير متوقع."
         },
 
 
@@ -166,21 +166,21 @@
         "register": "تسجيل",
         "have_account": "لديك حساب بالفعل؟",
         "login_here": "سجّل الدخول من هنا",
-        "first_name_required": ".الاسم الأول مطلوب",
-        "last_name_required": ".اسم العائلة مطلوب",
-        "email_required": ".البريد الإلكتروني مطلوب",
-        "invalid_email": ".تنسيق البريد الإلكتروني غير صالح",
-        "phone_required": ".رقم الجوال مطلوب",
-        "invalid_phone": ".رقم الجوال يجب أن يتكون من 10 أرقام",
-        "password_required": ".كلمة المرور مطلوبة",
-        "weak_password": ".كلمة المرور يجب أن تحتوي على حرف كبير وصغير ورقم ورمز خاص، وأن تكون على الأقل 8 أحرف",
-        "passwords_not_matching": ".كلمتا المرور غير متطابقتين",
-        "unexpected_error": ".حدث خطأ غير متوقع"
+        "first_name_required": "الاسم الأول مطلوب.",
+        "last_name_required": "اسم العائلة مطلوب.",
+        "email_required": "البريد الإلكتروني مطلوب.",
+        "invalid_email": "تنسيق البريد الإلكتروني غير صالح.",
+        "phone_required": "رقم الجوال مطلوب.",
+        "invalid_phone": "رقم الجوال يجب أن يتكون من 10 أرقام.",
+        "password_required": "كلمة المرور مطلوبة.",
+        "weak_password": "كلمة المرور يجب أن تحتوي على حرف كبير وصغير ورقم ورمز خاص، وأن تكون على الأقل 8 أحرف.",
+        "passwords_not_matching": "كلمتا المرور غير متطابقتين.",
+        "unexpected_error": "حدث خطأ غير متوقع."
         },
 
 
     "profile_page": {
-        "greeting": "مرحبًا ،{{name}}",
+        "greeting": "مرحبًا، {{name}}",
         "personal_info": "المعلومات الشخصية",
         "email": "البريد الإلكتروني",
         "phone": "رقم الهاتف",
