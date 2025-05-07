@@ -453,6 +453,6 @@ html[dir=rtl] .profile-page form label {
   text-align: right;
 }
 html[dir=rtl] .profile-page .form-actions {
-  flex-direction: row-reverse;
-  align-items: flex-start;
+  flex-direction: row-reverse !important;
+  align-items: flex-end !important;
 }/*# sourceMappingURL=Profile.css.map */

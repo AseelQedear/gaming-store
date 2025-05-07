@@ -347,8 +347,8 @@ html[dir="rtl"] {
     }
 
     .form-actions {
-      flex-direction: row-reverse;
-      align-items: flex-start;
+      flex-direction: row-reverse !important;
+      align-items: flex-end !important;
     }
   }
 }
