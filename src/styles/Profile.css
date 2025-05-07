@@ -443,7 +443,9 @@
 html[dir=rtl] .profile-page {
   direction: rtl;
 }
-html[dir=rtl] .profile-page h1,
+html[dir=rtl] .profile-page h1 {
+  text-align: center !important;
+}
 html[dir=rtl] .profile-page h2,
 html[dir=rtl] .profile-page .section-title,
 html[dir=rtl] .profile-page p {
@@ -456,7 +458,7 @@ html[dir=rtl] .profile-page .form-actions {
   justify-content: flex-end;
 }
 html[dir=rtl] .profile-page .favorites-section .favorites-list {
-  justify-content: flex-end;
+  justify-content: right;
 }
 html[dir=rtl] .profile-page .orders-section .product-summary {
   text-align: center;

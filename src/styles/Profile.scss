@@ -308,7 +308,7 @@
   }
 }
 
-// ✅ Mobile Support
+
 @media (max-width: 768px) {
   .profile-page {
     padding: 2rem 1rem;
@@ -333,12 +333,14 @@
   }
 }
 
-// ✅ RTL Support
 html[dir="rtl"] {
   .profile-page {
     direction: rtl;
 
-    h1,
+    h1{
+      text-align: center !important;
+    }
+
     h2,
     .section-title,
     p {
@@ -354,7 +356,7 @@ html[dir="rtl"] {
     }
 
     .favorites-section .favorites-list {
-      justify-content: flex-end;
+      justify-content: right;
     }
 
     .orders-section .product-summary {
