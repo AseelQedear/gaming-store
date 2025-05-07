@@ -323,9 +323,11 @@ html[dir=rtl] .filters-bar .form-select {
 @media (max-width: 768px) {
   .auth-page {
     flex-direction: column;
+    height: auto;
+    margin-top: 0;
   }
   .auth-page .auth-image {
-    height: 250px;
+    height: 220px;
   }
   .auth-page .auth-image img {
     -o-object-fit: cover;
@@ -335,7 +337,13 @@ html[dir=rtl] .filters-bar .form-select {
     width: 100%;
     padding: 3rem 2rem;
     justify-content: flex-start;
-    min-height: calc(100vh - 250px);
+    min-height: calc(100vh - 220px);
+  }
+  .auth-page .auth-form .auth-title {
+    font-size: 1.2rem;
+  }
+  .auth-page .auth-form form .btn-primary {
+    width: 100%;
   }
 }
 html[dir=rtl] .auth-page {

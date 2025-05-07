@@ -10,16 +10,9 @@
   max-width: 1100px;
   margin: 2rem auto;
   color: $text-light;
-  width: 1200px !important;
 
-  .profile-page .sr-symbol {
+  .sr-symbol {
     font-family: 'Arshid', sans-serif !important;
-  }
-
-  .profile-info,
-  .orders-section,
-  .favorites-section {
-    margin-bottom: 2rem;
   }
 
   h1 {
@@ -30,14 +23,19 @@
   }
 
   h2 {
-    text-align: left !important;
+    text-align: left;
+  }
+
+  .profile-info,
+  .orders-section,
+  .favorites-section {
+    margin-bottom: 2rem;
   }
 
   .profile-info {
     background-color: $secondary-bg;
     border-radius: $radius;
     padding: 2rem;
-    margin-bottom: 3rem;
 
     form {
       display: flex;
@@ -71,6 +69,7 @@
 
       .form-actions {
         display: flex;
+        flex-wrap: wrap;
         gap: 1rem;
 
         button {
@@ -135,12 +134,10 @@
     .order-block {
       min-width: 300px;
       max-width: 350px;
-      flex-shrink: 0;
       background-color: $secondary-bg;
       border-radius: $radius;
       padding: 1.5rem;
       box-shadow: $shadow-sm;
-      transition: transform 0.2s ease;
 
       h5 {
         color: $accent;
@@ -157,10 +154,8 @@
         background-color: color.adjust($secondary-bg, $lightness: -10%);
         border-radius: 10px;
         padding: 0.75rem;
-        font-size: 0.9rem;
         text-align: center;
         color: $text-light;
-        box-shadow: $shadow-sm;
 
         img {
           width: 100%;
@@ -181,7 +176,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 1.5rem;
-      justify-content: left !important;
+      justify-content: flex-start;
     }
 
     .favorite-tile {
@@ -189,10 +184,9 @@
       color: $text-light;
       border-radius: $radius;
       padding: 1rem;
-      width: 280px !important;
+      width: 280px;
       text-align: center;
       box-shadow: $shadow-sm;
-      transition: transform 0.2s;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -311,47 +305,43 @@
       }
     }
   }
+}
 
-  @media (max-width: 768px) {
-    .favorites-section .favorite-tile {
-      width: 100%;
-    }
+// ✅ Mobile Support
+@media (max-width: 768px) {
+  .profile-page {
+    padding: 2rem 1rem;
+    width: 100%;
+  }
 
-    .profile-page {
-      padding: 2rem 1rem;
-      width: 100%;
-    }
+  .favorites-section .favorites-list {
+    justify-content: center;
+  }
 
-    .orders-section .product-summary {
-      flex: 1 1 100%;
-      max-width: 100%;
-    }
+  .favorites-section .favorite-tile {
+    width: 100%;
+  }
+
+  .orders-section .orders-list {
+    flex-direction: column;
+  }
+
+  .orders-section .order-block {
+    max-width: 100%;
+    width: 100%;
   }
 }
 
+// ✅ RTL Support
 html[dir="rtl"] {
   .profile-page {
     direction: rtl;
 
-    h1 {
-      direction: rtl;
-    }
-
+    h1,
     h2,
     .section-title,
     p {
-      text-align: right !important;
-    }
-
-    .orders-section .product-summary {
-      text-align: center !important;
-      * {
-        text-align: center !important;
-      }
-    }
-
-    .favorites-section .favorites-list {
-      justify-content: right !important;
+      text-align: right;
     }
 
     form label {
@@ -359,8 +349,19 @@ html[dir="rtl"] {
     }
 
     .form-actions {
-      align-items: flex-start !important;
-      justify-content: right !important;
+      justify-content: flex-end;
+    }
+
+    .favorites-section .favorites-list {
+      justify-content: flex-end;
+    }
+
+    .orders-section .product-summary {
+      text-align: center;
+
+      * {
+        text-align: center;
+      }
     }
   }
 }

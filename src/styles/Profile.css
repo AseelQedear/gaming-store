@@ -169,15 +169,9 @@
   max-width: 1100px;
   margin: 2rem auto;
   color: #ffffff;
-  width: 1200px !important;
 }
-.profile-page .profile-page .sr-symbol {
+.profile-page .sr-symbol {
   font-family: "Arshid", sans-serif !important;
-}
-.profile-page .profile-info,
-.profile-page .orders-section,
-.profile-page .favorites-section {
-  margin-bottom: 2rem;
 }
 .profile-page h1 {
   text-align: center;
@@ -186,13 +180,17 @@
   margin-bottom: 2rem;
 }
 .profile-page h2 {
-  text-align: left !important;
+  text-align: left;
+}
+.profile-page .profile-info,
+.profile-page .orders-section,
+.profile-page .favorites-section {
+  margin-bottom: 2rem;
 }
 .profile-page .profile-info {
   background-color: #1D267D;
   border-radius: 16px;
   padding: 2rem;
-  margin-bottom: 3rem;
 }
 .profile-page .profile-info form {
   display: flex;
@@ -222,6 +220,7 @@
 }
 .profile-page .profile-info form .form-actions {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
 }
 .profile-page .profile-info form .form-actions button {
@@ -274,12 +273,10 @@
 .profile-page .orders-section .order-block {
   min-width: 300px;
   max-width: 350px;
-  flex-shrink: 0;
   background-color: #1D267D;
   border-radius: 16px;
   padding: 1.5rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-  transition: transform 0.2s ease;
 }
 .profile-page .orders-section .order-block h5 {
   color: #D4ADFC;
@@ -294,10 +291,8 @@
   background-color: #131954;
   border-radius: 10px;
   padding: 0.75rem;
-  font-size: 0.9rem;
   text-align: center;
   color: #ffffff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 .profile-page .orders-section .order-block .product-summary img {
   width: 100%;
@@ -312,17 +307,16 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
-  justify-content: left !important;
+  justify-content: flex-start;
 }
 .profile-page .favorites-section .favorite-tile {
   background-color: #1D267D;
   color: #ffffff;
   border-radius: 16px;
   padding: 1rem;
-  width: 280px !important;
+  width: 280px;
   text-align: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-  transition: transform 0.2s;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -425,44 +419,47 @@
   background: rgba(255, 255, 255, 0.1);
   animation: slideHighlight 0.6s forwards;
 }
+
 @media (max-width: 768px) {
-  .profile-page .favorites-section .favorite-tile {
-    width: 100%;
-  }
-  .profile-page .profile-page {
+  .profile-page {
     padding: 2rem 1rem;
     width: 100%;
   }
-  .profile-page .orders-section .product-summary {
-    flex: 1 1 100%;
+  .favorites-section .favorites-list {
+    justify-content: center;
+  }
+  .favorites-section .favorite-tile {
+    width: 100%;
+  }
+  .orders-section .orders-list {
+    flex-direction: column;
+  }
+  .orders-section .order-block {
     max-width: 100%;
+    width: 100%;
   }
 }
-
 html[dir=rtl] .profile-page {
   direction: rtl;
 }
-html[dir=rtl] .profile-page h1 {
-  direction: rtl;
-}
+html[dir=rtl] .profile-page h1,
 html[dir=rtl] .profile-page h2,
 html[dir=rtl] .profile-page .section-title,
 html[dir=rtl] .profile-page p {
-  text-align: right !important;
-}
-html[dir=rtl] .profile-page .orders-section .product-summary {
-  text-align: center !important;
-}
-html[dir=rtl] .profile-page .orders-section .product-summary * {
-  text-align: center !important;
-}
-html[dir=rtl] .profile-page .favorites-section .favorites-list {
-  justify-content: right !important;
+  text-align: right;
 }
 html[dir=rtl] .profile-page form label {
   text-align: right;
 }
 html[dir=rtl] .profile-page .form-actions {
-  align-items: flex-start !important;
-  justify-content: right !important;
+  justify-content: flex-end;
+}
+html[dir=rtl] .profile-page .favorites-section .favorites-list {
+  justify-content: flex-end;
+}
+html[dir=rtl] .profile-page .orders-section .product-summary {
+  text-align: center;
+}
+html[dir=rtl] .profile-page .orders-section .product-summary * {
+  text-align: center;
 }/*# sourceMappingURL=Profile.css.map */

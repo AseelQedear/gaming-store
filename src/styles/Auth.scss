@@ -141,13 +141,15 @@
   }
 }
 
-
+// ✅ Mobile Responsive
 @media (max-width: 768px) {
   .auth-page {
     flex-direction: column;
+    height: auto;
+    margin-top: 0;
 
     .auth-image {
-      height: 250px;
+      height: 220px;
 
       img {
         object-fit: cover;
@@ -158,43 +160,52 @@
       width: 100%;
       padding: 3rem 2rem;
       justify-content: flex-start;
-      min-height: calc(100vh - 250px);
+      min-height: calc(100vh - 220px);
+
+      .auth-title {
+        font-size: 1.2rem;
+      }
+
+      form {
+        .btn-primary {
+          width: 100%;
+        }
+      }
     }
   }
 }
 
-
+// ✅ RTL Support
 html[dir="rtl"] .auth-page {
   direction: rtl;
   text-align: right;
 
-    form {
-      .form-group {
-        align-items: flex-end;
+  form {
+    .form-group {
+      align-items: flex-end;
 
-        input {
-          direction: rtl;
-          text-align: right;
-
-          &::placeholder {
-            text-align: right !important;
-          }
-        }
-      }
-
-      .invalid-feedback {
-        text-align: right;
-      }
-
-      .form-check {
+      input {
         direction: rtl;
         text-align: right;
 
-        .form-check-input {
-          margin-left: 0;
-          margin-right: 0.5rem;
+        &::placeholder {
+          text-align: right !important;
         }
       }
     }
-  }
 
+    .invalid-feedback {
+      text-align: right;
+    }
+
+    .form-check {
+      direction: rtl;
+      text-align: right;
+
+      .form-check-input {
+        margin-left: 0;
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}
