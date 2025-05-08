@@ -633,26 +633,5 @@ html[dir="rtl"] .checkout-page {
         right: 1rem;
       }
     }
-  
-    html[dir="rtl"] .checkout-page {
-      .back-home-icon {
-        right: 1rem;
-        left: unset;
-      }
-  
-      .cart-body .cart-item {
-        .item-details {
-          align-items: center;
-  
-          h5, span, p {
-            text-align: center;
-          }
-  
-          .qty {
-            justify-content: center;
-          }
-        }
-      }
-    }
   }
   

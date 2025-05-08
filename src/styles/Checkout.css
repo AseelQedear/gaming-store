@@ -703,17 +703,4 @@ html[dir=rtl] .checkout-page .cart-footer input {
     left: 1rem;
     right: 1rem;
   }
-  html[dir=rtl] .checkout-page .back-home-icon {
-    right: 1rem;
-    left: unset;
-  }
-  html[dir=rtl] .checkout-page .cart-body .cart-item .item-details {
-    align-items: center;
-  }
-  html[dir=rtl] .checkout-page .cart-body .cart-item .item-details h5, html[dir=rtl] .checkout-page .cart-body .cart-item .item-details span, html[dir=rtl] .checkout-page .cart-body .cart-item .item-details p {
-    text-align: center;
-  }
-  html[dir=rtl] .checkout-page .cart-body .cart-item .item-details .qty {
-    justify-content: center;
-  }
 }/*# sourceMappingURL=Checkout.css.map */
