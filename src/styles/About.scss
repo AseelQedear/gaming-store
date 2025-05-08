@@ -230,20 +230,24 @@ html[dir="rtl"] .about-page-section {
     }
   }
 }
-
-
 @media (max-width: 768px) {
   .about-page-section {
-    padding: 2rem 1rem;
+    padding: 1.5rem 1rem;
+    width: 100%;
+    box-sizing: border-box;
 
     .section-title {
       font-size: 1.1rem;
+      text-align: center;
     }
 
     .about-description {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       line-height: 1.7rem;
-      padding: 0 0.5rem;
+      padding: 0;
+      text-align: center;
+      width: 100%;
+      max-width: 100%;
     }
 
     .fun-fact {
@@ -251,48 +255,68 @@ html[dir="rtl"] .about-page-section {
       flex-direction: column;
       text-align: center;
       padding: 1rem;
+      width: 100%;
     }
 
     .cta-button {
       padding: 0.6rem 1.5rem;
       font-size: 0.95rem;
       width: fit-content;
+      margin: 0 auto;
     }
   }
 
-  .gif-banner .gif-cropper {
-    width: 95%;
-    height: 180px;
+  .gif-banner {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .gif-cropper {
+      width: 100%;
+      max-width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
   }
 
   .timeline-horizontal {
-    padding: 1rem;
-    height: auto;
+    
+    width: 100%;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+  
+    &::-webkit-scrollbar {
+      display: none; 
+    }
 
     .timeline-track {
+      display: flex;
       flex-direction: row;
-      align-items: flex-start;
+      gap: 1rem;
+      padding-inline: 1rem;
+      width: fit-content;
       width: max-content;
-      min-width: 100%;
-      scroll-snap-align: start;
-
+      box-sizing: border-box;
+      padding-right: 25rem; 
+      
       .timeline-event {
-        width: 90px;
-        height: 150px;
-        margin: 0 0.8rem;
+        flex: 0 0 auto;
+        width: 95px;
+        height: 170px;
         scroll-snap-align: center;
+        text-align: center;
 
         .timeline-year {
-          margin-bottom: 0.8rem;
+          margin-bottom: 0.2rem;
           font-size: 0.9rem;
         }
 
         p {
           font-size: 0.8rem;
-          top: 60%;
-          width: 130px;
+          width: 150%;
+          margin: 0 auto;
         }
       }
     }
