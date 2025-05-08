@@ -242,6 +242,7 @@
     }
   }
 }
+
 html[dir="rtl"] {
   .cart-drawer {
     left: -100%;
@@ -283,3 +284,106 @@ html[dir="rtl"] {
     }
     }}}
 
+    @media (max-width: 768px) {
+      .cart-drawer {
+        width: 100vw;
+        padding: 1rem 1.2rem;
+    
+        .cart-header {
+          font-size: 1rem;
+    
+          button {
+            font-size: 1.3rem;
+          }
+        }
+    
+        .cart-body {
+          padding-right: 0;
+    
+          .cart-item {
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            padding-bottom: 1rem;
+    
+            img {
+              width: 100%;
+              max-width: 220px;
+              height: auto;
+            }
+    
+            .item-details {
+              align-items: center;
+              text-align: center;
+    
+              h5 {
+                font-size: 1.2rem;
+              }
+    
+              span {
+                font-size: 0.95rem;
+              }
+    
+              .price-info {
+                flex-wrap: wrap;
+                justify-content: center;
+              }
+    
+              .qty {
+                justify-content: center;
+                flex-wrap: wrap;
+              }
+            }
+          }
+    
+          .cart-summary {
+            padding-top: 0.5rem;
+    
+            p, h5 {
+              font-size: 1rem;
+            }
+    
+            h5 {
+              font-size: 1.3rem;
+            }
+          }
+        }
+    
+        .cart-footer {
+          .discount-row {
+            flex-direction: column;
+            gap: 0.8rem;
+    
+            input,
+            .apply-btn {
+              width: 100%;
+            }
+          }
+    
+          .checkout-btn {
+            width: 100%;
+          }
+        }
+      }
+    
+      html[dir="rtl"] .cart-drawer {
+        left: -100vw;
+    
+        &.open {
+          left: 0;
+        }
+    
+        .cart-body .cart-item {
+          text-align: center;
+    
+          .item-details {
+            align-items: center;
+          }
+        }
+    
+        .cart-footer .discount-row input {
+          text-align: right;
+        }
+      }
+    }
+    
