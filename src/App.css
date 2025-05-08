@@ -1223,19 +1223,15 @@ html[dir=rtl] .product-details {
 }
 html[dir=rtl] .product-details .product-info-box .title-row {
   flex-direction: row-reverse;
-  justify-content: space-between;
-  gap: 1rem;
 }
 html[dir=rtl] .product-details .product-info-box .title-row .product-title {
   order: 2;
-  margin-right: 0;
   margin-left: 1rem;
-  flex: initial;
+  margin-right: 0;
 }
 html[dir=rtl] .product-details .product-info-box .title-row .product-actions {
   order: 1;
   flex-direction: row-reverse;
-  display: flex;
   gap: 0.75rem;
 }
 html[dir=rtl] .product-details .product-info-box .price-info .current-price,
@@ -1258,58 +1254,58 @@ html[dir=rtl] .product-details .product-image-box .best-deal-badge {
   right: auto;
   left: -12px;
 }
+
 @media (max-width: 768px) {
-  html[dir=rtl] .product-details .product-image-box {
+  .product-details .product-image-box {
     width: 100%;
     height: auto;
     padding: 0.75rem;
   }
-  html[dir=rtl] .product-details .product-image-box img {
+  .product-details .product-image-box img {
     width: 100%;
     max-height: 300px;
   }
-  html[dir=rtl] .product-details .product-image-box .discount-badge,
-  html[dir=rtl] .product-details .product-image-box .best-deal-badge {
+  .product-details .product-image-box .discount-badge,
+  .product-details .product-image-box .best-deal-badge {
     font-size: 0.7rem;
     padding: 3px 8px;
     top: -8px;
   }
-  html[dir=rtl] .product-details .product-info-box {
+  .product-details .product-info-box {
     padding: 1rem;
   }
-  html[dir=rtl] .product-details .product-info-box .title-row {
+  .product-details .product-info-box .title-row {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
   }
-  html[dir=rtl] .product-details .product-info-box .title-row .product-title {
+  .product-details .product-info-box .title-row .product-title {
     font-size: 1.25rem;
     margin-left: 0;
   }
-  html[dir=rtl] .product-details .product-info-box .title-row .product-actions {
+  .product-details .product-info-box .title-row .product-actions {
     justify-content: flex-start;
     font-size: 1.3rem;
   }
-  html[dir=rtl] .product-details .product-info-box .price-info .current-price {
+  .product-details .product-info-box .price-info .current-price {
     font-size: 1.2rem;
   }
-  html[dir=rtl] .product-details .product-info-box .price-info .old-price,
-  html[dir=rtl] .product-details .product-info-box .price-info .offer-line {
+  .product-details .product-info-box .price-info .old-price,
+  .product-details .product-info-box .price-info .offer-line {
     font-size: 0.85rem;
   }
-  html[dir=rtl] .product-details .product-info-box .add-to-cart,
-  html[dir=rtl] .product-details .product-info-box .out-of-stock-label {
+  .product-details .product-info-box .add-to-cart,
+  .product-details .product-info-box .out-of-stock-label {
     width: 100%;
     font-size: 1rem;
   }
-  html[dir=rtl] .product-details .product-specs h4 {
+  .product-details .product-specs h4 {
     font-size: 1.3rem;
   }
-  html[dir=rtl] .product-details .product-specs .specs-list li {
+  .product-details .product-specs .specs-list li {
     font-size: 0.95rem;
   }
 }
-
 .why-choose-modern {
   background: linear-gradient(to left, #0C134F, #1D267D);
   padding: 4rem 0;
