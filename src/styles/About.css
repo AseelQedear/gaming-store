@@ -365,6 +365,8 @@ html[dir=rtl] .about-page-section .fun-fact {
 @media (max-width: 768px) {
   .about-page-section {
     padding: 2rem 1rem;
+    width: 100%;
+    overflow-x: hidden;
   }
   .about-page-section .section-title {
     font-size: 1.1rem;

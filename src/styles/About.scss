@@ -235,6 +235,9 @@ html[dir="rtl"] .about-page-section {
 @media (max-width: 768px) {
   .about-page-section {
     padding: 2rem 1rem;
+    width: 100%;
+    overflow-x: hidden;
+
 
     .section-title {
       font-size: 1.1rem;
