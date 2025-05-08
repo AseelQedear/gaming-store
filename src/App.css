@@ -1834,6 +1834,7 @@ html[dir=rtl] .filters-bar .form-select {
   z-index: 1050;
   color: #D4ADFC;
   font-family: "Press Start 2P", monospace;
+  direction: ltr;
 }
 .mobile-navbar .icon-group {
   gap: 1rem;
