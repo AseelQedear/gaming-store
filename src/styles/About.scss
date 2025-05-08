@@ -231,87 +231,70 @@ html[dir="rtl"] .about-page-section {
   }
 }
 
+
 @media (max-width: 768px) {
-  .timeline-horizontal {
-    width: 100%;
-    overflow-x: auto;
-    padding: 1rem 0;
-    scroll-snap-type: x mandatory;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+  .about-page-section {
+    padding: 2rem 1rem;
 
-    &::-webkit-scrollbar {
-      display: none;
+    .section-title {
+      font-size: 1.1rem;
     }
 
-    .timeline-track {
-      display: flex;
-      gap: 1rem;
-      width: max-content;
-      box-sizing: border-box;
-      padding-inline: 1rem 2rem;
+    .about-description {
+      font-size: 1.1rem;
+      line-height: 1.7rem;
+      padding: 0 0.5rem;
     }
 
-    .timeline-event {
-      flex: 0 0 auto;
-      width: 90px;
-      height: 150px;
-      scroll-snap-align: start;
-      position: relative;
+    .fun-fact {
+      font-size: 1rem;
+      flex-direction: column;
       text-align: center;
+      padding: 1rem;
+    }
 
-      .timeline-year {
-        margin-bottom: 0.5rem;
-        font-size: 0.9rem;
-      }
-
-      p {
-        position: absolute;
-        top: 60%;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 0.8rem;
-        width: 130px;
-        padding: 0.5rem 0.75rem;
-        background-color: #121212;
-        color: white;
-        border-radius: 6px;
-        box-shadow: 0 0 10px rgba(212, 173, 252, 0.25);
-        text-align: center;
-        z-index: 2;
-      }
+    .cta-button {
+      padding: 0.6rem 1.5rem;
+      font-size: 0.95rem;
+      width: fit-content;
     }
   }
 
-
-  html[dir="ltr"] .timeline-horizontal {
-    direction: ltr;
-
-    .timeline-track {
-      justify-content: flex-start;
-      padding-inline: 1rem 1rem;
-      padding-left: 30rem; 
-    }
-
-    .timeline-event p {
-      left: 50%;
-      transform: translateX(-50%);
-    }
+  .gif-banner .gif-cropper {
+    width: 95%;
+    height: 180px;
   }
 
-
-  html[dir="rtl"] .timeline-horizontal {
-    direction: rtl;
+  .timeline-horizontal {
+    padding: 1rem;
+    height: auto;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
 
     .timeline-track {
-      justify-content: flex-end;
-      padding-inline: 1rem 1rem;
-      padding-right: 30rem; 
-    }
+      flex-direction: row;
+      align-items: flex-start;
+      width: max-content;
+      min-width: 100%;
+      scroll-snap-align: start;
 
-    .timeline-event p {
-      left: 50%;
-      transform: translateX(-50%);
+      .timeline-event {
+        width: 90px;
+        height: 150px;
+        margin: 0 0.8rem;
+        scroll-snap-align: center;
+
+        .timeline-year {
+          margin-bottom: 0.8rem;
+          font-size: 0.9rem;
+        }
+
+        p {
+          font-size: 0.8rem;
+          top: 60%;
+          width: 130px;
+        }
+      }
     }
   }
 }
