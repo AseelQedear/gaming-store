@@ -363,52 +363,10 @@ html[dir=rtl] .about-page-section .fun-fact {
 }
 
 @media (max-width: 768px) {
-  .about-page-section {
-    padding: 1.5rem 1rem;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  .about-page-section .section-title {
-    font-size: 1.1rem;
-    text-align: center;
-  }
-  .about-page-section .about-description {
-    font-size: 1.05rem;
-    line-height: 1.7rem;
-    padding: 0;
-    text-align: center;
-    width: 100%;
-    max-width: 100%;
-  }
-  .about-page-section .fun-fact {
-    font-size: 1rem;
-    flex-direction: column;
-    text-align: center;
-    padding: 1rem;
-    width: 100%;
-  }
-  .about-page-section .cta-button {
-    padding: 0.6rem 1.5rem;
-    font-size: 0.95rem;
-    width: -moz-fit-content;
-    width: fit-content;
-    margin: 0 auto;
-  }
-  .gif-banner {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-  .gif-banner .gif-cropper {
-    width: 100%;
-    max-width: 100%;
-    height: 180px;
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
   .timeline-horizontal {
     width: 100%;
     overflow-x: auto;
+    padding: 1rem 0;
     scroll-snap-type: x mandatory;
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -418,30 +376,61 @@ html[dir=rtl] .about-page-section .fun-fact {
   }
   .timeline-horizontal .timeline-track {
     display: flex;
-    flex-direction: row;
     gap: 1rem;
-    padding-inline: 1rem;
-    width: -moz-fit-content;
-    width: fit-content;
     width: -moz-max-content;
     width: max-content;
     box-sizing: border-box;
-    padding-right: 25rem;
+    padding-inline: 1rem 2rem;
   }
-  .timeline-horizontal .timeline-track .timeline-event {
+  .timeline-horizontal .timeline-event {
     flex: 0 0 auto;
-    width: 95px;
-    height: 170px;
-    scroll-snap-align: center;
+    width: 90px;
+    height: 150px;
+    scroll-snap-align: start;
+    position: relative;
     text-align: center;
   }
-  .timeline-horizontal .timeline-track .timeline-event .timeline-year {
-    margin-bottom: 0.2rem;
+  .timeline-horizontal .timeline-event .timeline-year {
+    margin-bottom: 0.5rem;
     font-size: 0.9rem;
   }
-  .timeline-horizontal .timeline-track .timeline-event p {
+  .timeline-horizontal .timeline-event p {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
     font-size: 0.8rem;
-    width: 150%;
-    margin: 0 auto;
+    width: 130px;
+    padding: 0.5rem 0.75rem;
+    background-color: #121212;
+    color: white;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(212, 173, 252, 0.25);
+    text-align: center;
+    z-index: 2;
+  }
+  html[dir=ltr] .timeline-horizontal {
+    direction: ltr;
+  }
+  html[dir=ltr] .timeline-horizontal .timeline-track {
+    justify-content: flex-start;
+    padding-inline: 1rem 1rem;
+    padding-left: 30rem;
+  }
+  html[dir=ltr] .timeline-horizontal .timeline-event p {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  html[dir=rtl] .timeline-horizontal {
+    direction: rtl;
+  }
+  html[dir=rtl] .timeline-horizontal .timeline-track {
+    justify-content: flex-end;
+    padding-inline: 1rem 1rem;
+    padding-right: 30rem;
+  }
+  html[dir=rtl] .timeline-horizontal .timeline-event p {
+    left: 50%;
+    transform: translateX(-50%);
   }
 }/*# sourceMappingURL=About.css.map */
