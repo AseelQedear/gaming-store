@@ -399,8 +399,6 @@ html[dir=rtl] .about-page-section .fun-fact {
   .timeline-horizontal .timeline-track {
     flex-direction: row;
     align-items: flex-start;
-    width: -moz-max-content;
-    width: max-content;
     min-width: 100%;
     scroll-snap-align: start;
   }
