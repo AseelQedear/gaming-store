@@ -144,3 +144,57 @@
     100% { transform: scale(1); }
   }
   
+  
+// 📱 Mobile Styles
+@media (max-width: 768px) {
+  .product-card-style2 {
+    padding: 1rem;
+    text-align: center;
+    align-items: center;
+
+    .wishlist-icon {
+      top: 8px;
+      right: 8px;
+      font-size: 1.1rem;
+    }
+
+    .discount-badge {
+      font-size: 0.7rem;
+      padding: 3px 8px;
+      top: -8px;
+      left: -8px;
+    }
+
+    .device-img img {
+      max-height: 100px;
+      width: auto;
+    }
+
+    h5 {
+      font-size: 1rem;
+      margin-top: 0.75rem;
+    }
+
+    .price-info {
+      .current-price {
+        font-size: 1.2rem;
+      }
+
+      .old-price {
+        font-size: 0.85rem;
+      }
+    }
+
+    .offer-line {
+      font-size: 0.85rem;
+      margin-top: 0.4rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .btn {
+      font-size: 0.95rem;
+      padding: 0.5rem 1rem;
+      width: 100%;
+    }
+  }
+}

@@ -161,6 +161,48 @@ html[dir=rtl] .product-card-style2 .offer-line {
     transform: scale(1);
   }
 }
+@media (max-width: 768px) {
+  .product-card-style2 {
+    padding: 1rem;
+    text-align: center;
+    align-items: center;
+  }
+  .product-card-style2 .wishlist-icon {
+    top: 8px;
+    right: 8px;
+    font-size: 1.1rem;
+  }
+  .product-card-style2 .discount-badge {
+    font-size: 0.7rem;
+    padding: 3px 8px;
+    top: -8px;
+    left: -8px;
+  }
+  .product-card-style2 .device-img img {
+    max-height: 100px;
+    width: auto;
+  }
+  .product-card-style2 h5 {
+    font-size: 1rem;
+    margin-top: 0.75rem;
+  }
+  .product-card-style2 .price-info .current-price {
+    font-size: 1.2rem;
+  }
+  .product-card-style2 .price-info .old-price {
+    font-size: 0.85rem;
+  }
+  .product-card-style2 .offer-line {
+    font-size: 0.85rem;
+    margin-top: 0.4rem;
+    margin-bottom: 0.75rem;
+  }
+  .product-card-style2 .btn {
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
+    width: 100%;
+  }
+}
 @keyframes bounce-cart {
   0%, 100% {
     transform: scale(1);
@@ -731,29 +773,4 @@ html.dark-mode .mobile-sidebar .sidebar-logout span:hover {
 }
 .products-page .fade-slide-down {
   animation: slideDown 0.4s ease-out both;
-}
-@media (max-width: 768px) {
-  .products-page {
-    padding-top: 2rem;
-  }
-  .products-page .filters-bar {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 1rem;
-  }
-  .products-page .product-card-style2 {
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
-  }
-  .products-page .row {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-  .products-page .col-lg-3,
-  .products-page .col-md-4,
-  .products-page .col-sm-6 {
-    width: 100%;
-    max-width: 100%;
-  }
 }/*# sourceMappingURL=Products.css.map */
