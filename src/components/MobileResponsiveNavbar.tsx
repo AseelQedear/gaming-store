@@ -21,7 +21,7 @@ import { useTranslation } from "react-i18next";
 const MobileResponsiveNavbar: React.FC = () => {
   const [darkMode, setDarkMode] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const { cartItems } = useCart();
+  const { cartItems, openCart } = useCart(); // ✅ includes openCart
   const { isAuthenticated, logout } = useAuth();
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
@@ -63,7 +63,7 @@ const MobileResponsiveNavbar: React.FC = () => {
 
   const topIcons = [
     <FaSearch key="search" title={t("search")} onClick={() => navigate("/products")} />,
-    <div key="cart" className="cart-icon position-relative" title={t("cart")} onClick={() => navigate("/cart")}>
+    <div key="cart" className="cart-icon position-relative" title={t("cart")} onClick={openCart}>
       <FaShoppingCart />
       {totalItemCount > 0 && <span className="cart-badge">{totalItemCount}</span>}
     </div>,
