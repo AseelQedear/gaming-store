@@ -372,38 +372,51 @@ html[dir=rtl] .about-page-section .fun-fact {
   .about-page-section .about-description {
     font-size: 1.1rem;
     line-height: 1.7rem;
+    padding: 0 0.5rem;
   }
   .about-page-section .fun-fact {
     font-size: 1rem;
     flex-direction: column;
     text-align: center;
+    padding: 1rem;
   }
   .about-page-section .cta-button {
     padding: 0.6rem 1.5rem;
     font-size: 0.95rem;
+    width: -moz-fit-content;
+    width: fit-content;
   }
   .gif-banner .gif-cropper {
-    width: 90%;
-    height: 200px;
+    width: 95%;
+    height: 180px;
   }
   .timeline-horizontal {
     padding: 1rem;
     height: auto;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
   }
   .timeline-horizontal .timeline-track {
     flex-direction: row;
     align-items: flex-start;
+    width: -moz-max-content;
+    width: max-content;
+    min-width: 100%;
+    scroll-snap-align: start;
   }
   .timeline-horizontal .timeline-track .timeline-event {
-    width: 80px;
-    margin: 0 1rem;
+    width: 90px;
+    height: 150px;
+    margin: 0 0.8rem;
+    scroll-snap-align: center;
   }
   .timeline-horizontal .timeline-track .timeline-event .timeline-year {
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
+    font-size: 0.9rem;
   }
   .timeline-horizontal .timeline-track .timeline-event p {
-    font-size: 0.85rem;
-    top: 55%;
-    width: 140px;
+    font-size: 0.8rem;
+    top: 60%;
+    width: 130px;
   }
 }/*# sourceMappingURL=About.css.map */
