@@ -562,11 +562,28 @@ html[dir=ltr] .navbar .navbar-toggler {
     align-items: center;
     gap: 0.5rem;
   }
-  .site-footer .social-icons {
+  .site-footer .site-footer {
+    text-align: center;
+  }
+  .site-footer .site-footer .footer-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .site-footer .site-footer .footer-icons {
+    display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 0.75rem;
+    gap: 1rem;
     margin-top: 1rem;
+  }
+  .site-footer .site-footer .contact-info,
+  .site-footer .site-footer .quick-links,
+  .site-footer .site-footer .copyright {
+    text-align: center;
   }
   .site-footer .text-md-start,
   .site-footer .text-md-end {
