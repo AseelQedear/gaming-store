@@ -554,7 +554,7 @@ html[dir="rtl"] .checkout-page {
   }
   
   @media (max-width: 768px) {
-    html[dir="rtl"] .checkout-page {
+    .checkout-page {
       flex-direction: column;
       padding: 2rem 1rem;
   
@@ -563,7 +563,7 @@ html[dir="rtl"] .checkout-page {
         max-width: 100%;
         width: 100%;
         padding: 1.5rem;
-        text-align: right;
+        text-align: left;
       }
   
       .grid-2col {
@@ -574,7 +574,7 @@ html[dir="rtl"] .checkout-page {
         }
   
         .input-group {
-          text-align: right;
+          text-align: left;
         }
       }
   
@@ -589,7 +589,7 @@ html[dir="rtl"] .checkout-page {
       }
   
       .cart-body {
-        padding-left: 0;
+        padding-right: 0;
   
         .cart-item {
           flex-direction: column;
@@ -597,8 +597,10 @@ html[dir="rtl"] .checkout-page {
           text-align: center;
   
           img {
-            margin-left: 0;
-            margin-bottom: 1rem;
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+            margin: 0 0 1rem;
           }
   
           .item-details {
@@ -622,13 +624,13 @@ html[dir="rtl"] .checkout-page {
         input,
         .apply-btn {
           width: 100%;
-          text-align: right;
+          text-align: left;
         }
       }
   
       .back-home-icon {
-        right: 1rem;
-        left: unset;
+        top: 0.5rem;
+        left: 1rem;
         font-size: 2.2rem;
       }
   
@@ -639,9 +641,9 @@ html[dir="rtl"] .checkout-page {
       }
     }
   
-    html[dir="rtl"] select {
-      background-position: right 1rem center;
-      padding-right: 2.5rem;
+    select {
+      background-position: left 1rem center;
+      padding-left: 2.5rem;
     }
   }
   
