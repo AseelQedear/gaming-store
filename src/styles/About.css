@@ -397,11 +397,14 @@ html[dir=rtl] .about-page-section .fun-fact {
     height: auto;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
+    max-width: 100vw;
+    box-sizing: border-box;
   }
   .timeline-horizontal .timeline-track {
     flex-direction: row;
     align-items: flex-start;
-    min-width: 100%;
+    min-width: -moz-max-content;
+    min-width: max-content;
     scroll-snap-align: start;
   }
   .timeline-horizontal .timeline-track .timeline-event {
