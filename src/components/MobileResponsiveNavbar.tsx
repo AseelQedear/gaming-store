@@ -21,7 +21,7 @@ import { useTranslation } from "react-i18next";
 const MobileResponsiveNavbar: React.FC = () => {
   const [darkMode, setDarkMode] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const { cartItems, openCart } = useCart(); // ✅ includes openCart
+  const { cartItems, openCart } = useCart(); 
   const { isAuthenticated, logout } = useAuth();
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();

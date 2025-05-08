@@ -251,7 +251,8 @@ html[dir=rtl] .section-title, html[dir=rtl] .hero-title, html[dir=rtl] .footer-l
 .cart-drawer .cart-body {
   flex: 1;
   overflow-y: auto;
-  padding-right: 0.5rem;
+  padding-inline-end: 1rem;
+  scrollbar-gutter: stable;
 }
 .cart-drawer .cart-body .cart-item {
   display: flex;
