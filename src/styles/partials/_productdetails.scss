@@ -246,5 +246,73 @@
         left: -12px;
       }
     }
+
+   @media (max-width: 768px) {
+    .product-image-box {
+      width: 100%;
+      height: auto;
+      padding: 0.75rem;
+
+      img {
+        width: 100%;
+        max-height: 300px;
+      }
+
+      .discount-badge,
+      .best-deal-badge {
+        font-size: 0.7rem;
+        padding: 3px 8px;
+        top: -8px;
+      }
+    }
+
+    .product-info-box {
+      padding: 1rem;
+
+      .title-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+
+        .product-title {
+          font-size: 1.25rem;
+          margin-left: 0;
+        }
+
+        .product-actions {
+          justify-content: flex-start;
+          font-size: 1.3rem;
+        }
+      }
+
+      .price-info {
+        .current-price {
+          font-size: 1.2rem;
+        }
+
+        .old-price,
+        .offer-line {
+          font-size: 0.85rem;
+        }
+      }
+
+      .add-to-cart,
+      .out-of-stock-label {
+        width: 100%;
+        font-size: 1rem;
+      }
+    }
+
+    .product-specs {
+      h4 {
+        font-size: 1.3rem;
+      }
+
+      .specs-list {
+        li {
+          font-size: 0.95rem;
+        }
+      }
+    }
   }
-  
+}
