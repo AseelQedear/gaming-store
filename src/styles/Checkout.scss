@@ -552,9 +552,9 @@ html[dir="rtl"] .checkout-page {
       }
     }
   }
-
+  
   @media (max-width: 768px) {
-    .checkout-page {
+    html[dir="rtl"] .checkout-page {
       flex-direction: column;
       padding: 2rem 1rem;
   
@@ -563,6 +563,7 @@ html[dir="rtl"] .checkout-page {
         max-width: 100%;
         width: 100%;
         padding: 1.5rem;
+        text-align: right;
       }
   
       .grid-2col {
@@ -571,10 +572,24 @@ html[dir="rtl"] .checkout-page {
         .full-width {
           grid-column: span 1;
         }
+  
+        .input-group {
+          text-align: right;
+        }
+      }
+  
+      .button-row {
+        flex-direction: column;
+        gap: 1rem;
+  
+        button {
+          width: 100%;
+          max-width: 100%;
+        }
       }
   
       .cart-body {
-        padding-right: 0;
+        padding-left: 0;
   
         .cart-item {
           flex-direction: column;
@@ -582,10 +597,8 @@ html[dir="rtl"] .checkout-page {
           text-align: center;
   
           img {
-            width: 100%;
-            max-width: 250px;
-            height: auto;
-            margin: 0 0 1rem;
+            margin-left: 0;
+            margin-bottom: 1rem;
           }
   
           .item-details {
@@ -603,27 +616,19 @@ html[dir="rtl"] .checkout-page {
         }
       }
   
-      .button-row {
-        flex-direction: column;
-        gap: 1rem;
-  
-        button {
-          width: 100%;
-          max-width: 100%;
-        }
-      }
-  
       .cart-footer .discount-row {
         flex-direction: column;
   
-        input, .apply-btn {
+        input,
+        .apply-btn {
           width: 100%;
+          text-align: right;
         }
       }
   
       .back-home-icon {
-        top: 0.5rem;
-        left: 1rem;
+        right: 1rem;
+        left: unset;
         font-size: 2.2rem;
       }
   
@@ -632,6 +637,11 @@ html[dir="rtl"] .checkout-page {
         left: 1rem;
         right: 1rem;
       }
+    }
+  
+    html[dir="rtl"] select {
+      background-position: right 1rem center;
+      padding-right: 2.5rem;
     }
   }
   
