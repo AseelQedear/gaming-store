@@ -141,7 +141,6 @@
   }
 }
 
-// ✅ Mobile Responsive
 @media (max-width: 768px) {
   .auth-page {
     flex-direction: column;
@@ -175,11 +174,11 @@
   }
 }
 
-// ✅ RTL Support
 html[dir="rtl"] .auth-page {
   direction: rtl;
   text-align: right;
 
+   
   form {
     .form-group {
       align-items: flex-end;
