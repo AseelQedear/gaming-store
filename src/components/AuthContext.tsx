@@ -5,7 +5,7 @@ interface AuthContextType {
   isAuthenticated: boolean;
   checkingAuth: boolean;
   user: any;
-  login: (user: any) => void;
+  login: (payload: { token: string; user: any }) => void;
   logout: () => void;
 }
 
@@ -54,7 +54,11 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     setCheckingAuth(false);
   }, [t]);
 
-  const login = (userData: any) => {
+  const login = (payload: { token: string; user: any }) => {
+    const userData = {
+      ...payload.user,
+      token: payload.token
+    };
     setUser(userData);
     setIsAuthenticated(true);
     localStorage.setItem("user", JSON.stringify(userData));
