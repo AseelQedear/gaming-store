@@ -12,10 +12,7 @@ RUN dotnet publish -c Release -o out
 FROM mcr.microsoft.com/dotnet/aspnet:7.0
 WORKDIR /app
 
-# Copy the published app
 COPY --from=build /app/out ./
-
-# 🔥 Copy the SQLite DB manually from source (needed!)
 COPY --from=build /app/checkoutapi.db ./checkoutapi.db
 
 EXPOSE 80
