@@ -19,6 +19,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     const storedUser = localStorage.getItem("user") || sessionStorage.getItem("user");
+
     if (storedUser) {
       try {
         const parsed = JSON.parse(storedUser);
@@ -31,6 +32,14 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
           if (Date.now() < exp) {
             setUser(parsed);
             setIsAuthenticated(true);
+
+            const timeout = exp - Date.now();
+            const timer = setTimeout(() => {
+              logout();
+              console.warn(t("auth.token_expired"));
+            }, timeout);
+
+            return () => clearTimeout(timer);
           } else {
             console.warn(t("auth.token_expired")); 
             localStorage.removeItem("user");
@@ -41,6 +50,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         console.error(t("auth.invalid_token"), error); 
       }
     }
+
     setCheckingAuth(false);
   }, [t]);
 
