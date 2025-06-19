@@ -3,7 +3,6 @@ using CheckoutAPI.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using System.Security.Claims;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,7 +19,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// ✅ CORS (No trailing slash!)
+// ✅ CORS (NO TRAILING SLASH!)
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(policy =>
@@ -32,7 +31,7 @@ builder.Services.AddCors(options =>
     });
 });
 
-// ✅ JWT Authentication
+// ✅ JWT Auth
 var jwtKey = builder.Configuration["Jwt:Key"];
 var jwtIssuer = builder.Configuration["Jwt:Issuer"];
 var jwtAudience = builder.Configuration["Jwt:Audience"];
@@ -54,10 +53,7 @@ builder.Services.AddAuthentication(options =>
         ValidateIssuerSigningKey = true,
         ValidIssuer = jwtIssuer,
         ValidAudience = jwtAudience,
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey!)),
-
-        // ✅ Critical fix to extract correct claim for user ID
-        NameClaimType = ClaimTypes.NameIdentifier
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey!))
     };
 
     options.Events = new JwtBearerEvents
@@ -80,7 +76,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseCors(); // ⬅ must come before UseAuthentication
+app.UseCors(); // must come BEFORE auth
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
