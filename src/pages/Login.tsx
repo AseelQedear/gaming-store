@@ -15,7 +15,7 @@ const Login: React.FC = () => {
   const navigate = useNavigate();
   const { login: loginUser } = useAuth();
   const { t, i18n } = useTranslation();
-
+  
   useEffect(() => {
     const user =
       JSON.parse(localStorage.getItem("user") || sessionStorage.getItem("user") || "null");
@@ -25,12 +25,13 @@ const Login: React.FC = () => {
     }
   }, [navigate]);
 
-  useEffect(() => {
-    const dir = i18n.dir();
-    document.documentElement.setAttribute("dir", dir);
-    document.body.classList.toggle("rtl", dir === "rtl");
-  }, [i18n.language]);
-
+   useEffect(() => {
+      const dir = i18n.dir();
+      document.documentElement.setAttribute("dir", dir);
+      document.body.classList.toggle("rtl", dir === "rtl");
+    }, [i18n.language]);
+    
+  
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -63,20 +64,21 @@ const Login: React.FC = () => {
         { email, password }
       );
 
-      const { token, user } = response.data;
-
-      if (token && user) {
-        const userData = { ...user, token };
+      if (response.data && response.data.token) {
+        const userData = JSON.stringify({
+          token: response.data.token,
+          email: response.data.email,
+        });
 
         if (rememberMe) {
-          localStorage.setItem("user", JSON.stringify(userData));
+          localStorage.setItem("user", userData);
           sessionStorage.removeItem("user");
         } else {
-          sessionStorage.setItem("user", JSON.stringify(userData));
+          sessionStorage.setItem("user", userData);
           localStorage.removeItem("user");
         }
 
-        loginUser({ token, user });
+        loginUser({ token: response.data.token, email: response.data.email });
         navigate("/");
       } else {
         setServerError(t("login_page.invalid_response"));

@@ -19,7 +19,7 @@ namespace CheckoutAPI.Controllers
             _context = context;
         }
 
-        // OfferKey mapping logic
+        // Same OfferKey mapping logic as DeviceController
         private string GetOfferKey(string offer)
         {
             return offer switch
@@ -70,31 +70,30 @@ namespace CheckoutAPI.Controllers
             var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "0");
 
             var favorites = await _context.Favorites
-                .Where(f => f.UserId == userId && f.Device != null) // ✅ Safeguard for deleted devices
+                .Where(f => f.UserId == userId)
                 .Include(f => f.Device)
+                .Select(f => new
+                {
+                    Device = new
+                    {
+                        f.Device.Id,
+                        f.Device.Name,
+                        f.Device.Price,
+                        f.Device.OldPrice,
+                        f.Device.Percent,
+                        f.Device.Image,
+                        f.Device.Type,
+                        f.Device.Offer,
+                        OfferKey = GetOfferKey(f.Device.Offer),
+                        f.Device.Available,
+                        f.Device.BestDeal,
+                        f.Device.Discounted,
+                        Specifications = f.Device.Specifications
+                    }
+                })
                 .ToListAsync();
 
-            var result = favorites.Select(f => new
-            {
-                Device = new
-                {
-                    f.Device.Id,
-                    f.Device.Name,
-                    f.Device.Price,
-                    f.Device.OldPrice,
-                    f.Device.Percent,
-                    f.Device.Image,
-                    f.Device.Type,
-                    f.Device.Offer,
-                    OfferKey = GetOfferKey(f.Device.Offer),
-                    f.Device.Available,
-                    f.Device.BestDeal,
-                    f.Device.Discounted,
-                    Specifications = f.Device.Specifications
-                }
-            });
-
-            return Ok(result);
+            return Ok(favorites);
         }
     }
 }

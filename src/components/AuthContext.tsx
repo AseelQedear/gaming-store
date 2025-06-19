@@ -1,11 +1,11 @@
 import { createContext, useContext, useEffect, useState, ReactNode } from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next"; 
 
 interface AuthContextType {
   isAuthenticated: boolean;
   checkingAuth: boolean;
   user: any;
-  login: (payload: { token: string; user: any }) => void;
+  login: (user: any) => void;
   logout: () => void;
 }
 
@@ -15,13 +15,10 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<any>(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [checkingAuth, setCheckingAuth] = useState(true);
-  const { t } = useTranslation();
+  const { t } = useTranslation(); 
 
   useEffect(() => {
-    const storedUser =
-      localStorage.getItem("user") || sessionStorage.getItem("user");
-    let timer: ReturnType<typeof setTimeout>;
-
+    const storedUser = localStorage.getItem("user") || sessionStorage.getItem("user");
     if (storedUser) {
       try {
         const parsed = JSON.parse(storedUser);
@@ -34,33 +31,20 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
           if (Date.now() < exp) {
             setUser(parsed);
             setIsAuthenticated(true);
-
-            const timeout = exp - Date.now();
-            timer = setTimeout(() => {
-              logout();
-              console.warn(t("auth.token_expired"));
-            }, timeout);
           } else {
-            console.warn(t("auth.token_expired"));
+            console.warn(t("auth.token_expired")); 
             localStorage.removeItem("user");
             sessionStorage.removeItem("user");
           }
         }
       } catch (error) {
-        console.error(t("auth.invalid_token"), error);
+        console.error(t("auth.invalid_token"), error); 
       }
     }
-
     setCheckingAuth(false);
-
-    return () => clearTimeout(timer);
   }, [t]);
 
-  const login = (payload: { token: string; user: any }) => {
-    const userData = {
-      ...payload.user,
-      token: payload.token
-    };
+  const login = (userData: any) => {
     setUser(userData);
     setIsAuthenticated(true);
     localStorage.setItem("user", JSON.stringify(userData));
@@ -75,9 +59,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   };
 
   return (
-    <AuthContext.Provider
-      value={{ isAuthenticated, checkingAuth, user, login, logout }}
-    >
+    <AuthContext.Provider value={{ isAuthenticated, checkingAuth, user, login, logout }}>
       {children}
     </AuthContext.Provider>
   );
@@ -85,7 +67,6 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
 export const useAuth = () => {
   const context = useContext(AuthContext);
-  if (!context)
-    throw new Error("useAuth must be used inside AuthProvider");
+  if (!context) throw new Error("useAuth must be used inside AuthProvider");
   return context;
 };

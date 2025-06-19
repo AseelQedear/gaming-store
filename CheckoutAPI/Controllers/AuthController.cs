@@ -16,29 +16,19 @@ namespace CheckoutAPI.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> Login([FromBody] LoginRequest request)
-        {
-            var token = await _authService.LoginAsync(request);
-            if (token == null)
-                return Unauthorized(new { error = "Invalid email or password." });
+public async Task<IActionResult> Login([FromBody] LoginRequest request)
+{
+    var token = await _authService.LoginAsync(request);
+    if (token == null)
+        return Unauthorized(new { error = "Invalid email or password." });
 
-            var user = await _authService.GetUserByEmailAsync(request.Email);
-            if (user == null)
-                return Unauthorized(new { error = "User not found." });
+    var user = await _authService.GetUserByEmailAsync(request.Email);
+    if (user == null)
+        return Unauthorized(new { error = "User not found." });
 
-            return Ok(new
-            {
-                token,
-                user = new
-                {
-                    user.Id,
-                    user.FirstName,
-                    user.LastName,
-                    user.Email,
-                    user.Phone
-                }
-            });
-        }
+    return Ok(new { token, email = user.Email });
+}
+
 
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] RegisterRequest request)
@@ -47,22 +37,10 @@ namespace CheckoutAPI.Controllers
             if (token == null)
                 return Conflict(new { error = "Email already exists." });
 
-            var user = await _authService.GetUserByEmailAsync(request.Email);
-            if (user == null)
-                return StatusCode(500, new { error = "User creation failed." });
-
-            return Ok(new
-            {
-                token,
-                user = new
-                {
-                    user.Id,
-                    user.FirstName,
-                    user.LastName,
-                    user.Email,
-                    user.Phone
-                }
-            });
+            return Ok(new { token = token, email = request.Email });
         }
     }
+
+    
 }
+
