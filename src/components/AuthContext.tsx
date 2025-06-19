@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState, ReactNode } from "react";
-import { useTranslation } from "react-i18next"; 
+import { useTranslation } from "react-i18next";
 
 interface AuthContextType {
   isAuthenticated: boolean;
@@ -15,10 +15,11 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<any>(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [checkingAuth, setCheckingAuth] = useState(true);
-  const { t } = useTranslation(); 
+  const { t } = useTranslation();
 
   useEffect(() => {
     const storedUser = localStorage.getItem("user") || sessionStorage.getItem("user");
+
     if (storedUser) {
       try {
         const parsed = JSON.parse(storedUser);
@@ -32,16 +33,22 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
             setUser(parsed);
             setIsAuthenticated(true);
           } else {
-            console.warn(t("auth.token_expired")); 
+            console.warn(t("auth.token_expired"));
             localStorage.removeItem("user");
             sessionStorage.removeItem("user");
           }
         }
       } catch (error) {
-        console.error(t("auth.invalid_token"), error); 
+        console.error(t("auth.invalid_token"), error);
       }
     }
-    setCheckingAuth(false);
+
+    // ✅ Delay the setting of checkingAuth for smoother UX
+    const timeoutId = setTimeout(() => {
+      setCheckingAuth(false);
+    }, 300); // adjust delay if needed (e.g., 300ms for a quick fade)
+
+    return () => clearTimeout(timeoutId);
   }, [t]);
 
   const login = (userData: any) => {
