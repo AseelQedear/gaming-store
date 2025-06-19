@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState, ReactNode } from "react";
-import { useTranslation } from "react-i18next"; 
+import { useTranslation } from "react-i18next";
 
 interface AuthContextType {
   isAuthenticated: boolean;
@@ -15,10 +15,12 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<any>(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [checkingAuth, setCheckingAuth] = useState(true);
-  const { t } = useTranslation(); 
+  const { t } = useTranslation();
 
   useEffect(() => {
-    const storedUser = localStorage.getItem("user") || sessionStorage.getItem("user");
+    const storedUser =
+      localStorage.getItem("user") || sessionStorage.getItem("user");
+    let timer: ReturnType<typeof setTimeout>;
 
     if (storedUser) {
       try {
@@ -34,24 +36,24 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
             setIsAuthenticated(true);
 
             const timeout = exp - Date.now();
-            const timer = setTimeout(() => {
+            timer = setTimeout(() => {
               logout();
               console.warn(t("auth.token_expired"));
             }, timeout);
-
-            return () => clearTimeout(timer);
           } else {
-            console.warn(t("auth.token_expired")); 
+            console.warn(t("auth.token_expired"));
             localStorage.removeItem("user");
             sessionStorage.removeItem("user");
           }
         }
       } catch (error) {
-        console.error(t("auth.invalid_token"), error); 
+        console.error(t("auth.invalid_token"), error);
       }
     }
 
     setCheckingAuth(false);
+
+    return () => clearTimeout(timer);
   }, [t]);
 
   const login = (payload: { token: string; user: any }) => {
@@ -73,7 +75,9 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ isAuthenticated, checkingAuth, user, login, logout }}>
+    <AuthContext.Provider
+      value={{ isAuthenticated, checkingAuth, user, login, logout }}
+    >
       {children}
     </AuthContext.Provider>
   );
@@ -81,6 +85,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
 export const useAuth = () => {
   const context = useContext(AuthContext);
-  if (!context) throw new Error("useAuth must be used inside AuthProvider");
+  if (!context)
+    throw new Error("useAuth must be used inside AuthProvider");
   return context;
 };
